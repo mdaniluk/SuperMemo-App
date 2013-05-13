@@ -4,7 +4,7 @@
 #include <QtWidgets/QMainWindow>
 #include "ui_projektzpr.h"
 
-class ProjektZPR : public QMainWindow
+class ProjektZPR : public QMainWindow, private Ui::ProjektZPRClass
 {
 	Q_OBJECT
 
@@ -14,6 +14,8 @@ public:
 
 private:
 	Ui::ProjektZPRClass ui;
+private slots:
+	void start();
 };
 
 #endif // PROJEKTZPR_H
