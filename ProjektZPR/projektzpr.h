@@ -17,6 +17,7 @@ private:
 	
 	Ui::ProjektZPRClass ui;
 	StartMenu *st;
+
 private slots:
 	void start();
 	
