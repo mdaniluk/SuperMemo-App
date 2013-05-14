@@ -12,14 +12,14 @@ class ProjektZPR : public QMainWindow, private Ui::ProjektZPRClass
 public:
 	ProjektZPR(QWidget *parent = 0);
 	~ProjektZPR();
-	StartMenu *st;
 
 private:
 	
 	Ui::ProjektZPRClass ui;
-	
+	StartMenu *st;
 private slots:
 	void start();
+	
 };
 
-#endif // PROJEKTZPR_H }
+#endif // PROJEKTZPR_H 
