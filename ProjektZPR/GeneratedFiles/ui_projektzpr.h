@@ -17,8 +17,8 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
-#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
 
@@ -32,7 +32,7 @@ public:
     QAction *actionQuit;
     QAction *actionNew_Course;
     QWidget *centralWidget;
-    QTextEdit *textEdit;
+    QPushButton *pushButton;
     QMenuBar *menuBar;
     QMenu *menuFile;
     QMenu *menuCreate;
@@ -54,9 +54,9 @@ public:
         actionNew_Course->setObjectName(QStringLiteral("actionNew_Course"));
         centralWidget = new QWidget(ProjektZPRClass);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        textEdit = new QTextEdit(centralWidget);
-        textEdit->setObjectName(QStringLiteral("textEdit"));
-        textEdit->setGeometry(QRect(140, 160, 104, 71));
+        pushButton = new QPushButton(centralWidget);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton->setGeometry(QRect(170, 160, 75, 23));
         ProjektZPRClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(ProjektZPRClass);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -82,6 +82,9 @@ public:
 
         retranslateUi(ProjektZPRClass);
         QObject::connect(actionQuit, SIGNAL(triggered()), ProjektZPRClass, SLOT(close()));
+        QObject::connect(pushButton, SIGNAL(clicked()), ProjektZPRClass, SLOT(pushButtonTest()));
+        QObject::connect(actionStart, SIGNAL(triggered()), ProjektZPRClass, SLOT(start()));
+        QObject::connect(actionNew_Course, SIGNAL(triggered()), ProjektZPRClass, SLOT(newTest()));
 
         QMetaObject::connectSlotsByName(ProjektZPRClass);
     } // setupUi
@@ -93,6 +96,7 @@ public:
         actionStop->setText(QApplication::translate("ProjektZPRClass", "Stop", 0));
         actionQuit->setText(QApplication::translate("ProjektZPRClass", "Quit", 0));
         actionNew_Course->setText(QApplication::translate("ProjektZPRClass", "New Course", 0));
+        pushButton->setText(QApplication::translate("ProjektZPRClass", "PushButton", 0));
         menuFile->setTitle(QApplication::translate("ProjektZPRClass", "File", 0));
         menuCreate->setTitle(QApplication::translate("ProjektZPRClass", "Create", 0));
     } // retranslateUi

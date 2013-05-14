@@ -1,16 +1,16 @@
 #include "projektzpr.h"
-#include "startmenu.h"
 ProjektZPR::ProjektZPR(QWidget *parent)
 	: QMainWindow(parent)
 {
 	setupUi(this);
-	QObject::connect(actionStart, SIGNAL(triggered() ), this, SLOT( start() ) );
 }
 
 ProjektZPR::~ProjektZPR()
 {
-	if(st != nullptr)
+	/*if(st != nullptr)
 		delete st;
+	if(newCourseWindow != nullptr)
+		delete newCourseWindow;*/
 	//wroc tu
 }
 void ProjektZPR::start(){
@@ -19,6 +19,18 @@ void ProjektZPR::start(){
 
 	st->show();
 
+
 	
 	/*USTAWIC DELETE st*/
 }
+void  ProjektZPR::newTest(){
+	newCourseWindow = new CreateNewTest();
+	newCourseWindow->show();
+
+
+}
+void  ProjektZPR::pushButtonTest(){
+	newCourseWindow = new CreateNewTest();
+	newCourseWindow->show();
+}
+
