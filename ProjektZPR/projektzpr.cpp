@@ -9,10 +9,12 @@ ProjektZPR::ProjektZPR(QWidget *parent)
 
 ProjektZPR::~ProjektZPR()
 {
-
+	if(st != nullptr)
+		delete st;
+	//wroc tu
 }
 void ProjektZPR::start(){
-	StartMenu *st = new StartMenu();
+	st = new StartMenu();
 	st->show();
 
 	/*USTAWIC DELETE st*/
