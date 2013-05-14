@@ -13,7 +13,21 @@
   <property name="windowTitle">
    <string>ProjektZPR</string>
   </property>
-  <widget class="QWidget" name="centralWidget"/>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>160</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>PushButton</string>
+    </property>
+   </widget>
+  </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
@@ -91,5 +105,58 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ProjektZPRClass</receiver>
+   <slot>pushButtonTest()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>205</x>
+     <y>200</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>228</x>
+     <y>247</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionStart</sender>
+   <signal>triggered()</signal>
+   <receiver>ProjektZPRClass</receiver>
+   <slot>start()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>299</x>
+     <y>199</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionNew_Course</sender>
+   <signal>triggered()</signal>
+   <receiver>ProjektZPRClass</receiver>
+   <slot>newTest()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>299</x>
+     <y>199</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
+ <slots>
+  <slot>pushButtonTest()</slot>
+  <slot>start()</slot>
+  <slot>newTest()</slot>
+ </slots>
 </ui>
