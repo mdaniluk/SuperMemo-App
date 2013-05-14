@@ -14,10 +14,10 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
-#include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
@@ -32,7 +32,8 @@ public:
     QAction *actionQuit;
     QAction *actionNew_Course;
     QWidget *centralWidget;
-    QPushButton *pushButton;
+    QLabel *label;
+    QLabel *label_2;
     QMenuBar *menuBar;
     QMenu *menuFile;
     QMenu *menuCreate;
@@ -54,9 +55,18 @@ public:
         actionNew_Course->setObjectName(QStringLiteral("actionNew_Course"));
         centralWidget = new QWidget(ProjektZPRClass);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        pushButton = new QPushButton(centralWidget);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(170, 160, 75, 23));
+        label = new QLabel(centralWidget);
+        label->setObjectName(QStringLiteral("label"));
+        label->setGeometry(QRect(90, 0, 441, 131));
+        QFont font;
+        font.setFamily(QStringLiteral("Edwardian Script ITC"));
+        font.setPointSize(52);
+        font.setBold(true);
+        font.setWeight(75);
+        label->setFont(font);
+        label_2 = new QLabel(centralWidget);
+        label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setGeometry(QRect(400, 330, 181, 21));
         ProjektZPRClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(ProjektZPRClass);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -82,7 +92,6 @@ public:
 
         retranslateUi(ProjektZPRClass);
         QObject::connect(actionQuit, SIGNAL(triggered()), ProjektZPRClass, SLOT(close()));
-        QObject::connect(pushButton, SIGNAL(clicked()), ProjektZPRClass, SLOT(pushButtonTest()));
         QObject::connect(actionStart, SIGNAL(triggered()), ProjektZPRClass, SLOT(start()));
         QObject::connect(actionNew_Course, SIGNAL(triggered()), ProjektZPRClass, SLOT(newTest()));
 
@@ -96,7 +105,8 @@ public:
         actionStop->setText(QApplication::translate("ProjektZPRClass", "Stop", 0));
         actionQuit->setText(QApplication::translate("ProjektZPRClass", "Quit", 0));
         actionNew_Course->setText(QApplication::translate("ProjektZPRClass", "New Course", 0));
-        pushButton->setText(QApplication::translate("ProjektZPRClass", "PushButton", 0));
+        label->setText(QApplication::translate("ProjektZPRClass", "Witaj w Supermemo ", 0));
+        label_2->setText(QApplication::translate("ProjektZPRClass", "Autors: Micha\305\202 Daniluk & Piotr Ma\305\202ecki", 0));
         menuFile->setTitle(QApplication::translate("ProjektZPRClass", "File", 0));
         menuCreate->setTitle(QApplication::translate("ProjektZPRClass", "Create", 0));
     } // retranslateUi
