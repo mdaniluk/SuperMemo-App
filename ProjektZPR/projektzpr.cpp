@@ -12,8 +12,9 @@ ProjektZPR::~ProjektZPR()
 
 }
 void ProjektZPR::start(){
-	StartMenu *st = new StartMenu();
+	 st = new StartMenu();
 	st->show();
 
+	
 	/*USTAWIC DELETE st*/
 }
