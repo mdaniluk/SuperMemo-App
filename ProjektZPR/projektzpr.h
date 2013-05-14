@@ -3,7 +3,7 @@
 
 #include <QtWidgets/QMainWindow>
 #include "ui_projektzpr.h"
-
+#include "startmenu.h"
 class ProjektZPR : public QMainWindow, private Ui::ProjektZPRClass
 {
 	Q_OBJECT
@@ -11,11 +11,12 @@ class ProjektZPR : public QMainWindow, private Ui::ProjektZPRClass
 public:
 	ProjektZPR(QWidget *parent = 0);
 	~ProjektZPR();
-
 private:
 	Ui::ProjektZPRClass ui;
+	StartMenu *st;
 private slots:
 	void start();
+	
 };
 
 #endif // PROJEKTZPR_H
