@@ -239,6 +239,7 @@ public:
 
         retranslateUi(CreateNewTest);
         QObject::connect(next, SIGNAL(clicked()), CreateNewTest, SLOT(nextQuestion()));
+        QObject::connect(back, SIGNAL(clicked()), CreateNewTest, SLOT(backQuestion()));
 
         tabWidget->setCurrentIndex(1);
 

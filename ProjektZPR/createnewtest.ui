@@ -315,8 +315,8 @@ p, li { white-space: pre-wrap; }
    <slot>nextQuestion()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>428</x>
-     <y>345</y>
+     <x>499</x>
+     <y>424</y>
     </hint>
     <hint type="destinationlabel">
      <x>475</x>
@@ -324,8 +324,25 @@ p, li { white-space: pre-wrap; }
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>back</sender>
+   <signal>clicked()</signal>
+   <receiver>CreateNewTest</receiver>
+   <slot>backQuestion()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>164</x>
+     <y>437</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>96</x>
+     <y>457</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>nextQuestion()</slot>
+  <slot>backQuestion()</slot>
  </slots>
 </ui>

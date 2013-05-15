@@ -18,6 +18,7 @@ private:
 	int number;
 private slots:
 	void nextQuestion();
+	void backQuestion();
 };
 
 #endif // CREATENEWTEST_H
