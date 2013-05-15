@@ -6,27 +6,53 @@ CreateNewTest::CreateNewTest(QWidget *parent)
 	ui.setupUi(this);
 	number = 1;
 	questions = new QString[20];
+	answers = new QString[20];
 }
 
 CreateNewTest::~CreateNewTest()
 {
 	delete questions;
+	delete answers;
 }
+
 void CreateNewTest::nextQuestion(){
 	questions[number] = ui.questionEdit->toPlainText();
-	number++;
-	ui.questionNumber->setText(QString::number(number));
-	if(questions[number] != nullptr)
-		ui.questionEdit->setText(questions[number]);
+	
+	if(ui.open->isActiveWindow() ){
+		answers[number] = ui.answerOpenEdit->toPlainText();
+		if(answers[number + 1] != nullptr){
+			ui.answerOpenEdit->setText(answers[number + 1]);
+		}	
+		else
+			ui.answerOpenEdit->setText("");	
+	}
+	
+	if(questions[number + 1] != nullptr){
+		ui.questionEdit->setText(questions[number + 1]);
+	}	
 	else
 		ui.questionEdit->setText("");
+
+	number++;
+	ui.questionNumber->setText(QString::number(number));
 }
 void CreateNewTest::backQuestion(){
-	number--;
-	if(number > 0){
+	
+	if(number > 1){
+		number--;
+		questions[number+1] = ui.questionEdit->toPlainText();
 		ui.questionEdit->setText(questions[number]);
 		ui.questionNumber->setText(QString::number(number));
-		questions[number] = ui.questionEdit->toPlainText();
+		
+
+		/*open answer */
+		if(ui.open->isActiveWindow() ){
+			answers[number + 1] = ui.answerOpenEdit->toPlainText();
+			ui.answerOpenEdit->setText(answers[number]);
+			
+		}
+
+		
 	}
 	
 }

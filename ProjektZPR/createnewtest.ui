@@ -76,7 +76,7 @@ p, li { white-space: pre-wrap; }
    <property name="currentIndex">
     <number>1</number>
    </property>
-   <widget class="QWidget" name="Open">
+   <widget class="QWidget" name="open">
     <attribute name="title">
      <string>Open</string>
     </attribute>
@@ -86,7 +86,7 @@ p, li { white-space: pre-wrap; }
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="Close">
+   <widget class="QWidget" name="close">
     <attribute name="title">
      <string>Close</string>
     </attribute>

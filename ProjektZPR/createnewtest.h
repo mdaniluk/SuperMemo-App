@@ -15,6 +15,7 @@ public:
 private:
 	Ui::CreateNewTest ui;
 	QString *questions;
+	QString *answers;
 	int number;
 private slots:
 	void nextQuestion();

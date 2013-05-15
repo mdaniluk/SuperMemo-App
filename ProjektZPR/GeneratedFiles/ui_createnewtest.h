@@ -34,10 +34,10 @@ public:
     QTextEdit *questionEdit;
     QPushButton *save;
     QTabWidget *tabWidget;
-    QWidget *Open;
+    QWidget *open;
     QVBoxLayout *verticalLayout;
     QTextEdit *answerOpenEdit;
-    QWidget *Close;
+    QWidget *close;
     QGridLayout *gridLayout_3;
     QVBoxLayout *verticalLayout_3;
     QGroupBox *groupBox_2;
@@ -88,28 +88,28 @@ public:
         tabWidget = new QTabWidget(CreateNewTest);
         tabWidget->setObjectName(QStringLiteral("tabWidget"));
         tabWidget->setGeometry(QRect(90, 160, 461, 231));
-        Open = new QWidget();
-        Open->setObjectName(QStringLiteral("Open"));
-        verticalLayout = new QVBoxLayout(Open);
+        open = new QWidget();
+        open->setObjectName(QStringLiteral("open"));
+        verticalLayout = new QVBoxLayout(open);
         verticalLayout->setSpacing(6);
         verticalLayout->setContentsMargins(11, 11, 11, 11);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        answerOpenEdit = new QTextEdit(Open);
+        answerOpenEdit = new QTextEdit(open);
         answerOpenEdit->setObjectName(QStringLiteral("answerOpenEdit"));
 
         verticalLayout->addWidget(answerOpenEdit);
 
-        tabWidget->addTab(Open, QString());
-        Close = new QWidget();
-        Close->setObjectName(QStringLiteral("Close"));
-        gridLayout_3 = new QGridLayout(Close);
+        tabWidget->addTab(open, QString());
+        close = new QWidget();
+        close->setObjectName(QStringLiteral("close"));
+        gridLayout_3 = new QGridLayout(close);
         gridLayout_3->setSpacing(6);
         gridLayout_3->setContentsMargins(11, 11, 11, 11);
         gridLayout_3->setObjectName(QStringLiteral("gridLayout_3"));
         verticalLayout_3 = new QVBoxLayout();
         verticalLayout_3->setSpacing(6);
         verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
-        groupBox_2 = new QGroupBox(Close);
+        groupBox_2 = new QGroupBox(close);
         groupBox_2->setObjectName(QStringLiteral("groupBox_2"));
         gridLayout = new QGridLayout(groupBox_2);
         gridLayout->setSpacing(6);
@@ -123,7 +123,7 @@ public:
 
         verticalLayout_3->addWidget(groupBox_2);
 
-        groupBox_3 = new QGroupBox(Close);
+        groupBox_3 = new QGroupBox(close);
         groupBox_3->setObjectName(QStringLiteral("groupBox_3"));
         rbB = new QRadioButton(groupBox_3);
         rbB->setObjectName(QStringLiteral("rbB"));
@@ -131,7 +131,7 @@ public:
 
         verticalLayout_3->addWidget(groupBox_3);
 
-        groupBox_4 = new QGroupBox(Close);
+        groupBox_4 = new QGroupBox(close);
         groupBox_4->setObjectName(QStringLiteral("groupBox_4"));
         rbC = new QRadioButton(groupBox_4);
         rbC->setObjectName(QStringLiteral("rbC"));
@@ -139,7 +139,7 @@ public:
 
         verticalLayout_3->addWidget(groupBox_4);
 
-        groupBox = new QGroupBox(Close);
+        groupBox = new QGroupBox(close);
         groupBox->setObjectName(QStringLiteral("groupBox"));
         rbD = new QRadioButton(groupBox);
         rbD->setObjectName(QStringLiteral("rbD"));
@@ -153,22 +153,22 @@ public:
         gridLayout_2 = new QGridLayout();
         gridLayout_2->setSpacing(6);
         gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
-        answerCloseAEdit = new QTextEdit(Close);
+        answerCloseAEdit = new QTextEdit(close);
         answerCloseAEdit->setObjectName(QStringLiteral("answerCloseAEdit"));
 
         gridLayout_2->addWidget(answerCloseAEdit, 0, 0, 1, 1);
 
-        answerCloseBEdit = new QTextEdit(Close);
+        answerCloseBEdit = new QTextEdit(close);
         answerCloseBEdit->setObjectName(QStringLiteral("answerCloseBEdit"));
 
         gridLayout_2->addWidget(answerCloseBEdit, 1, 0, 1, 1);
 
-        answerCloseCEdit = new QTextEdit(Close);
+        answerCloseCEdit = new QTextEdit(close);
         answerCloseCEdit->setObjectName(QStringLiteral("answerCloseCEdit"));
 
         gridLayout_2->addWidget(answerCloseCEdit, 2, 0, 1, 1);
 
-        answerCloseDEdit = new QTextEdit(Close);
+        answerCloseDEdit = new QTextEdit(close);
         answerCloseDEdit->setObjectName(QStringLiteral("answerCloseDEdit"));
 
         gridLayout_2->addWidget(answerCloseDEdit, 3, 0, 1, 1);
@@ -176,12 +176,12 @@ public:
 
         gridLayout_3->addLayout(gridLayout_2, 0, 1, 2, 2);
 
-        label_3 = new QLabel(Close);
+        label_3 = new QLabel(close);
         label_3->setObjectName(QStringLiteral("label_3"));
 
         gridLayout_3->addWidget(label_3, 1, 2, 1, 1);
 
-        tabWidget->addTab(Close, QString());
+        tabWidget->addTab(close, QString());
         label_2 = new QLabel(CreateNewTest);
         label_2->setObjectName(QStringLiteral("label_2"));
         label_2->setGeometry(QRect(10, 180, 66, 20));
@@ -257,7 +257,7 @@ public:
 "</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><br /></p></body></html>", 0));
         save->setText(QApplication::translate("CreateNewTest", "Save Course", 0));
-        tabWidget->setTabText(tabWidget->indexOf(Open), QApplication::translate("CreateNewTest", "Open", 0));
+        tabWidget->setTabText(tabWidget->indexOf(open), QApplication::translate("CreateNewTest", "Open", 0));
         groupBox_2->setTitle(QString());
         rbA->setText(QApplication::translate("CreateNewTest", "a)", 0));
         groupBox_3->setTitle(QString());
@@ -267,7 +267,7 @@ public:
         groupBox->setTitle(QString());
         rbD->setText(QApplication::translate("CreateNewTest", "d)", 0));
         label_3->setText(QString());
-        tabWidget->setTabText(tabWidget->indexOf(Close), QApplication::translate("CreateNewTest", "Close", 0));
+        tabWidget->setTabText(tabWidget->indexOf(close), QApplication::translate("CreateNewTest", "Close", 0));
         label_2->setText(QApplication::translate("CreateNewTest", "Answer", 0));
         help->setText(QApplication::translate("CreateNewTest", "Help", 0));
         back->setText(QApplication::translate("CreateNewTest", "Back", 0));
