@@ -64,7 +64,7 @@ p, li { white-space: pre-wrap; }
     <string>Save Course</string>
    </property>
   </widget>
-  <widget class="QTabWidget" name="tabWidget">
+  <widget class="QTabWidget" name="tabs">
    <property name="geometry">
     <rect>
      <x>90</x>
@@ -294,7 +294,7 @@ p, li { white-space: pre-wrap; }
   <zorder>label</zorder>
   <zorder>questionEdit</zorder>
   <zorder>save</zorder>
-  <zorder>tabWidget</zorder>
+  <zorder>tabs</zorder>
   <zorder>label_2</zorder>
   <zorder>help</zorder>
   <zorder>questionNumber</zorder>
@@ -340,9 +340,44 @@ p, li { white-space: pre-wrap; }
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>tabs</sender>
+   <signal>currentChanged(int)</signal>
+   <receiver>CreateNewTest</receiver>
+   <slot>currentChangedSlot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>158</x>
+     <y>171</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>50</x>
+     <y>151</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>save</sender>
+   <signal>clicked()</signal>
+   <receiver>CreateNewTest</receiver>
+   <slot>saveCourse()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>609</x>
+     <y>105</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>604</x>
+     <y>49</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>nextQuestion()</slot>
   <slot>backQuestion()</slot>
+  <slot>currentChangedSlot()</slot>
+  <slot>writeToCloseB()</slot>
+  <slot>saveCourse()</slot>
  </slots>
 </ui>

@@ -33,7 +33,7 @@ public:
     QLabel *label;
     QTextEdit *questionEdit;
     QPushButton *save;
-    QTabWidget *tabWidget;
+    QTabWidget *tabs;
     QWidget *open;
     QVBoxLayout *verticalLayout;
     QTextEdit *answerOpenEdit;
@@ -85,9 +85,9 @@ public:
         save = new QPushButton(CreateNewTest);
         save->setObjectName(QStringLiteral("save"));
         save->setGeometry(QRect(570, 90, 75, 23));
-        tabWidget = new QTabWidget(CreateNewTest);
-        tabWidget->setObjectName(QStringLiteral("tabWidget"));
-        tabWidget->setGeometry(QRect(90, 160, 461, 231));
+        tabs = new QTabWidget(CreateNewTest);
+        tabs->setObjectName(QStringLiteral("tabs"));
+        tabs->setGeometry(QRect(90, 160, 461, 231));
         open = new QWidget();
         open->setObjectName(QStringLiteral("open"));
         verticalLayout = new QVBoxLayout(open);
@@ -99,7 +99,7 @@ public:
 
         verticalLayout->addWidget(answerOpenEdit);
 
-        tabWidget->addTab(open, QString());
+        tabs->addTab(open, QString());
         close = new QWidget();
         close->setObjectName(QStringLiteral("close"));
         gridLayout_3 = new QGridLayout(close);
@@ -181,7 +181,7 @@ public:
 
         gridLayout_3->addWidget(label_3, 1, 2, 1, 1);
 
-        tabWidget->addTab(close, QString());
+        tabs->addTab(close, QString());
         label_2 = new QLabel(CreateNewTest);
         label_2->setObjectName(QStringLiteral("label_2"));
         label_2->setGeometry(QRect(10, 180, 66, 20));
@@ -229,7 +229,7 @@ public:
         label->raise();
         questionEdit->raise();
         save->raise();
-        tabWidget->raise();
+        tabs->raise();
         label_2->raise();
         help->raise();
         questionNumber->raise();
@@ -240,8 +240,10 @@ public:
         retranslateUi(CreateNewTest);
         QObject::connect(next, SIGNAL(clicked()), CreateNewTest, SLOT(nextQuestion()));
         QObject::connect(back, SIGNAL(clicked()), CreateNewTest, SLOT(backQuestion()));
+        QObject::connect(tabs, SIGNAL(currentChanged(int)), CreateNewTest, SLOT(currentChangedSlot()));
+        QObject::connect(save, SIGNAL(clicked()), CreateNewTest, SLOT(saveCourse()));
 
-        tabWidget->setCurrentIndex(1);
+        tabs->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(CreateNewTest);
@@ -257,7 +259,7 @@ public:
 "</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><br /></p></body></html>", 0));
         save->setText(QApplication::translate("CreateNewTest", "Save Course", 0));
-        tabWidget->setTabText(tabWidget->indexOf(open), QApplication::translate("CreateNewTest", "Open", 0));
+        tabs->setTabText(tabs->indexOf(open), QApplication::translate("CreateNewTest", "Open", 0));
         groupBox_2->setTitle(QString());
         rbA->setText(QApplication::translate("CreateNewTest", "a)", 0));
         groupBox_3->setTitle(QString());
@@ -267,7 +269,7 @@ public:
         groupBox->setTitle(QString());
         rbD->setText(QApplication::translate("CreateNewTest", "d)", 0));
         label_3->setText(QString());
-        tabWidget->setTabText(tabWidget->indexOf(close), QApplication::translate("CreateNewTest", "Close", 0));
+        tabs->setTabText(tabs->indexOf(close), QApplication::translate("CreateNewTest", "Close", 0));
         label_2->setText(QApplication::translate("CreateNewTest", "Answer", 0));
         help->setText(QApplication::translate("CreateNewTest", "Help", 0));
         back->setText(QApplication::translate("CreateNewTest", "Back", 0));

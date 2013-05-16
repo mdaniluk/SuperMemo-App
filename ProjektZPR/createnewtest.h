@@ -17,9 +17,13 @@ private:
 	QString *questions;
 	QString *answers;
 	int number;
+	bool isNextOrBack;
+	int numberOfQuestions;
 private slots:
 	void nextQuestion();
 	void backQuestion();
+	void currentChangedSlot();
+	void saveCourse();
 };
 
 #endif // CREATENEWTEST_H
