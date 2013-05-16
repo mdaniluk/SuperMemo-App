@@ -19,6 +19,7 @@ private:
 	int number;
 	bool isNextOrBack;
 	int numberOfQuestions;
+	//QString nameOfTest;
 private slots:
 	void nextQuestion();
 	void backQuestion();
