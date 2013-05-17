@@ -21,27 +21,71 @@ CreateNewTest::~CreateNewTest()
 	delete questions;
 	delete answers;
 }
+void CreateNewTest::getTask(){
+	questions[number] = ui.questionEdit->toPlainText();
 
+	if(!ui.open->isHidden() ){
+		answers[number] = ui.answerOpenEdit->toPlainText();	
+	}
+	else if(!ui.close->isHidden() ){
+		if(ui.answerCloseAEdit->toPlainText() != ""){
+			answers[number] = "***" + ui.answerCloseAEdit->toPlainText();
+			answers[number] += "***" + ui.aValue->currentText();
+		}
+		if(ui.answerCloseBEdit->toPlainText() != ""){
+			answers[number] += "***" + ui.answerCloseBEdit->toPlainText();
+			answers[number] += "***" + ui.bValue->currentText();
+		}
+		if(ui.answerCloseCEdit->toPlainText() != ""){
+			answers[number] += "***" + ui.answerCloseCEdit->toPlainText();
+			answers[number] += "***" + ui.cValue->currentText();
+		}
+		if(ui.answerCloseDEdit->toPlainText() != ""){
+			answers[number] += "***" + ui.answerCloseDEdit->toPlainText();
+			answers[number] += "***" + ui.dValue->currentText();
+		}
+				
+	}
+}
+
+void CreateNewTest::setTask(){
+	if(answers[number].startsWith("***") ){
+		ui.tabs->setCurrentIndex(1); // -close
+		ui.answerCloseAEdit->setText(answers[number].section("***",1,1) );
+		ui.answerCloseBEdit->setText(answers[number].section("***",3,3) );
+		ui.answerCloseCEdit->setText(answers[number].section("***",5,5) );
+		ui.answerCloseDEdit->setText(answers[number].section("***",7,7) );
+		ui.answerOpenEdit->setText("");
+	}
+	else{
+		ui.tabs->setCurrentIndex(0);
+		if(answers[number] != ""){
+			ui.answerOpenEdit->setText(answers[number]);
+		}
+		else
+			ui.answerOpenEdit->setText("");
+
+		ui.answerCloseAEdit->setText("");
+		ui.answerCloseBEdit->setText("");
+		ui.answerCloseCEdit->setText("");
+		ui.answerCloseDEdit->setText("");
+
+	}
+		
+	if(questions[number ] != ""){
+		ui.questionEdit->setText(questions[number]);
+	}	
+	else
+		ui.questionEdit->setText("");
+
+	
+	ui.questionNumber->setText(QString::number(number));
+}
 void CreateNewTest::saveCourse(){
 	if(numberOfQuestions == number){
 			isNextOrBack = true;
 			
-			questions[number] = ui.questionEdit->toPlainText();
-
-			if(!ui.open->isHidden() ){
-				answers[number] = ui.answerOpenEdit->toPlainText();	
-			}
-			else if(!ui.close->isHidden() ){
-				if(ui.answerCloseAEdit->toPlainText() != "")
-					answers[number] = "***" + ui.answerCloseAEdit->toPlainText();
-				if(ui.answerCloseBEdit->toPlainText() != "")
-					answers[number] += "***" + ui.answerCloseBEdit->toPlainText();
-				if(ui.answerCloseCEdit->toPlainText() != "")
-					answers[number] += "***" + ui.answerCloseCEdit->toPlainText();
-				if(ui.answerCloseDEdit->toPlainText() != "")
-					answers[number] += "***" + ui.answerCloseDEdit->toPlainText();
-				
-			}
+			getTask();
 			
 			isNextOrBack = false;
 	}
@@ -78,29 +122,37 @@ void CreateNewTest::saveCourse(){
 				task.appendChild(answer);
 
 				QString a = ans.section("***",1,1);
-				QString b = ans.section("***",2,2);
-				QString c = ans.section("***",3,3);
-				QString d = ans.section("***",4,4);
+				QString b = ans.section("***",3,3);
+				QString c = ans.section("***",5,5);
+				QString d = ans.section("***",7,7);
+				QString aVal = ans.section("***",2,2);
+				QString bVal = ans.section("***",4,4);
+				QString cVal = ans.section("***",6,6);
+				QString dVal = ans.section("***",8,8);
 				if ( a != ""){
 					QDomElement answerA = document.createElement("a");
+					answerA.setAttribute("Value",aVal);
 					answer.appendChild(answerA);
 					QDomText answerText = document.createTextNode(a);
 					answerA.appendChild(answerText);
 				}
 				if ( b != ""){
 					QDomElement answerB = document.createElement("b");
+					answerB.setAttribute("Value",bVal);
 					answer.appendChild(answerB);
 					QDomText answerText = document.createTextNode(b);
 					answerB.appendChild(answerText);
 				}
 				if ( c != ""){
 					QDomElement answerC = document.createElement("c");
+					answerC.setAttribute("Value",cVal);
 					answer.appendChild(answerC);
 					QDomText answerText = document.createTextNode(c);
 					answerC.appendChild(answerText);
 				}
 				if ( d != ""){
 					QDomElement answerD = document.createElement("d");
+					answerD.setAttribute("Value",dVal);
 					answer.appendChild(answerD);
 					QDomText answerText = document.createTextNode(d);
 					answerD.appendChild(answerText);
@@ -159,100 +211,27 @@ void CreateNewTest::nextQuestion(){
 	}
 	else{
 		isNextOrBack = true;
-		questions[number] = ui.questionEdit->toPlainText();
-
-		if(!ui.open->isHidden() ){
-			answers[number] = ui.answerOpenEdit->toPlainText();	
-		}
-		else if(!ui.close->isHidden() ){
-			if(ui.answerCloseAEdit->toPlainText() != "")
-				answers[number] = "***" + ui.answerCloseAEdit->toPlainText();
-			if(ui.answerCloseBEdit->toPlainText() != "")
-				answers[number] += "***" + ui.answerCloseBEdit->toPlainText();
-			if(ui.answerCloseCEdit->toPlainText() != "")
-				answers[number] += "***" + ui.answerCloseCEdit->toPlainText();
-			if(ui.answerCloseDEdit->toPlainText() != "")
-				answers[number] += "***" + ui.answerCloseDEdit->toPlainText();
-		}
-
+		getTask();
 		number++;
-		if(answers[number].startsWith("***") ){
-			ui.tabs->setCurrentIndex(1); // -close
-			ui.answerCloseAEdit->setText(answers[number].section("***",1,1) );
-			ui.answerCloseBEdit->setText(answers[number].section("***",2,2) );
-			ui.answerCloseCEdit->setText(answers[number].section("***",3,3) );
-			ui.answerCloseDEdit->setText(answers[number].section("***",4,4) );
-			ui.answerOpenEdit->setText("");
-		}
-		else{
-			ui.tabs->setCurrentIndex(0);
-			if(answers[number] != ""){
-				ui.answerOpenEdit->setText(answers[number]);
-			}
-			else
-				ui.answerOpenEdit->setText("");
-
-			ui.answerCloseAEdit->setText("");
-			ui.answerCloseBEdit->setText("");
-			ui.answerCloseCEdit->setText("");
-			ui.answerCloseDEdit->setText("");
-
-		}
-		
-		if(questions[number ] != ""){
-			ui.questionEdit->setText(questions[number]);
-		}	
-		else
-			ui.questionEdit->setText("");
-
-		
-		ui.questionNumber->setText(QString::number(number));
+		setTask();
 		isNextOrBack = false;
-		if(numberOfQuestions < number)
+		if(numberOfQuestions < number){
 			numberOfQuestions = number;
+			ui.aValue->setCurrentIndex(0);
+			ui.bValue->setCurrentIndex(0);
+			ui.cValue->setCurrentIndex(0);
+			ui.dValue->setCurrentIndex(0);
+		}
 	}
 	
 }
 void CreateNewTest::backQuestion(){
 	if(number > 1){
 		isNextOrBack = true;
-		questions[number] = ui.questionEdit->toPlainText();
-		
-		/*open answer */
-		if(!ui.open->isHidden() ){
-			answers[number] = ui.answerOpenEdit->toPlainText();
-		}
-		else if(!ui.close->isHidden() ){
-			if(ui.answerCloseAEdit->toPlainText() != "")
-				answers[number] = "***" + ui.answerCloseAEdit->toPlainText();
-			if(ui.answerCloseBEdit->toPlainText() != "")
-				answers[number] += "***" + ui.answerCloseBEdit->toPlainText();
-			if(ui.answerCloseCEdit->toPlainText() != "")
-				answers[number] += "***" + ui.answerCloseCEdit->toPlainText();
-			if(ui.answerCloseDEdit->toPlainText() != "")
-				answers[number] += "***" + ui.answerCloseDEdit->toPlainText();
-		}
+		getTask();
 
 		number--;
-		if(answers[number].startsWith("***") ){
-			ui.tabs->setCurrentIndex(1); // index1 - close
-			ui.answerCloseAEdit->setText(answers[number].section("***",1,1) );
-			ui.answerCloseBEdit->setText(answers[number].section("***",2,2) );
-			ui.answerCloseCEdit->setText(answers[number].section("***",3,3) );
-			ui.answerCloseDEdit->setText(answers[number].section("***",4,4) );
-			ui.answerOpenEdit->setText("");
-		}	
-		else{
-			ui.tabs->setCurrentIndex(0);
-			ui.answerOpenEdit->setText(answers[number]);
-			ui.answerCloseAEdit->setText("");
-			ui.answerCloseBEdit->setText("");
-			ui.answerCloseCEdit->setText("");
-			ui.answerCloseDEdit->setText("");
-		}
-
-		ui.questionEdit->setText(questions[number]);
-		ui.questionNumber->setText(QString::number(number));	
+		setTask();	
 		isNextOrBack = false;
 	}
 	

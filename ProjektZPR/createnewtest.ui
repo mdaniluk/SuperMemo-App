@@ -90,111 +90,186 @@ p, li { white-space: pre-wrap; }
     <attribute name="title">
      <string>Close</string>
     </attribute>
-    <layout class="QGridLayout" name="gridLayout_3">
-     <item row="0" column="0" rowspan="2">
-      <layout class="QVBoxLayout" name="verticalLayout_3">
-       <item>
-        <widget class="QGroupBox" name="groupBox_2">
-         <property name="title">
-          <string/>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>304</x>
+       <y>106</y>
+       <width>16</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>31</width>
+       <height>191</height>
+      </rect>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_4">
+        <property name="font">
+         <font>
+          <family>Cambria</family>
+          <pointsize>10</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>a)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_5">
+        <property name="font">
+         <font>
+          <family>Cambria</family>
+          <pointsize>10</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>b)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_6">
+        <property name="font">
+         <font>
+          <family>Cambria</family>
+          <pointsize>10</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>c)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="label_7">
+        <property name="font">
+         <font>
+          <family>Cambria</family>
+          <pointsize>10</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>d)</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>400</x>
+       <y>0</y>
+       <width>52</width>
+       <height>211</height>
+      </rect>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_3">
+      <item row="0" column="0">
+       <widget class="QComboBox" name="aValue">
+        <property name="currentText">
+         <string>True</string>
+        </property>
+        <item>
+         <property name="text">
+          <string>True</string>
          </property>
-         <layout class="QGridLayout" name="gridLayout">
-          <item row="0" column="0">
-           <widget class="QRadioButton" name="rbA">
-            <property name="text">
-             <string>a)</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item>
-        <widget class="QGroupBox" name="groupBox_3">
-         <property name="title">
-          <string/>
+        </item>
+        <item>
+         <property name="text">
+          <string>False</string>
          </property>
-         <widget class="QRadioButton" name="rbB">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>10</y>
-            <width>33</width>
-            <height>17</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>b)</string>
-          </property>
-         </widget>
-        </widget>
-       </item>
-       <item>
-        <widget class="QGroupBox" name="groupBox_4">
-         <property name="title">
-          <string/>
+        </item>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QComboBox" name="bValue">
+        <item>
+         <property name="text">
+          <string>True</string>
          </property>
-         <widget class="QRadioButton" name="rbC">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>13</y>
-            <width>32</width>
-            <height>17</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>c)</string>
-          </property>
-         </widget>
-        </widget>
-       </item>
-       <item>
-        <widget class="QGroupBox" name="groupBox">
-         <property name="title">
-          <string/>
+        </item>
+        <item>
+         <property name="text">
+          <string>False</string>
          </property>
-         <widget class="QRadioButton" name="rbD">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>13</y>
-            <width>33</width>
-            <height>17</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>d)</string>
-          </property>
-         </widget>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item row="0" column="1" rowspan="2" colspan="2">
-      <layout class="QGridLayout" name="gridLayout_2">
-       <item row="0" column="0">
-        <widget class="QTextEdit" name="answerCloseAEdit"/>
-       </item>
-       <item row="1" column="0">
-        <widget class="QTextEdit" name="answerCloseBEdit"/>
-       </item>
-       <item row="2" column="0">
-        <widget class="QTextEdit" name="answerCloseCEdit"/>
-       </item>
-       <item row="3" column="0">
-        <widget class="QTextEdit" name="answerCloseDEdit"/>
-       </item>
-      </layout>
-     </item>
-     <item row="1" column="2">
-      <widget class="QLabel" name="label_3">
-       <property name="text">
-        <string/>
-       </property>
-      </widget>
-     </item>
-    </layout>
+        </item>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QComboBox" name="cValue">
+        <item>
+         <property name="text">
+          <string>True</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>False</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QComboBox" name="dValue">
+        <item>
+         <property name="text">
+          <string>True</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>False</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>10</y>
+       <width>331</width>
+       <height>191</height>
+      </rect>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="0" column="0">
+       <widget class="QTextEdit" name="answerCloseAEdit"/>
+      </item>
+      <item row="1" column="0">
+       <widget class="QTextEdit" name="answerCloseBEdit"/>
+      </item>
+      <item row="2" column="0">
+       <widget class="QTextEdit" name="answerCloseCEdit"/>
+      </item>
+      <item row="3" column="0">
+       <widget class="QTextEdit" name="answerCloseDEdit"/>
+      </item>
+     </layout>
+    </widget>
    </widget>
   </widget>
   <widget class="QLabel" name="label_2">

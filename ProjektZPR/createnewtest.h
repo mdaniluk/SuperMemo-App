@@ -19,7 +19,8 @@ private:
 	int number;
 	bool isNextOrBack;
 	int numberOfQuestions;
-	//QString nameOfTest;
+	void getTask();
+	void setTask();
 private slots:
 	void nextQuestion();
 	void backQuestion();

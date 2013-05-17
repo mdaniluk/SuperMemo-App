@@ -13,13 +13,12 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QGridLayout>
-#include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QRadioButton>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QTextEdit>
 #include <QtWidgets/QVBoxLayout>
@@ -38,28 +37,30 @@ public:
     QVBoxLayout *verticalLayout;
     QTextEdit *answerOpenEdit;
     QWidget *close;
-    QGridLayout *gridLayout_3;
-    QVBoxLayout *verticalLayout_3;
-    QGroupBox *groupBox_2;
+    QLabel *label_3;
+    QWidget *layoutWidget;
     QGridLayout *gridLayout;
-    QRadioButton *rbA;
-    QGroupBox *groupBox_3;
-    QRadioButton *rbB;
-    QGroupBox *groupBox_4;
-    QRadioButton *rbC;
-    QGroupBox *groupBox;
-    QRadioButton *rbD;
+    QLabel *label_4;
+    QLabel *label_5;
+    QLabel *label_6;
+    QLabel *label_7;
+    QWidget *layoutWidget1;
+    QGridLayout *gridLayout_3;
+    QComboBox *aValue;
+    QComboBox *bValue;
+    QComboBox *cValue;
+    QComboBox *dValue;
+    QWidget *layoutWidget2;
     QGridLayout *gridLayout_2;
     QTextEdit *answerCloseAEdit;
     QTextEdit *answerCloseBEdit;
     QTextEdit *answerCloseCEdit;
     QTextEdit *answerCloseDEdit;
-    QLabel *label_3;
     QLabel *label_2;
     QPushButton *help;
-    QWidget *layoutWidget;
+    QWidget *layoutWidget3;
     QVBoxLayout *verticalLayout_4;
-    QWidget *layoutWidget1;
+    QWidget *layoutWidget4;
     QHBoxLayout *horizontalLayout;
     QPushButton *back;
     QPushButton *next;
@@ -102,84 +103,101 @@ public:
         tabs->addTab(open, QString());
         close = new QWidget();
         close->setObjectName(QStringLiteral("close"));
-        gridLayout_3 = new QGridLayout(close);
-        gridLayout_3->setSpacing(6);
-        gridLayout_3->setContentsMargins(11, 11, 11, 11);
-        gridLayout_3->setObjectName(QStringLiteral("gridLayout_3"));
-        verticalLayout_3 = new QVBoxLayout();
-        verticalLayout_3->setSpacing(6);
-        verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
-        groupBox_2 = new QGroupBox(close);
-        groupBox_2->setObjectName(QStringLiteral("groupBox_2"));
-        gridLayout = new QGridLayout(groupBox_2);
+        label_3 = new QLabel(close);
+        label_3->setObjectName(QStringLiteral("label_3"));
+        label_3->setGeometry(QRect(304, 106, 16, 16));
+        layoutWidget = new QWidget(close);
+        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
+        layoutWidget->setGeometry(QRect(10, 10, 31, 191));
+        gridLayout = new QGridLayout(layoutWidget);
         gridLayout->setSpacing(6);
         gridLayout->setContentsMargins(11, 11, 11, 11);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
-        rbA = new QRadioButton(groupBox_2);
-        rbA->setObjectName(QStringLiteral("rbA"));
+        gridLayout->setContentsMargins(0, 0, 0, 0);
+        label_4 = new QLabel(layoutWidget);
+        label_4->setObjectName(QStringLiteral("label_4"));
+        QFont font1;
+        font1.setFamily(QStringLiteral("Cambria"));
+        font1.setPointSize(10);
+        font1.setBold(false);
+        font1.setWeight(50);
+        label_4->setFont(font1);
 
-        gridLayout->addWidget(rbA, 0, 0, 1, 1);
+        gridLayout->addWidget(label_4, 0, 0, 1, 1);
 
+        label_5 = new QLabel(layoutWidget);
+        label_5->setObjectName(QStringLiteral("label_5"));
+        label_5->setFont(font1);
 
-        verticalLayout_3->addWidget(groupBox_2);
+        gridLayout->addWidget(label_5, 1, 0, 1, 1);
 
-        groupBox_3 = new QGroupBox(close);
-        groupBox_3->setObjectName(QStringLiteral("groupBox_3"));
-        rbB = new QRadioButton(groupBox_3);
-        rbB->setObjectName(QStringLiteral("rbB"));
-        rbB->setGeometry(QRect(10, 10, 33, 17));
+        label_6 = new QLabel(layoutWidget);
+        label_6->setObjectName(QStringLiteral("label_6"));
+        label_6->setFont(font1);
 
-        verticalLayout_3->addWidget(groupBox_3);
+        gridLayout->addWidget(label_6, 2, 0, 1, 1);
 
-        groupBox_4 = new QGroupBox(close);
-        groupBox_4->setObjectName(QStringLiteral("groupBox_4"));
-        rbC = new QRadioButton(groupBox_4);
-        rbC->setObjectName(QStringLiteral("rbC"));
-        rbC->setGeometry(QRect(10, 13, 32, 17));
+        label_7 = new QLabel(layoutWidget);
+        label_7->setObjectName(QStringLiteral("label_7"));
+        label_7->setFont(font1);
 
-        verticalLayout_3->addWidget(groupBox_4);
+        gridLayout->addWidget(label_7, 3, 0, 1, 1);
 
-        groupBox = new QGroupBox(close);
-        groupBox->setObjectName(QStringLiteral("groupBox"));
-        rbD = new QRadioButton(groupBox);
-        rbD->setObjectName(QStringLiteral("rbD"));
-        rbD->setGeometry(QRect(10, 13, 33, 17));
+        layoutWidget1 = new QWidget(close);
+        layoutWidget1->setObjectName(QStringLiteral("layoutWidget1"));
+        layoutWidget1->setGeometry(QRect(400, 0, 52, 211));
+        gridLayout_3 = new QGridLayout(layoutWidget1);
+        gridLayout_3->setSpacing(6);
+        gridLayout_3->setContentsMargins(11, 11, 11, 11);
+        gridLayout_3->setObjectName(QStringLiteral("gridLayout_3"));
+        gridLayout_3->setContentsMargins(0, 0, 0, 0);
+        aValue = new QComboBox(layoutWidget1);
+        aValue->setObjectName(QStringLiteral("aValue"));
 
-        verticalLayout_3->addWidget(groupBox);
+        gridLayout_3->addWidget(aValue, 0, 0, 1, 1);
 
+        bValue = new QComboBox(layoutWidget1);
+        bValue->setObjectName(QStringLiteral("bValue"));
 
-        gridLayout_3->addLayout(verticalLayout_3, 0, 0, 2, 1);
+        gridLayout_3->addWidget(bValue, 1, 0, 1, 1);
 
-        gridLayout_2 = new QGridLayout();
+        cValue = new QComboBox(layoutWidget1);
+        cValue->setObjectName(QStringLiteral("cValue"));
+
+        gridLayout_3->addWidget(cValue, 2, 0, 1, 1);
+
+        dValue = new QComboBox(layoutWidget1);
+        dValue->setObjectName(QStringLiteral("dValue"));
+
+        gridLayout_3->addWidget(dValue, 3, 0, 1, 1);
+
+        layoutWidget2 = new QWidget(close);
+        layoutWidget2->setObjectName(QStringLiteral("layoutWidget2"));
+        layoutWidget2->setGeometry(QRect(60, 10, 331, 191));
+        gridLayout_2 = new QGridLayout(layoutWidget2);
         gridLayout_2->setSpacing(6);
+        gridLayout_2->setContentsMargins(11, 11, 11, 11);
         gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
-        answerCloseAEdit = new QTextEdit(close);
+        gridLayout_2->setContentsMargins(0, 0, 0, 0);
+        answerCloseAEdit = new QTextEdit(layoutWidget2);
         answerCloseAEdit->setObjectName(QStringLiteral("answerCloseAEdit"));
 
         gridLayout_2->addWidget(answerCloseAEdit, 0, 0, 1, 1);
 
-        answerCloseBEdit = new QTextEdit(close);
+        answerCloseBEdit = new QTextEdit(layoutWidget2);
         answerCloseBEdit->setObjectName(QStringLiteral("answerCloseBEdit"));
 
         gridLayout_2->addWidget(answerCloseBEdit, 1, 0, 1, 1);
 
-        answerCloseCEdit = new QTextEdit(close);
+        answerCloseCEdit = new QTextEdit(layoutWidget2);
         answerCloseCEdit->setObjectName(QStringLiteral("answerCloseCEdit"));
 
         gridLayout_2->addWidget(answerCloseCEdit, 2, 0, 1, 1);
 
-        answerCloseDEdit = new QTextEdit(close);
+        answerCloseDEdit = new QTextEdit(layoutWidget2);
         answerCloseDEdit->setObjectName(QStringLiteral("answerCloseDEdit"));
 
         gridLayout_2->addWidget(answerCloseDEdit, 3, 0, 1, 1);
-
-
-        gridLayout_3->addLayout(gridLayout_2, 0, 1, 2, 2);
-
-        label_3 = new QLabel(close);
-        label_3->setObjectName(QStringLiteral("label_3"));
-
-        gridLayout_3->addWidget(label_3, 1, 2, 1, 1);
 
         tabs->addTab(close, QString());
         label_2 = new QLabel(CreateNewTest);
@@ -189,28 +207,28 @@ public:
         help = new QPushButton(CreateNewTest);
         help->setObjectName(QStringLiteral("help"));
         help->setGeometry(QRect(570, 210, 75, 23));
-        layoutWidget = new QWidget(CreateNewTest);
-        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(0, 0, 2, 2));
-        verticalLayout_4 = new QVBoxLayout(layoutWidget);
+        layoutWidget3 = new QWidget(CreateNewTest);
+        layoutWidget3->setObjectName(QStringLiteral("layoutWidget3"));
+        layoutWidget3->setGeometry(QRect(0, 0, 2, 2));
+        verticalLayout_4 = new QVBoxLayout(layoutWidget3);
         verticalLayout_4->setSpacing(6);
         verticalLayout_4->setContentsMargins(11, 11, 11, 11);
         verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
         verticalLayout_4->setContentsMargins(0, 0, 0, 0);
-        layoutWidget1 = new QWidget(CreateNewTest);
-        layoutWidget1->setObjectName(QStringLiteral("layoutWidget1"));
-        layoutWidget1->setGeometry(QRect(140, 410, 361, 51));
-        horizontalLayout = new QHBoxLayout(layoutWidget1);
+        layoutWidget4 = new QWidget(CreateNewTest);
+        layoutWidget4->setObjectName(QStringLiteral("layoutWidget4"));
+        layoutWidget4->setGeometry(QRect(140, 410, 361, 51));
+        horizontalLayout = new QHBoxLayout(layoutWidget4);
         horizontalLayout->setSpacing(6);
         horizontalLayout->setContentsMargins(11, 11, 11, 11);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        back = new QPushButton(layoutWidget1);
+        back = new QPushButton(layoutWidget4);
         back->setObjectName(QStringLiteral("back"));
 
         horizontalLayout->addWidget(back);
 
-        next = new QPushButton(layoutWidget1);
+        next = new QPushButton(layoutWidget4);
         next->setObjectName(QStringLiteral("next"));
 
         horizontalLayout->addWidget(next);
@@ -218,12 +236,12 @@ public:
         questionNumber = new QLabel(CreateNewTest);
         questionNumber->setObjectName(QStringLiteral("questionNumber"));
         questionNumber->setGeometry(QRect(300, 10, 91, 41));
-        QFont font1;
-        font1.setFamily(QStringLiteral("Cambria"));
-        font1.setPointSize(33);
-        font1.setBold(true);
-        font1.setWeight(75);
-        questionNumber->setFont(font1);
+        QFont font2;
+        font2.setFamily(QStringLiteral("Cambria"));
+        font2.setPointSize(33);
+        font2.setBold(true);
+        font2.setWeight(75);
+        questionNumber->setFont(font2);
         layoutWidget->raise();
         layoutWidget->raise();
         label->raise();
@@ -260,15 +278,32 @@ public:
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><br /></p></body></html>", 0));
         save->setText(QApplication::translate("CreateNewTest", "Save Course", 0));
         tabs->setTabText(tabs->indexOf(open), QApplication::translate("CreateNewTest", "Open", 0));
-        groupBox_2->setTitle(QString());
-        rbA->setText(QApplication::translate("CreateNewTest", "a)", 0));
-        groupBox_3->setTitle(QString());
-        rbB->setText(QApplication::translate("CreateNewTest", "b)", 0));
-        groupBox_4->setTitle(QString());
-        rbC->setText(QApplication::translate("CreateNewTest", "c)", 0));
-        groupBox->setTitle(QString());
-        rbD->setText(QApplication::translate("CreateNewTest", "d)", 0));
         label_3->setText(QString());
+        label_4->setText(QApplication::translate("CreateNewTest", "a)", 0));
+        label_5->setText(QApplication::translate("CreateNewTest", "b)", 0));
+        label_6->setText(QApplication::translate("CreateNewTest", "c)", 0));
+        label_7->setText(QApplication::translate("CreateNewTest", "d)", 0));
+        aValue->clear();
+        aValue->insertItems(0, QStringList()
+         << QApplication::translate("CreateNewTest", "True", 0)
+         << QApplication::translate("CreateNewTest", "False", 0)
+        );
+        aValue->setCurrentText(QApplication::translate("CreateNewTest", "True", 0));
+        bValue->clear();
+        bValue->insertItems(0, QStringList()
+         << QApplication::translate("CreateNewTest", "True", 0)
+         << QApplication::translate("CreateNewTest", "False", 0)
+        );
+        cValue->clear();
+        cValue->insertItems(0, QStringList()
+         << QApplication::translate("CreateNewTest", "True", 0)
+         << QApplication::translate("CreateNewTest", "False", 0)
+        );
+        dValue->clear();
+        dValue->insertItems(0, QStringList()
+         << QApplication::translate("CreateNewTest", "True", 0)
+         << QApplication::translate("CreateNewTest", "False", 0)
+        );
         tabs->setTabText(tabs->indexOf(close), QApplication::translate("CreateNewTest", "Close", 0));
         label_2->setText(QApplication::translate("CreateNewTest", "Answer", 0));
         help->setText(QApplication::translate("CreateNewTest", "Help", 0));
