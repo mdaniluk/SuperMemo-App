@@ -29,8 +29,4 @@ void  ProjektZPR::newTest(){
 
 
 }
-void  ProjektZPR::pushButtonTest(){
-	newCourseWindow = new CreateNewTest();
-	newCourseWindow->show();
-}
 
