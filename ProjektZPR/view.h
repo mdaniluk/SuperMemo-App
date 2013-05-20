@@ -17,6 +17,9 @@ signals:
 	void clikedCreateNewTest();
 	void askedNext();
 	void askedBack();
+	void askedQuit();
+private slots:
+	void on_next_clicked();
 public slots:
 	void createNewTest();
 	void showYou();

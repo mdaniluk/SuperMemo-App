@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 	controller.moveToThread(&controllerThread);
 	view.connect(&controllerThread, SIGNAL(started()), SLOT(showYou()));
 	controllerThread.start();
-
+	controllerThread.connect(&view, SIGNAL(askedQuit()), SLOT(quit()));
 
 	//ProjektZPR w;
 	//w.show();

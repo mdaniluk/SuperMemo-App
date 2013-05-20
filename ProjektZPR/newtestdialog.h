@@ -10,7 +10,7 @@ class NewTestDialog : public QDialog, public Ui::NewTest
 	Q_OBJECT
 
 public:
-	NewTestDialog(Controller *controller, View *parent);
+	NewTestDialog(Controller *controller, View *parent= NULL);
 	NewTestDialog();
 	~NewTestDialog();
 

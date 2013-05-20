@@ -20,7 +20,9 @@ NewTestDialog::NewTestDialog()
 }
 void NewTestDialog::on_next_clicked(){
 
+	//myView->actionNext->trigger();
 	emit goNext();
+	//label->hide();
 }
 void NewTestDialog::on_back_clicked(){
 
