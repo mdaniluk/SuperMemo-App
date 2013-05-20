@@ -1,10 +1,25 @@
 #include "projektzpr.h"
+#include "view.h" 
+#include "controller.h" 
 #include <QtWidgets/QApplication>
-
+#include <QThread>
+#include "newtestdialog.h"
 int main(int argc, char *argv[])
 {
 	QApplication a(argc, argv);
-	ProjektZPR w;
-	w.show();
+	Controller controller;
+	View view(&controller);
+	controller.connectView(&view);
+
+	QThread controllerThread;
+	controller.moveToThread(&controllerThread);
+	view.connect(&controllerThread, SIGNAL(started()), SLOT(showYou()));
+	controllerThread.start();
+
+
+	//ProjektZPR w;
+	//w.show();
+	/*NewTestDialog w;
+	w.show();*/
 	return a.exec();
 }
