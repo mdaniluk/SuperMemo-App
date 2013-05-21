@@ -1,22 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>CreateNewTest</class>
- <widget class="QWidget" name="CreateNewTest">
+ <class>CreateTest</class>
+ <widget class="QWidget" name="CreateTest">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>662</width>
-    <height>481</height>
+    <width>641</width>
+    <height>408</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>CreateNewTest</string>
+   <string>CreateTest</string>
   </property>
+  <widget class="QLabel" name="questionNumber">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>10</y>
+     <width>91</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Cambria</family>
+     <pointsize>33</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>1</string>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="questionEdit">
+   <property name="geometry">
+    <rect>
+     <x>110</x>
+     <y>60</y>
+     <width>441</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="html">
+    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="save">
+   <property name="geometry">
+    <rect>
+     <x>560</x>
+     <y>60</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Save Course</string>
+   </property>
+  </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>10</x>
+     <x>20</x>
      <y>60</y>
      <width>66</width>
      <height>20</height>
@@ -34,41 +85,11 @@
     <string>Question</string>
    </property>
   </widget>
-  <widget class="QTextEdit" name="questionEdit">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>70</y>
-     <width>441</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="html">
-    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="save">
-   <property name="geometry">
-    <rect>
-     <x>570</x>
-     <y>90</y>
-     <width>75</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Save Course</string>
-   </property>
-  </widget>
   <widget class="QTabWidget" name="tabs">
    <property name="geometry">
     <rect>
-     <x>90</x>
-     <y>160</y>
+     <x>80</x>
+     <y>110</y>
      <width>461</width>
      <height>231</height>
     </rect>
@@ -175,7 +196,7 @@ p, li { white-space: pre-wrap; }
       </item>
      </layout>
     </widget>
-    <widget class="QWidget" name="layoutWidget">
+    <widget class="QWidget" name="layoutWidget_2">
      <property name="geometry">
       <rect>
        <x>400</x>
@@ -246,13 +267,13 @@ p, li { white-space: pre-wrap; }
       </item>
      </layout>
     </widget>
-    <widget class="QWidget" name="layoutWidget">
+    <widget class="QWidget" name="layoutWidget_3">
      <property name="geometry">
       <rect>
        <x>60</x>
        <y>10</y>
        <width>331</width>
-       <height>304</height>
+       <height>191</height>
       </rect>
      </property>
      <layout class="QGridLayout" name="gridLayout_2">
@@ -275,8 +296,8 @@ p, li { white-space: pre-wrap; }
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>180</y>
+     <x>20</x>
+     <y>140</y>
      <width>66</width>
      <height>20</height>
     </rect>
@@ -296,8 +317,8 @@ p, li { white-space: pre-wrap; }
   <widget class="QPushButton" name="help">
    <property name="geometry">
     <rect>
-     <x>570</x>
-     <y>210</y>
+     <x>590</x>
+     <y>160</y>
      <width>75</width>
      <height>23</height>
     </rect>
@@ -306,22 +327,11 @@ p, li { white-space: pre-wrap; }
     <string>Help</string>
    </property>
   </widget>
-  <widget class="QWidget" name="layoutWidget">
+  <widget class="QWidget" name="layoutWidget_4">
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>2</width>
-     <height>2</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout_4"/>
-  </widget>
-  <widget class="QWidget" name="layoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>140</x>
-     <y>410</y>
+     <x>130</x>
+     <y>350</y>
      <width>361</width>
      <height>51</height>
     </rect>
@@ -343,51 +353,8 @@ p, li { white-space: pre-wrap; }
     </item>
    </layout>
   </widget>
-  <widget class="QLabel" name="questionNumber">
-   <property name="geometry">
-    <rect>
-     <x>300</x>
-     <y>10</y>
-     <width>91</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Cambria</family>
-     <pointsize>33</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>1</string>
-   </property>
-  </widget>
-  <zorder>layoutWidget</zorder>
-  <zorder>layoutWidget</zorder>
-  <zorder>label</zorder>
-  <zorder>questionEdit</zorder>
-  <zorder>save</zorder>
-  <zorder>tabs</zorder>
-  <zorder>label_2</zorder>
-  <zorder>help</zorder>
-  <zorder>questionNumber</zorder>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <tabstops>
-  <tabstop>next</tabstop>
-  <tabstop>back</tabstop>
-  <tabstop>save</tabstop>
-  <tabstop>questionEdit</tabstop>
- </tabstops>
  <resources/>
  <connections/>
- <slots>
-  <slot>nextQuestion()</slot>
-  <slot>backQuestion()</slot>
-  <slot>currentChangedSlot()</slot>
-  <slot>writeToCloseB()</slot>
-  <slot>saveCourse()</slot>
- </slots>
 </ui>

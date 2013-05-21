@@ -41,12 +41,6 @@
     <ClCompile Include="projektzpr.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_projektzpr.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_projektzpr.cpp">
-      <Filter>Generated Files\Release</Filter>
-    </ClCompile>
     <ClCompile Include="GeneratedFiles\qrc_projektzpr.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
@@ -101,6 +95,15 @@
     <ClCompile Include="model.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="createtest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_createtest.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_createtest.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="projektzpr.h">
@@ -139,6 +142,12 @@
     <CustomBuild Include="model.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
+    <CustomBuild Include="createtest.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="createtest.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_projektzpr.h">
@@ -154,6 +163,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_newtest.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_createtest.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
   </ItemGroup>

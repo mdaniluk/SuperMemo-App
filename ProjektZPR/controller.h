@@ -18,9 +18,9 @@ public:
 signals:
 
 public slots:
-
+	void addTask(int id, std::string question, std::string answer);
 	void activateNext();
-
+	void testSlot(int id,std::string question, std::string answer);
 private:
 	View *view_;
 	Model *model_;

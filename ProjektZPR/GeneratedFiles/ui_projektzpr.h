@@ -24,13 +24,13 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_ProjektZPRClass
+class Ui_mainWindow
 {
 public:
-    QAction *actionStart;
     QAction *actionStop;
     QAction *actionQuit;
     QAction *actionNew_Course;
+    QAction *actionStart;
     QWidget *centralWidget;
     QLabel *label;
     QLabel *label_2;
@@ -40,20 +40,20 @@ public:
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
 
-    void setupUi(QMainWindow *ProjektZPRClass)
+    void setupUi(QMainWindow *mainWindow)
     {
-        if (ProjektZPRClass->objectName().isEmpty())
-            ProjektZPRClass->setObjectName(QStringLiteral("ProjektZPRClass"));
-        ProjektZPRClass->resize(600, 400);
-        actionStart = new QAction(ProjektZPRClass);
-        actionStart->setObjectName(QStringLiteral("actionStart"));
-        actionStop = new QAction(ProjektZPRClass);
+        if (mainWindow->objectName().isEmpty())
+            mainWindow->setObjectName(QStringLiteral("mainWindow"));
+        mainWindow->resize(600, 400);
+        actionStop = new QAction(mainWindow);
         actionStop->setObjectName(QStringLiteral("actionStop"));
-        actionQuit = new QAction(ProjektZPRClass);
+        actionQuit = new QAction(mainWindow);
         actionQuit->setObjectName(QStringLiteral("actionQuit"));
-        actionNew_Course = new QAction(ProjektZPRClass);
+        actionNew_Course = new QAction(mainWindow);
         actionNew_Course->setObjectName(QStringLiteral("actionNew_Course"));
-        centralWidget = new QWidget(ProjektZPRClass);
+        actionStart = new QAction(mainWindow);
+        actionStart->setObjectName(QStringLiteral("actionStart"));
+        centralWidget = new QWidget(mainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         label = new QLabel(centralWidget);
         label->setObjectName(QStringLiteral("label"));
@@ -67,21 +67,21 @@ public:
         label_2 = new QLabel(centralWidget);
         label_2->setObjectName(QStringLiteral("label_2"));
         label_2->setGeometry(QRect(400, 330, 181, 21));
-        ProjektZPRClass->setCentralWidget(centralWidget);
-        menuBar = new QMenuBar(ProjektZPRClass);
+        mainWindow->setCentralWidget(centralWidget);
+        menuBar = new QMenuBar(mainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
         menuBar->setGeometry(QRect(0, 0, 600, 21));
         menuFile = new QMenu(menuBar);
         menuFile->setObjectName(QStringLiteral("menuFile"));
         menuCreate = new QMenu(menuBar);
         menuCreate->setObjectName(QStringLiteral("menuCreate"));
-        ProjektZPRClass->setMenuBar(menuBar);
-        mainToolBar = new QToolBar(ProjektZPRClass);
+        mainWindow->setMenuBar(menuBar);
+        mainToolBar = new QToolBar(mainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
-        ProjektZPRClass->addToolBar(Qt::TopToolBarArea, mainToolBar);
-        statusBar = new QStatusBar(ProjektZPRClass);
+        mainWindow->addToolBar(Qt::TopToolBarArea, mainToolBar);
+        statusBar = new QStatusBar(mainWindow);
         statusBar->setObjectName(QStringLiteral("statusBar"));
-        ProjektZPRClass->setStatusBar(statusBar);
+        mainWindow->setStatusBar(statusBar);
 
         menuBar->addAction(menuFile->menuAction());
         menuBar->addAction(menuCreate->menuAction());
@@ -90,31 +90,28 @@ public:
         menuFile->addAction(actionQuit);
         menuCreate->addAction(actionNew_Course);
 
-        retranslateUi(ProjektZPRClass);
-        QObject::connect(actionQuit, SIGNAL(triggered()), ProjektZPRClass, SLOT(close()));
-        QObject::connect(actionStart, SIGNAL(triggered()), ProjektZPRClass, SLOT(start()));
-        QObject::connect(actionNew_Course, SIGNAL(triggered()), ProjektZPRClass, SLOT(newTest()));
+        retranslateUi(mainWindow);
 
-        QMetaObject::connectSlotsByName(ProjektZPRClass);
+        QMetaObject::connectSlotsByName(mainWindow);
     } // setupUi
 
-    void retranslateUi(QMainWindow *ProjektZPRClass)
+    void retranslateUi(QMainWindow *mainWindow)
     {
-        ProjektZPRClass->setWindowTitle(QApplication::translate("ProjektZPRClass", "ProjektZPR", 0));
-        actionStart->setText(QApplication::translate("ProjektZPRClass", "Start", 0));
-        actionStop->setText(QApplication::translate("ProjektZPRClass", "Stop", 0));
-        actionQuit->setText(QApplication::translate("ProjektZPRClass", "Quit", 0));
-        actionNew_Course->setText(QApplication::translate("ProjektZPRClass", "New Course", 0));
-        label->setText(QApplication::translate("ProjektZPRClass", "Witaj w Supermemo ", 0));
-        label_2->setText(QApplication::translate("ProjektZPRClass", "Autors: Micha\305\202 Daniluk & Piotr Ma\305\202ecki", 0));
-        menuFile->setTitle(QApplication::translate("ProjektZPRClass", "File", 0));
-        menuCreate->setTitle(QApplication::translate("ProjektZPRClass", "Create", 0));
+        mainWindow->setWindowTitle(QApplication::translate("mainWindow", "ProjektZPR", 0));
+        actionStop->setText(QApplication::translate("mainWindow", "Stop", 0));
+        actionQuit->setText(QApplication::translate("mainWindow", "Quit", 0));
+        actionNew_Course->setText(QApplication::translate("mainWindow", "New Course", 0));
+        actionStart->setText(QApplication::translate("mainWindow", "Start", 0));
+        label->setText(QApplication::translate("mainWindow", "Witaj w Supermemo ", 0));
+        label_2->setText(QApplication::translate("mainWindow", "Autors: Micha\305\202 Daniluk & Piotr Ma\305\202ecki", 0));
+        menuFile->setTitle(QApplication::translate("mainWindow", "File", 0));
+        menuCreate->setTitle(QApplication::translate("mainWindow", "Create", 0));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class ProjektZPRClass: public Ui_ProjektZPRClass {};
+    class mainWindow: public Ui_mainWindow {};
 } // namespace Ui
 
 QT_END_NAMESPACE

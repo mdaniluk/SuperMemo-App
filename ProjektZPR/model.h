@@ -10,7 +10,7 @@ class Model
 public:
 	Model();
 	~Model();
-	void setNext();
+	void setNext(int id, std::string question, std::string answer);
 
 private:
 	

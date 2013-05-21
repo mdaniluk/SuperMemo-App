@@ -7,24 +7,27 @@
 #include "controller.h"
 class Controller;
 
-class View : public QMainWindow, public Ui::NewTest
+class View : public QMainWindow, public Ui::mainWindow
 {
 	Q_OBJECT
 public:
 	explicit View(Controller* controller, QWidget *parent = NULL);
 	~View();
 signals:
-	void clikedCreateNewTest();
-	void askedNext();
-	void askedBack();
-	void askedQuit();
+	void setCurrentTask(int id, std::string question, std::string answer);
+	void testCurrentSignal(int,std::string, std::string);
+	//void clikedCreateNewTest();
+	//void askedNext();
+	//void askedBack();
+	//void askedQuit();
 private slots:
 	void on_next_clicked();
+	void on_actionNew_Course_triggered();
 public slots:
-	void createNewTest();
+	//void createNewTest();
 	void showYou();
 private:
-	Controller* myController;
+	Controller* myController_;
 
 
 

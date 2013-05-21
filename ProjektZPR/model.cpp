@@ -10,7 +10,7 @@ Model::~Model()
 {
 
 }
-void Model::setNext(){
+void Model::setNext(int id, std::string question, std::string answer){
 
 	qDebug() << "jeeeeeeeeeeeeeee";
 }
