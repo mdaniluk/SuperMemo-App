@@ -3,7 +3,7 @@
 #include<qdebug.h>
 Model::Model()
 {
-	//ui.setupUi(this);
+	
 }
 
 Model::~Model()

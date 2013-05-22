@@ -24,10 +24,7 @@ void Controller::connectView(View * view){
 	connect(view_, SIGNAL(setCurrentTask(int, std::string, std::string)), this, SLOT(addTask(int, std::string, std::string) ) );
 	connect(view_, SIGNAL(testCurrentSignal(int,std::string, std::string)), this, SLOT(testSlot(int,std::string, std::string) ) );
 }
-void Controller::activateNext(){
 
-	//model_->setNext();
-}
 void Controller::addTask(int id, std::string question, std::string answer){
 	model_->setNext(id,question,answer);
 }

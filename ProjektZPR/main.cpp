@@ -17,9 +17,6 @@ int main(int argc, char *argv[])
 	controllerThread.start();
 	controllerThread.connect(&view, SIGNAL(askedQuit()), SLOT(quit()));
 
-	//ProjektZPR w;
-	//w.show();
-	/*NewTestDialog w;
-	w.show();*/
+
 	return a.exec();
 }

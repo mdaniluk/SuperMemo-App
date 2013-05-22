@@ -1,9 +1,11 @@
 #include "startmenu.h"
 
-StartMenu::StartMenu(QWidget *parent)
-	: QWidget(parent)
-{
-	ui.setupUi(this);
+StartMenu::StartMenu(Controller *controller, View *parent)
+	: QDialog(parent), myView_(parent), myController_(controller)
+{	
+	setAttribute(Qt::WA_DeleteOnClose, true);
+	setupUi(this);
+	show();
 }
 
 StartMenu::~StartMenu()

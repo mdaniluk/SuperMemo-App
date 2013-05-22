@@ -1,19 +1,23 @@
 #ifndef STARTMENU_H
 #define STARTMENU_H
 
-#include <QWidget>
+#include <QDialog>
 #include "ui_startmenu.h"
+#include "view.h"
+#include "controller.h"
 
-class StartMenu : public QWidget
+class StartMenu : public QDialog,  public Ui::StartMenu
 {
 	Q_OBJECT
 
 public:
-	StartMenu(QWidget *parent = 0);
+	StartMenu(Controller *controller, View *parent = NULL);
 	~StartMenu();
 
 private:
-	Ui::StartMenu ui;
+	//Ui::StartMenu ui;
+	View *myView_;
+	Controller *myController_;
 };
 
 #endif // STARTMENU_H
