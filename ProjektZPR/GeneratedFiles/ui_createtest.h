@@ -180,7 +180,7 @@ public:
 
         layoutWidget_3 = new QWidget(close);
         layoutWidget_3->setObjectName(QStringLiteral("layoutWidget_3"));
-        layoutWidget_3->setGeometry(QRect(60, 10, 331, 304));
+        layoutWidget_3->setGeometry(QRect(60, 10, 331, 191));
         gridLayout_2 = new QGridLayout(layoutWidget_3);
         gridLayout_2->setSpacing(6);
         gridLayout_2->setContentsMargins(11, 11, 11, 11);
