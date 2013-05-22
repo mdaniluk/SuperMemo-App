@@ -1,17 +1,23 @@
 #include "createtest.h"
 #include <boost\regex.hpp>
 #include <qmessagebox.h>
+#include <QInputDialog>
 CreateTest::CreateTest(Controller *controller, View *parent)
 	: QDialog(parent), myView_(parent), myController_(controller)
 {
+	setAttribute(Qt::WA_DeleteOnClose, true);
 	setupUi(this);
 	isNextOrBack_ = false;
+	numberOfQuestions_ = 0;
 	number_ = 1;
 	connect(this,SIGNAL(setTaskNext(int, std::string, std::string ) ),myView_,SIGNAL(setCurrentTaskNext(int, std::string, std::string)) );
 	connect(this,SIGNAL(setTaskBack(int, std::string, std::string ) ),myView_,SIGNAL(setCurrentTaskBack(int, std::string, std::string))  );
-	connect(this,SIGNAL(saveCourse()),myView_,SIGNAL(saveCurrentCourse())  );
+	connect(this,SIGNAL(setLastTask(int, std::string, std::string ) ),myView_,SIGNAL(setLastTask(int, std::string, std::string)) );
+	connect(this,SIGNAL(saveCourse(std::string)),myView_,SIGNAL(saveCurrentCourse(std::string))  );
 
 	connect(myController_,SIGNAL(goNext(int,std::string, std::string) ), this, SLOT(refreshTask(int,std::string, std::string) ) );
+	connect(myController_,SIGNAL(closeCreator() ), this, SLOT(closeWindow()) );
+
 	connect(tabs, SIGNAL(currentChanged(int)), this , SLOT(currentChangedSlot(int)) );
 	show();
 
@@ -86,6 +92,8 @@ void CreateTest::on_next_clicked(){
 		number_++;
 		questionNumber->setText(QString::number(number_) );
 		isNextOrBack_ = false;
+		if(numberOfQuestions_ < number_)
+			numberOfQuestions_ = number_;
 	}
 
 }
@@ -198,5 +206,17 @@ void CreateTest::refreshTask(int number,std::string question, std::string answer
 }
 
 void CreateTest::on_save_clicked(){
-	emit saveCourse();
+	if(numberOfQuestions_ == number_){
+		isNextOrBack_ = true;
+		getTask();
+		emit setLastTask(number_, question_, answer_);			
+	}
+
+	QString nameOfTest = QInputDialog::getText(this, "Information", "Name of your test: ", QLineEdit::Normal);
+	emit saveCourse(nameOfTest.toStdString());
+	isNextOrBack_ = false;
+}
+
+void CreateTest::closeWindow(){
+	QDialog::close();
 }

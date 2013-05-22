@@ -16,20 +16,18 @@ public:
 signals:
 	void setCurrentTaskNext(int id, std::string question, std::string answer);
 	void setCurrentTaskBack(int id, std::string question, std::string answer);
+	void setLastTask(int id, std::string question, std::string answer);
 	void testCurrentSignal(int,std::string, std::string);
-	void saveCurrentCourse();
+	void saveCurrentCourse(std::string);
 private slots:
 	void on_next_clicked();
 	void on_actionNew_Course_triggered();
+	void close();
 public slots:
 	//void createNewTest();
 	void showYou();
 private:
 	Controller* myController_;
-
-
-
-	
 };
 
 #endif // VIEW_H

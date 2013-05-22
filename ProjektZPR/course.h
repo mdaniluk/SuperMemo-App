@@ -15,7 +15,7 @@ public:
 	string getAnswers(int index);
 	void setQuestions(int id, string question);
 	void setAnswers(int id, string answer);
-	void writeToXML();
+	void writeToXML(std::string nameOfFile);
 private:
 	vector<string> questions;
 	vector<string> answers;

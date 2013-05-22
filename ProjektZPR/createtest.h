@@ -17,7 +17,8 @@ public:
 signals:
 	void setTaskNext(int id, std::string question, std::string answer);
 	void setTaskBack(int id, std::string question, std::string answer);
-	void saveCourse();
+	void setLastTask(int id, std::string question, std::string answer);
+	void saveCourse(std::string);
 private slots:
 	void on_next_clicked();
 	void on_back_clicked();
@@ -25,12 +26,14 @@ private slots:
 public slots:
 	void refreshTask(int number,std::string question, std::string answer);
 	void currentChangedSlot(int index);
+	void closeWindow();
 private:
 	View *myView_;
 	Controller *myController_;
 	int number_;
 	string answer_;
 	string question_;
+	int numberOfQuestions_;
 	bool isNextOrBack_;
 	void getTask();
 	void currentChangedTab();

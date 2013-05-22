@@ -10,7 +10,7 @@ public:
 	~Model();
 	void setNext(int id, std::string question, std::string answer);
 	Course* getCurrentCourse(){ return currentCourse; }
-	void setSaveCourse();
+	void setSaveCourse(std::string nameOfFile);
 private:
 	Course *currentCourse;
 	int a;

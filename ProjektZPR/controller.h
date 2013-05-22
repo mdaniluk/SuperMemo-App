@@ -17,12 +17,15 @@ public:
 
 signals:
 	void goNext(int id,std::string question, std::string answer);
+	void closeCreator();
 public slots:
 	void addTaskNext(int id, std::string question, std::string answer);
 	void addTaskBack(int id, std::string question, std::string answer);
+	void addLastTask(int id, std::string question, std::string answer);
 	void activateNext();
 	void testSlot(int id,std::string question, std::string answer);
-	void addSaveCourse();
+	void addSaveCourse(std::string nameOfFile);
+	
 private:
 	View *view_;
 	Model *model_;

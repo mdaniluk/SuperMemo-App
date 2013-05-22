@@ -2,6 +2,7 @@
 #include "createtest.h"
 View::View(Controller* controller, QWidget *parent): myController_(controller), QMainWindow(parent){
 	setupUi(this);
+	connect(myController_,SIGNAL(closeCreator() ), this, SLOT(close()) );
 }
 View::~View()
 {
@@ -24,4 +25,8 @@ void View::on_next_clicked(){
 void View::on_actionNew_Course_triggered(){
 	//label_2->setText("DZIALA");
 	CreateTest *createTest = new CreateTest(myController_,this);
+	
+}
+void View::close(){
+	
 }
