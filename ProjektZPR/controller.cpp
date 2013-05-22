@@ -28,6 +28,7 @@ void Controller::connectView(View * view){
 	connect(view_, SIGNAL(saveCurrentCourse(std::string)), this, SLOT(addSaveCourse(std::string)) );
 }
 
+
 void Controller::activateNext(){
 
 	//model_->setNext();
@@ -43,6 +44,9 @@ void Controller::addTaskBack(int id, std::string question, std::string answer){
 	emit goNext(id-1, model_->getCurrentCourse()->getQuestions(id-1), model_->getCurrentCourse()->getAnswers(id-1) );
 }
 void Controller::addLastTask(int id, std::string question, std::string answer){
+
+}
+void Controller::addTask(int id, std::string question, std::string answer){
 	model_->setNext(id,question,answer);
 }
 void Controller::testSlot(int id, std::string question, std::string answer){

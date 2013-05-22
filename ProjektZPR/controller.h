@@ -23,6 +23,7 @@ public slots:
 	void addTaskBack(int id, std::string question, std::string answer);
 	void addLastTask(int id, std::string question, std::string answer);
 	void activateNext();
+	void addTask(int id, std::string question, std::string answer);
 	void testSlot(int id,std::string question, std::string answer);
 	void addSaveCourse(std::string nameOfFile);
 	
