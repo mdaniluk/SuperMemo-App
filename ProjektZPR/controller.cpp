@@ -28,7 +28,6 @@ void Controller::connectView(View * view){
 	connect(view_, SIGNAL(saveCurrentCourse(std::string)), this, SLOT(addSaveCourse(std::string)) );
 }
 
-
 void Controller::activateNext(){
 
 	//model_->setNext();
