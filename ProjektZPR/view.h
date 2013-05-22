@@ -14,12 +14,10 @@ public:
 	explicit View(Controller* controller, QWidget *parent = NULL);
 	~View();
 signals:
-	void setCurrentTask(int id, std::string question, std::string answer);
+	void setCurrentTaskNext(int id, std::string question, std::string answer);
+	void setCurrentTaskBack(int id, std::string question, std::string answer);
 	void testCurrentSignal(int,std::string, std::string);
-	//void clikedCreateNewTest();
-	//void askedNext();
-	//void askedBack();
-	//void askedQuit();
+	void saveCurrentCourse();
 private slots:
 	void on_next_clicked();
 	void on_actionNew_Course_triggered();

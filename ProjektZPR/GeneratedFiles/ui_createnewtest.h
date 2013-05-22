@@ -70,7 +70,7 @@ public:
     {
         if (CreateNewTest->objectName().isEmpty())
             CreateNewTest->setObjectName(QStringLiteral("CreateNewTest"));
-        CreateNewTest->resize(662, 481);
+        CreateNewTest->resize(656, 481);
         label = new QLabel(CreateNewTest);
         label->setObjectName(QStringLiteral("label"));
         label->setGeometry(QRect(10, 60, 66, 20));
@@ -257,7 +257,7 @@ public:
 
         retranslateUi(CreateNewTest);
 
-        tabs->setCurrentIndex(1);
+        tabs->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(CreateNewTest);

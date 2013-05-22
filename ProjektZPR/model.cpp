@@ -3,7 +3,7 @@
 #include<qdebug.h>
 Model::Model()
 {
-	//ui.setupUi(this);
+	currentCourse = new Course();
 }
 
 Model::~Model()
@@ -11,6 +11,10 @@ Model::~Model()
 
 }
 void Model::setNext(int id, std::string question, std::string answer){
-
-	qDebug() << "jeeeeeeeeeeeeeee";
+	currentCourse->setQuestions(id, question);
+	currentCourse->setAnswers(id, answer);
+	//qDebug() << "jeeeeeeeeeeeeeee";
+}
+void Model::setSaveCourse(){
+	currentCourse->writeToXML();
 }

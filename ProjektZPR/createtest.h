@@ -14,17 +14,27 @@ class CreateTest : public QDialog, public Ui::CreateTest
 public:
 	CreateTest(Controller *controller, View *parent = NULL);
 	~CreateTest();
-
 signals:
-	void setTask(int id, std::string question, std::string answer);
-	void testSignal(int, std::string, std::string);
+	void setTaskNext(int id, std::string question, std::string answer);
+	void setTaskBack(int id, std::string question, std::string answer);
+	void saveCourse();
 private slots:
 	void on_next_clicked();
 	void on_back_clicked();
+	void on_save_clicked();
+public slots:
+	void refreshTask(int number,std::string question, std::string answer);
+	void currentChangedSlot(int index);
 private:
 	View *myView_;
 	Controller *myController_;
 	int number_;
+	string answer_;
+	string question_;
+	bool isNextOrBack_;
+	void getTask();
+	void currentChangedTab();
+	
 };
 
 #endif // CREATETEST_H

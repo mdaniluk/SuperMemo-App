@@ -104,6 +104,9 @@
     <ClCompile Include="GeneratedFiles\Release\moc_createtest.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
+    <ClCompile Include="course.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="projektzpr.h">
@@ -167,6 +170,9 @@
     </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_createtest.h">
       <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="course.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
