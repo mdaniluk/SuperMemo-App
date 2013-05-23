@@ -11,12 +11,13 @@ public:
 	~Model();
 	void setNext(int id, std::string question, std::string answer);
 	Course* getCurrentCourse(){ return currentCourse; }
-	Start* getCurrentStart(){ return startMenu; }
+	Start* getCurrentStart(){ return start; }
 	void setSaveCourse(std::string nameOfFile);
 	void setListOfFiles();
+	void setChooseCourse();
 private:
 	Course *currentCourse;
-	Start *startMenu;
+	Start *start;
 };
 
 #endif // MODEL_H

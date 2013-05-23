@@ -39,7 +39,7 @@
     <rect>
      <x>110</x>
      <y>60</y>
-     <width>441</width>
+     <width>461</width>
      <height>51</height>
     </rect>
    </property>
@@ -54,7 +54,7 @@ p, li { white-space: pre-wrap; }
   <widget class="QPushButton" name="save">
    <property name="geometry">
     <rect>
-     <x>560</x>
+     <x>590</x>
      <y>60</y>
      <width>75</width>
      <height>23</height>
@@ -88,8 +88,8 @@ p, li { white-space: pre-wrap; }
   <widget class="QTabWidget" name="tabs">
    <property name="geometry">
     <rect>
-     <x>80</x>
-     <y>110</y>
+     <x>110</x>
+     <y>120</y>
      <width>461</width>
      <height>231</height>
     </rect>
@@ -270,9 +270,9 @@ p, li { white-space: pre-wrap; }
     <widget class="QWidget" name="layoutWidget_3">
      <property name="geometry">
       <rect>
-       <x>60</x>
+       <x>30</x>
        <y>10</y>
-       <width>331</width>
+       <width>361</width>
        <height>191</height>
       </rect>
      </property>
@@ -330,8 +330,8 @@ p, li { white-space: pre-wrap; }
   <widget class="QWidget" name="layoutWidget_4">
    <property name="geometry">
     <rect>
-     <x>130</x>
-     <y>350</y>
+     <x>160</x>
+     <y>360</y>
      <width>361</width>
      <height>51</height>
     </rect>
@@ -355,6 +355,23 @@ p, li { white-space: pre-wrap; }
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>next</tabstop>
+  <tabstop>back</tabstop>
+  <tabstop>save</tabstop>
+  <tabstop>questionEdit</tabstop>
+  <tabstop>tabs</tabstop>
+  <tabstop>answerOpenEdit</tabstop>
+  <tabstop>aValue</tabstop>
+  <tabstop>bValue</tabstop>
+  <tabstop>cValue</tabstop>
+  <tabstop>dValue</tabstop>
+  <tabstop>answerCloseAEdit</tabstop>
+  <tabstop>answerCloseBEdit</tabstop>
+  <tabstop>answerCloseCEdit</tabstop>
+  <tabstop>answerCloseDEdit</tabstop>
+  <tabstop>help</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

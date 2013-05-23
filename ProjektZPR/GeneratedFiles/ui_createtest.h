@@ -80,10 +80,10 @@ public:
         questionNumber->setFont(font);
         questionEdit = new QTextEdit(CreateTest);
         questionEdit->setObjectName(QStringLiteral("questionEdit"));
-        questionEdit->setGeometry(QRect(110, 60, 441, 51));
+        questionEdit->setGeometry(QRect(110, 60, 461, 51));
         save = new QPushButton(CreateTest);
         save->setObjectName(QStringLiteral("save"));
-        save->setGeometry(QRect(560, 60, 75, 23));
+        save->setGeometry(QRect(590, 60, 75, 23));
         label = new QLabel(CreateTest);
         label->setObjectName(QStringLiteral("label"));
         label->setGeometry(QRect(20, 60, 66, 20));
@@ -95,7 +95,7 @@ public:
         label->setFont(font1);
         tabs = new QTabWidget(CreateTest);
         tabs->setObjectName(QStringLiteral("tabs"));
-        tabs->setGeometry(QRect(80, 110, 461, 231));
+        tabs->setGeometry(QRect(110, 120, 461, 231));
         open = new QWidget();
         open->setObjectName(QStringLiteral("open"));
         verticalLayout = new QVBoxLayout(open);
@@ -180,7 +180,7 @@ public:
 
         layoutWidget_3 = new QWidget(close);
         layoutWidget_3->setObjectName(QStringLiteral("layoutWidget_3"));
-        layoutWidget_3->setGeometry(QRect(60, 10, 331, 191));
+        layoutWidget_3->setGeometry(QRect(30, 10, 361, 191));
         gridLayout_2 = new QGridLayout(layoutWidget_3);
         gridLayout_2->setSpacing(6);
         gridLayout_2->setContentsMargins(11, 11, 11, 11);
@@ -216,7 +216,7 @@ public:
         help->setGeometry(QRect(590, 160, 75, 23));
         layoutWidget_4 = new QWidget(CreateTest);
         layoutWidget_4->setObjectName(QStringLiteral("layoutWidget_4"));
-        layoutWidget_4->setGeometry(QRect(130, 350, 361, 51));
+        layoutWidget_4->setGeometry(QRect(160, 360, 361, 51));
         horizontalLayout = new QHBoxLayout(layoutWidget_4);
         horizontalLayout->setSpacing(6);
         horizontalLayout->setContentsMargins(11, 11, 11, 11);
@@ -232,6 +232,20 @@ public:
 
         horizontalLayout->addWidget(next);
 
+        QWidget::setTabOrder(next, back);
+        QWidget::setTabOrder(back, save);
+        QWidget::setTabOrder(save, questionEdit);
+        QWidget::setTabOrder(questionEdit, tabs);
+        QWidget::setTabOrder(tabs, answerOpenEdit);
+        QWidget::setTabOrder(answerOpenEdit, aValue);
+        QWidget::setTabOrder(aValue, bValue);
+        QWidget::setTabOrder(bValue, cValue);
+        QWidget::setTabOrder(cValue, dValue);
+        QWidget::setTabOrder(dValue, answerCloseAEdit);
+        QWidget::setTabOrder(answerCloseAEdit, answerCloseBEdit);
+        QWidget::setTabOrder(answerCloseBEdit, answerCloseCEdit);
+        QWidget::setTabOrder(answerCloseCEdit, answerCloseDEdit);
+        QWidget::setTabOrder(answerCloseDEdit, help);
 
         retranslateUi(CreateTest);
 

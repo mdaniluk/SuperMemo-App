@@ -19,13 +19,15 @@ signals:
 	void goNext(int id,std::string question, std::string answer);
 	void closeCreator();
 	void getListOfCourses(std::vector<std::string>);
+	void closeStartWindow();
 public slots:
 	void addTaskNext(int id, std::string question, std::string answer);
 	void addTaskBack(int id, std::string question, std::string answer);
 	void addLastTask(int id, std::string question, std::string answer);
 	void addSaveCourse(std::string nameOfFile);
 	void addListOfFiles();
-	
+	void addChooseCourse();
+	void addcloseStartWindow();
 private:
 	View *view_;
 	Model *model_;

@@ -27,11 +27,11 @@ class Ui_StartMenu
 {
 public:
     QLabel *label;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QVBoxLayout *verticalLayout;
     QListWidget *coursesList;
     QHBoxLayout *horizontalLayout;
-    QPushButton *start;
+    QPushButton *choose;
     QPushButton *delete_2;
 
     void setupUi(QWidget *StartMenu)
@@ -42,15 +42,15 @@ public:
         label = new QLabel(StartMenu);
         label->setObjectName(QStringLiteral("label"));
         label->setGeometry(QRect(20, 10, 81, 21));
-        widget = new QWidget(StartMenu);
-        widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(20, 41, 258, 225));
-        verticalLayout = new QVBoxLayout(widget);
+        layoutWidget = new QWidget(StartMenu);
+        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
+        layoutWidget->setGeometry(QRect(20, 41, 258, 225));
+        verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setSpacing(6);
         verticalLayout->setContentsMargins(11, 11, 11, 11);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
-        coursesList = new QListWidget(widget);
+        coursesList = new QListWidget(layoutWidget);
         coursesList->setObjectName(QStringLiteral("coursesList"));
 
         verticalLayout->addWidget(coursesList);
@@ -58,12 +58,12 @@ public:
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setSpacing(6);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        start = new QPushButton(widget);
-        start->setObjectName(QStringLiteral("start"));
+        choose = new QPushButton(layoutWidget);
+        choose->setObjectName(QStringLiteral("choose"));
 
-        horizontalLayout->addWidget(start);
+        horizontalLayout->addWidget(choose);
 
-        delete_2 = new QPushButton(widget);
+        delete_2 = new QPushButton(layoutWidget);
         delete_2->setObjectName(QStringLiteral("delete_2"));
 
         horizontalLayout->addWidget(delete_2);
@@ -71,11 +71,8 @@ public:
 
         verticalLayout->addLayout(horizontalLayout);
 
+        layoutWidget->raise();
         label->raise();
-        coursesList->raise();
-        delete_2->raise();
-        start->raise();
-        start->raise();
 
         retranslateUi(StartMenu);
 
@@ -86,7 +83,7 @@ public:
     {
         StartMenu->setWindowTitle(QApplication::translate("StartMenu", "StartMenu", 0));
         label->setText(QApplication::translate("StartMenu", "Dost\304\231pne Kursy", 0));
-        start->setText(QApplication::translate("StartMenu", "Wybierz", 0));
+        choose->setText(QApplication::translate("StartMenu", "Wybierz", 0));
         delete_2->setText(QApplication::translate("StartMenu", "Usun", 0));
     } // retranslateUi
 

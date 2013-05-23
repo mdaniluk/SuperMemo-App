@@ -14,6 +14,7 @@ Start::~Start()
 
 namespace fs = ::boost::filesystem;
 void Start::setListOfFiles(){
+	filesXml.clear();
 	const fs::path root = "Resources/";
 	const std::string extension = ".xml";
 
@@ -31,3 +32,5 @@ void Start::setListOfFiles(){
 	}
 }
 
+void Start::chooseCourse(){
+}

@@ -3,7 +3,7 @@
 Model::Model()
 {
 	currentCourse = new Course();
-	startMenu = new Start();
+	start = new Start();
 }
 
 Model::~Model()
@@ -19,5 +19,8 @@ void Model::setSaveCourse(std::string nameOfFile){
 	currentCourse->writeToXML(nameOfFile);
 }
 void Model::setListOfFiles(){
-	startMenu->setListOfFiles();
+	start->setListOfFiles();
+}
+void Model::setChooseCourse(){
+	start->chooseCourse();
 }

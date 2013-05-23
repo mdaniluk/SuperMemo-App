@@ -26,6 +26,8 @@ void Controller::connectView(View * view){
 	connect(view_, SIGNAL(setLastTask(int, std::string, std::string)), this, SLOT(addLastTask(int, std::string, std::string) ) );
 	connect(view_, SIGNAL(saveCurrentCourse(std::string)), this, SLOT(addSaveCourse(std::string)) );
 	connect(view_, SIGNAL(showCurrentListOfFiles()), this, SLOT(addListOfFiles() ) );
+	connect(view_, SIGNAL(chooseCourse()), this, SLOT(addChooseCourse() ) );
+	connect(view_, SIGNAL(closeStartWindow()), this, SLOT(addcloseStartWindow() ) );
 }
 
 void Controller::addTaskNext(int id, std::string question, std::string answer){
@@ -49,4 +51,12 @@ void Controller::addSaveCourse(std::string nameOfFile){
 void Controller::addListOfFiles(){
 	model_->setListOfFiles();
 	emit getListOfCourses(model_->getCurrentStart()->getListOfFiles());
+}
+
+void Controller::addChooseCourse(){
+	model_->setChooseCourse();
+	emit closeStartWindow();
+}
+void Controller::addcloseStartWindow(){
+	emit closeStartWindow();
 }

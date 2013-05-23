@@ -17,13 +17,16 @@ signals:
 	void setLastTask(int id, std::string question, std::string answer);
 	void saveCurrentCourse(std::string);
 	void showCurrentListOfFiles();
+	void chooseCourse();
+	void closeStartWindow();
 
 private slots:
 	void on_actionStart_triggered();
 	void on_actionNew_Course_triggered();
 	void close();
+	void closeStart();
+
 public slots:
-	
 	void showYou();
 private:
 	Controller* myController_;
