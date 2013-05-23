@@ -1,17 +1,31 @@
 #ifndef DECK_H
 #define DECK_H
+#include "questioncard.h"
 #include <QObject>
+#include <boost/foreach.hpp>
 #include <boost/serialization/nvp.hpp>
+#include <boost/serialization/vector.hpp>
+#include <boost/property_tree/xml_parser.hpp>
+#include <boost/property_tree/ptree.hpp>
+#include <boost/serialization/shared_ptr.hpp>
+#include <boost/algorithm/string.hpp>
+#include <boost/tuple/tuple.hpp>
+#include <list>
+#include <iostream>
+#include <vector>
+#include <map>
+#include "Exception.h"
+using std::list;
+using std::pair;
+typedef boost::shared_ptr<QuestionCard> PQcard;
 
-typedef std::pair<std::string, std::string> CloseAnswer; //odpowiedz + TRUE/FALSE
 class Deck
 {
 public:
 	Deck();
 	// Tworzymy nowy kurs
-	Deck(std::stringstream& fileContent, const std::string question,  const std::string answer, const int Idquestion );
+	Deck(std::stringstream& fileContent);
 
-	Deck(std::stringstream& fileContent, const std::string question,  CloseAnswer answer, const int Idquestion );
 
 	~Deck();
 
