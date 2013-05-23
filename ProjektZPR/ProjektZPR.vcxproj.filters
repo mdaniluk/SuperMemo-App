@@ -50,9 +50,6 @@
     <ClCompile Include="GeneratedFiles\Release\moc_startmenu.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
-    <ClCompile Include="DatabaseSqlite.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="view.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -87,6 +84,8 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="start.cpp">
+
+    <ClCompile Include="deck.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -126,9 +125,6 @@
     <ClInclude Include="GeneratedFiles\ui_startmenu.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
-    <ClInclude Include="DatabaseSqlite.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_createtest.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
@@ -136,6 +132,7 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="start.h">
+    <ClInclude Include="deck.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

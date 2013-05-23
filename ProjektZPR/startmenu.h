@@ -6,6 +6,7 @@
 #include "view.h"
 #include "controller.h"
 
+
 class StartMenu : public QDialog,  public Ui::StartMenu
 {
 	Q_OBJECT

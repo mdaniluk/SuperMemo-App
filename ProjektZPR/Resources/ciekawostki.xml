@@ -1,0 +1,18 @@
+<SuperMemo>
+ <Task Id="1">
+  <Question Id="1">Jak masz na imiê?</Question>
+  <AnswerOpen Id="1">Piotr</AnswerOpen>
+ </Task>
+ <Task Id="2">
+  <Question Id="2">Ile masz lat</Question>
+  <AnswerClose Id="2">
+   <a Value="False">10</a>
+   <b Value="True">21</b>
+   <c Value="False">30</c>
+  </AnswerClose>
+ </Task>
+ <Task Id="3">
+  <Question Id="3">Najwy¿szy szczyt œwiata?</Question>
+  <AnswerOpen Id="3">Mount Everest</AnswerOpen>
+ </Task>
+</SuperMemo>
