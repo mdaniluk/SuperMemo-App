@@ -16,6 +16,7 @@ signals:
 	void setCurrentTaskBack(int id, std::string question, std::string answer);
 	void setLastTask(int id, std::string question, std::string answer);
 	void saveCurrentCourse(std::string);
+	void showCurrentListOfFiles();
 
 private slots:
 	void on_actionStart_triggered();

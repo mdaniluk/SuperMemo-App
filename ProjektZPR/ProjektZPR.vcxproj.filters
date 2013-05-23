@@ -86,6 +86,9 @@
     <ClCompile Include="course.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="start.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="projektzpr.ui">
@@ -130,6 +133,9 @@
       <Filter>Generated Files</Filter>
     </ClInclude>
     <ClInclude Include="course.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="start.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

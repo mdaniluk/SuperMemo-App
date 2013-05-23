@@ -86,7 +86,7 @@ void CreateTest::on_next_clicked(){
 		QMessageBox::information(nullptr,"Warning", "You should write a question and answer","OK");
 	}
 	else{
-			isNextOrBack_ = true;
+		isNextOrBack_ = true;
 		getTask();
 		emit setTaskNext(number_,question_, answer_);
 		number_++;
