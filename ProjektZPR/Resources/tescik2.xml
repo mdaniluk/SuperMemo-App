@@ -1,0 +1,26 @@
+<SuperMemo>
+ <Task Id="1">
+  <Question Id="1">1</Question>
+  <AnswerClose Id="1">
+   <a Value="False">aaaaaaaaaaaa</a>
+   <b Value="False">bvbbbbbbb</b>
+   <c Value="False">cvvvvvvvvvv</c>
+   <d Value="False">ddddddddd</d>
+  </AnswerClose>
+ </Task>
+ <Task Id="2">
+  <Question Id="2">aa</Question>
+  <AnswerOpen Id="2">aaaaaa</AnswerOpen>
+ </Task>
+ <Task Id="3">
+  <Question Id="3">ss</Question>
+  <AnswerOpen Id="3">sssssssssss</AnswerOpen>
+ </Task>
+ <Task Id="4">
+  <Question Id="4">ssss</Question>
+  <AnswerClose Id="4">
+   <a Value="True">s</a>
+   <b Value="False">s</b>
+  </AnswerClose>
+ </Task>
+</SuperMemo>
