@@ -86,6 +86,9 @@
     <ClCompile Include="deck.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="questioncard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="projektzpr.ui">
@@ -115,6 +118,9 @@
     <CustomBuild Include="createtest.ui">
       <Filter>Form Files</Filter>
     </CustomBuild>
+    <CustomBuild Include="questioncard.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_projektzpr.h">
@@ -130,6 +136,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="deck.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Exception.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
