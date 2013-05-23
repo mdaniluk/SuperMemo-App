@@ -16,10 +16,6 @@ public:
 	~StartMenu();
 
 private:
-<<<<<<< HEAD
-=======
-	
->>>>>>> piotrek
 	View *myView_;
 	Controller *myController_;
 };
