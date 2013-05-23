@@ -62,9 +62,6 @@
     <ClCompile Include="GeneratedFiles\Release\moc_createnewtest.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
-    <ClCompile Include="DatabaseSqlite.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="view.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -83,15 +80,6 @@
     <ClCompile Include="GeneratedFiles\Release\moc_controller.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_newtestdialog.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_newtestdialog.cpp">
-      <Filter>Generated Files\Release</Filter>
-    </ClCompile>
-    <ClCompile Include="newtestdialog.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="model.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -105,6 +93,9 @@
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
     <ClCompile Include="course.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="deck.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -136,12 +127,6 @@
     <CustomBuild Include="controller.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
-    <CustomBuild Include="newtest.ui">
-      <Filter>Form Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="newtestdialog.h">
-      <Filter>Header Files</Filter>
-    </CustomBuild>
     <CustomBuild Include="model.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
@@ -162,16 +147,13 @@
     <ClInclude Include="GeneratedFiles\ui_createnewtest.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
-    <ClInclude Include="DatabaseSqlite.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GeneratedFiles\ui_newtest.h">
-      <Filter>Generated Files</Filter>
-    </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_createtest.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
     <ClInclude Include="course.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="deck.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
