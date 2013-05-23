@@ -15,6 +15,7 @@ CreateTest::CreateTest(Controller *controller, View *parent)
 	connect(this,SIGNAL(setTaskBack(int, std::string, std::string ) ),myView_,SIGNAL(setCurrentTaskBack(int, std::string, std::string))  );
 	connect(this,SIGNAL(setLastTask(int, std::string, std::string ) ),myView_,SIGNAL(setLastTask(int, std::string, std::string)) );
 	connect(this,SIGNAL(saveCourse(std::string)),myView_,SIGNAL(saveCurrentCourse(std::string))  );
+	connect(this,SIGNAL(closeCreator()), myView_, SIGNAL(closeAnyWindow()) );
 
 	connect(myController_,SIGNAL(goNext(int,std::string, std::string) ), this, SLOT(refreshTask(int,std::string, std::string) ) );
 	connect(myController_,SIGNAL(closeCreator() ), this, SLOT(closeWindow()) );
@@ -220,4 +221,8 @@ void CreateTest::on_save_clicked(){
 
 void CreateTest::closeWindow(){
 	QDialog::close();
+}
+
+void CreateTest::closeEvent(QCloseEvent *event){
+	emit closeCreator();
 }

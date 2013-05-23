@@ -18,7 +18,7 @@ signals:
 	void saveCurrentCourse(std::string);
 	void showCurrentListOfFiles();
 	void chooseCourse();
-	void closeStartWindow();
+	void closeAnyWindow();
 
 private slots:
 	void on_actionStart_triggered();

@@ -10,7 +10,7 @@ StartMenu::StartMenu(Controller *controller, View *parent)
 
 	connect(this,SIGNAL(showListOfFiles()), myView_, SIGNAL(showCurrentListOfFiles()) );
 	connect(this,SIGNAL(choose()), myView_, SIGNAL(chooseCourse()) );
-	connect(this,SIGNAL(closeStart()), myView_, SIGNAL(closeStartWindow()) );
+	connect(this,SIGNAL(closeStart()), myView_, SIGNAL(closeAnyWindow()) );
 	connect(myController_,SIGNAL(getListOfCourses(std::vector<std::string>) ), this, SLOT(setListOfCourses(std::vector<std::string>)) );
 	connect(myController_,SIGNAL(closeStartWindow() ), this, SLOT(closeWindow()) );
 

@@ -14,11 +14,13 @@ class CreateTest : public QDialog, public Ui::CreateTest
 public:
 	CreateTest(Controller *controller, View *parent = NULL);
 	~CreateTest();
+	void closeEvent(QCloseEvent *event);
 signals:
 	void setTaskNext(int id, std::string question, std::string answer);
 	void setTaskBack(int id, std::string question, std::string answer);
 	void setLastTask(int id, std::string question, std::string answer);
 	void saveCourse(std::string);
+	void closeCreator();
 private slots:
 	void on_next_clicked();
 	void on_back_clicked();

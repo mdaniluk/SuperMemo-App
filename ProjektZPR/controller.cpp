@@ -27,7 +27,7 @@ void Controller::connectView(View * view){
 	connect(view_, SIGNAL(saveCurrentCourse(std::string)), this, SLOT(addSaveCourse(std::string)) );
 	connect(view_, SIGNAL(showCurrentListOfFiles()), this, SLOT(addListOfFiles() ) );
 	connect(view_, SIGNAL(chooseCourse()), this, SLOT(addChooseCourse() ) );
-	connect(view_, SIGNAL(closeStartWindow()), this, SLOT(addcloseStartWindow() ) );
+	connect(view_, SIGNAL(closeAnyWindow()), this, SLOT(addcloseStartWindow() ) );
 }
 
 void Controller::addTaskNext(int id, std::string question, std::string answer){
