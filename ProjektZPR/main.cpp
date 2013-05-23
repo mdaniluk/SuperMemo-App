@@ -1,9 +1,7 @@
-#include "projektzpr.h"
 #include "view.h" 
 #include "controller.h" 
 #include <QtWidgets/QApplication>
 #include <QThread>
-#include "newtestdialog.h"
 int main(int argc, char *argv[])
 {
 	QApplication a(argc, argv);

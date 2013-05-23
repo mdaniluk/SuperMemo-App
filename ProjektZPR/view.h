@@ -2,8 +2,6 @@
 #define VIEW_H
 #include <QtWidgets/QMainWindow>
 #include "ui_projektzpr.h"
-
-#include "projektzpr.h"
 #include "controller.h"
 class Controller;
 
@@ -17,7 +15,6 @@ signals:
 	void setCurrentTaskNext(int id, std::string question, std::string answer);
 	void setCurrentTaskBack(int id, std::string question, std::string answer);
 	void setLastTask(int id, std::string question, std::string answer);
-	void testCurrentSignal(int,std::string, std::string);
 	void saveCurrentCourse(std::string);
 
 private slots:

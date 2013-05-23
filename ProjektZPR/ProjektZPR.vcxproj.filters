@@ -38,9 +38,6 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="projektzpr.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="GeneratedFiles\qrc_projektzpr.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
@@ -51,15 +48,6 @@
       <Filter>Generated Files\Debug</Filter>
     </ClCompile>
     <ClCompile Include="GeneratedFiles\Release\moc_startmenu.cpp">
-      <Filter>Generated Files\Release</Filter>
-    </ClCompile>
-    <ClCompile Include="createnewtest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_createnewtest.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_createnewtest.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
     <ClCompile Include="DatabaseSqlite.cpp">
@@ -83,15 +71,6 @@
     <ClCompile Include="GeneratedFiles\Release\moc_controller.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_newtestdialog.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_newtestdialog.cpp">
-      <Filter>Generated Files\Release</Filter>
-    </ClCompile>
-    <ClCompile Include="newtestdialog.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="model.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -109,9 +88,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="projektzpr.h">
-      <Filter>Header Files</Filter>
-    </CustomBuild>
     <CustomBuild Include="projektzpr.ui">
       <Filter>Form Files</Filter>
     </CustomBuild>
@@ -124,22 +100,10 @@
     <CustomBuild Include="startmenu.ui">
       <Filter>Form Files</Filter>
     </CustomBuild>
-    <CustomBuild Include="createnewtest.h">
-      <Filter>Header Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="createnewtest.ui">
-      <Filter>Form Files</Filter>
-    </CustomBuild>
     <CustomBuild Include="view.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
     <CustomBuild Include="controller.h">
-      <Filter>Header Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="newtest.ui">
-      <Filter>Form Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="newtestdialog.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
     <CustomBuild Include="model.h">
@@ -159,14 +123,8 @@
     <ClInclude Include="GeneratedFiles\ui_startmenu.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
-    <ClInclude Include="GeneratedFiles\ui_createnewtest.h">
-      <Filter>Generated Files</Filter>
-    </ClInclude>
     <ClInclude Include="DatabaseSqlite.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GeneratedFiles\ui_newtest.h">
-      <Filter>Generated Files</Filter>
     </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_createtest.h">
       <Filter>Generated Files</Filter>

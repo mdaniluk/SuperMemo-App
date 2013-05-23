@@ -10,7 +10,6 @@ View::~View()
 
 }
 
-
 void View::showYou(){
 	this->show();
 }

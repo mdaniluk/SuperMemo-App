@@ -15,7 +15,6 @@ public:
 	~StartMenu();
 
 private:
-	//Ui::StartMenu ui;
 	View *myView_;
 	Controller *myController_;
 };

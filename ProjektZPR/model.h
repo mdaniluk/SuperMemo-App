@@ -13,7 +13,6 @@ public:
 	void setSaveCourse(std::string nameOfFile);
 private:
 	Course *currentCourse;
-	int a;
 };
 
 #endif // MODEL_H

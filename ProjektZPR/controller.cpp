@@ -24,13 +24,7 @@ void Controller::connectView(View * view){
 	connect(view_, SIGNAL(setCurrentTaskNext(int, std::string, std::string)), this, SLOT(addTaskNext(int, std::string, std::string) ) );
 	connect(view_, SIGNAL(setCurrentTaskBack(int, std::string, std::string)), this, SLOT(addTaskBack(int, std::string, std::string) ) );
 	connect(view_, SIGNAL(setLastTask(int, std::string, std::string)), this, SLOT(addLastTask(int, std::string, std::string) ) );
-	connect(view_, SIGNAL(testCurrentSignal(int,std::string, std::string)), this, SLOT(testSlot(int,std::string, std::string) ) );
 	connect(view_, SIGNAL(saveCurrentCourse(std::string)), this, SLOT(addSaveCourse(std::string)) );
-}
-
-void Controller::activateNext(){
-
-	//model_->setNext();
 }
 
 void Controller::addTaskNext(int id, std::string question, std::string answer){
@@ -44,9 +38,6 @@ void Controller::addTaskBack(int id, std::string question, std::string answer){
 }
 void Controller::addLastTask(int id, std::string question, std::string answer){
 	model_->setNext(id,question,answer);
-}
-void Controller::testSlot(int id, std::string question, std::string answer){
-	qDebug()<<"Doszlo2";
 }
 
 void Controller::addSaveCourse(std::string nameOfFile){
