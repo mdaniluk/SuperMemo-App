@@ -2,6 +2,10 @@
 #include "controller.h" 
 #include <QtWidgets/QApplication>
 #include <QThread>
+<<<<<<< HEAD
+=======
+
+>>>>>>> piotrek
 int main(int argc, char *argv[])
 {
 	QApplication a(argc, argv);

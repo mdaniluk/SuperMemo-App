@@ -6,6 +6,7 @@
 #include "view.h"
 #include "controller.h"
 
+
 class StartMenu : public QDialog,  public Ui::StartMenu
 {
 	Q_OBJECT
@@ -15,6 +16,10 @@ public:
 	~StartMenu();
 
 private:
+<<<<<<< HEAD
+=======
+	
+>>>>>>> piotrek
 	View *myView_;
 	Controller *myController_;
 };
