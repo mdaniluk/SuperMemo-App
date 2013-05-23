@@ -84,7 +84,8 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="start.cpp">
-
+	  <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="deck.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -132,6 +133,8 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="start.h">
+	   <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="deck.h">
       <Filter>Header Files</Filter>
     </ClInclude>
