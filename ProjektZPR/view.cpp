@@ -4,7 +4,7 @@
 #include <qmessagebox.h>
 View::View(Controller* controller, QWidget *parent): myController_(controller), QMainWindow(parent){
 	setupUi(this);
-	connect(myController_, SIGNAL(closeCreator() ), this, SLOT(close()) );
+
 	connect(myController_, SIGNAL(enabledMainWindow()), this, SLOT(enabledMainWin() ) );
 	connect(myController_, SIGNAL(error(std::string)), this, SLOT(showError(std::string)) );
 }

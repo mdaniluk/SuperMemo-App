@@ -4,7 +4,6 @@ StartMenu::StartMenu(Controller *controller, View *parent)
 {	
 	setAttribute(Qt::WA_DeleteOnClose, true);
 	setupUi(this);
-	Qt::WindowStaysOnTopHint;
 
 	qRegisterMetaType<std::vector<std::string>>("std::vector<std::string>");
 
