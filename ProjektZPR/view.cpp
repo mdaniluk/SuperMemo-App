@@ -1,11 +1,12 @@
 #include "view.h"
 #include "createtest.h"
 #include "startmenu.h"
+#include <qmessagebox.h>
 View::View(Controller* controller, QWidget *parent): myController_(controller), QMainWindow(parent){
 	setupUi(this);
-	connect(myController_,SIGNAL(closeCreator() ), this, SLOT(close()) );
-	connect(myController_,SIGNAL(closeStartWindow() ), this, SLOT(closeStart()) );
-
+	connect(myController_, SIGNAL(closeCreator() ), this, SLOT(close()) );
+	connect(myController_, SIGNAL(enabledMainWindow()), this, SLOT(enabledMainWin() ) );
+	connect(myController_, SIGNAL(error(std::string)), this, SLOT(showError(std::string)) );
 }
 View::~View()
 {
@@ -14,6 +15,10 @@ View::~View()
 
 void View::showYou(){
 	this->show();
+}
+
+void View::showError(std::string message){
+	QMessageBox::warning(this, "Warning! ",QString::fromStdString(message));
 }
 
 void View::on_actionStart_triggered(){
@@ -26,9 +31,7 @@ void View::on_actionNew_Course_triggered(){
 	this->setDisabled(true);
 	createTest->setEnabled(true);
 }
-void View::close(){
-	
-}
-void View::closeStart(){
+
+void View::enabledMainWin(){
 	this->setEnabled(true);
 }

@@ -1,19 +1,12 @@
 #include "controller.h"
-#include <QDebug>
+#include "Exception.h"
 
 Controller::Controller()
-	: view_(NULL), model_(new Model)
-{
-
+	: view_(NULL), model_(new Model){}
+Controller::~Controller(){
 }
-
-Controller::~Controller()
-{
-
-}
-
 void Controller::connectView(View * view){
-
+	
 	if(view_){
 		view_->disconnect();
 	}
@@ -27,36 +20,72 @@ void Controller::connectView(View * view){
 	connect(view_, SIGNAL(saveCurrentCourse(std::string)), this, SLOT(addSaveCourse(std::string)) );
 	connect(view_, SIGNAL(showCurrentListOfFiles()), this, SLOT(addListOfFiles() ) );
 	connect(view_, SIGNAL(chooseCourse()), this, SLOT(addChooseCourse() ) );
-	connect(view_, SIGNAL(closeAnyWindow()), this, SLOT(addcloseStartWindow() ) );
+	connect(view_, SIGNAL(closeAnyWindow()), this, SLOT(addCloseAnyWindow() ) );
 }
 
 void Controller::addTaskNext(int id, std::string question, std::string answer){
-	model_->setNext(id,question,answer);
-	emit goNext(id+1, model_->getCurrentCourse()->getQuestions(id+1), model_->getCurrentCourse()->getAnswers(id+1) );
+	try{
+		model_->setNext(id,question,answer);
+		emit goNext(id+1, model_->getCurrentCourse()->getQuestions(id+1), model_->getCurrentCourse()->getAnswers(id+1) );
+	}
+	catch (myException e){
+		emit error(e.returnMessage());
+	}
+	
 }
 
 void Controller::addTaskBack(int id, std::string question, std::string answer){
-	model_->setNext(id,question,answer);
-	emit goNext(id-1, model_->getCurrentCourse()->getQuestions(id-1), model_->getCurrentCourse()->getAnswers(id-1) );
+	try{
+		model_->setNext(id,question,answer);
+		emit goNext(id-1, model_->getCurrentCourse()->getQuestions(id-1), model_->getCurrentCourse()->getAnswers(id-1) );
+	}
+	catch (myException e){
+		emit error(e.returnMessage());
+	}
 }
 void Controller::addLastTask(int id, std::string question, std::string answer){
-	model_->setNext(id,question,answer);
+	try{
+		model_->setNext(id,question,answer);
+	}
+	catch (myException e){
+		emit error(e.returnMessage());
+	}
 }
 
 void Controller::addSaveCourse(std::string nameOfFile){
-	model_->setSaveCourse(nameOfFile);
-	emit closeCreator();
+	try{
+		model_->setSaveCourse(nameOfFile);
+		emit closeCreator();
+	}
+	catch (myException e){
+		emit error(e.returnMessage());
+	}
 }
 
 void Controller::addListOfFiles(){
-	model_->setListOfFiles();
-	emit getListOfCourses(model_->getCurrentStart()->getListOfFiles());
+	try{
+		model_->setListOfFiles();
+		emit getListOfCourses(model_->getCurrentStart()->getListOfFiles());
+	}
+	catch (myException e){
+		emit error(e.returnMessage());
+	}
 }
 
 void Controller::addChooseCourse(){
-	model_->setChooseCourse();
-	emit closeStartWindow();
+	try{
+		model_->setChooseCourse();
+		emit closeStartWindow();
+	}
+	catch (myException e){
+		emit error(e.returnMessage());
+	}
 }
-void Controller::addcloseStartWindow(){
-	emit closeStartWindow();
+void Controller::addCloseAnyWindow(){
+	try{
+		emit enabledMainWindow();
+	}
+	catch (myException e){
+		emit error(e.returnMessage());
+	}
 }

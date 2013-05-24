@@ -16,10 +16,12 @@ public:
 	void connectView(View *view);
 
 signals:
+	void error(std::string);
 	void goNext(int id,std::string question, std::string answer);
 	void closeCreator();
 	void getListOfCourses(std::vector<std::string>);
 	void closeStartWindow();
+	void enabledMainWindow();
 public slots:
 	void addTaskNext(int id, std::string question, std::string answer);
 	void addTaskBack(int id, std::string question, std::string answer);
@@ -27,7 +29,7 @@ public slots:
 	void addSaveCourse(std::string nameOfFile);
 	void addListOfFiles();
 	void addChooseCourse();
-	void addcloseStartWindow();
+	void addCloseAnyWindow();
 private:
 	View *view_;
 	Model *model_;
