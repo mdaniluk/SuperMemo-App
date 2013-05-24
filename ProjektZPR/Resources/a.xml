@@ -1,0 +1,10 @@
+<SuperMemo>
+ <Task Id="1">
+  <Question Id="1">a</Question>
+  <AnswerClose Id="1">
+   <a Value="True">a</a>
+   <b Value="True">a</b>
+   <c Value="True">a</c>
+  </AnswerClose>
+ </Task>
+</SuperMemo>
