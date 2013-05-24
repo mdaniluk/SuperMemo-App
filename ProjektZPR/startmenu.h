@@ -18,13 +18,15 @@ protected:
 	void closeEvent(QCloseEvent *event);
 signals:
 	void showListOfFiles();
-	void choose();
+	void choose(std::string);
 	void closeStart();
+	void deleteCourse(std::string);
 private:
 	View *myView_;
 	Controller *myController_;
 private slots:
 	void on_choose_clicked();
+	void on_deleteButton_clicked();
 public slots:
 	void setListOfCourses(std::vector<std::string> listOfFiles);
 	void closeWindow();

@@ -22,14 +22,16 @@ signals:
 	void getListOfCourses(std::vector<std::string>);
 	void closeStartWindow();
 	void enabledMainWindow();
+	void refreshCourses();
 public slots:
 	void addTaskNext(int id, std::string question, std::string answer);
 	void addTaskBack(int id, std::string question, std::string answer);
 	void addLastTask(int id, std::string question, std::string answer);
 	void addSaveCourse(std::string nameOfFile);
 	void addListOfFiles();
-	void addChooseCourse();
+	void addChooseCourse(std::string course);
 	void addCloseAnyWindow();
+	void deleteChooseCourse(std::string course);
 private:
 	View *view_;
 	Model *model_;

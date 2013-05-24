@@ -19,7 +19,8 @@ void Controller::connectView(View * view){
 	connect(view_, SIGNAL(setLastTask(int, std::string, std::string)), this, SLOT(addLastTask(int, std::string, std::string) ) );
 	connect(view_, SIGNAL(saveCurrentCourse(std::string)), this, SLOT(addSaveCourse(std::string)) );
 	connect(view_, SIGNAL(showCurrentListOfFiles()), this, SLOT(addListOfFiles() ) );
-	connect(view_, SIGNAL(chooseCourse()), this, SLOT(addChooseCourse() ) );
+	connect(view_, SIGNAL(chooseCourse(std::string)), this, SLOT(addChooseCourse(std::string) ) );
+	connect(view_, SIGNAL(deleteCourse(std::string)), this, SLOT(deleteChooseCourse(std::string) ) );
 	connect(view_, SIGNAL(closeAnyWindow()), this, SLOT(addCloseAnyWindow() ) );
 }
 
@@ -72,15 +73,26 @@ void Controller::addListOfFiles(){
 	}
 }
 
-void Controller::addChooseCourse(){
+void Controller::addChooseCourse(std::string course){
 	try{
-		model_->setChooseCourse();
+		model_->setChooseCourse(course);
 		emit closeStartWindow();
 	}
 	catch (myException e){
 		emit error(e.returnMessage());
 	}
 }
+
+void Controller::deleteChooseCourse(std::string course){
+	try{
+		model_->deleteChooseCourse(course);
+		emit getListOfCourses(model_->getCurrentStart()->getListOfFiles());
+	}
+	catch (myException e){
+		emit error(e.returnMessage());
+	}
+}
+
 void Controller::addCloseAnyWindow(){
 	try{
 		emit enabledMainWindow();

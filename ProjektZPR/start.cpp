@@ -1,4 +1,5 @@
 #include "start.h"
+#include <algorithm>
 #define BOOST_FILESYSTEM_VERSION 3
 #define BOOST_FILESYSTEM_NO_DEPRECATED 
 
@@ -12,7 +13,6 @@ Start::~Start()
 {
 }
 
-namespace fs = ::boost::filesystem;
 void Start::setListOfFiles(){
 	filesXml.clear();
 	const fs::path root = "Resources/";
@@ -32,5 +32,11 @@ void Start::setListOfFiles(){
 	}
 }
 
-void Start::chooseCourse(){
+void Start::chooseCourse(std::string course){
+}
+
+void Start::deleteCourse(std::string course){
+	const fs::path root = "Resources/" + course + ".xml";
+	fs::remove(root);
+	filesXml.erase(std::remove(filesXml.begin(), filesXml.end(), course + ".xml") , filesXml.end());	
 }

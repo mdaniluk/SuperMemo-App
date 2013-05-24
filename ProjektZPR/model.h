@@ -14,7 +14,8 @@ public:
 	Start* getCurrentStart(){ return start; }
 	void setSaveCourse(std::string nameOfFile);
 	void setListOfFiles();
-	void setChooseCourse();
+	void setChooseCourse(std::string course);
+	void deleteChooseCourse(std::string course);
 private:
 	Course *currentCourse;
 	Start *start;
