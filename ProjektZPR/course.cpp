@@ -5,7 +5,7 @@
 #include <boost/algorithm/string/predicate.hpp>
 #include <boost/lexical_cast.hpp>
 Course::Course(){
-	numberOfQuestions_ = 0;
+	//numberOfQuestions_ = 0;
 }
 void Course::setQuestions(int id, string question){
 	if(id > questions.size() ){
