@@ -1,3 +1,4 @@
+
 <SuperMemo>
  <Task Id="1" Type="1">
   <Question Id="1">Jak masz na imiê?</Question>
@@ -14,5 +15,12 @@
  <Task Id="3" Type="1">
   <Question Id="3">Najwy¿szy szczyt œwiata?</Question>
   <AnswerOpen Id="3">Mount Everest</AnswerOpen>
+ </Task>
+<Task Id="4" Type="0">
+  <Question Id="4">Lubisz frytki?</Question>
+  <AnswerClose Id="4">
+   <a Value="False">Nie</a>
+   <b Value="True">Tak</b>
+  </AnswerClose>
  </Task>
 </SuperMemo>

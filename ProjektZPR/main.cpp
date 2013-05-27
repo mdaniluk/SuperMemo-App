@@ -21,6 +21,7 @@ int main(int argc, char *argv[])
 	controllerThread.connect(&view, SIGNAL(askedQuit()), SLOT(quit()));
 
 
+	Deck *d= new Deck("resources/ciekawostki.xml");
 	/*std::ifstream plik("resources/ciekawostki.xml");
 
 	if (!plik.is_open()){
