@@ -32,7 +32,7 @@ public:
     QListWidget *coursesList;
     QHBoxLayout *horizontalLayout;
     QPushButton *choose;
-    QPushButton *delete_2;
+    QPushButton *deleteButton;
 
     void setupUi(QWidget *StartMenu)
     {
@@ -63,10 +63,10 @@ public:
 
         horizontalLayout->addWidget(choose);
 
-        delete_2 = new QPushButton(layoutWidget);
-        delete_2->setObjectName(QStringLiteral("delete_2"));
+        deleteButton = new QPushButton(layoutWidget);
+        deleteButton->setObjectName(QStringLiteral("deleteButton"));
 
-        horizontalLayout->addWidget(delete_2);
+        horizontalLayout->addWidget(deleteButton);
 
 
         verticalLayout->addLayout(horizontalLayout);
@@ -84,7 +84,7 @@ public:
         StartMenu->setWindowTitle(QApplication::translate("StartMenu", "StartMenu", 0));
         label->setText(QApplication::translate("StartMenu", "Dost\304\231pne Kursy", 0));
         choose->setText(QApplication::translate("StartMenu", "Wybierz", 0));
-        delete_2->setText(QApplication::translate("StartMenu", "Usun", 0));
+        deleteButton->setText(QApplication::translate("StartMenu", "Usun", 0));
     } // retranslateUi
 
 };
