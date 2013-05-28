@@ -7,7 +7,7 @@ using namespace std;
 class Course
 {
 public:
-	Course();
+	Course(void);
 	~Course();
 	vector<string> getQuestions() { return questions; }
 	vector<string> getAnswers() { return answers; }
