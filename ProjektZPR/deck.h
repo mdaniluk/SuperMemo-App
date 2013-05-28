@@ -2,14 +2,14 @@
 #define DECK_H
 #include "questioncard.h"
 #include <QObject>
-#include <boost/foreach.hpp>
-#include <boost/serialization/nvp.hpp>
-#include <boost/serialization/vector.hpp>
-#include <boost/property_tree/xml_parser.hpp>
-#include <boost/property_tree/ptree.hpp>
+#include <QFile>
+#include <QtCore>
+#include <QDebug>
+#include <QtXml>
+#include <QString>
+#include <QMessageBox>
+#include <QXmlStreamReader>
 #include <boost/serialization/shared_ptr.hpp>
-#include <boost/algorithm/string.hpp>
-#include <boost/tuple/tuple.hpp>
 #include <list>
 #include <iostream>
 #include <vector>
@@ -22,9 +22,8 @@ typedef boost::shared_ptr<QuestionCard> PQcard;
 class Deck
 {
 public:
-	Deck();
+	Deck(QString filename);
 	// Tworzymy nowy kurs
-	Deck(std::stringstream& fileContent);
 
 
 	~Deck();

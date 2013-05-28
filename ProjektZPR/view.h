@@ -23,12 +23,14 @@ signals:
 private slots:
 	void on_actionStart_triggered();
 	void on_actionNew_Course_triggered();
+	void on_beginChoose();
 public slots:
 	void enabledMainWin();
 	void showYou();
 	void showError(std::string message);
 private:
 	Controller* myController_;
+	void onBeginHide();
 
 };
 

@@ -18,6 +18,9 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QProgressBar>
+#include <QtWidgets/QPushButton>
+#include <QtWidgets/QSlider>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
@@ -34,6 +37,15 @@ public:
     QWidget *centralWidget;
     QLabel *label;
     QLabel *label_2;
+    QPushButton *judge_button;
+    QPushButton *answer_button;
+    QPushButton *end_button;
+    QProgressBar *progressBar;
+    QLabel *latwe;
+    QLabel *trudne;
+    QSlider *verticalSlider;
+    QLabel *answer;
+    QLabel *question;
     QMenuBar *menuBar;
     QMenu *menuFile;
     QMenu *menuCreate;
@@ -67,7 +79,50 @@ public:
         label_2 = new QLabel(centralWidget);
         label_2->setObjectName(QStringLiteral("label_2"));
         label_2->setGeometry(QRect(400, 330, 181, 21));
+        judge_button = new QPushButton(centralWidget);
+        judge_button->setObjectName(QStringLiteral("judge_button"));
+        judge_button->setGeometry(QRect(410, 300, 75, 23));
+        answer_button = new QPushButton(centralWidget);
+        answer_button->setObjectName(QStringLiteral("answer_button"));
+        answer_button->setGeometry(QRect(490, 300, 75, 23));
+        end_button = new QPushButton(centralWidget);
+        end_button->setObjectName(QStringLiteral("end_button"));
+        end_button->setGeometry(QRect(330, 300, 75, 23));
+        progressBar = new QProgressBar(centralWidget);
+        progressBar->setObjectName(QStringLiteral("progressBar"));
+        progressBar->setGeometry(QRect(20, 300, 301, 23));
+        progressBar->setValue(24);
+        latwe = new QLabel(centralWidget);
+        latwe->setObjectName(QStringLiteral("latwe"));
+        latwe->setGeometry(QRect(550, 20, 46, 13));
+        trudne = new QLabel(centralWidget);
+        trudne->setObjectName(QStringLiteral("trudne"));
+        trudne->setGeometry(QRect(550, 280, 46, 13));
+        verticalSlider = new QSlider(centralWidget);
+        verticalSlider->setObjectName(QStringLiteral("verticalSlider"));
+        verticalSlider->setGeometry(QRect(560, 49, 20, 221));
+        verticalSlider->setOrientation(Qt::Vertical);
+        answer = new QLabel(centralWidget);
+        answer->setObjectName(QStringLiteral("answer"));
+        answer->setGeometry(QRect(50, 160, 501, 131));
+        question = new QLabel(centralWidget);
+        question->setObjectName(QStringLiteral("question"));
+        question->setGeometry(QRect(50, 0, 501, 151));
         mainWindow->setCentralWidget(centralWidget);
+        label->raise();
+        label_2->raise();
+        answer->raise();
+        question->raise();
+        judge_button->raise();
+        answer_button->raise();
+        end_button->raise();
+        answer->raise();
+        question->raise();
+        question->raise();
+        progressBar->raise();
+        latwe->raise();
+        trudne->raise();
+        verticalSlider->raise();
         menuBar = new QMenuBar(mainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
         menuBar->setGeometry(QRect(0, 0, 600, 21));
@@ -104,6 +159,13 @@ public:
         actionStart->setText(QApplication::translate("mainWindow", "Start", 0));
         label->setText(QApplication::translate("mainWindow", "Witaj w Supermemo ", 0));
         label_2->setText(QApplication::translate("mainWindow", "Autors: Micha\305\202 Daniluk & Piotr Ma\305\202ecki", 0));
+        judge_button->setText(QApplication::translate("mainWindow", "Judge", 0));
+        answer_button->setText(QApplication::translate("mainWindow", "Answer", 0));
+        end_button->setText(QApplication::translate("mainWindow", "End", 0));
+        latwe->setText(QApplication::translate("mainWindow", "\305\201atwe", 0));
+        trudne->setText(QApplication::translate("mainWindow", "Trudne", 0));
+        answer->setText(QString());
+        question->setText(QString());
         menuFile->setTitle(QApplication::translate("mainWindow", "File", 0));
         menuCreate->setTitle(QApplication::translate("mainWindow", "Create", 0));
     } // retranslateUi
