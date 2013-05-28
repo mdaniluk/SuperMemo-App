@@ -5,6 +5,7 @@
 
 View::View(Controller* controller, QWidget *parent): myController_(controller), QMainWindow(parent){
 	setupUi(this);
+	QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
 	qRegisterMetaType<vector<PQcard>>("vector<PQcard>");
 	connect(myController_, SIGNAL(enabledMainWindow()), this, SLOT(enabledMainWin() ) );
 	connect(myController_, SIGNAL(error(std::string)), this, SLOT(showError(std::string)) );
@@ -20,8 +21,8 @@ View::~View()
 void View::showQuestionCardList(vector<PQcard> vectorPQcard)
 {	
 	boost::shared_ptr<QuestionCard> questiocard;
-	questiocard= vectorPQcard.at(1);
-	question->setText(QString::fromStdString(questiocard->getQuestion()));
+	questiocard= vectorPQcard.at(2);
+	question->setText(QString::fromUtf8((questiocard->getQuestion()).c_str()));
 
 	
 }

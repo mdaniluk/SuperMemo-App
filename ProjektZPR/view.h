@@ -1,6 +1,7 @@
 #ifndef VIEW_H
 #define VIEW_H
 #include <QtWidgets/QMainWindow>
+#include <QTextCodec>
 #include "ui_projektzpr.h"
 #include "controller.h"
 #include "deck.h"
