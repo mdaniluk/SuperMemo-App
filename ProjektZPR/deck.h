@@ -16,6 +16,7 @@
 #include <map>
 #include "Exception.h"
 using std::list;
+using std::vector;
 using std::pair;
 typedef boost::shared_ptr<QuestionCard> PQcard;
 
@@ -24,13 +25,13 @@ class Deck
 public:
 	Deck(QString filename);
 	// Tworzymy nowy kurs
-	list<PQcard> getQuestionCardList() {return listPQ;}
+	vector<PQcard> getQuestionCardVector() {return vectorPQ;}
 
 	~Deck();
 
 private:
 	friend class boost::serialization::access;
-	list<PQcard> listPQ;
+	vector<PQcard> vectorPQ;
 };
 
 #endif // DECK_H

@@ -3,8 +3,9 @@
 
 #include <QObject>
 #include <list>
+#include <vector>
 using std::string;
-typedef std::list<std::pair<string, string>> CloseAnswer; //wektor (odpowiedz + TRUE/FALSE) dla ka¿dego z pytan
+typedef std::vector<std::pair<string, string>> CloseAnswer; //wektor (odpowiedz + TRUE/FALSE) dla ka¿dego z pytan
 class QuestionCard 
 {
 

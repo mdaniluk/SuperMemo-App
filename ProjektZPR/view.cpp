@@ -5,10 +5,10 @@
 
 View::View(Controller* controller, QWidget *parent): myController_(controller), QMainWindow(parent){
 	setupUi(this);
-	qRegisterMetaType<list<PQcard>>("list<PQcard>");
+	qRegisterMetaType<vector<PQcard>>("vector<PQcard>");
 	connect(myController_, SIGNAL(enabledMainWindow()), this, SLOT(enabledMainWin() ) );
 	connect(myController_, SIGNAL(error(std::string)), this, SLOT(showError(std::string)) );
-	connect(myController_, SIGNAL( emitQuestionCardList(list<PQcard>)), this, SLOT(showQuestionCardList(list<PQcard>)) );
+	connect(myController_, SIGNAL( emitQuestionCardList(vector<PQcard>)), this, SLOT(showQuestionCardList(vector<PQcard>)) );
 	connect(this, SIGNAL(chooseCourse(std::string)), this, SLOT(on_beginChoose()) );
 
 	onBeginHide();
@@ -17,10 +17,10 @@ View::~View()
 {
 
 }
-void View::showQuestionCardList(list<PQcard> listPQcard)
+void View::showQuestionCardList(vector<PQcard> vectorPQcard)
 {	
 	boost::shared_ptr<QuestionCard> questiocard;
-	questiocard= listPQcard.back();
+	questiocard= vectorPQcard.at(1);
 	question->setText(QString::fromStdString(questiocard->getQuestion()));
 
 	

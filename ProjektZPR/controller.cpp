@@ -79,7 +79,7 @@ void Controller::addChooseCourse(std::string course){
 	try{
 		model_->setChooseCourse(course);
 		emit closeStartWindow();
-		emit emitQuestionCardList(model_->getCurrentStart()->getDeck()->getQuestionCardList());
+		emit emitQuestionCardList(model_->getCurrentStart()->getDeck()->getQuestionCardVector());
 	}
 	catch (myException e){
 		emit error(e.returnMessage());

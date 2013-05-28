@@ -41,7 +41,7 @@ Deck::Deck(QString filename)
 
 		qDebug()<<"Otwarte";
 		card=PQcard(new QuestionCard((itemnode.firstChild().toElement().text()).toStdString(), (itemnode.lastChild().toElement().text()).toStdString(),  (itemnode.toElement().attribute("Id")).toInt(), "True" ));
-		listPQ.push_back(card);
+		vectorPQ.push_back(card);
 		 }
 
 		 else{
@@ -57,7 +57,7 @@ Deck::Deck(QString filename)
 		}
 		
 		card=PQcard(new QuestionCard((itemnode.firstChild().toElement().text()).toStdString(), answer,  (itemnode.toElement().attribute("Id")).toInt(), "True" ));
-		listPQ.push_back(card);
+		vectorPQ.push_back(card);
 		 qDebug()<<"Zamkniete";
 		 } 
 	 }

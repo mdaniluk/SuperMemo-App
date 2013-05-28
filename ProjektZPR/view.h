@@ -30,7 +30,7 @@ public slots:
 	void enabledMainWin();
 	void showYou();
 	void showError(std::string message);
-	void showQuestionCardList(list<PQcard>);
+	void showQuestionCardList(vector<PQcard>);
 private:
 	Controller* myController_;
 	void onBeginHide();
