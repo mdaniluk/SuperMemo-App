@@ -23,6 +23,7 @@ signals:
 	void closeStartWindow();
 	void enabledMainWindow();
 	void refreshCourses();
+	void emitQuestionCardList(list<PQcard>);
 public slots:
 	void addTaskNext(int id, std::string question, std::string answer);
 	void addTaskBack(int id, std::string question, std::string answer);

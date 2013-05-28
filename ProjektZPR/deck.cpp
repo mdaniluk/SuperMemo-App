@@ -3,7 +3,7 @@
 // konstruktor klasy Deck wczytuje plik xml do listy wskaŸników do klasy QuestionCard. 
 Deck::Deck(QString filename)
 {	
-	list<PQcard> listPQ;
+	
 	PQcard card;
 	QDomDocument doc;
 	QFile file(filename);

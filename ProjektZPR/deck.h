@@ -24,13 +24,13 @@ class Deck
 public:
 	Deck(QString filename);
 	// Tworzymy nowy kurs
-
+	list<PQcard> getQuestionCardList() {return listPQ;}
 
 	~Deck();
 
 private:
 	friend class boost::serialization::access;
-	
+	list<PQcard> listPQ;
 };
 
 #endif // DECK_H

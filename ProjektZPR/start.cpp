@@ -33,6 +33,7 @@ void Start::setListOfFiles(){
 }
 
 void Start::chooseCourse(std::string course){
+	deck_= new Deck(QString::fromStdString("Resources/" + course + ".xml"));
 }
 
 void Start::deleteCourse(std::string course){
