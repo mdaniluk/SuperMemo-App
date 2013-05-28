@@ -7,12 +7,26 @@ View::View(Controller* controller, QWidget *parent): myController_(controller), 
 
 	connect(myController_, SIGNAL(enabledMainWindow()), this, SLOT(enabledMainWin() ) );
 	connect(myController_, SIGNAL(error(std::string)), this, SLOT(showError(std::string)) );
+	connect(this, SIGNAL(chooseCourse(std::string)), this, SLOT(on_beginChoose()) );
+
+	onBeginHide();
 }
 View::~View()
 {
 
 }
 
+void View::on_beginChoose(){
+	progressBar->show();
+	answer_button->show();
+	judge_button->show();
+	end_button->show();
+	trudne->show();
+	latwe->show();
+	verticalSlider->show();
+	label->hide();
+	label_2->hide();
+}
 void View::showYou(){
 	this->show();
 }
@@ -34,4 +48,16 @@ void View::on_actionNew_Course_triggered(){
 
 void View::enabledMainWin(){
 	this->setEnabled(true);
+}
+
+void View::onBeginHide(){
+	progressBar->hide();
+	answer_button->hide();
+	judge_button->hide();
+	end_button->hide();
+	trudne->hide();
+	latwe->hide();
+	verticalSlider->hide();
+	label->show();
+	label_2->show();
 }
