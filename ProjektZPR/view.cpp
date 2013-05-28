@@ -2,11 +2,13 @@
 #include "createtest.h"
 #include "startmenu.h"
 #include <qmessagebox.h>
+
 View::View(Controller* controller, QWidget *parent): myController_(controller), QMainWindow(parent){
 	setupUi(this);
-
+	qRegisterMetaType<list<PQcard>>("list<PQcard>");
 	connect(myController_, SIGNAL(enabledMainWindow()), this, SLOT(enabledMainWin() ) );
 	connect(myController_, SIGNAL(error(std::string)), this, SLOT(showError(std::string)) );
+	connect(myController_, SIGNAL( emitQuestionCardList(list<PQcard>)), this, SLOT(showQuestionCardList(list<PQcard>)) );
 	connect(this, SIGNAL(chooseCourse(std::string)), this, SLOT(on_beginChoose()) );
 
 	onBeginHide();
@@ -15,7 +17,14 @@ View::~View()
 {
 
 }
+void View::showQuestionCardList(list<PQcard> listPQcard)
+{	
+	boost::shared_ptr<QuestionCard> questiocard;
+	questiocard= listPQcard.back();
+	question->setText(QString::fromStdString(questiocard->getQuestion()));
 
+	
+}
 void View::on_beginChoose(){
 	progressBar->show();
 	answer_button->show();

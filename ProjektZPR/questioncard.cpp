@@ -2,7 +2,7 @@
 
 
 
-QuestionCard::QuestionCard(const std::string question,  const std::string answer, const int idQuestion , const bool questionType): question_(question), answer_(answer), 
+QuestionCard::QuestionCard(const std::string question,  const std::string answer, const int idQuestion , const bool questionType): question_(question), answerOpen_(answer), 
 	idQuestion_(idQuestion), questionType_(questionType)
 {
 

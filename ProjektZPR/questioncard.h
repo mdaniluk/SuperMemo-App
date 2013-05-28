@@ -13,13 +13,18 @@ public:
 	QuestionCard (){};
 	QuestionCard( const std::string question,  const std::string answer, const int idQuestion , const bool questionType);
 	QuestionCard( const std::string question,  CloseAnswer closeanswer, const int idQuestion, const bool questionType);
+	bool getQuestionType() {return questionType_;}
+	int getIdQuestion() {return idQuestion_;}
+	string getAnswerOpen() {return answerOpen_;}
+	string getQuestion() {return question_;}
+	CloseAnswer getcloseAnswer() {return closeAnswer_;}
 	~QuestionCard();
 
 private:
 	
 	bool questionType_;
 	int idQuestion_;
-	string answer_;
+	string answerOpen_;
 	string question_;
 	CloseAnswer closeAnswer_;
 

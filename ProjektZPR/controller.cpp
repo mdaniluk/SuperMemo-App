@@ -14,6 +14,7 @@ void Controller::connectView(View * view){
 
 	qRegisterMetaType<std::string>("std::string");
 
+
 	connect(view_, SIGNAL(setCurrentTaskNext(int, std::string, std::string)), this, SLOT(addTaskNext(int, std::string, std::string) ) );
 	connect(view_, SIGNAL(setCurrentTaskBack(int, std::string, std::string)), this, SLOT(addTaskBack(int, std::string, std::string) ) );
 	connect(view_, SIGNAL(setLastTask(int, std::string, std::string)), this, SLOT(addLastTask(int, std::string, std::string) ) );
@@ -22,6 +23,7 @@ void Controller::connectView(View * view){
 	connect(view_, SIGNAL(chooseCourse(std::string)), this, SLOT(addChooseCourse(std::string) ) );
 	connect(view_, SIGNAL(deleteCourse(std::string)), this, SLOT(deleteChooseCourse(std::string) ) );
 	connect(view_, SIGNAL(closeAnyWindow()), this, SLOT(addCloseAnyWindow() ) );
+
 }
 
 void Controller::addTaskNext(int id, std::string question, std::string answer){

@@ -3,6 +3,7 @@
 #include <QtWidgets/QMainWindow>
 #include "ui_projektzpr.h"
 #include "controller.h"
+#include "deck.h"
 class Controller;
 
 class View : public QMainWindow, public Ui::mainWindow
@@ -24,10 +25,12 @@ private slots:
 	void on_actionStart_triggered();
 	void on_actionNew_Course_triggered();
 	void on_beginChoose();
+	
 public slots:
 	void enabledMainWin();
 	void showYou();
 	void showError(std::string message);
+	void showQuestionCardList(list<PQcard>);
 private:
 	Controller* myController_;
 	void onBeginHide();
