@@ -48,7 +48,7 @@
      <string>Autors: Michał Daniluk &amp; Piotr Małecki</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="judge_button">
+   <widget class="QPushButton" name="judgeButton">
     <property name="geometry">
      <rect>
       <x>410</x>
@@ -103,8 +103,8 @@
    <widget class="QLabel" name="latwe">
     <property name="geometry">
      <rect>
-      <x>550</x>
-      <y>20</y>
+      <x>516</x>
+      <y>45</y>
       <width>46</width>
       <height>13</height>
      </rect>
@@ -116,8 +116,8 @@
    <widget class="QLabel" name="trudne">
     <property name="geometry">
      <rect>
-      <x>550</x>
-      <y>280</y>
+      <x>515</x>
+      <y>255</y>
       <width>46</width>
       <height>13</height>
      </rect>
@@ -289,7 +289,7 @@
      <string/>
     </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>70</x>
@@ -329,7 +329,7 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>41</x>
@@ -369,10 +369,25 @@
      </item>
     </layout>
    </widget>
+   <widget class="QLabel" name="valueJudge">
+    <property name="geometry">
+     <rect>
+      <x>561</x>
+      <y>280</y>
+      <width>21</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <zorder>layoutWidget</zorder>
+   <zorder>layoutWidget</zorder>
    <zorder>layoutWidget</zorder>
    <zorder>labelWelcome</zorder>
    <zorder>labelAuthors</zorder>
-   <zorder>judge_button</zorder>
+   <zorder>judgeButton</zorder>
    <zorder>answerButton</zorder>
    <zorder>end_button</zorder>
    <zorder>question</zorder>
@@ -383,15 +398,8 @@
    <zorder>answerOpenEdit</zorder>
    <zorder>nextButton</zorder>
    <zorder>backButton</zorder>
-   <zorder>answerEditCloseA</zorder>
-   <zorder>answerEditCloseB</zorder>
-   <zorder>answerEditCloseC</zorder>
-   <zorder>answerEditCloseD</zorder>
-   <zorder>checkBoxA</zorder>
-   <zorder>checkBoxB</zorder>
-   <zorder>checkBoxC</zorder>
-   <zorder>checkBoxD</zorder>
    <zorder>correctAnswer</zorder>
+   <zorder>valueJudge</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">

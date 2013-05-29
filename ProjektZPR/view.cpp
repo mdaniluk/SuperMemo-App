@@ -13,6 +13,8 @@ View::View(Controller* controller, QWidget *parent): myController_(controller), 
 	connect(myController_, SIGNAL( emitQuestionCardList(vector<PQcard>)), this, SLOT(showQuestionCardList(vector<PQcard>)) );
 	connect(this, SIGNAL(chooseCourse(std::string)), this, SLOT(on_beginChoose()) );
 
+	connect( verticalSlider, SIGNAL(valueChanged(int)),this, SLOT(changeValueOfSlider(int)) );
+
 	onBeginHide();
 }
 
@@ -33,7 +35,7 @@ void View::showQuestionCardList(vector<PQcard> vectorPQcard)
 void View::on_beginChoose(){
 	progressBar->show();
 	answerButton->show();
-	judge_button->show();
+	judgeButton->show();
 	end_button->show();
 	trudne->show();
 	latwe->show();
@@ -73,11 +75,12 @@ void View::enabledMainWin(){
 void View::onBeginHide(){
 	progressBar->hide();
 	answerButton->hide();
-	judge_button->hide();
+	judgeButton->hide();
 	end_button->hide();
 	trudne->hide();
 	latwe->hide();
 	verticalSlider->hide();
+	verticalSlider->setMaximum(10);
 	labelWelcome->show();
 	labelAuthors->show();
 	answerOpenEdit->hide();
@@ -208,4 +211,11 @@ void View::on_answerButton_clicked(){
 		correctAnswer->show();
 
 	}
+}
+
+void View::changeValueOfSlider(int value){
+	valueJudge->setText(QString::number(value));
+}
+void View::on_judgeButton_clicked(){
+	int a = verticalSlider->value();
 }

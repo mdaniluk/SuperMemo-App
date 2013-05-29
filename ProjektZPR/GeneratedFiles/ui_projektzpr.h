@@ -40,7 +40,7 @@ public:
     QWidget *centralWidget;
     QLabel *labelWelcome;
     QLabel *labelAuthors;
-    QPushButton *judge_button;
+    QPushButton *judgeButton;
     QPushButton *answerButton;
     QPushButton *end_button;
     QProgressBar *progressBar;
@@ -58,18 +58,19 @@ public:
     QLabel *cLabel;
     QLabel *dLabel;
     QLabel *correctAnswer;
-    QWidget *widget;
+    QWidget *layoutWidget1;
     QGridLayout *gridLayout_3;
     QLabel *answerEditCloseA;
     QLabel *answerEditCloseC;
     QLabel *answerEditCloseD;
     QLabel *answerEditCloseB;
-    QWidget *widget1;
+    QWidget *layoutWidget2;
     QGridLayout *gridLayout_2;
     QCheckBox *checkBoxA;
     QCheckBox *checkBoxB;
     QCheckBox *checkBoxC;
     QCheckBox *checkBoxD;
+    QLabel *valueJudge;
     QMenuBar *menuBar;
     QMenu *menuFile;
     QMenu *menuCreate;
@@ -103,9 +104,9 @@ public:
         labelAuthors = new QLabel(centralWidget);
         labelAuthors->setObjectName(QStringLiteral("labelAuthors"));
         labelAuthors->setGeometry(QRect(400, 330, 181, 21));
-        judge_button = new QPushButton(centralWidget);
-        judge_button->setObjectName(QStringLiteral("judge_button"));
-        judge_button->setGeometry(QRect(410, 300, 75, 23));
+        judgeButton = new QPushButton(centralWidget);
+        judgeButton->setObjectName(QStringLiteral("judgeButton"));
+        judgeButton->setGeometry(QRect(410, 300, 75, 23));
         answerButton = new QPushButton(centralWidget);
         answerButton->setObjectName(QStringLiteral("answerButton"));
         answerButton->setGeometry(QRect(490, 300, 75, 23));
@@ -118,10 +119,10 @@ public:
         progressBar->setValue(24);
         latwe = new QLabel(centralWidget);
         latwe->setObjectName(QStringLiteral("latwe"));
-        latwe->setGeometry(QRect(550, 20, 46, 13));
+        latwe->setGeometry(QRect(516, 45, 46, 13));
         trudne = new QLabel(centralWidget);
         trudne->setObjectName(QStringLiteral("trudne"));
-        trudne->setGeometry(QRect(550, 280, 46, 13));
+        trudne->setGeometry(QRect(515, 255, 46, 13));
         verticalSlider = new QSlider(centralWidget);
         verticalSlider->setObjectName(QStringLiteral("verticalSlider"));
         verticalSlider->setGeometry(QRect(560, 49, 20, 221));
@@ -185,67 +186,72 @@ public:
         correctAnswer->setObjectName(QStringLiteral("correctAnswer"));
         correctAnswer->setGeometry(QRect(65, 90, 441, 41));
         correctAnswer->setFont(font1);
-        widget = new QWidget(centralWidget);
-        widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(70, 111, 441, 131));
-        gridLayout_3 = new QGridLayout(widget);
+        layoutWidget1 = new QWidget(centralWidget);
+        layoutWidget1->setObjectName(QStringLiteral("layoutWidget1"));
+        layoutWidget1->setGeometry(QRect(70, 111, 441, 131));
+        gridLayout_3 = new QGridLayout(layoutWidget1);
         gridLayout_3->setSpacing(6);
         gridLayout_3->setContentsMargins(11, 11, 11, 11);
         gridLayout_3->setObjectName(QStringLiteral("gridLayout_3"));
         gridLayout_3->setContentsMargins(0, 0, 0, 0);
-        answerEditCloseA = new QLabel(widget);
+        answerEditCloseA = new QLabel(layoutWidget1);
         answerEditCloseA->setObjectName(QStringLiteral("answerEditCloseA"));
 
         gridLayout_3->addWidget(answerEditCloseA, 0, 0, 1, 1);
 
-        answerEditCloseC = new QLabel(widget);
+        answerEditCloseC = new QLabel(layoutWidget1);
         answerEditCloseC->setObjectName(QStringLiteral("answerEditCloseC"));
 
         gridLayout_3->addWidget(answerEditCloseC, 2, 0, 1, 1);
 
-        answerEditCloseD = new QLabel(widget);
+        answerEditCloseD = new QLabel(layoutWidget1);
         answerEditCloseD->setObjectName(QStringLiteral("answerEditCloseD"));
 
         gridLayout_3->addWidget(answerEditCloseD, 3, 0, 1, 1);
 
-        answerEditCloseB = new QLabel(widget);
+        answerEditCloseB = new QLabel(layoutWidget1);
         answerEditCloseB->setObjectName(QStringLiteral("answerEditCloseB"));
 
         gridLayout_3->addWidget(answerEditCloseB, 1, 0, 1, 1);
 
-        widget1 = new QWidget(centralWidget);
-        widget1->setObjectName(QStringLiteral("widget1"));
-        widget1->setGeometry(QRect(41, 102, 20, 151));
-        gridLayout_2 = new QGridLayout(widget1);
+        layoutWidget2 = new QWidget(centralWidget);
+        layoutWidget2->setObjectName(QStringLiteral("layoutWidget2"));
+        layoutWidget2->setGeometry(QRect(41, 102, 20, 151));
+        gridLayout_2 = new QGridLayout(layoutWidget2);
         gridLayout_2->setSpacing(6);
         gridLayout_2->setContentsMargins(11, 11, 11, 11);
         gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
         gridLayout_2->setContentsMargins(0, 0, 0, 0);
-        checkBoxA = new QCheckBox(widget1);
+        checkBoxA = new QCheckBox(layoutWidget2);
         checkBoxA->setObjectName(QStringLiteral("checkBoxA"));
 
         gridLayout_2->addWidget(checkBoxA, 0, 0, 1, 1);
 
-        checkBoxB = new QCheckBox(widget1);
+        checkBoxB = new QCheckBox(layoutWidget2);
         checkBoxB->setObjectName(QStringLiteral("checkBoxB"));
 
         gridLayout_2->addWidget(checkBoxB, 1, 0, 1, 1);
 
-        checkBoxC = new QCheckBox(widget1);
+        checkBoxC = new QCheckBox(layoutWidget2);
         checkBoxC->setObjectName(QStringLiteral("checkBoxC"));
 
         gridLayout_2->addWidget(checkBoxC, 2, 0, 1, 1);
 
-        checkBoxD = new QCheckBox(widget1);
+        checkBoxD = new QCheckBox(layoutWidget2);
         checkBoxD->setObjectName(QStringLiteral("checkBoxD"));
 
         gridLayout_2->addWidget(checkBoxD, 3, 0, 1, 1);
 
+        valueJudge = new QLabel(centralWidget);
+        valueJudge->setObjectName(QStringLiteral("valueJudge"));
+        valueJudge->setGeometry(QRect(561, 280, 21, 16));
         mainWindow->setCentralWidget(centralWidget);
+        layoutWidget->raise();
+        layoutWidget->raise();
         layoutWidget->raise();
         labelWelcome->raise();
         labelAuthors->raise();
-        judge_button->raise();
+        judgeButton->raise();
         answerButton->raise();
         end_button->raise();
         question->raise();
@@ -256,15 +262,8 @@ public:
         answerOpenEdit->raise();
         nextButton->raise();
         backButton->raise();
-        answerEditCloseA->raise();
-        answerEditCloseB->raise();
-        answerEditCloseC->raise();
-        answerEditCloseD->raise();
-        checkBoxA->raise();
-        checkBoxB->raise();
-        checkBoxC->raise();
-        checkBoxD->raise();
         correctAnswer->raise();
+        valueJudge->raise();
         menuBar = new QMenuBar(mainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
         menuBar->setGeometry(QRect(0, 0, 600, 21));
@@ -301,7 +300,7 @@ public:
         actionStart->setText(QApplication::translate("mainWindow", "Start", 0));
         labelWelcome->setText(QApplication::translate("mainWindow", "Witaj w Supermemo ", 0));
         labelAuthors->setText(QApplication::translate("mainWindow", "Autors: Micha\305\202 Daniluk & Piotr Ma\305\202ecki", 0));
-        judge_button->setText(QApplication::translate("mainWindow", "Judge", 0));
+        judgeButton->setText(QApplication::translate("mainWindow", "Judge", 0));
         answerButton->setText(QApplication::translate("mainWindow", "Answer", 0));
         end_button->setText(QApplication::translate("mainWindow", "End", 0));
         latwe->setText(QApplication::translate("mainWindow", "\305\201atwe", 0));
@@ -322,6 +321,7 @@ public:
         checkBoxB->setText(QString());
         checkBoxC->setText(QString());
         checkBoxD->setText(QString());
+        valueJudge->setText(QString());
         menuFile->setTitle(QApplication::translate("mainWindow", "File", 0));
         menuCreate->setTitle(QApplication::translate("mainWindow", "Create", 0));
     } // retranslateUi

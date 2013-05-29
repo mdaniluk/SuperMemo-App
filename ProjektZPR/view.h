@@ -31,11 +31,13 @@ private slots:
 	void on_nextButton_clicked();
 	void on_backButton_clicked();
 	void on_answerButton_clicked();
+	void on_judgeButton_clicked();
 public slots:
 	void enabledMainWin();
 	void showYou();
 	void showError(std::string message);
 	void showQuestionCardList(vector<PQcard>);
+	void changeValueOfSlider(int);
 private:
 	Controller* myController_;
 	void onBeginHide();
