@@ -16,9 +16,11 @@ public:
 	void setListOfFiles();
 	void setChooseCourse(std::string course);
 	void deleteChooseCourse(std::string course);
+	void endCourseAction(std::vector<int>);
 private:
 	Course *currentCourse;
 	Start *start;
+	Deck *deck;
 };
 
 #endif // MODEL_H

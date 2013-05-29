@@ -45,6 +45,7 @@ private:
 		ar & BOOST_SERIALIZATION_NVP(how_many_);
 		ar & BOOST_SERIALIZATION_NVP(eFactor_);
 		ar & BOOST_SERIALIZATION_NVP(interval_);
+		ar & BOOST_SERIALIZATION_NVP(now);
 
     }
 	// Question type True when open, False when close
@@ -63,6 +64,8 @@ private:
 	double eFactor_;
 	// interval between appearing question again in program (in days)
 	double interval_;
+	// date of next revision;
+	boost::gregorian::date now;
 
 };
 

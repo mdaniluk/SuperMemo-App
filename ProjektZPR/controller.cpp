@@ -13,7 +13,8 @@ void Controller::connectView(View * view){
 	view_=view;
 
 	qRegisterMetaType<std::string>("std::string");
-
+	qRegisterMetaType<std::vector<int>>("std::vector<int>");
+	
 
 	connect(view_, SIGNAL(setCurrentTaskNext(int, std::string, std::string)), this, SLOT(addTaskNext(int, std::string, std::string) ) );
 	connect(view_, SIGNAL(setCurrentTaskBack(int, std::string, std::string)), this, SLOT(addTaskBack(int, std::string, std::string) ) );
@@ -23,9 +24,19 @@ void Controller::connectView(View * view){
 	connect(view_, SIGNAL(chooseCourse(std::string)), this, SLOT(addChooseCourse(std::string) ) );
 	connect(view_, SIGNAL(deleteCourse(std::string)), this, SLOT(deleteChooseCourse(std::string) ) );
 	connect(view_, SIGNAL(closeAnyWindow()), this, SLOT(addCloseAnyWindow() ) );
+	connect(view_, SIGNAL(endCourse(vector<int>)), this, SLOT(endCourseJudge(vector<int>) ) );
 
 }
 
+void Controller::endCourseJudge(std::vector<int> userJudges){
+	try{
+		model_->endCourseAction(userJudges);
+		}
+	catch (myException e){
+		emit error(e.returnMessage());
+	}
+	
+}
 void Controller::addTaskNext(int id, std::string question, std::string answer){
 	try{
 		model_->setNext(id,question,answer);

@@ -33,6 +33,7 @@ public slots:
 	void addChooseCourse(std::string course);
 	void addCloseAnyWindow();
 	void deleteChooseCourse(std::string course);
+	void endCourseJudge(std::vector<int>);
 private:
 	View *view_;
 	Model *model_;

@@ -64,7 +64,24 @@ Deck::Deck(QString filename)
 	
 
 }
+void Deck::setNextDateForEach(vector<int> answersJudged){
+	
+	//for (vector<PQcard>::const_iterator i=vectorPQ.begin();i!=vectorPQ.end(); ++i){
+	//	vectorPQ.at(i)->dateOfNextQuestion(answersJudged.at(i));
 
+	//}
+	/*for_each(vectorPQ.begin(), vectorPQ.end(), [&evenCount] (int n){
+	
+		vectorPQ.at(n)->dateOfNextQuestion(answersJudge.at(n));
+	});
+		
+		*/	for (int n=0; n<vectorPQ.size(); n++){
+			vectorPQ.at(n)->dateOfNextQuestion(answersJudged.at(n));}
+}
+Deck::Deck()
+{
+
+}
 Deck::~Deck()
 {
 
