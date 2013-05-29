@@ -13,6 +13,7 @@ void Controller::connectView(View * view){
 	view_=view;
 
 	qRegisterMetaType<std::string>("std::string");
+	qRegisterMetaType<vector<bool>>("vector<bool>");
 
 
 	connect(view_, SIGNAL(setCurrentTaskNext(int, std::string, std::string)), this, SLOT(addTaskNext(int, std::string, std::string) ) );
@@ -23,6 +24,8 @@ void Controller::connectView(View * view){
 	connect(view_, SIGNAL(chooseCourse(std::string)), this, SLOT(addChooseCourse(std::string) ) );
 	connect(view_, SIGNAL(deleteCourse(std::string)), this, SLOT(deleteChooseCourse(std::string) ) );
 	connect(view_, SIGNAL(closeAnyWindow()), this, SLOT(addCloseAnyWindow() ) );
+	connect(view_, SIGNAL(computeMark(int, std::string, std::string) ), this, SLOT(computeMarkForOpen(int, std::string, std::string) ) );
+	connect(view_, SIGNAL(computeMark(int, vector<bool>, vector<bool>) ), this, SLOT(computeMarkForClose(int, vector<bool>, vector<bool>)) );
 
 }
 
@@ -103,4 +106,14 @@ void Controller::addCloseAnyWindow(){
 	catch (myException e){
 		emit error(e.returnMessage());
 	}
+}
+
+void Controller::computeMarkForOpen(int type, std::string user, std::string correct ){
+	model_->computeOpenMark(type,user,correct);
+	emit emitSuggestedMark(model_->getCurrentMark()->getValue() );
+}
+
+void Controller::computeMarkForClose(int type , vector<bool> user, vector<bool> correct){
+	model_->computeCloseMark(type,user,correct);
+	emit emitSuggestedMark(model_->getCurrentMark()->getValue() );
 }

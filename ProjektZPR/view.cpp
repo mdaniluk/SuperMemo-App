@@ -3,7 +3,7 @@
 #include "startmenu.h"
 #include <qmessagebox.h>
 #include "ui_projektzpr.h"
-#include <boost/algorithm/string.hpp>
+
 typedef std::vector<std::pair<string, string>> CloseAnswer; //wektor (odpowiedz + TRUE/FALSE) dla ka¿dego z pytan
 
 View::View(Controller* controller, QWidget *parent): myController_(controller), QMainWindow(parent){
@@ -13,6 +13,7 @@ View::View(Controller* controller, QWidget *parent): myController_(controller), 
 	connect(myController_, SIGNAL(enabledMainWindow()), this, SLOT(enabledMainWin() ) );
 	connect(myController_, SIGNAL(error(std::string)), this, SLOT(showError(std::string)) );
 	connect(myController_, SIGNAL( emitQuestionCardList(vector<PQcard>)), this, SLOT(showQuestionCardList(vector<PQcard>)) );
+	connect(myController_, SIGNAL(emitSuggestedMark(int) ), this, SLOT(setSuggesterMark(int) ) );
 	connect(this, SIGNAL(chooseCourse(std::string)), this, SLOT(on_beginChoose()) );
 
 	connect( verticalSlider, SIGNAL(valueChanged(int)),this, SLOT(changeValueOfSlider(int)) );
@@ -128,7 +129,7 @@ void View::showCurrentTask(){
 		verticalSlider->setValue(judgeVector_.at(currentTask_-1) );
 	}
 	else{
-		verticalSlider->setValue(5);
+		verticalSlider->setValue(0);
 		
 	}
 
@@ -185,38 +186,12 @@ void View::getCurrentTask(){
 
 void View::setCurrentTask(){
 }
-
-int View::computeSuggestedMark(){
-	int mark = 0;
+void View::computeSuggestedMark(){
+	
 	if(currentTaskType_ == 1){ //open
 		string userAnswer = answerOpenEdit->toPlainText().toStdString();
 		string correctAnswer = questiocard_->getAnswerOpen();
-		if(boost::iequals(userAnswer, correctAnswer) ){
-			mark = 5;
-		}
-		else
-			mark = 0;
-		int correct = 0;
-		int sizeMin;
-		int sizeMax;
-		if(userAnswer.size() > correctAnswer.size()){
-			sizeMin = correctAnswer.size();
-			sizeMax = userAnswer.size();
-		}	
-		else{
-			sizeMin = userAnswer.size();
-			sizeMax = correctAnswer.size();userAnswer.size();
-		}
-		for (int i = 0; i < sizeMin; i++ ) {
-			if (userAnswer[i] = correctAnswer[i]) {
-					correct++;
-			}
-		}
-		if(correct > 1)
-			mark = 5 * ((double)correct/(double)sizeMax);
-		else
-			mark = 0;
-
+		emit computeMark(currentTaskType_,userAnswer, correctAnswer);
 
 	}
 	else{
@@ -248,14 +223,14 @@ int View::computeSuggestedMark(){
 			if(close.at(i).second == "False")
 				correctAnswer.push_back(false);
 		}
-		int correct = 0;
-		for(int i = 0; i < userAnswer.size(); i++){
-			if(userAnswer.at(i) == correctAnswer.at(i) )
-				correct++;
-		}
-		mark = 5 * ((double)correct/(double)userAnswer.size());
+		emit computeMark(currentTaskType_,userAnswer, correctAnswer);
+
 	}
-	return mark;
+
+}
+
+void View::setSuggesterMark(int mark){
+	verticalSlider->setValue(mark);
 }
 void View::on_nextButton_clicked(){
 	
@@ -284,8 +259,8 @@ void View::on_backButton_clicked(){
 }
 
 void View::on_answerButton_clicked(){
-	int mark = computeSuggestedMark();
-	verticalSlider->setValue(mark);
+	computeSuggestedMark();
+	
 	if(currentTaskType_ == 0){
 		CloseAnswer closeAnswer = questiocard_->getcloseAnswer();
 		if(closeAnswer.size() > 0){
@@ -324,6 +299,7 @@ void View::on_answerButton_clicked(){
 		correctAnswer->show();
 
 	}
+
 }
 
 void View::changeValueOfSlider(int value){

@@ -116,6 +116,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="mark.cpp" />
     <ClCompile Include="model.cpp" />
     <ClCompile Include="start.cpp" />
     <ClCompile Include="questioncard.cpp" />
@@ -138,6 +139,7 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="mark.h" />
     <ClInclude Include="start.h" />
     <CustomBuild Include="questioncard.h">
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalInputs)</AdditionalInputs>

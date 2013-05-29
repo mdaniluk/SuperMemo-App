@@ -26,6 +26,9 @@ signals:
 	void closeAnyWindow();
 	void deleteCourse(std::string);
 	void endCourse(vector<int>);
+	void computeMark(int, std::string, std::string);
+	void computeMark(int, vector<bool>, vector<bool>);
+
 private slots:
 	void on_actionStart_triggered();
 	void on_actionNew_Course_triggered();
@@ -41,6 +44,7 @@ public slots:
 	void showError(std::string message);
 	void showQuestionCardList(vector<PQcard>);
 	void changeValueOfSlider(int);
+	void setSuggesterMark(int);
 private:
 	Controller* myController_;
 	void onBeginHide();
@@ -56,7 +60,8 @@ private:
 	void showCurrentTask(); 
 	void getCurrentTask();
 	void setCurrentTask();
-	int computeSuggestedMark();
+	void computeSuggestedMark();
+	int mark_;
 
 };
 

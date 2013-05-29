@@ -4,6 +4,7 @@ Model::Model()
 {
 	currentCourse = new Course();
 	start = new Start();
+	mark = new Mark();
 }
 
 Model::~Model()
@@ -31,4 +32,12 @@ void Model::setChooseCourse(std::string course){
 
 void Model::deleteChooseCourse(std::string course){
 	start->deleteCourse(course);
+}
+
+void Model::computeCloseMark(int type , vector<bool> user, vector<bool> correct ){
+	mark->computeForClose(type, user, correct);
+}
+
+void Model::computeOpenMark(int type, std::string user, std::string correct ){
+	mark->computeForOpen(type, user, correct);
 }
