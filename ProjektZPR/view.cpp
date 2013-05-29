@@ -83,7 +83,7 @@ void View::onBeginHide(){
 	trudne->hide();
 	latwe->hide();
 	verticalSlider->hide();
-	verticalSlider->setMaximum(10);
+	verticalSlider->setMaximum(5);
 	labelWelcome->show();
 	labelAuthors->show();
 	answerOpenEdit->hide();
