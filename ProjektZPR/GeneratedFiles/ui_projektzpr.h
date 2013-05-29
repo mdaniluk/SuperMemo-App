@@ -57,6 +57,7 @@ public:
     QLabel *bLabel;
     QLabel *cLabel;
     QLabel *dLabel;
+    QLabel *correctAnswer;
     QWidget *widget;
     QGridLayout *gridLayout_3;
     QLabel *answerEditCloseA;
@@ -127,7 +128,13 @@ public:
         verticalSlider->setOrientation(Qt::Vertical);
         question = new QLabel(centralWidget);
         question->setObjectName(QStringLiteral("question"));
-        question->setGeometry(QRect(50, 0, 501, 151));
+        question->setGeometry(QRect(30, 0, 501, 151));
+        QFont font1;
+        font1.setFamily(QStringLiteral("Calibri"));
+        font1.setPointSize(12);
+        font1.setBold(true);
+        font1.setWeight(75);
+        question->setFont(font1);
         answerOpenEdit = new QTextEdit(centralWidget);
         answerOpenEdit->setObjectName(QStringLiteral("answerOpenEdit"));
         answerOpenEdit->setGeometry(QRect(70, 140, 441, 111));
@@ -147,33 +154,37 @@ public:
         gridLayout->setContentsMargins(0, 0, 0, 0);
         aLabel = new QLabel(layoutWidget);
         aLabel->setObjectName(QStringLiteral("aLabel"));
-        QFont font1;
-        font1.setFamily(QStringLiteral("Cambria"));
-        font1.setPointSize(10);
-        font1.setBold(false);
-        font1.setWeight(50);
-        aLabel->setFont(font1);
+        QFont font2;
+        font2.setFamily(QStringLiteral("Cambria"));
+        font2.setPointSize(10);
+        font2.setBold(false);
+        font2.setWeight(50);
+        aLabel->setFont(font2);
 
         gridLayout->addWidget(aLabel, 0, 0, 1, 1);
 
         bLabel = new QLabel(layoutWidget);
         bLabel->setObjectName(QStringLiteral("bLabel"));
-        bLabel->setFont(font1);
+        bLabel->setFont(font2);
 
         gridLayout->addWidget(bLabel, 1, 0, 1, 1);
 
         cLabel = new QLabel(layoutWidget);
         cLabel->setObjectName(QStringLiteral("cLabel"));
-        cLabel->setFont(font1);
+        cLabel->setFont(font2);
 
         gridLayout->addWidget(cLabel, 2, 0, 1, 1);
 
         dLabel = new QLabel(layoutWidget);
         dLabel->setObjectName(QStringLiteral("dLabel"));
-        dLabel->setFont(font1);
+        dLabel->setFont(font2);
 
         gridLayout->addWidget(dLabel, 3, 0, 1, 1);
 
+        correctAnswer = new QLabel(centralWidget);
+        correctAnswer->setObjectName(QStringLiteral("correctAnswer"));
+        correctAnswer->setGeometry(QRect(65, 90, 441, 41));
+        correctAnswer->setFont(font1);
         widget = new QWidget(centralWidget);
         widget->setObjectName(QStringLiteral("widget"));
         widget->setGeometry(QRect(70, 111, 441, 131));
@@ -253,6 +264,7 @@ public:
         checkBoxB->raise();
         checkBoxC->raise();
         checkBoxD->raise();
+        correctAnswer->raise();
         menuBar = new QMenuBar(mainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
         menuBar->setGeometry(QRect(0, 0, 600, 21));
@@ -301,6 +313,7 @@ public:
         bLabel->setText(QApplication::translate("mainWindow", "b)", 0));
         cLabel->setText(QApplication::translate("mainWindow", "c)", 0));
         dLabel->setText(QApplication::translate("mainWindow", "d)", 0));
+        correctAnswer->setText(QString());
         answerEditCloseA->setText(QString());
         answerEditCloseC->setText(QString());
         answerEditCloseD->setText(QString());

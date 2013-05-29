@@ -2,6 +2,7 @@
 #include "createtest.h"
 #include "startmenu.h"
 #include <qmessagebox.h>
+#include "ui_projektzpr.h"
 typedef std::vector<std::pair<string, string>> CloseAnswer; //wektor (odpowiedz + TRUE/FALSE) dla ka¿dego z pytan
 
 View::View(Controller* controller, QWidget *parent): myController_(controller), QMainWindow(parent){
@@ -98,11 +99,15 @@ void View::prepareToOpen(){
 	checkBoxB->hide();
 	checkBoxC->hide();
 	checkBoxD->hide();
+	correctAnswer->hide();
 }
 
 void View::showCurrentTask(){
-
-
+	answerEditCloseA->setStyleSheet("QLabel {}");
+	answerEditCloseB->setStyleSheet("QLabel {}");
+	answerEditCloseC->setStyleSheet("QLabel {}");
+	answerEditCloseD->setStyleSheet("QLabel {}");
+	correctAnswer->hide();
 	questiocard_= taskVector_.at(currentTask_-1);
 	question->setText(QString::fromStdString(questiocard_->getQuestion()));
 	if(questiocard_->getQuestionType() == true){ //open answer
@@ -115,12 +120,12 @@ void View::showCurrentTask(){
 		answerOpenEdit->hide();
 
 		CloseAnswer closeAnswer = questiocard_->getcloseAnswer();
-		if(closeAnswer.size() == 4){
+		if(closeAnswer.size() > 0){
 			answerEditCloseA->setText(QString::fromStdString(closeAnswer.at(0).first) );
 			aLabel->show();
 			answerEditCloseA->show();
 			checkBoxA->show();
-			if(closeAnswer.at(1).first != ""){
+			if(closeAnswer.size() > 1 && closeAnswer.at(1).first != ""){
 				answerEditCloseB->setText(QString::fromStdString(closeAnswer.at(1).first) );
 				bLabel->show();
 				answerEditCloseB->show();
@@ -128,13 +133,13 @@ void View::showCurrentTask(){
 
 			}
 				
-			if(closeAnswer.at(2).first != ""){
+			if(closeAnswer.size() > 2 && closeAnswer.at(2).first != ""){
 				answerEditCloseC->setText(QString::fromStdString(closeAnswer.at(2).first) );
 				cLabel->show();
 				answerEditCloseC->show();
 				checkBoxC->show();
 			}
-			if(closeAnswer.at(3).first != ""){
+			if(closeAnswer.size() > 3 && closeAnswer.at(3).first != ""){
 				answerEditCloseD->setText(QString::fromStdString(closeAnswer.at(3).first) );
 				dLabel->show();
 				answerEditCloseD->show();
@@ -167,25 +172,40 @@ void View::on_backButton_clicked(){
 void View::on_answerButton_clicked(){
 	if(currentTaskType_ == 0){
 		CloseAnswer closeAnswer = questiocard_->getcloseAnswer();
+		if(closeAnswer.size() > 0){
+			if(closeAnswer.at(0).second == "True")
+				answerEditCloseA->setStyleSheet("QLabel { background-color : green; color : black; }");
+			else if(closeAnswer.at(0).second == "False")
+				answerEditCloseA->setStyleSheet("QLabel { background-color : red; color : black; }");
 
-		if(closeAnswer.at(0).second == "True")
-			answerEditCloseA->setStyleSheet("QLabel { background-color : green; color : black; }");
-		else if(closeAnswer.at(0).second == "False")
-			answerEditCloseA->setStyleSheet("QLabel { background-color : red; color : black; }");
+		}
+		if(closeAnswer.size() > 1){
+			if(closeAnswer.at(1).second == "True")
+				answerEditCloseB->setStyleSheet("QLabel { background-color : green; color : black; }");
+			else if(closeAnswer.at(1).second == "False")
+				answerEditCloseB->setStyleSheet("QLabel { background-color : red; color : black; }");
 
-		if(closeAnswer.at(1).second == "True")
-			answerEditCloseB->setStyleSheet("QLabel { background-color : green; color : black; }");
-		else if(closeAnswer.at(1).second == "False")
-			answerEditCloseB->setStyleSheet("QLabel { background-color : red; color : black; }");
-
-		if(closeAnswer.at(2).second == "True")
-			answerEditCloseC->setStyleSheet("QLabel { background-color : green; color : black; }");
-		else if(closeAnswer.at(2).second == "False")
-			answerEditCloseC->setStyleSheet("QLabel { background-color : red; color : black; }");
+		}
 		
-		if(closeAnswer.at(3).second == "True")
-			answerEditCloseD->setStyleSheet("QLabel { background-color : green; color : black; }");
-		else if(closeAnswer.at(3).second == "False")
-			answerEditCloseD->setStyleSheet("QLabel { background-color : red; color : black; }");
+		if(closeAnswer.size() > 2){
+			if(closeAnswer.at(2).second == "True")
+				answerEditCloseC->setStyleSheet("QLabel { background-color : green; color : black; }");
+			else if(closeAnswer.at(2).second == "False")
+				answerEditCloseC->setStyleSheet("QLabel { background-color : red; color : black; }");
+		}
+		
+		if(closeAnswer.size() > 3){
+			if(closeAnswer.at(3).second == "True")
+				answerEditCloseD->setStyleSheet("QLabel { background-color : green; color : black; }");
+			else if(closeAnswer.at(3).second == "False")
+				answerEditCloseD->setStyleSheet("QLabel { background-color : red; color : black; }");
+		}
+
+	}
+	else if(currentTaskType_ == 1){
+		correctAnswer->setText(QString::fromStdString("Correct Answer: " + questiocard_->getAnswerOpen() ) );
+		correctAnswer->setStyleSheet("QLabel { background-color : green; color : black; }");
+		correctAnswer->show();
+
 	}
 }

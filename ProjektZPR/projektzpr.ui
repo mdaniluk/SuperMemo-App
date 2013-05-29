@@ -142,11 +142,19 @@
    <widget class="QLabel" name="question">
     <property name="geometry">
      <rect>
-      <x>50</x>
+      <x>30</x>
       <y>0</y>
       <width>501</width>
       <height>151</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Calibri</family>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="text">
      <string/>
@@ -260,6 +268,27 @@
      </item>
     </layout>
    </widget>
+   <widget class="QLabel" name="correctAnswer">
+    <property name="geometry">
+     <rect>
+      <x>65</x>
+      <y>90</y>
+      <width>441</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Calibri</family>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
    <widget class="QWidget" name="">
     <property name="geometry">
      <rect>
@@ -362,6 +391,7 @@
    <zorder>checkBoxB</zorder>
    <zorder>checkBoxC</zorder>
    <zorder>checkBoxD</zorder>
+   <zorder>correctAnswer</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
