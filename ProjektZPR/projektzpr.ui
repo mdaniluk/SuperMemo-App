@@ -14,7 +14,7 @@
    <string>ProjektZPR</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="labelWelcome">
     <property name="geometry">
      <rect>
       <x>90</x>
@@ -35,7 +35,7 @@
      <string>Witaj w Supermemo </string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_2">
+   <widget class="QLabel" name="labelAuthors">
     <property name="geometry">
      <rect>
       <x>400</x>
@@ -139,19 +139,6 @@
      <enum>Qt::Vertical</enum>
     </property>
    </widget>
-   <widget class="QLabel" name="answer">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>160</y>
-      <width>501</width>
-      <height>131</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
    <widget class="QLabel" name="question">
     <property name="geometry">
      <rect>
@@ -165,20 +152,240 @@
      <string/>
     </property>
    </widget>
-   <zorder>label</zorder>
-   <zorder>label_2</zorder>
-   <zorder>answer</zorder>
-   <zorder>question</zorder>
+   <widget class="QTextEdit" name="answerOpenEdit">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>140</y>
+      <width>441</width>
+      <height>111</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="nextButton">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>260</y>
+      <width>151</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Next</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="backButton">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>260</y>
+      <width>156</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Back</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>110</y>
+      <width>20</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0">
+      <widget class="QLabel" name="aLabel">
+       <property name="font">
+        <font>
+         <family>Cambria</family>
+         <pointsize>10</pointsize>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>a)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="bLabel">
+       <property name="font">
+        <font>
+         <family>Cambria</family>
+         <pointsize>10</pointsize>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>b)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="cLabel">
+       <property name="font">
+        <font>
+         <family>Cambria</family>
+         <pointsize>10</pointsize>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>c)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="dLabel">
+       <property name="font">
+        <font>
+         <family>Cambria</family>
+         <pointsize>10</pointsize>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>d)</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QLabel" name="answerEditCloseA">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>110</y>
+      <width>391</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="answerEditCloseB">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>143</y>
+      <width>381</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="answerEditCloseC">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>178</y>
+      <width>381</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="answerEditCloseD">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>211</y>
+      <width>401</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBoxA">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>118</y>
+      <width>16</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBoxB">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>152</y>
+      <width>16</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBoxC">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>187</y>
+      <width>16</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBoxD">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>220</y>
+      <width>16</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <zorder>layoutWidget</zorder>
+   <zorder>labelWelcome</zorder>
+   <zorder>labelAuthors</zorder>
    <zorder>judge_button</zorder>
    <zorder>answer_button</zorder>
    <zorder>end_button</zorder>
-   <zorder>answer</zorder>
-   <zorder>question</zorder>
    <zorder>question</zorder>
    <zorder>progressBar</zorder>
    <zorder>latwe</zorder>
    <zorder>trudne</zorder>
    <zorder>verticalSlider</zorder>
+   <zorder>answerOpenEdit</zorder>
+   <zorder>nextButton</zorder>
+   <zorder>backButton</zorder>
+   <zorder>answerEditCloseA</zorder>
+   <zorder>answerEditCloseB</zorder>
+   <zorder>answerEditCloseC</zorder>
+   <zorder>answerEditCloseD</zorder>
+   <zorder>checkBoxA</zorder>
+   <zorder>checkBoxB</zorder>
+   <zorder>checkBoxC</zorder>
+   <zorder>checkBoxD</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">

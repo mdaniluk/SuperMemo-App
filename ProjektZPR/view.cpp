@@ -2,6 +2,7 @@
 #include "createtest.h"
 #include "startmenu.h"
 #include <qmessagebox.h>
+typedef std::vector<std::pair<string, string>> CloseAnswer; //wektor (odpowiedz + TRUE/FALSE) dla ka¿dego z pytan
 
 View::View(Controller* controller, QWidget *parent): myController_(controller), QMainWindow(parent){
 	setupUi(this);
@@ -13,16 +14,69 @@ View::View(Controller* controller, QWidget *parent): myController_(controller), 
 
 	onBeginHide();
 }
+
 View::~View()
 {
 
 }
+
 void View::showQuestionCardList(vector<PQcard> vectorPQcard)
 {	
-	boost::shared_ptr<QuestionCard> questiocard;
-	questiocard= vectorPQcard.at(1);
-	question->setText(QString::fromStdString(questiocard->getQuestion()));
+	taskVector_ = vectorPQcard;
 
+	boost::shared_ptr<QuestionCard> questiocard;
+	questiocard= taskVector_.at(0);
+
+	question->setText(QString::fromStdString(questiocard->getQuestion()));
+	if(questiocard->getQuestionType() == true) //open answer
+		answerOpenEdit->show();
+	else{
+		answerOpenEdit->hide();
+		
+		
+		
+		
+		CloseAnswer closeAnswer = questiocard->getcloseAnswer();
+		if(closeAnswer.size() != 0){
+			answerEditCloseA->setText(QString::fromStdString(closeAnswer.at(0).first) );
+			aLabel->show();
+			answerEditCloseA->show();
+			checkBoxA->show();
+			if(closeAnswer.size() > 1){
+				answerEditCloseB->setText(QString::fromStdString(closeAnswer.at(1).first) );
+				bLabel->show();
+				answerEditCloseB->show();
+				checkBoxB->show();
+
+			}
+				
+			if(closeAnswer.size() > 2){
+				answerEditCloseC->setText(QString::fromStdString(closeAnswer.at(2).first) );
+				cLabel->show();
+				answerEditCloseC->show();
+				checkBoxC->show();
+			}
+			if(closeAnswer.size() > 3){
+				answerEditCloseD->setText(QString::fromStdString(closeAnswer.at(3).first) );
+				dLabel->show();
+				answerEditCloseD->show();
+				checkBoxD->show();
+			}
+		}
+		
+
+		
+		
+		
+		
+		
+		
+		
+	
+		
+
+	}
+		
 	
 }
 void View::on_beginChoose(){
@@ -33,8 +87,12 @@ void View::on_beginChoose(){
 	trudne->show();
 	latwe->show();
 	verticalSlider->show();
-	label->hide();
-	label_2->hide();
+
+	labelWelcome->hide();
+	labelAuthors->hide();
+	
+	nextButton->show();
+	backButton->show();
 }
 void View::showYou(){
 	this->show();
@@ -67,6 +125,21 @@ void View::onBeginHide(){
 	trudne->hide();
 	latwe->hide();
 	verticalSlider->hide();
-	label->show();
-	label_2->show();
+	labelWelcome->show();
+	labelAuthors->show();
+	answerOpenEdit->hide();
+	nextButton->hide();
+	backButton->hide();
+	aLabel->hide();
+	bLabel->hide();
+	cLabel->hide();
+	dLabel->hide();
+	answerEditCloseA->hide();
+	answerEditCloseB->hide();
+	answerEditCloseC->hide();
+	answerEditCloseD->hide();
+	checkBoxA->hide();
+	checkBoxB->hide();
+	checkBoxC->hide();
+	checkBoxD->hide();
 }

@@ -4,6 +4,9 @@
 #include "ui_projektzpr.h"
 #include "controller.h"
 #include "deck.h"
+
+typedef boost::shared_ptr<QuestionCard> PQcard;
+
 class Controller;
 
 class View : public QMainWindow, public Ui::mainWindow
@@ -34,6 +37,7 @@ public slots:
 private:
 	Controller* myController_;
 	void onBeginHide();
+	vector<PQcard> taskVector_;
 
 };
 
