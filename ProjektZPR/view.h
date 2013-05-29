@@ -5,6 +5,9 @@
 #include "ui_projektzpr.h"
 #include "controller.h"
 #include "deck.h"
+
+typedef boost::shared_ptr<QuestionCard> PQcard;
+
 class Controller;
 
 class View : public QMainWindow, public Ui::mainWindow
@@ -26,7 +29,9 @@ private slots:
 	void on_actionStart_triggered();
 	void on_actionNew_Course_triggered();
 	void on_beginChoose();
-	
+	void on_nextButton_clicked();
+	void on_backButton_clicked();
+	void on_answerButton_clicked();
 public slots:
 	void enabledMainWin();
 	void showYou();
@@ -35,6 +40,15 @@ public slots:
 private:
 	Controller* myController_;
 	void onBeginHide();
+	vector<PQcard> taskVector_;
+	boost::shared_ptr<QuestionCard> questiocard_;
+
+	int currentTask_;
+	int currentTaskType_; // 1 - open, 0 - close
+	int numberOfAllTasks_;
+	void prepareToClose();
+	void prepareToOpen();
+	void showCurrentTask(); 
 
 };
 
