@@ -54,6 +54,8 @@ private:
 	void prepareToClose();
 	void prepareToOpen();
 	void showCurrentTask(); 
+	void getCurrentTask();
+	void setCurrentTask();
 
 };
 

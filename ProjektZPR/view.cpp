@@ -123,17 +123,25 @@ void View::showCurrentTask(){
 	questiocard_= taskVector_.at(currentTask_-1);
 	question->setText(QString::fromStdString(questiocard_->getQuestion()));
 
-	if(judgeVector_.size() >= currentTask_)
+	if(judgeVector_.size() >= currentTask_){
 		verticalSlider->setValue(judgeVector_.at(currentTask_-1) );
-	else
+	}
+	else{
 		verticalSlider->setValue(5);
+		
+	}
 
 	if(questiocard_->getQuestionType() == true){ //open answer
 		currentTaskType_ = 1 ;
+		answerOpenEdit->clear();
 		answerOpenEdit->show();
 		prepareToOpen();
 	}
 	else{
+		checkBoxA->setChecked(false);
+		checkBoxB->setChecked(false);
+		checkBoxC->setChecked(false);
+		checkBoxD->setChecked(false);
 		currentTaskType_ = 0;
 		answerOpenEdit->hide();
 
@@ -169,9 +177,18 @@ void View::showCurrentTask(){
 
 	}
 }
+
+void::View::getCurrentTask(){
+
+}
+
+void::View::setCurrentTask(){
+}
+
 void View::on_nextButton_clicked(){
 	
 	if(currentTask_ < taskVector_.size() ){
+		
 		currentTask_++;
 		showCurrentTask();
 		//progressBar->setValue( ( ((double)(currentTask_-1)/(double)numberOfAllTasks_) )*100);

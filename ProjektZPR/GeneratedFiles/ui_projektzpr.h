@@ -26,6 +26,7 @@
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTextEdit>
 #include <QtWidgets/QToolBar>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -64,13 +65,13 @@ public:
     QLabel *answerEditCloseC;
     QLabel *answerEditCloseD;
     QLabel *answerEditCloseB;
-    QWidget *layoutWidget2;
-    QGridLayout *gridLayout_2;
-    QCheckBox *checkBoxA;
+    QLabel *valueJudge;
+    QWidget *widget;
+    QVBoxLayout *verticalLayout;
     QCheckBox *checkBoxB;
+    QCheckBox *checkBoxA;
     QCheckBox *checkBoxC;
     QCheckBox *checkBoxD;
-    QLabel *valueJudge;
     QMenuBar *menuBar;
     QMenu *menuFile;
     QMenu *menuCreate;
@@ -129,7 +130,7 @@ public:
         verticalSlider->setOrientation(Qt::Vertical);
         question = new QLabel(centralWidget);
         question->setObjectName(QStringLiteral("question"));
-        question->setGeometry(QRect(30, 0, 501, 151));
+        question->setGeometry(QRect(50, -10, 491, 121));
         QFont font1;
         font1.setFamily(QStringLiteral("Calibri"));
         font1.setPointSize(12);
@@ -214,37 +215,37 @@ public:
 
         gridLayout_3->addWidget(answerEditCloseB, 1, 0, 1, 1);
 
-        layoutWidget2 = new QWidget(centralWidget);
-        layoutWidget2->setObjectName(QStringLiteral("layoutWidget2"));
-        layoutWidget2->setGeometry(QRect(41, 102, 20, 151));
-        gridLayout_2 = new QGridLayout(layoutWidget2);
-        gridLayout_2->setSpacing(6);
-        gridLayout_2->setContentsMargins(11, 11, 11, 11);
-        gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
-        gridLayout_2->setContentsMargins(0, 0, 0, 0);
-        checkBoxA = new QCheckBox(layoutWidget2);
-        checkBoxA->setObjectName(QStringLiteral("checkBoxA"));
-
-        gridLayout_2->addWidget(checkBoxA, 0, 0, 1, 1);
-
-        checkBoxB = new QCheckBox(layoutWidget2);
-        checkBoxB->setObjectName(QStringLiteral("checkBoxB"));
-
-        gridLayout_2->addWidget(checkBoxB, 1, 0, 1, 1);
-
-        checkBoxC = new QCheckBox(layoutWidget2);
-        checkBoxC->setObjectName(QStringLiteral("checkBoxC"));
-
-        gridLayout_2->addWidget(checkBoxC, 2, 0, 1, 1);
-
-        checkBoxD = new QCheckBox(layoutWidget2);
-        checkBoxD->setObjectName(QStringLiteral("checkBoxD"));
-
-        gridLayout_2->addWidget(checkBoxD, 3, 0, 1, 1);
-
         valueJudge = new QLabel(centralWidget);
         valueJudge->setObjectName(QStringLiteral("valueJudge"));
         valueJudge->setGeometry(QRect(561, 280, 21, 16));
+        widget = new QWidget(centralWidget);
+        widget->setObjectName(QStringLiteral("widget"));
+        widget->setGeometry(QRect(40, 102, 16, 151));
+        verticalLayout = new QVBoxLayout(widget);
+        verticalLayout->setSpacing(6);
+        verticalLayout->setContentsMargins(11, 11, 11, 11);
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        verticalLayout->setContentsMargins(0, 0, 0, 0);
+        checkBoxB = new QCheckBox(widget);
+        checkBoxB->setObjectName(QStringLiteral("checkBoxB"));
+
+        verticalLayout->addWidget(checkBoxB);
+
+        checkBoxA = new QCheckBox(widget);
+        checkBoxA->setObjectName(QStringLiteral("checkBoxA"));
+
+        verticalLayout->addWidget(checkBoxA);
+
+        checkBoxC = new QCheckBox(widget);
+        checkBoxC->setObjectName(QStringLiteral("checkBoxC"));
+
+        verticalLayout->addWidget(checkBoxC);
+
+        checkBoxD = new QCheckBox(widget);
+        checkBoxD->setObjectName(QStringLiteral("checkBoxD"));
+
+        verticalLayout->addWidget(checkBoxD);
+
         mainWindow->setCentralWidget(centralWidget);
         layoutWidget->raise();
         layoutWidget->raise();
@@ -264,6 +265,7 @@ public:
         backButton->raise();
         correctAnswer->raise();
         valueJudge->raise();
+        checkBoxA->raise();
         menuBar = new QMenuBar(mainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
         menuBar->setGeometry(QRect(0, 0, 600, 21));
@@ -317,11 +319,11 @@ public:
         answerEditCloseC->setText(QString());
         answerEditCloseD->setText(QString());
         answerEditCloseB->setText(QString());
-        checkBoxA->setText(QString());
+        valueJudge->setText(QString());
         checkBoxB->setText(QString());
+        checkBoxA->setText(QString());
         checkBoxC->setText(QString());
         checkBoxD->setText(QString());
-        valueJudge->setText(QString());
         menuFile->setTitle(QApplication::translate("mainWindow", "File", 0));
         menuCreate->setTitle(QApplication::translate("mainWindow", "Create", 0));
     } // retranslateUi
