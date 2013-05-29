@@ -41,7 +41,7 @@ public:
     QLabel *labelWelcome;
     QLabel *labelAuthors;
     QPushButton *judge_button;
-    QPushButton *answer_button;
+    QPushButton *answerButton;
     QPushButton *end_button;
     QProgressBar *progressBar;
     QLabel *latwe;
@@ -105,9 +105,9 @@ public:
         judge_button = new QPushButton(centralWidget);
         judge_button->setObjectName(QStringLiteral("judge_button"));
         judge_button->setGeometry(QRect(410, 300, 75, 23));
-        answer_button = new QPushButton(centralWidget);
-        answer_button->setObjectName(QStringLiteral("answer_button"));
-        answer_button->setGeometry(QRect(490, 300, 75, 23));
+        answerButton = new QPushButton(centralWidget);
+        answerButton->setObjectName(QStringLiteral("answerButton"));
+        answerButton->setGeometry(QRect(490, 300, 75, 23));
         end_button = new QPushButton(centralWidget);
         end_button->setObjectName(QStringLiteral("end_button"));
         end_button->setGeometry(QRect(330, 300, 75, 23));
@@ -204,7 +204,7 @@ public:
 
         widget1 = new QWidget(centralWidget);
         widget1->setObjectName(QStringLiteral("widget1"));
-        widget1->setGeometry(QRect(41, 109, 20, 141));
+        widget1->setGeometry(QRect(41, 102, 20, 151));
         gridLayout_2 = new QGridLayout(widget1);
         gridLayout_2->setSpacing(6);
         gridLayout_2->setContentsMargins(11, 11, 11, 11);
@@ -235,7 +235,7 @@ public:
         labelWelcome->raise();
         labelAuthors->raise();
         judge_button->raise();
-        answer_button->raise();
+        answerButton->raise();
         end_button->raise();
         question->raise();
         progressBar->raise();
@@ -290,7 +290,7 @@ public:
         labelWelcome->setText(QApplication::translate("mainWindow", "Witaj w Supermemo ", 0));
         labelAuthors->setText(QApplication::translate("mainWindow", "Autors: Micha\305\202 Daniluk & Piotr Ma\305\202ecki", 0));
         judge_button->setText(QApplication::translate("mainWindow", "Judge", 0));
-        answer_button->setText(QApplication::translate("mainWindow", "Answer", 0));
+        answerButton->setText(QApplication::translate("mainWindow", "Answer", 0));
         end_button->setText(QApplication::translate("mainWindow", "End", 0));
         latwe->setText(QApplication::translate("mainWindow", "\305\201atwe", 0));
         trudne->setText(QApplication::translate("mainWindow", "Trudne", 0));

@@ -31,7 +31,7 @@ void View::showQuestionCardList(vector<PQcard> vectorPQcard)
 }
 void View::on_beginChoose(){
 	progressBar->show();
-	answer_button->show();
+	answerButton->show();
 	judge_button->show();
 	end_button->show();
 	trudne->show();
@@ -71,7 +71,7 @@ void View::enabledMainWin(){
 
 void View::onBeginHide(){
 	progressBar->hide();
-	answer_button->hide();
+	answerButton->hide();
 	judge_button->hide();
 	end_button->hide();
 	trudne->hide();
@@ -101,17 +101,20 @@ void View::prepareToOpen(){
 }
 
 void View::showCurrentTask(){
-	boost::shared_ptr<QuestionCard> questiocard;
-	questiocard= taskVector_.at(currentTask_-1);
-	question->setText(QString::fromStdString(questiocard->getQuestion()));
-	if(questiocard->getQuestionType() == true){ //open answer
+
+
+	questiocard_= taskVector_.at(currentTask_-1);
+	question->setText(QString::fromStdString(questiocard_->getQuestion()));
+	if(questiocard_->getQuestionType() == true){ //open answer
+		currentTaskType_ = 1 ;
 		answerOpenEdit->show();
 		prepareToOpen();
 	}
 	else{
+		currentTaskType_ = 0;
 		answerOpenEdit->hide();
 
-		CloseAnswer closeAnswer = questiocard->getcloseAnswer();
+		CloseAnswer closeAnswer = questiocard_->getcloseAnswer();
 		if(closeAnswer.size() == 4){
 			answerEditCloseA->setText(QString::fromStdString(closeAnswer.at(0).first) );
 			aLabel->show();
@@ -159,4 +162,30 @@ void View::on_backButton_clicked(){
 		showCurrentTask();
 	}
 	
+}
+
+void View::on_answerButton_clicked(){
+	if(currentTaskType_ == 0){
+		CloseAnswer closeAnswer = questiocard_->getcloseAnswer();
+
+		if(closeAnswer.at(0).second == "True")
+			answerEditCloseA->setStyleSheet("QLabel { background-color : green; color : black; }");
+		else if(closeAnswer.at(0).second == "False")
+			answerEditCloseA->setStyleSheet("QLabel { background-color : red; color : black; }");
+
+		if(closeAnswer.at(1).second == "True")
+			answerEditCloseB->setStyleSheet("QLabel { background-color : green; color : black; }");
+		else if(closeAnswer.at(1).second == "False")
+			answerEditCloseB->setStyleSheet("QLabel { background-color : red; color : black; }");
+
+		if(closeAnswer.at(2).second == "True")
+			answerEditCloseC->setStyleSheet("QLabel { background-color : green; color : black; }");
+		else if(closeAnswer.at(2).second == "False")
+			answerEditCloseC->setStyleSheet("QLabel { background-color : red; color : black; }");
+		
+		if(closeAnswer.at(3).second == "True")
+			answerEditCloseD->setStyleSheet("QLabel { background-color : green; color : black; }");
+		else if(closeAnswer.at(3).second == "False")
+			answerEditCloseD->setStyleSheet("QLabel { background-color : red; color : black; }");
+	}
 }
