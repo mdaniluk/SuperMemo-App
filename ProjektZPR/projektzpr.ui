@@ -353,14 +353,14 @@
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
-      <widget class="QCheckBox" name="checkBoxB">
+      <widget class="QCheckBox" name="checkBoxA">
        <property name="text">
         <string/>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QCheckBox" name="checkBoxA">
+      <widget class="QCheckBox" name="checkBoxB">
        <property name="text">
         <string/>
        </property>
@@ -400,7 +400,7 @@
    <zorder>backButton</zorder>
    <zorder>correctAnswer</zorder>
    <zorder>valueJudge</zorder>
-   <zorder>checkBoxA</zorder>
+   <zorder>checkBoxB</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">

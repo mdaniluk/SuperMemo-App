@@ -3,6 +3,7 @@
 #include "startmenu.h"
 #include <qmessagebox.h>
 #include "ui_projektzpr.h"
+#include <boost/algorithm/string.hpp>
 typedef std::vector<std::pair<string, string>> CloseAnswer; //wektor (odpowiedz + TRUE/FALSE) dla ka¿dego z pytan
 
 View::View(Controller* controller, QWidget *parent): myController_(controller), QMainWindow(parent){
@@ -178,13 +179,84 @@ void View::showCurrentTask(){
 	}
 }
 
-void::View::getCurrentTask(){
+void View::getCurrentTask(){
 
 }
 
-void::View::setCurrentTask(){
+void View::setCurrentTask(){
 }
 
+int View::computeSuggestedMark(){
+	int mark = 0;
+	if(currentTaskType_ == 1){ //open
+		string userAnswer = answerOpenEdit->toPlainText().toStdString();
+		string correctAnswer = questiocard_->getAnswerOpen();
+		if(boost::iequals(userAnswer, correctAnswer) ){
+			mark = 5;
+		}
+		else
+			mark = 0;
+		int correct = 0;
+		int sizeMin;
+		int sizeMax;
+		if(userAnswer.size() > correctAnswer.size()){
+			sizeMin = correctAnswer.size();
+			sizeMax = userAnswer.size();
+		}	
+		else{
+			sizeMin = userAnswer.size();
+			sizeMax = correctAnswer.size();userAnswer.size();
+		}
+		for (int i = 0; i < sizeMin; i++ ) {
+			if (userAnswer[i] = correctAnswer[i]) {
+					correct++;
+			}
+		}
+		if(correct > 1)
+			mark = 5 * ((double)correct/(double)sizeMax);
+		else
+			mark = 0;
+
+
+	}
+	else{
+		vector<bool> userAnswer;
+		vector<bool> correctAnswer;
+		CloseAnswer close = questiocard_->getcloseAnswer();
+		for(int i = 0; i < close.size(); i++){
+			bool userValue;
+			if(i == 0 && !checkBoxA->isHidden()){
+				userValue = checkBoxA->isChecked();
+				userAnswer.push_back(userValue);
+			}
+			if(i == 1 && !checkBoxB->isHidden()){
+				userValue = checkBoxB->isChecked();
+				userAnswer.push_back(userValue);
+			}
+			if(i == 2 && !checkBoxC->isHidden()){
+				userValue = checkBoxC->isChecked();
+				userAnswer.push_back(userValue);
+			}
+			if(i == 3 && !checkBoxD->isHidden()){
+				userValue = checkBoxD->isChecked();
+				userAnswer.push_back(userValue);
+			}
+
+			
+			if(close.at(i).second == "True")
+				correctAnswer.push_back(true);
+			if(close.at(i).second == "False")
+				correctAnswer.push_back(false);
+		}
+		int correct = 0;
+		for(int i = 0; i < userAnswer.size(); i++){
+			if(userAnswer.at(i) == correctAnswer.at(i) )
+				correct++;
+		}
+		mark = 5 * ((double)correct/(double)userAnswer.size());
+	}
+	return mark;
+}
 void View::on_nextButton_clicked(){
 	
 	if(currentTask_ < taskVector_.size() ){
@@ -212,6 +284,8 @@ void View::on_backButton_clicked(){
 }
 
 void View::on_answerButton_clicked(){
+	int mark = computeSuggestedMark();
+	verticalSlider->setValue(mark);
 	if(currentTaskType_ == 0){
 		CloseAnswer closeAnswer = questiocard_->getcloseAnswer();
 		if(closeAnswer.size() > 0){

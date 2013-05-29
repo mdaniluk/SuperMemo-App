@@ -68,8 +68,8 @@ public:
     QLabel *valueJudge;
     QWidget *widget;
     QVBoxLayout *verticalLayout;
-    QCheckBox *checkBoxB;
     QCheckBox *checkBoxA;
+    QCheckBox *checkBoxB;
     QCheckBox *checkBoxC;
     QCheckBox *checkBoxD;
     QMenuBar *menuBar;
@@ -226,15 +226,15 @@ public:
         verticalLayout->setContentsMargins(11, 11, 11, 11);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
-        checkBoxB = new QCheckBox(widget);
-        checkBoxB->setObjectName(QStringLiteral("checkBoxB"));
-
-        verticalLayout->addWidget(checkBoxB);
-
         checkBoxA = new QCheckBox(widget);
         checkBoxA->setObjectName(QStringLiteral("checkBoxA"));
 
         verticalLayout->addWidget(checkBoxA);
+
+        checkBoxB = new QCheckBox(widget);
+        checkBoxB->setObjectName(QStringLiteral("checkBoxB"));
+
+        verticalLayout->addWidget(checkBoxB);
 
         checkBoxC = new QCheckBox(widget);
         checkBoxC->setObjectName(QStringLiteral("checkBoxC"));
@@ -265,7 +265,7 @@ public:
         backButton->raise();
         correctAnswer->raise();
         valueJudge->raise();
-        checkBoxA->raise();
+        checkBoxB->raise();
         menuBar = new QMenuBar(mainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
         menuBar->setGeometry(QRect(0, 0, 600, 21));
@@ -320,8 +320,8 @@ public:
         answerEditCloseD->setText(QString());
         answerEditCloseB->setText(QString());
         valueJudge->setText(QString());
-        checkBoxB->setText(QString());
         checkBoxA->setText(QString());
+        checkBoxB->setText(QString());
         checkBoxC->setText(QString());
         checkBoxD->setText(QString());
         menuFile->setTitle(QApplication::translate("mainWindow", "File", 0));

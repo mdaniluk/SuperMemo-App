@@ -56,6 +56,7 @@ private:
 	void showCurrentTask(); 
 	void getCurrentTask();
 	void setCurrentTask();
+	int computeSuggestedMark();
 
 };
 
