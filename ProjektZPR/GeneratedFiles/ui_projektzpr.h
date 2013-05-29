@@ -57,10 +57,14 @@ public:
     QLabel *bLabel;
     QLabel *cLabel;
     QLabel *dLabel;
+    QWidget *widget;
+    QGridLayout *gridLayout_3;
     QLabel *answerEditCloseA;
-    QLabel *answerEditCloseB;
     QLabel *answerEditCloseC;
     QLabel *answerEditCloseD;
+    QLabel *answerEditCloseB;
+    QWidget *widget1;
+    QGridLayout *gridLayout_2;
     QCheckBox *checkBoxA;
     QCheckBox *checkBoxB;
     QCheckBox *checkBoxC;
@@ -170,30 +174,62 @@ public:
 
         gridLayout->addWidget(dLabel, 3, 0, 1, 1);
 
-        answerEditCloseA = new QLabel(centralWidget);
+        widget = new QWidget(centralWidget);
+        widget->setObjectName(QStringLiteral("widget"));
+        widget->setGeometry(QRect(70, 111, 441, 131));
+        gridLayout_3 = new QGridLayout(widget);
+        gridLayout_3->setSpacing(6);
+        gridLayout_3->setContentsMargins(11, 11, 11, 11);
+        gridLayout_3->setObjectName(QStringLiteral("gridLayout_3"));
+        gridLayout_3->setContentsMargins(0, 0, 0, 0);
+        answerEditCloseA = new QLabel(widget);
         answerEditCloseA->setObjectName(QStringLiteral("answerEditCloseA"));
-        answerEditCloseA->setGeometry(QRect(70, 110, 391, 31));
-        answerEditCloseB = new QLabel(centralWidget);
-        answerEditCloseB->setObjectName(QStringLiteral("answerEditCloseB"));
-        answerEditCloseB->setGeometry(QRect(70, 143, 381, 31));
-        answerEditCloseC = new QLabel(centralWidget);
+
+        gridLayout_3->addWidget(answerEditCloseA, 0, 0, 1, 1);
+
+        answerEditCloseC = new QLabel(widget);
         answerEditCloseC->setObjectName(QStringLiteral("answerEditCloseC"));
-        answerEditCloseC->setGeometry(QRect(70, 178, 381, 31));
-        answerEditCloseD = new QLabel(centralWidget);
+
+        gridLayout_3->addWidget(answerEditCloseC, 2, 0, 1, 1);
+
+        answerEditCloseD = new QLabel(widget);
         answerEditCloseD->setObjectName(QStringLiteral("answerEditCloseD"));
-        answerEditCloseD->setGeometry(QRect(70, 211, 401, 31));
-        checkBoxA = new QCheckBox(centralWidget);
+
+        gridLayout_3->addWidget(answerEditCloseD, 3, 0, 1, 1);
+
+        answerEditCloseB = new QLabel(widget);
+        answerEditCloseB->setObjectName(QStringLiteral("answerEditCloseB"));
+
+        gridLayout_3->addWidget(answerEditCloseB, 1, 0, 1, 1);
+
+        widget1 = new QWidget(centralWidget);
+        widget1->setObjectName(QStringLiteral("widget1"));
+        widget1->setGeometry(QRect(41, 109, 20, 141));
+        gridLayout_2 = new QGridLayout(widget1);
+        gridLayout_2->setSpacing(6);
+        gridLayout_2->setContentsMargins(11, 11, 11, 11);
+        gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
+        gridLayout_2->setContentsMargins(0, 0, 0, 0);
+        checkBoxA = new QCheckBox(widget1);
         checkBoxA->setObjectName(QStringLiteral("checkBoxA"));
-        checkBoxA->setGeometry(QRect(40, 118, 16, 16));
-        checkBoxB = new QCheckBox(centralWidget);
+
+        gridLayout_2->addWidget(checkBoxA, 0, 0, 1, 1);
+
+        checkBoxB = new QCheckBox(widget1);
         checkBoxB->setObjectName(QStringLiteral("checkBoxB"));
-        checkBoxB->setGeometry(QRect(40, 152, 16, 16));
-        checkBoxC = new QCheckBox(centralWidget);
+
+        gridLayout_2->addWidget(checkBoxB, 1, 0, 1, 1);
+
+        checkBoxC = new QCheckBox(widget1);
         checkBoxC->setObjectName(QStringLiteral("checkBoxC"));
-        checkBoxC->setGeometry(QRect(40, 187, 16, 16));
-        checkBoxD = new QCheckBox(centralWidget);
+
+        gridLayout_2->addWidget(checkBoxC, 2, 0, 1, 1);
+
+        checkBoxD = new QCheckBox(widget1);
         checkBoxD->setObjectName(QStringLiteral("checkBoxD"));
-        checkBoxD->setGeometry(QRect(40, 220, 16, 16));
+
+        gridLayout_2->addWidget(checkBoxD, 3, 0, 1, 1);
+
         mainWindow->setCentralWidget(centralWidget);
         layoutWidget->raise();
         labelWelcome->raise();
@@ -266,9 +302,9 @@ public:
         cLabel->setText(QApplication::translate("mainWindow", "c)", 0));
         dLabel->setText(QApplication::translate("mainWindow", "d)", 0));
         answerEditCloseA->setText(QString());
-        answerEditCloseB->setText(QString());
         answerEditCloseC->setText(QString());
         answerEditCloseD->setText(QString());
+        answerEditCloseB->setText(QString());
         checkBoxA->setText(QString());
         checkBoxB->setText(QString());
         checkBoxC->setText(QString());

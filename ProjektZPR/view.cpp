@@ -112,12 +112,12 @@ void View::showCurrentTask(){
 		answerOpenEdit->hide();
 
 		CloseAnswer closeAnswer = questiocard->getcloseAnswer();
-		if(closeAnswer.size() != 0){
+		if(closeAnswer.size() == 4){
 			answerEditCloseA->setText(QString::fromStdString(closeAnswer.at(0).first) );
 			aLabel->show();
 			answerEditCloseA->show();
 			checkBoxA->show();
-			if(closeAnswer.size() > 1){
+			if(closeAnswer.at(1).first != ""){
 				answerEditCloseB->setText(QString::fromStdString(closeAnswer.at(1).first) );
 				bLabel->show();
 				answerEditCloseB->show();
@@ -125,13 +125,13 @@ void View::showCurrentTask(){
 
 			}
 				
-			if(closeAnswer.size() > 2){
+			if(closeAnswer.at(2).first != ""){
 				answerEditCloseC->setText(QString::fromStdString(closeAnswer.at(2).first) );
 				cLabel->show();
 				answerEditCloseC->show();
 				checkBoxC->show();
 			}
-			if(closeAnswer.size() > 3){
+			if(closeAnswer.at(3).first != ""){
 				answerEditCloseD->setText(QString::fromStdString(closeAnswer.at(3).first) );
 				dLabel->show();
 				answerEditCloseD->show();
