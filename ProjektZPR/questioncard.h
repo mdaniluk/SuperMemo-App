@@ -4,8 +4,18 @@
 #include <QObject>
 #include <list>
 #include <vector>
+#include <boost/date_time/gregorian/gregorian.hpp>
+#include <boost/serialization/nvp.hpp>
 using std::string;
-typedef std::vector<std::pair<string, string>> CloseAnswer; //wektor (odpowiedz + TRUE/FALSE) dla ka¿dego z pytan
+using boost::serialization::make_nvp;
+typedef std::vector<std::pair<string, string>> CloseAnswer; 
+
+/**
+ * Class which represents logical structure of question, consists all elements of question. Enables setting 
+ * next date of showing each question.
+ * @author Piotr
+ */
+
 class QuestionCard 
 {
 
@@ -14,6 +24,7 @@ public:
 	QuestionCard (){};
 	QuestionCard( const std::string question,  const std::string answer, const int idQuestion , const bool questionType);
 	QuestionCard( const std::string question,  CloseAnswer closeanswer, const int idQuestion, const bool questionType);
+	boost::gregorian::date dateOfNextQuestion(int mark );
 	bool getQuestionType() {return questionType_;}
 	int getIdQuestion() {return idQuestion_;}
 	string getAnswerOpen() {return answerOpen_;}
@@ -22,12 +33,36 @@ public:
 	~QuestionCard();
 
 private:
-	
+	friend class boost::serialization::access;
+	template<class Archive>
+    void serialize(Archive & ar, const unsigned int version){
+		ar & BOOST_SERIALIZATION_NVP(questionType_);
+		ar & BOOST_SERIALIZATION_NVP(idQuestion_);
+		ar & BOOST_SERIALIZATION_NVP(answerOpen_);
+		ar & BOOST_SERIALIZATION_NVP(closeAnswer_);
+		ar & BOOST_SERIALIZATION_NVP(question_);
+		ar & BOOST_SERIALIZATION_NVP(powtorzenie_);
+		ar & BOOST_SERIALIZATION_NVP(how_many_);
+		ar & BOOST_SERIALIZATION_NVP(eFactor_);
+		ar & BOOST_SERIALIZATION_NVP(interval_);
+
+    }
+	// Question type True when open, False when close
 	bool questionType_;
+	// which question
 	int idQuestion_;
+	// open answer
 	string answerOpen_;
+	// question
 	string question_;
+	//vector of pairs (pair consists of 2 strings, answer to question and True or False)
 	CloseAnswer closeAnswer_;
+	//how many times question was answered by user
+	int how_many_;
+	// question difficulty
+	double eFactor_;
+	// interval between appearing question again in program (in days)
+	double interval_;
 
 };
 
