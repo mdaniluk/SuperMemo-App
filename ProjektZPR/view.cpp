@@ -22,62 +22,12 @@ View::~View()
 
 void View::showQuestionCardList(vector<PQcard> vectorPQcard)
 {	
+	currentTask_ = 1;
+	
 	taskVector_ = vectorPQcard;
+	numberOfAllTasks_ = taskVector_.size();
+	showCurrentTask();
 
-	boost::shared_ptr<QuestionCard> questiocard;
-	questiocard= taskVector_.at(0);
-
-	question->setText(QString::fromStdString(questiocard->getQuestion()));
-	if(questiocard->getQuestionType() == true) //open answer
-		answerOpenEdit->show();
-	else{
-		answerOpenEdit->hide();
-		
-		
-		
-		
-		CloseAnswer closeAnswer = questiocard->getcloseAnswer();
-		if(closeAnswer.size() != 0){
-			answerEditCloseA->setText(QString::fromStdString(closeAnswer.at(0).first) );
-			aLabel->show();
-			answerEditCloseA->show();
-			checkBoxA->show();
-			if(closeAnswer.size() > 1){
-				answerEditCloseB->setText(QString::fromStdString(closeAnswer.at(1).first) );
-				bLabel->show();
-				answerEditCloseB->show();
-				checkBoxB->show();
-
-			}
-				
-			if(closeAnswer.size() > 2){
-				answerEditCloseC->setText(QString::fromStdString(closeAnswer.at(2).first) );
-				cLabel->show();
-				answerEditCloseC->show();
-				checkBoxC->show();
-			}
-			if(closeAnswer.size() > 3){
-				answerEditCloseD->setText(QString::fromStdString(closeAnswer.at(3).first) );
-				dLabel->show();
-				answerEditCloseD->show();
-				checkBoxD->show();
-			}
-		}
-		
-
-		
-		
-		
-		
-		
-		
-		
-	
-		
-
-	}
-		
-	
 }
 void View::on_beginChoose(){
 	progressBar->show();
@@ -93,6 +43,8 @@ void View::on_beginChoose(){
 	
 	nextButton->show();
 	backButton->show();
+	prepareToOpen();
+
 }
 void View::showYou(){
 	this->show();
@@ -130,6 +82,10 @@ void View::onBeginHide(){
 	answerOpenEdit->hide();
 	nextButton->hide();
 	backButton->hide();
+	prepareToOpen();
+}
+
+void View::prepareToOpen(){
 	aLabel->hide();
 	bLabel->hide();
 	cLabel->hide();
@@ -142,4 +98,65 @@ void View::onBeginHide(){
 	checkBoxB->hide();
 	checkBoxC->hide();
 	checkBoxD->hide();
+}
+
+void View::showCurrentTask(){
+	boost::shared_ptr<QuestionCard> questiocard;
+	questiocard= taskVector_.at(currentTask_-1);
+	question->setText(QString::fromStdString(questiocard->getQuestion()));
+	if(questiocard->getQuestionType() == true){ //open answer
+		answerOpenEdit->show();
+		prepareToOpen();
+	}
+	else{
+		answerOpenEdit->hide();
+
+		CloseAnswer closeAnswer = questiocard->getcloseAnswer();
+		if(closeAnswer.size() != 0){
+			answerEditCloseA->setText(QString::fromStdString(closeAnswer.at(0).first) );
+			aLabel->show();
+			answerEditCloseA->show();
+			checkBoxA->show();
+			if(closeAnswer.size() > 1){
+				answerEditCloseB->setText(QString::fromStdString(closeAnswer.at(1).first) );
+				bLabel->show();
+				answerEditCloseB->show();
+				checkBoxB->show();
+
+			}
+				
+			if(closeAnswer.size() > 2){
+				answerEditCloseC->setText(QString::fromStdString(closeAnswer.at(2).first) );
+				cLabel->show();
+				answerEditCloseC->show();
+				checkBoxC->show();
+			}
+			if(closeAnswer.size() > 3){
+				answerEditCloseD->setText(QString::fromStdString(closeAnswer.at(3).first) );
+				dLabel->show();
+				answerEditCloseD->show();
+				checkBoxD->show();
+			}
+		}
+		
+
+
+	}
+}
+void View::on_nextButton_clicked(){
+	
+	if(currentTask_ < taskVector_.size() ){
+		currentTask_++;
+		showCurrentTask();
+	}
+	
+}
+
+void View::on_backButton_clicked(){
+	
+	if(currentTask_ > 1 ){
+		currentTask_--;
+		showCurrentTask();
+	}
+	
 }

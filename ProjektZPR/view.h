@@ -28,7 +28,8 @@ private slots:
 	void on_actionStart_triggered();
 	void on_actionNew_Course_triggered();
 	void on_beginChoose();
-	
+	void on_nextButton_clicked();
+	void on_backButton_clicked();
 public slots:
 	void enabledMainWin();
 	void showYou();
@@ -38,6 +39,12 @@ private:
 	Controller* myController_;
 	void onBeginHide();
 	vector<PQcard> taskVector_;
+
+	int currentTask_;
+	int numberOfAllTasks_;
+	void prepareToClose();
+	void prepareToOpen();
+	void showCurrentTask(); 
 
 };
 
