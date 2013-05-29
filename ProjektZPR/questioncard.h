@@ -24,6 +24,7 @@ public:
 	QuestionCard (){};
 	QuestionCard( const std::string question,  const std::string answer, const int idQuestion , const bool questionType);
 	QuestionCard( const std::string question,  CloseAnswer closeanswer, const int idQuestion, const bool questionType);
+	boost::gregorian::date dateOfNextQuestion(int mark );
 	bool getQuestionType() {return questionType_;}
 	int getIdQuestion() {return idQuestion_;}
 	string getAnswerOpen() {return answerOpen_;}
