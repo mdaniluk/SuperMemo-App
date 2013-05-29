@@ -33,6 +33,9 @@ void View::showQuestionCardList(vector<PQcard> vectorPQcard)
 
 }
 void View::on_beginChoose(){
+	nextButton->setDisabled(true);
+	backButton->setDisabled(true);
+	progressBar->setValue(0);
 	progressBar->show();
 	answerButton->show();
 	judgeButton->show();
@@ -106,6 +109,7 @@ void View::prepareToOpen(){
 }
 
 void View::showCurrentTask(){
+
 	answerEditCloseA->setStyleSheet("QLabel {}");
 	answerEditCloseB->setStyleSheet("QLabel {}");
 	answerEditCloseC->setStyleSheet("QLabel {}");
@@ -113,6 +117,12 @@ void View::showCurrentTask(){
 	correctAnswer->hide();
 	questiocard_= taskVector_.at(currentTask_-1);
 	question->setText(QString::fromStdString(questiocard_->getQuestion()));
+
+	if(judgeVector_.size() >= currentTask_)
+		verticalSlider->setValue(judgeVector_.at(currentTask_-1) );
+	else
+		verticalSlider->setValue(5);
+
 	if(questiocard_->getQuestionType() == true){ //open answer
 		currentTaskType_ = 1 ;
 		answerOpenEdit->show();
@@ -159,6 +169,12 @@ void View::on_nextButton_clicked(){
 	if(currentTask_ < taskVector_.size() ){
 		currentTask_++;
 		showCurrentTask();
+		//progressBar->setValue( ( ((double)(currentTask_-1)/(double)numberOfAllTasks_) )*100);
+		if(judgeVector_.size() < currentTask_){
+			nextButton->setDisabled(true);
+			backButton->setDisabled(true);
+
+		}
 	}
 	
 }
@@ -168,6 +184,7 @@ void View::on_backButton_clicked(){
 	if(currentTask_ > 1 ){
 		currentTask_--;
 		showCurrentTask();
+		//progressBar->setValue( ( ((double)(currentTask_-1)/(double)numberOfAllTasks_) )*100);
 	}
 	
 }
@@ -217,5 +234,15 @@ void View::changeValueOfSlider(int value){
 	valueJudge->setText(QString::number(value));
 }
 void View::on_judgeButton_clicked(){
-	int a = verticalSlider->value();
+
+	nextButton->setEnabled(true);
+	backButton->setEnabled(true);
+	int valueProgressBar =  ( ((double)(currentTask_)/(double)numberOfAllTasks_) )*100;
+	if(valueProgressBar > progressBar->value() )
+		progressBar->setValue(valueProgressBar);
+
+	if(currentTask_> judgeVector_.size() )
+		judgeVector_.push_back(verticalSlider->value());
+	else
+		judgeVector_.at(currentTask_ - 1) = verticalSlider->value();
 }

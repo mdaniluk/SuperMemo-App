@@ -47,6 +47,7 @@ private:
 	int currentTask_;
 	int currentTaskType_; // 1 - open, 0 - close
 	int numberOfAllTasks_;
+	vector<int> judgeVector_;
 	void prepareToClose();
 	void prepareToOpen();
 	void showCurrentTask(); 
