@@ -24,6 +24,7 @@ signals:
 	void chooseCourse(std::string);
 	void closeAnyWindow();
 	void deleteCourse(std::string);
+	void endCourse(vector<int>);
 private slots:
 	void on_actionStart_triggered();
 	void on_actionNew_Course_triggered();
@@ -32,6 +33,7 @@ private slots:
 	void on_backButton_clicked();
 	void on_answerButton_clicked();
 	void on_judgeButton_clicked();
+	void on_endButton_clicked();
 public slots:
 	void enabledMainWin();
 	void showYou();

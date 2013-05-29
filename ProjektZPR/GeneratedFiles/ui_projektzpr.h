@@ -42,7 +42,7 @@ public:
     QLabel *labelAuthors;
     QPushButton *judgeButton;
     QPushButton *answerButton;
-    QPushButton *end_button;
+    QPushButton *endButton;
     QProgressBar *progressBar;
     QLabel *latwe;
     QLabel *trudne;
@@ -110,9 +110,9 @@ public:
         answerButton = new QPushButton(centralWidget);
         answerButton->setObjectName(QStringLiteral("answerButton"));
         answerButton->setGeometry(QRect(490, 300, 75, 23));
-        end_button = new QPushButton(centralWidget);
-        end_button->setObjectName(QStringLiteral("end_button"));
-        end_button->setGeometry(QRect(330, 300, 75, 23));
+        endButton = new QPushButton(centralWidget);
+        endButton->setObjectName(QStringLiteral("endButton"));
+        endButton->setGeometry(QRect(330, 300, 75, 23));
         progressBar = new QProgressBar(centralWidget);
         progressBar->setObjectName(QStringLiteral("progressBar"));
         progressBar->setGeometry(QRect(20, 300, 301, 23));
@@ -253,7 +253,7 @@ public:
         labelAuthors->raise();
         judgeButton->raise();
         answerButton->raise();
-        end_button->raise();
+        endButton->raise();
         question->raise();
         progressBar->raise();
         latwe->raise();
@@ -302,7 +302,7 @@ public:
         labelAuthors->setText(QApplication::translate("mainWindow", "Autors: Micha\305\202 Daniluk & Piotr Ma\305\202ecki", 0));
         judgeButton->setText(QApplication::translate("mainWindow", "Judge", 0));
         answerButton->setText(QApplication::translate("mainWindow", "Answer", 0));
-        end_button->setText(QApplication::translate("mainWindow", "End", 0));
+        endButton->setText(QApplication::translate("mainWindow", "End", 0));
         latwe->setText(QApplication::translate("mainWindow", "\305\201atwe", 0));
         trudne->setText(QApplication::translate("mainWindow", "Trudne", 0));
         question->setText(QString());

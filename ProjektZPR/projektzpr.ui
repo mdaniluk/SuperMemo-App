@@ -74,7 +74,7 @@
      <string>Answer</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="end_button">
+   <widget class="QPushButton" name="endButton">
     <property name="geometry">
      <rect>
       <x>330</x>
@@ -389,7 +389,7 @@
    <zorder>labelAuthors</zorder>
    <zorder>judgeButton</zorder>
    <zorder>answerButton</zorder>
-   <zorder>end_button</zorder>
+   <zorder>endButton</zorder>
    <zorder>question</zorder>
    <zorder>progressBar</zorder>
    <zorder>latwe</zorder>

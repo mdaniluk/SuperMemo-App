@@ -39,7 +39,7 @@ void View::on_beginChoose(){
 	progressBar->show();
 	answerButton->show();
 	judgeButton->show();
-	end_button->show();
+	endButton->show();
 	trudne->show();
 	latwe->show();
 	verticalSlider->show();
@@ -79,7 +79,7 @@ void View::onBeginHide(){
 	progressBar->hide();
 	answerButton->hide();
 	judgeButton->hide();
-	end_button->hide();
+	endButton->hide();
 	trudne->hide();
 	latwe->hide();
 	verticalSlider->hide();
@@ -245,4 +245,17 @@ void View::on_judgeButton_clicked(){
 		judgeVector_.push_back(verticalSlider->value());
 	else
 		judgeVector_.at(currentTask_ - 1) = verticalSlider->value();
+}
+
+void View::on_endButton_clicked(){
+	QMessageBox* msg = new QMessageBox(this->parentWidget());
+	msg->setWindowTitle("Warning");
+	msg->setText("Are you sure to end this course?");
+	msg->setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+	msg->show();	
+	int reply = msg->exec();
+	switch (reply) {
+		case QMessageBox::Yes:
+			emit endCourse(judgeVector_);
+	}
 }
