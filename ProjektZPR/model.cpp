@@ -15,6 +15,10 @@ Model::~Model()
 {
 
 }
+
+void Model::setChooseCourseContinue(std::string name){
+	start-> continueClicked(name);
+}
 void Model::endCourseAction(std::vector<int> answersJudged){
 
 	start->setNextDateForEach(answersJudged);

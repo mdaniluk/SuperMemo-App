@@ -10,6 +10,7 @@ StartMenu::StartMenu(Controller *controller, View *parent)
 
 	connect(this,SIGNAL(showListOfFiles()), myView_, SIGNAL(showCurrentListOfFiles()) );
 	connect(this,SIGNAL(choose(std::string)), myView_, SIGNAL(chooseCourse(std::string)) );
+	connect(this,SIGNAL(chooseContinue(std::string)), myView_, SIGNAL(chooseContinueCourse(std::string)) );
 	connect(this,SIGNAL(closeStart()), myView_, SIGNAL(closeAnyWindow()) );
 	connect(this,SIGNAL(deleteCourse(std::string)),myView_, SIGNAL(deleteCourse(std::string) ));
 
@@ -32,6 +33,11 @@ void StartMenu::setListOfCourses(std::vector<std::string> listOfFiles){
 		coursesList->addItem(QString::fromStdString(course) );
 	}
 		
+}
+
+void StartMenu::on_continueButton_clicked(){
+	emit chooseContinue(coursesList->currentItem()->text().toStdString() );
+	qDebug()<<"Continue1";
 }
 
 void StartMenu::on_choose_clicked(){

@@ -19,6 +19,7 @@ protected:
 signals:
 	void showListOfFiles();
 	void choose(std::string);
+	void chooseContinue(std::string);
 	void closeStart();
 	void deleteCourse(std::string);
 private:
@@ -26,6 +27,7 @@ private:
 	Controller *myController_;
 private slots:
 	void on_choose_clicked();
+	void on_continueButton_clicked();
 	void on_deleteButton_clicked();
 public slots:
 	void setListOfCourses(std::vector<std::string> listOfFiles);
