@@ -98,6 +98,15 @@
     <ClCompile Include="mark.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="statistic.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_statistic.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_statistic.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="projektzpr.ui">
@@ -130,6 +139,12 @@
     <CustomBuild Include="questioncard.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
+    <CustomBuild Include="statistic.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="statistic.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_projektzpr.h">
@@ -155,6 +170,9 @@
     </ClInclude>
     <ClInclude Include="mark.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_statistic.h">
+      <Filter>Generated Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -25,6 +25,7 @@ signals:
 	void refreshCourses();
 	void emitQuestionCardList(vector<PQcard>,std::string);
 	void emitSuggestedMark(int);
+	void showStats(vector<int>);
 public slots:
 	void addTaskNext(int id, std::string question, std::string answer);
 	void addTaskBack(int id, std::string question, std::string answer);
@@ -36,6 +37,7 @@ public slots:
 	void deleteChooseCourse(std::string course);
 	void computeMarkForOpen(int, std::string, std::string);
 	void computeMarkForClose(int, vector<bool>, vector<bool>);
+	void addEndCourse(vector<int>, std::string);
 private:
 	View *view_;
 	Model *model_;

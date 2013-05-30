@@ -1,5 +1,6 @@
 #include "view.h"
 #include "createtest.h"
+#include "statistic.h"
 #include "startmenu.h"
 #include <qmessagebox.h>
 #include "ui_projektzpr.h"
@@ -102,6 +103,7 @@ void View::onBeginHide(){
 	nextButton->hide();
 	backButton->hide();
 	prepareToOpen();
+	valueJudge->hide();
 }
 
 void View::prepareToOpen(){
@@ -383,11 +385,10 @@ void View::on_endButton_clicked(){
 		case QMessageBox::Yes:
 			//prepareToOpen();
 			onBeginHide();
+			Statistic *statistic = new Statistic(myController_,this);
 			emit endCourse(judgeVector_,nameOfCourse_);
-			QDialog *statistic = new QDialog();
-			//statistic->addAction(QLabel *label);
-			statistic->show();
-
+			
+			
 
 	}
 }
