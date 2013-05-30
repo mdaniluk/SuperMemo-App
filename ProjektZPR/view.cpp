@@ -11,9 +11,11 @@ View::View(Controller* controller, QWidget *parent): myController_(controller), 
 	QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
 	qRegisterMetaType<vector<PQcard>>("vector<PQcard>");
 	qRegisterMetaType<vector<int>>("vector<int>");
+	qRegisterMetaType<std::string>("std::string");
+
 	connect(myController_, SIGNAL(enabledMainWindow()), this, SLOT(enabledMainWin() ) );
 	connect(myController_, SIGNAL(error(std::string)), this, SLOT(showError(std::string)) );
-	connect(myController_, SIGNAL( emitQuestionCardList(vector<PQcard>)), this, SLOT(showQuestionCardList(vector<PQcard>)) );
+	connect(myController_, SIGNAL( emitQuestionCardList(vector<PQcard>, std::string)), this, SLOT(showQuestionCardList(vector<PQcard>, std::string)) );
 	connect(myController_, SIGNAL(emitSuggestedMark(int) ), this, SLOT(setSuggesterMark(int) ) );
 	connect(this, SIGNAL(chooseCourse(std::string)), this, SLOT(on_beginChoose()) );
 
@@ -21,6 +23,7 @@ View::View(Controller* controller, QWidget *parent): myController_(controller), 
 	//connect(this, SIGNAL(endCourse(vector<int>)), myController_, SLOT(endCourseJudge(vector<int>) ) );
 
 	onBeginHide();
+
 }
 
 View::~View()
@@ -28,13 +31,13 @@ View::~View()
 
 }
 
-void View::showQuestionCardList(vector<PQcard> vectorPQcard)
+void View::showQuestionCardList(vector<PQcard> vectorPQcard, std::string nameOfCourse)
 {	
 
 	/*boost::shared_ptr<QuestionCard> questiocard;
 	questiocard= vectorPQcard.at(2);
 	question->setText(QString::fromUtf8((questiocard->getQuestion()).c_str()));*/
-	
+	nameOfCourse_ = nameOfCourse;
 	currentTask_ = 1;
 	taskVector_ = vectorPQcard;
 	numberOfAllTasks_ = taskVector_.size();
@@ -59,6 +62,7 @@ void View::on_beginChoose(){
 	nextButton->show();
 	backButton->show();
 	prepareToOpen();
+
 
 }
 void View::showYou(){
@@ -85,6 +89,7 @@ void View::enabledMainWin(){
 }
 
 void View::onBeginHide(){
+	question->hide();
 	progressBar->hide();
 	answerButton->hide();
 	judgeButton->hide();
@@ -102,23 +107,20 @@ void View::onBeginHide(){
 }
 
 void View::prepareToOpen(){
-	aLabel->hide();
-	bLabel->hide();
-	cLabel->hide();
-	dLabel->hide();
 	answerEditCloseA->hide();
 	answerEditCloseB->hide();
 	answerEditCloseC->hide();
 	answerEditCloseD->hide();
-	checkBoxA->hide();
-	checkBoxB->hide();
-	checkBoxC->hide();
-	checkBoxD->hide();
+	aButton->hide();
+	bButton->hide();
+	cButton->hide();
+	dButton->hide();
 	correctAnswer->hide();
 }
 
 void View::showCurrentTask(){
-
+	isNextOrBack = true;
+	question->show();
 	answerEditCloseA->setStyleSheet("QLabel {}");
 	answerEditCloseB->setStyleSheet("QLabel {}");
 	answerEditCloseC->setStyleSheet("QLabel {}");
@@ -142,46 +144,90 @@ void View::showCurrentTask(){
 		prepareToOpen();
 	}
 	else{
-		checkBoxA->setChecked(false);
-		checkBoxB->setChecked(false);
-		checkBoxC->setChecked(false);
-		checkBoxD->setChecked(false);
+		isAClicked = false; 
+		isBClicked = false;
+		isCClicked = false;
+		isDClicked = false;
+		aButton->setStyleSheet("");
+		bButton->setStyleSheet("");
+		cButton->setStyleSheet("");
+		dButton->setStyleSheet("");
 		currentTaskType_ = 0;
 		answerOpenEdit->hide();
 
 		CloseAnswer closeAnswer = questiocard_->getcloseAnswer();
 		if(closeAnswer.size() > 0){
 			answerEditCloseA->setText(QString::fromStdString(closeAnswer.at(0).first) );
-			aLabel->show();
 			answerEditCloseA->show();
-			checkBoxA->show();
+			aButton->show();
 			if(closeAnswer.size() > 1 && closeAnswer.at(1).first != ""){
 				answerEditCloseB->setText(QString::fromStdString(closeAnswer.at(1).first) );
-				bLabel->show();
 				answerEditCloseB->show();
-				checkBoxB->show();
+				bButton->show();
 
 			}
 				
 			if(closeAnswer.size() > 2 && closeAnswer.at(2).first != ""){
 				answerEditCloseC->setText(QString::fromStdString(closeAnswer.at(2).first) );
-				cLabel->show();
 				answerEditCloseC->show();
-				checkBoxC->show();
+				cButton->show();
 			}
 			if(closeAnswer.size() > 3 && closeAnswer.at(3).first != ""){
 				answerEditCloseD->setText(QString::fromStdString(closeAnswer.at(3).first) );
-				dLabel->show();
 				answerEditCloseD->show();
-				checkBoxD->show();
+				dButton->show();
 			}
 		}
 		
+	
 
+	}
+	isNextOrBack = false;
+}
 
+void View::on_aButton_clicked(){
+	if(isAClicked){
+		aButton->setStyleSheet("");
+		isAClicked = false;
+	}
+	else{
+		aButton->setStyleSheet("background-color: green");
+		isAClicked = true;
 	}
 }
 
+void View::on_bButton_clicked(){
+	if(isBClicked){
+		bButton->setStyleSheet("");
+		isBClicked = false;
+	}
+	else{
+		bButton->setStyleSheet("background-color: green");
+		isBClicked = true;
+	}
+}
+
+void View::on_cButton_clicked(){
+	if(isCClicked){
+		cButton->setStyleSheet("");
+		isCClicked = false;
+	}
+	else{
+		cButton->setStyleSheet("background-color: green");
+		isCClicked = true;
+	}
+}
+
+void View::on_dButton_clicked(){
+	if(isDClicked){
+		dButton->setStyleSheet("");
+		isDClicked = false;
+	}
+	else{
+		dButton->setStyleSheet("background-color: green");
+		isDClicked = true;
+	}
+}
 void View::getCurrentTask(){
 
 }
@@ -202,20 +248,20 @@ void View::computeSuggestedMark(){
 		CloseAnswer close = questiocard_->getcloseAnswer();
 		for(int i = 0; i < close.size(); i++){
 			bool userValue;
-			if(i == 0 && !checkBoxA->isHidden()){
-				userValue = checkBoxA->isChecked();
+			if(i == 0 && !aButton->isHidden()){
+				userValue = isAClicked;
 				userAnswer.push_back(userValue);
 			}
-			if(i == 1 && !checkBoxB->isHidden()){
-				userValue = checkBoxB->isChecked();
+			if(i == 1 && !bButton->isHidden()){
+				userValue = isBClicked;
 				userAnswer.push_back(userValue);
 			}
-			if(i == 2 && !checkBoxC->isHidden()){
-				userValue = checkBoxC->isChecked();
+			if(i == 2 && !cButton->isHidden()){
+				userValue = isCClicked;
 				userAnswer.push_back(userValue);
 			}
-			if(i == 3 && !checkBoxD->isHidden()){
-				userValue = checkBoxD->isChecked();
+			if(i == 3 && !dButton->isHidden()){
+				userValue = isDClicked;
 				userAnswer.push_back(userValue);
 			}
 
@@ -233,6 +279,7 @@ void View::computeSuggestedMark(){
 
 void View::setSuggesterMark(int mark){
 	verticalSlider->setValue(mark);
+	judgeButton->click();
 }
 void View::on_nextButton_clicked(){
 	
@@ -302,10 +349,16 @@ void View::on_answerButton_clicked(){
 
 	}
 
+//	
+
 }
 
 void View::changeValueOfSlider(int value){
 	valueJudge->setText(QString::number(value));
+	if(!isNextOrBack){
+		nextButton->setDisabled(true);
+		backButton->setDisabled(true);
+	}
 }
 void View::on_judgeButton_clicked(){
 
@@ -331,7 +384,14 @@ void View::on_endButton_clicked(){
 	qDebug() << "End";
 	switch (reply) {
 		case QMessageBox::Yes:
-			emit endCourse(judgeVector_);
-			qDebug() << "End emit";
+
+			//prepareToOpen();
+			onBeginHide();
+			emit endCourse(judgeVector_,nameOfCourse_);
+			QDialog *statistic = new QDialog();
+			//statistic->addAction(QLabel *label);
+			statistic->show();
+
+
 	}
 }

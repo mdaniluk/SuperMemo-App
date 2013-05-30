@@ -13,7 +13,6 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
-#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
@@ -26,7 +25,6 @@
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTextEdit>
 #include <QtWidgets/QToolBar>
-#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -52,26 +50,20 @@ public:
     QTextEdit *answerOpenEdit;
     QPushButton *nextButton;
     QPushButton *backButton;
-    QWidget *layoutWidget;
-    QGridLayout *gridLayout;
-    QLabel *aLabel;
-    QLabel *bLabel;
-    QLabel *cLabel;
-    QLabel *dLabel;
     QLabel *correctAnswer;
-    QWidget *layoutWidget1;
+    QLabel *valueJudge;
+    QWidget *layoutWidget;
     QGridLayout *gridLayout_3;
     QLabel *answerEditCloseA;
     QLabel *answerEditCloseC;
     QLabel *answerEditCloseD;
     QLabel *answerEditCloseB;
-    QLabel *valueJudge;
-    QWidget *widget;
-    QVBoxLayout *verticalLayout;
-    QCheckBox *checkBoxA;
-    QCheckBox *checkBoxB;
-    QCheckBox *checkBoxC;
-    QCheckBox *checkBoxD;
+    QWidget *layoutWidget1;
+    QGridLayout *gridLayout;
+    QPushButton *aButton;
+    QPushButton *bButton;
+    QPushButton *cButton;
+    QPushButton *dButton;
     QMenuBar *menuBar;
     QMenu *menuFile;
     QMenu *menuCreate;
@@ -146,108 +138,81 @@ public:
         backButton = new QPushButton(centralWidget);
         backButton->setObjectName(QStringLiteral("backButton"));
         backButton->setGeometry(QRect(110, 260, 156, 23));
-        layoutWidget = new QWidget(centralWidget);
-        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(10, 110, 20, 131));
-        gridLayout = new QGridLayout(layoutWidget);
-        gridLayout->setSpacing(6);
-        gridLayout->setContentsMargins(11, 11, 11, 11);
-        gridLayout->setObjectName(QStringLiteral("gridLayout"));
-        gridLayout->setContentsMargins(0, 0, 0, 0);
-        aLabel = new QLabel(layoutWidget);
-        aLabel->setObjectName(QStringLiteral("aLabel"));
-        QFont font2;
-        font2.setFamily(QStringLiteral("Cambria"));
-        font2.setPointSize(10);
-        font2.setBold(false);
-        font2.setWeight(50);
-        aLabel->setFont(font2);
-
-        gridLayout->addWidget(aLabel, 0, 0, 1, 1);
-
-        bLabel = new QLabel(layoutWidget);
-        bLabel->setObjectName(QStringLiteral("bLabel"));
-        bLabel->setFont(font2);
-
-        gridLayout->addWidget(bLabel, 1, 0, 1, 1);
-
-        cLabel = new QLabel(layoutWidget);
-        cLabel->setObjectName(QStringLiteral("cLabel"));
-        cLabel->setFont(font2);
-
-        gridLayout->addWidget(cLabel, 2, 0, 1, 1);
-
-        dLabel = new QLabel(layoutWidget);
-        dLabel->setObjectName(QStringLiteral("dLabel"));
-        dLabel->setFont(font2);
-
-        gridLayout->addWidget(dLabel, 3, 0, 1, 1);
-
         correctAnswer = new QLabel(centralWidget);
         correctAnswer->setObjectName(QStringLiteral("correctAnswer"));
-        correctAnswer->setGeometry(QRect(65, 90, 441, 41));
+        correctAnswer->setGeometry(QRect(65, 90, 441, 35));
+        correctAnswer->setMaximumSize(QSize(16777215, 35));
         correctAnswer->setFont(font1);
-        layoutWidget1 = new QWidget(centralWidget);
-        layoutWidget1->setObjectName(QStringLiteral("layoutWidget1"));
-        layoutWidget1->setGeometry(QRect(70, 111, 441, 131));
-        gridLayout_3 = new QGridLayout(layoutWidget1);
+        valueJudge = new QLabel(centralWidget);
+        valueJudge->setObjectName(QStringLiteral("valueJudge"));
+        valueJudge->setGeometry(QRect(561, 280, 21, 16));
+        layoutWidget = new QWidget(centralWidget);
+        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
+        layoutWidget->setGeometry(QRect(95, 99, 473, 164));
+        gridLayout_3 = new QGridLayout(layoutWidget);
         gridLayout_3->setSpacing(6);
         gridLayout_3->setContentsMargins(11, 11, 11, 11);
         gridLayout_3->setObjectName(QStringLiteral("gridLayout_3"));
         gridLayout_3->setContentsMargins(0, 0, 0, 0);
-        answerEditCloseA = new QLabel(layoutWidget1);
+        answerEditCloseA = new QLabel(layoutWidget);
         answerEditCloseA->setObjectName(QStringLiteral("answerEditCloseA"));
+        answerEditCloseA->setMinimumSize(QSize(471, 36));
+        answerEditCloseA->setMaximumSize(QSize(471, 36));
 
         gridLayout_3->addWidget(answerEditCloseA, 0, 0, 1, 1);
 
-        answerEditCloseC = new QLabel(layoutWidget1);
+        answerEditCloseC = new QLabel(layoutWidget);
         answerEditCloseC->setObjectName(QStringLiteral("answerEditCloseC"));
+        answerEditCloseC->setMinimumSize(QSize(0, 36));
+        answerEditCloseC->setMaximumSize(QSize(16777215, 36));
 
         gridLayout_3->addWidget(answerEditCloseC, 2, 0, 1, 1);
 
-        answerEditCloseD = new QLabel(layoutWidget1);
+        answerEditCloseD = new QLabel(layoutWidget);
         answerEditCloseD->setObjectName(QStringLiteral("answerEditCloseD"));
+        answerEditCloseD->setMinimumSize(QSize(0, 36));
+        answerEditCloseD->setMaximumSize(QSize(16777215, 36));
 
         gridLayout_3->addWidget(answerEditCloseD, 3, 0, 1, 1);
 
-        answerEditCloseB = new QLabel(layoutWidget1);
+        answerEditCloseB = new QLabel(layoutWidget);
         answerEditCloseB->setObjectName(QStringLiteral("answerEditCloseB"));
+        answerEditCloseB->setMinimumSize(QSize(0, 36));
+        answerEditCloseB->setMaximumSize(QSize(16777215, 36));
 
         gridLayout_3->addWidget(answerEditCloseB, 1, 0, 1, 1);
 
-        valueJudge = new QLabel(centralWidget);
-        valueJudge->setObjectName(QStringLiteral("valueJudge"));
-        valueJudge->setGeometry(QRect(561, 280, 21, 16));
-        widget = new QWidget(centralWidget);
-        widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(40, 102, 16, 151));
-        verticalLayout = new QVBoxLayout(widget);
-        verticalLayout->setSpacing(6);
-        verticalLayout->setContentsMargins(11, 11, 11, 11);
-        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        verticalLayout->setContentsMargins(0, 0, 0, 0);
-        checkBoxA = new QCheckBox(widget);
-        checkBoxA->setObjectName(QStringLiteral("checkBoxA"));
+        layoutWidget1 = new QWidget(centralWidget);
+        layoutWidget1->setObjectName(QStringLiteral("layoutWidget1"));
+        layoutWidget1->setGeometry(QRect(13, 102, 77, 161));
+        gridLayout = new QGridLayout(layoutWidget1);
+        gridLayout->setSpacing(6);
+        gridLayout->setContentsMargins(11, 11, 11, 11);
+        gridLayout->setObjectName(QStringLiteral("gridLayout"));
+        gridLayout->setContentsMargins(0, 0, 0, 0);
+        aButton = new QPushButton(layoutWidget1);
+        aButton->setObjectName(QStringLiteral("aButton"));
+        aButton->setEnabled(true);
+        aButton->setMaximumSize(QSize(75, 23));
 
-        verticalLayout->addWidget(checkBoxA);
+        gridLayout->addWidget(aButton, 0, 0, 1, 1);
 
-        checkBoxB = new QCheckBox(widget);
-        checkBoxB->setObjectName(QStringLiteral("checkBoxB"));
+        bButton = new QPushButton(layoutWidget1);
+        bButton->setObjectName(QStringLiteral("bButton"));
 
-        verticalLayout->addWidget(checkBoxB);
+        gridLayout->addWidget(bButton, 1, 0, 1, 1);
 
-        checkBoxC = new QCheckBox(widget);
-        checkBoxC->setObjectName(QStringLiteral("checkBoxC"));
+        cButton = new QPushButton(layoutWidget1);
+        cButton->setObjectName(QStringLiteral("cButton"));
 
-        verticalLayout->addWidget(checkBoxC);
+        gridLayout->addWidget(cButton, 2, 0, 1, 1);
 
-        checkBoxD = new QCheckBox(widget);
-        checkBoxD->setObjectName(QStringLiteral("checkBoxD"));
+        dButton = new QPushButton(layoutWidget1);
+        dButton->setObjectName(QStringLiteral("dButton"));
 
-        verticalLayout->addWidget(checkBoxD);
+        gridLayout->addWidget(dButton, 3, 0, 1, 1);
 
         mainWindow->setCentralWidget(centralWidget);
-        layoutWidget->raise();
         layoutWidget->raise();
         layoutWidget->raise();
         labelWelcome->raise();
@@ -265,7 +230,6 @@ public:
         backButton->raise();
         correctAnswer->raise();
         valueJudge->raise();
-        checkBoxB->raise();
         menuBar = new QMenuBar(mainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
         menuBar->setGeometry(QRect(0, 0, 600, 21));
@@ -310,20 +274,16 @@ public:
         question->setText(QString());
         nextButton->setText(QApplication::translate("mainWindow", "Next", 0));
         backButton->setText(QApplication::translate("mainWindow", "Back", 0));
-        aLabel->setText(QApplication::translate("mainWindow", "a)", 0));
-        bLabel->setText(QApplication::translate("mainWindow", "b)", 0));
-        cLabel->setText(QApplication::translate("mainWindow", "c)", 0));
-        dLabel->setText(QApplication::translate("mainWindow", "d)", 0));
         correctAnswer->setText(QString());
+        valueJudge->setText(QString());
         answerEditCloseA->setText(QString());
         answerEditCloseC->setText(QString());
         answerEditCloseD->setText(QString());
         answerEditCloseB->setText(QString());
-        valueJudge->setText(QString());
-        checkBoxA->setText(QString());
-        checkBoxB->setText(QString());
-        checkBoxC->setText(QString());
-        checkBoxD->setText(QString());
+        aButton->setText(QApplication::translate("mainWindow", "A", 0));
+        bButton->setText(QApplication::translate("mainWindow", "B", 0));
+        cButton->setText(QApplication::translate("mainWindow", "C", 0));
+        dButton->setText(QApplication::translate("mainWindow", "D", 0));
         menuFile->setTitle(QApplication::translate("mainWindow", "File", 0));
         menuCreate->setTitle(QApplication::translate("mainWindow", "Create", 0));
     } // retranslateUi
