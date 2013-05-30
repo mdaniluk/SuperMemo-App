@@ -70,6 +70,7 @@ private:
 	bool isBClicked;
 	bool isCClicked;
 	bool isDClicked;
+	bool isNextOrBack;
 };
 
 #endif // VIEW_H

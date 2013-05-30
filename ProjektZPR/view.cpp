@@ -114,7 +114,7 @@ void View::prepareToOpen(){
 }
 
 void View::showCurrentTask(){
-
+	isNextOrBack = true;
 	answerEditCloseA->setStyleSheet("QLabel {}");
 	answerEditCloseB->setStyleSheet("QLabel {}");
 	answerEditCloseC->setStyleSheet("QLabel {}");
@@ -173,9 +173,10 @@ void View::showCurrentTask(){
 			}
 		}
 		
-
+	
 
 	}
+	isNextOrBack = false;
 }
 
 void View::on_aButton_clicked(){
@@ -272,6 +273,7 @@ void View::computeSuggestedMark(){
 
 void View::setSuggesterMark(int mark){
 	verticalSlider->setValue(mark);
+	judgeButton->click();
 }
 void View::on_nextButton_clicked(){
 	
@@ -341,10 +343,16 @@ void View::on_answerButton_clicked(){
 
 	}
 
+//	
+
 }
 
 void View::changeValueOfSlider(int value){
 	valueJudge->setText(QString::number(value));
+	if(!isNextOrBack){
+		nextButton->setDisabled(true);
+		backButton->setDisabled(true);
+	}
 }
 void View::on_judgeButton_clicked(){
 
