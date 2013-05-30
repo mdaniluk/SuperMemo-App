@@ -38,6 +38,10 @@ private slots:
 	void on_answerButton_clicked();
 	void on_judgeButton_clicked();
 	void on_endButton_clicked();
+	void on_aButton_clicked();
+	void on_bButton_clicked();
+	void on_cButton_clicked();
+	void on_dButton_clicked();
 public slots:
 	void enabledMainWin();
 	void showYou();
@@ -62,7 +66,10 @@ private:
 	void setCurrentTask();
 	void computeSuggestedMark();
 	int mark_;
-
+	bool isAClicked;
+	bool isBClicked;
+	bool isCClicked;
+	bool isDClicked;
 };
 
 #endif // VIEW_H
