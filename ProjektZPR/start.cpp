@@ -84,6 +84,10 @@ void Start::loadFromFileCurrentState( Deck &s, const char* filename)
 void Start::continueClicked(std::string name){
 
 	qDebug() << "CONTINUE";
+	//Deck *newDeck_;
+	//loadFromFileCurrentState(*newDeck_, name.c_str());
+	
+	
 }
 void Start::deleteCourse(std::string course){
 	const fs::path root = "Resources/" + course + ".xml";
