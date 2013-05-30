@@ -25,6 +25,7 @@ private slots:
 	void on_next_clicked();
 	void on_back_clicked();
 	void on_save_clicked();
+	void on_help_clicked();
 public slots:
 	void refreshTask(int number,std::string question, std::string answer);
 	void currentChangedSlot(int index);

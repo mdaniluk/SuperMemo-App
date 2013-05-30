@@ -8,6 +8,9 @@ CreateTest::CreateTest(Controller *controller, View *parent)
 {
 	setAttribute(Qt::WA_DeleteOnClose, true);
 	setupUi(this);
+	QPalette palette;
+	palette.setBrush(this->backgroundRole(), QBrush(QImage("images/tlo.jpg")));
+	this->setPalette(palette);
 	isNextOrBack_ = false;
 	numberOfQuestions_ = 0;
 	number_ = 1;
@@ -225,4 +228,14 @@ void CreateTest::closeWindow(){
 
 void CreateTest::closeEvent(QCloseEvent *event){
 	emit closeCreator();
+}
+
+void CreateTest::on_help_clicked(){
+	QMessageBox* helpMsg = new QMessageBox(this->parentWidget());
+	helpMsg->setWindowTitle("Help");
+	QString helpStr = "You can create your own course \n";
+	helpStr.append("It is possible to set task with open or close answer\n");
+	helpStr.append("If you want to finish click Save Course");
+	helpMsg->setText(helpStr);
+	helpMsg->show();	
 }

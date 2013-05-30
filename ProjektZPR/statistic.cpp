@@ -4,6 +4,9 @@ Statistic::Statistic(Controller *controller, View *parent): QDialog(parent), myV
 {
 	setAttribute(Qt::WA_DeleteOnClose, true);
 	setupUi(this);
+	QPalette palette;
+	palette.setBrush(this->backgroundRole(), QBrush(QImage("images/tlo.jpg")));
+	this->setPalette(palette);
 	qRegisterMetaType<vector<int>>("vector<int>");
 	connect(myController_, SIGNAL(showStats(vector<int>) ), this, SLOT (showStatistic(vector<int> ) ) );
 	show();
