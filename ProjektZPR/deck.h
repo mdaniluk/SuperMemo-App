@@ -10,6 +10,7 @@
 #include <QMessageBox>
 #include <QXmlStreamReader>
 #include <boost/serialization/shared_ptr.hpp>
+#include <boost/serialization/vector.hpp>
 #include <list>
 #include <iostream>
 #include <vector>
@@ -32,7 +33,15 @@ public:
 
 private:
 	friend class boost::serialization::access;
-	vector<PQcard> vectorPQ;
+	
+ 
+	template<class Archive>										
+    void serialize(Archive & ar, const unsigned int version)
+    {
+        
+		ar & vectorPQ;
+    }
+	vector<PQcard> vectorPQ; 
 };
 
 #endif // DECK_H

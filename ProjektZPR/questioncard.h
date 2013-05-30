@@ -2,9 +2,13 @@
 #define QUESTIONCARD_H
 
 #include <QObject>
+#include <QDebug>
 #include <list>
 #include <vector>
 #include <boost/date_time/gregorian/gregorian.hpp>
+#include <boost/date_time/gregorian/greg_serialize.hpp>
+#include <boost/serialization/map.hpp>
+#include <boost/serialization/is_bitwise_serializable.hpp>
 #include <boost/serialization/nvp.hpp>
 using std::string;
 using boost::serialization::make_nvp;
@@ -41,7 +45,6 @@ private:
 		ar & BOOST_SERIALIZATION_NVP(answerOpen_);
 		ar & BOOST_SERIALIZATION_NVP(closeAnswer_);
 		ar & BOOST_SERIALIZATION_NVP(question_);
-		ar & BOOST_SERIALIZATION_NVP(powtorzenie_);
 		ar & BOOST_SERIALIZATION_NVP(how_many_);
 		ar & BOOST_SERIALIZATION_NVP(eFactor_);
 		ar & BOOST_SERIALIZATION_NVP(interval_);

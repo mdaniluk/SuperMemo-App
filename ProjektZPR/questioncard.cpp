@@ -45,9 +45,10 @@ boost::gregorian::date QuestionCard::dateOfNextQuestion(int mark )
 			interval_ = 1;
 		}
 
-	boost::gregorian::date now =  boost::gregorian::day_clock::local_day();
+	now =  boost::gregorian::day_clock::local_day();
 	boost::gregorian::date_duration number_days(static_cast<long>(interval_));
 	now += number_days;
+	qDebug() << QString::fromStdString(to_simple_string(now)); 
 	return now;
 
 }
