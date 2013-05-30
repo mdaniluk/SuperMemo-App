@@ -21,6 +21,7 @@ public:
 	void endCourseAction(std::vector<int>);
 	void computeOpenMark(int type, std::string user, std::string correct );
 	void computeCloseMark(int type , vector<bool> user, vector<bool> correct );
+	void setChooseCourseContinue(std::string name);
 private:
 	Course *currentCourse;
 	Start *start;

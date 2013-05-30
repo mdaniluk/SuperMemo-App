@@ -56,9 +56,9 @@ void Start::setNextDateForEach(vector<int> answersJudged){
 void  Start::saveToFileCurrentState(const Deck &s, const char* filename)
 {
 	try{
-		// stworz archiwum
+		
 		std::ofstream ofs(filename);
-		// zapisz w postaci archiwum tekstowego
+		
 		boost::archive::text_oarchive oa(ofs);
 		oa << s;
 	}
@@ -68,6 +68,23 @@ void Start::chooseCourse(std::string course){
 	deck_= new Deck(QString::fromStdString("Resources/" + course + ".xml"));
 }
 
+void Start::loadFromFileCurrentState( Deck &s, const char* filename)
+{
+	try{
+		
+		std::ifstream ifs(filename);
+		boost::archive::text_iarchive ia(ifs);
+		
+		ia >> s;
+	}
+	catch(std::exception e) { 
+		std::cout << e.what() << std::endl; exit(1); }
+}
+
+void Start::continueClicked(std::string name){
+
+	qDebug() << "CONTINUE";
+}
 void Start::deleteCourse(std::string course){
 	const fs::path root = "Resources/" + course + ".xml";
 	fs::remove(root);

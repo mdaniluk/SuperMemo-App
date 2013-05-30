@@ -39,6 +39,7 @@ public slots:
 	void computeMarkForClose(int, vector<bool>, vector<bool>);
 
 	void endCourseJudge(vector<int>);
+	void addChooseCourseContinue(std::string name);
 
 private:
 	View *view_;

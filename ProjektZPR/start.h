@@ -17,6 +17,8 @@ public:
 	void deleteCourse(std::string course);
 	void setNextDateForEach(vector<int> answersJudged);
 	void saveToFileCurrentState(const Deck &s, const char* filename);
+	void loadFromFileCurrentState( Deck &s, const char* filename);
+	void continueClicked(std::string name);
 private:
 	std::vector<std::string> filesXml;
 	Deck* deck_;

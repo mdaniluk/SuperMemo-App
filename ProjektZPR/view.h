@@ -23,6 +23,7 @@ signals:
 	void saveCurrentCourse(std::string);
 	void showCurrentListOfFiles();
 	void chooseCourse(std::string);
+	void chooseContinueCourse(std::string);
 	void closeAnyWindow();
 	void deleteCourse(std::string);
 	void endCourse(vector<int>, std::string);

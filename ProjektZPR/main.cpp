@@ -4,6 +4,7 @@
 #include <QtWidgets/QApplication>
 #include <QThread>
 
+
 int main(int argc, char *argv[])
 {	
 
@@ -13,25 +14,12 @@ int main(int argc, char *argv[])
 	Controller controller;
 	View view(&controller);
 	controller.connectView(&view);
-
 	QThread controllerThread;
 	controller.moveToThread(&controllerThread);
 	view.connect(&controllerThread, SIGNAL(started()), SLOT(showYou()));
 	controllerThread.start();
 	controllerThread.connect(&view, SIGNAL(askedQuit()), SLOT(quit()));
 
-
-	Deck *d= new Deck("resources/ciekawostki.xml");
-	/*std::ifstream plik("resources/ciekawostki.xml");
-
-	if (!plik.is_open()){
-
-		throw LackFile("Lack of file");
-	}
-	std::stringstream buffer;
-	buffer << plik.rdbuf();
-
-	Deck *d= new Deck(buffer);*/
 
 
 	return a.exec();
