@@ -9,7 +9,11 @@ typedef std::vector<std::pair<string, string>> CloseAnswer; //wektor (odpowiedz 
 
 View::View(Controller* controller, QWidget *parent): myController_(controller), QMainWindow(parent){
 	setupUi(this);
-	QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
+	
+	QPalette palette;
+	palette.setBrush(this->backgroundRole(), QBrush(QImage("images/tlo.jpg")));
+	this->setPalette(palette);
+	//QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
 	qRegisterMetaType<vector<PQcard>>("vector<PQcard>");
 	qRegisterMetaType<std::string>("std::string");
 

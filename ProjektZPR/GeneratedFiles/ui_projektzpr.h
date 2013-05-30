@@ -75,6 +75,7 @@ public:
         if (mainWindow->objectName().isEmpty())
             mainWindow->setObjectName(QStringLiteral("mainWindow"));
         mainWindow->resize(600, 400);
+        mainWindow->setMaximumSize(QSize(600, 400));
         actionStop = new QAction(mainWindow);
         actionStop->setObjectName(QStringLiteral("actionStop"));
         actionQuit = new QAction(mainWindow);
