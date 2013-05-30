@@ -64,7 +64,39 @@ Deck::Deck(QString filename)
 	
 
 }
+void Deck::setNextDateForEach(vector<int> answersJudged){
+	
+	//for (vector<PQcard>::const_iterator i=vectorPQ.begin();i!=vectorPQ.end(); ++i){
+	//	vectorPQ.at(i)->dateOfNextQuestion(answersJudged.at(i));
 
+	//}
+	/*for_each(vectorPQ.begin(), vectorPQ.end(), [&evenCount] (int n){
+	
+		vectorPQ.at(n)->dateOfNextQuestion(answersJudge.at(n));
+	});
+		
+		*/	
+	qDebug()<< "tttttttttt";
+	for (int n=0; n<vectorPQ.size(); n++){
+		qDebug()<< "jooooooo"+ n;
+		vectorPQ.at(n)->dateOfNextQuestion(answersJudged.at(n));}
+}
+
+//void saveToFileCurrentState(const akademik &s, const char* filename)
+//{
+//	try{
+//		// stworz archiwum
+//		std::ofstream ofs(filename);
+//		// zapisz w postaci archiwum tekstowego
+//		boost::archive::text_oarchive oa(ofs);
+//		oa << s;
+//	}
+//	catch(std::exception e) { std::cout << e.what() << std::endl; exit(1); }
+//}
+Deck::Deck()
+{
+
+}
 Deck::~Deck()
 {
 

@@ -4,14 +4,21 @@ Model::Model()
 {
 	currentCourse = new Course();
 	start = new Start();
+
 	mark = new Mark();
+
+	deck = new Deck();
+
 }
 
 Model::~Model()
 {
 
 }
+void Model::endCourseAction(std::vector<int> answersJudged){
 
+	deck->setNextDateForEach(answersJudged);
+}
 void Model::setNext(int id, std::string question, std::string answer){
 	currentCourse->setQuestions(id, question);
 	currentCourse->setAnswers(id, answer);

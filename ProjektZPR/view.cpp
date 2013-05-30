@@ -10,6 +10,7 @@ View::View(Controller* controller, QWidget *parent): myController_(controller), 
 	setupUi(this);
 	QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
 	qRegisterMetaType<vector<PQcard>>("vector<PQcard>");
+	qRegisterMetaType<vector<int>>("vector<int>");
 	connect(myController_, SIGNAL(enabledMainWindow()), this, SLOT(enabledMainWin() ) );
 	connect(myController_, SIGNAL(error(std::string)), this, SLOT(showError(std::string)) );
 	connect(myController_, SIGNAL( emitQuestionCardList(vector<PQcard>)), this, SLOT(showQuestionCardList(vector<PQcard>)) );
@@ -17,6 +18,7 @@ View::View(Controller* controller, QWidget *parent): myController_(controller), 
 	connect(this, SIGNAL(chooseCourse(std::string)), this, SLOT(on_beginChoose()) );
 
 	connect( verticalSlider, SIGNAL(valueChanged(int)),this, SLOT(changeValueOfSlider(int)) );
+	//connect(this, SIGNAL(endCourse(vector<int>)), myController_, SLOT(endCourseJudge(vector<int>) ) );
 
 	onBeginHide();
 }
@@ -326,8 +328,10 @@ void View::on_endButton_clicked(){
 	msg->setStandardButtons(QMessageBox::Yes | QMessageBox::No);
 	msg->show();	
 	int reply = msg->exec();
+	qDebug() << "End";
 	switch (reply) {
 		case QMessageBox::Yes:
 			emit endCourse(judgeVector_);
+			qDebug() << "End emit";
 	}
 }

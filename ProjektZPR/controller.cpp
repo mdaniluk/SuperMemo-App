@@ -13,7 +13,12 @@ void Controller::connectView(View * view){
 	view_=view;
 
 	qRegisterMetaType<std::string>("std::string");
+
 	qRegisterMetaType<vector<bool>>("vector<bool>");
+
+
+	qRegisterMetaType<vector<int>>("vector<int>");
+	
 
 
 	connect(view_, SIGNAL(setCurrentTaskNext(int, std::string, std::string)), this, SLOT(addTaskNext(int, std::string, std::string) ) );
@@ -24,11 +29,25 @@ void Controller::connectView(View * view){
 	connect(view_, SIGNAL(chooseCourse(std::string)), this, SLOT(addChooseCourse(std::string) ) );
 	connect(view_, SIGNAL(deleteCourse(std::string)), this, SLOT(deleteChooseCourse(std::string) ) );
 	connect(view_, SIGNAL(closeAnyWindow()), this, SLOT(addCloseAnyWindow() ) );
+
 	connect(view_, SIGNAL(computeMark(int, std::string, std::string) ), this, SLOT(computeMarkForOpen(int, std::string, std::string) ) );
 	connect(view_, SIGNAL(computeMark(int, vector<bool>, vector<bool>) ), this, SLOT(computeMarkForClose(int, vector<bool>, vector<bool>)) );
 
+	connect(view_, SIGNAL(endCourse(vector<int>)), this, SLOT(endCourseJudge(vector<int>) ) );
+
+
 }
 
+void Controller::endCourseJudge(std::vector<int> userJudges){
+	try{
+		qDebug()<<"END Controler";
+		model_->endCourseAction(userJudges);
+		}
+	catch (myException e){
+		emit error(e.returnMessage());
+	}
+	
+}
 void Controller::addTaskNext(int id, std::string question, std::string answer){
 	try{
 		model_->setNext(id,question,answer);
@@ -109,6 +128,7 @@ void Controller::addCloseAnyWindow(){
 }
 
 void Controller::computeMarkForOpen(int type, std::string user, std::string correct ){
+	qDebug()<<" Controler mark for open";
 	model_->computeOpenMark(type,user,correct);
 	emit emitSuggestedMark(model_->getCurrentMark()->getValue() );
 }

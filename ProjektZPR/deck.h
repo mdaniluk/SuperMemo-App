@@ -23,10 +23,11 @@ typedef boost::shared_ptr<QuestionCard> PQcard;
 class Deck
 {
 public:
+	Deck();
 	Deck(QString filename);
 	// Tworzymy nowy kurs
 	vector<PQcard> getQuestionCardVector() {return vectorPQ;}
-
+	void setNextDateForEach(vector<int> answersJudged);
 	~Deck();
 
 private:
