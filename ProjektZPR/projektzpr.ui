@@ -236,13 +236,13 @@
      <string/>
     </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>95</x>
       <y>99</y>
       <width>473</width>
-      <height>151</height>
+      <height>164</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout_3">
@@ -261,7 +261,7 @@
         </size>
        </property>
        <property name="text">
-        <string>sa</string>
+        <string/>
        </property>
       </widget>
      </item>
@@ -324,11 +324,11 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>13</x>
-      <y>96</y>
+      <y>102</y>
       <width>77</width>
       <height>161</height>
      </rect>
@@ -373,6 +373,7 @@
      </item>
     </layout>
    </widget>
+   <zorder>layoutWidget</zorder>
    <zorder>layoutWidget</zorder>
    <zorder>labelWelcome</zorder>
    <zorder>labelAuthors</zorder>

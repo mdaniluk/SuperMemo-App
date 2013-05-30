@@ -52,13 +52,13 @@ public:
     QPushButton *backButton;
     QLabel *correctAnswer;
     QLabel *valueJudge;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QGridLayout *gridLayout_3;
     QLabel *answerEditCloseA;
     QLabel *answerEditCloseC;
     QLabel *answerEditCloseD;
     QLabel *answerEditCloseB;
-    QWidget *widget1;
+    QWidget *layoutWidget1;
     QGridLayout *gridLayout;
     QPushButton *aButton;
     QPushButton *bButton;
@@ -146,73 +146,75 @@ public:
         valueJudge = new QLabel(centralWidget);
         valueJudge->setObjectName(QStringLiteral("valueJudge"));
         valueJudge->setGeometry(QRect(561, 280, 21, 16));
-        widget = new QWidget(centralWidget);
-        widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(95, 99, 473, 151));
-        gridLayout_3 = new QGridLayout(widget);
+        layoutWidget = new QWidget(centralWidget);
+        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
+        layoutWidget->setGeometry(QRect(95, 99, 473, 164));
+        gridLayout_3 = new QGridLayout(layoutWidget);
         gridLayout_3->setSpacing(6);
         gridLayout_3->setContentsMargins(11, 11, 11, 11);
         gridLayout_3->setObjectName(QStringLiteral("gridLayout_3"));
         gridLayout_3->setContentsMargins(0, 0, 0, 0);
-        answerEditCloseA = new QLabel(widget);
+        answerEditCloseA = new QLabel(layoutWidget);
         answerEditCloseA->setObjectName(QStringLiteral("answerEditCloseA"));
         answerEditCloseA->setMinimumSize(QSize(471, 36));
         answerEditCloseA->setMaximumSize(QSize(471, 36));
 
         gridLayout_3->addWidget(answerEditCloseA, 0, 0, 1, 1);
 
-        answerEditCloseC = new QLabel(widget);
+        answerEditCloseC = new QLabel(layoutWidget);
         answerEditCloseC->setObjectName(QStringLiteral("answerEditCloseC"));
         answerEditCloseC->setMinimumSize(QSize(0, 36));
         answerEditCloseC->setMaximumSize(QSize(16777215, 36));
 
         gridLayout_3->addWidget(answerEditCloseC, 2, 0, 1, 1);
 
-        answerEditCloseD = new QLabel(widget);
+        answerEditCloseD = new QLabel(layoutWidget);
         answerEditCloseD->setObjectName(QStringLiteral("answerEditCloseD"));
         answerEditCloseD->setMinimumSize(QSize(0, 36));
         answerEditCloseD->setMaximumSize(QSize(16777215, 36));
 
         gridLayout_3->addWidget(answerEditCloseD, 3, 0, 1, 1);
 
-        answerEditCloseB = new QLabel(widget);
+        answerEditCloseB = new QLabel(layoutWidget);
         answerEditCloseB->setObjectName(QStringLiteral("answerEditCloseB"));
         answerEditCloseB->setMinimumSize(QSize(0, 36));
         answerEditCloseB->setMaximumSize(QSize(16777215, 36));
 
         gridLayout_3->addWidget(answerEditCloseB, 1, 0, 1, 1);
 
-        widget1 = new QWidget(centralWidget);
-        widget1->setObjectName(QStringLiteral("widget1"));
-        widget1->setGeometry(QRect(13, 96, 77, 161));
-        gridLayout = new QGridLayout(widget1);
+        layoutWidget1 = new QWidget(centralWidget);
+        layoutWidget1->setObjectName(QStringLiteral("layoutWidget1"));
+        layoutWidget1->setGeometry(QRect(13, 102, 77, 161));
+        gridLayout = new QGridLayout(layoutWidget1);
         gridLayout->setSpacing(6);
         gridLayout->setContentsMargins(11, 11, 11, 11);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
         gridLayout->setContentsMargins(0, 0, 0, 0);
-        aButton = new QPushButton(widget1);
+        aButton = new QPushButton(layoutWidget1);
         aButton->setObjectName(QStringLiteral("aButton"));
         aButton->setEnabled(true);
         aButton->setMaximumSize(QSize(75, 23));
 
         gridLayout->addWidget(aButton, 0, 0, 1, 1);
 
-        bButton = new QPushButton(widget1);
+        bButton = new QPushButton(layoutWidget1);
         bButton->setObjectName(QStringLiteral("bButton"));
 
         gridLayout->addWidget(bButton, 1, 0, 1, 1);
 
-        cButton = new QPushButton(widget1);
+        cButton = new QPushButton(layoutWidget1);
         cButton->setObjectName(QStringLiteral("cButton"));
 
         gridLayout->addWidget(cButton, 2, 0, 1, 1);
 
-        dButton = new QPushButton(widget1);
+        dButton = new QPushButton(layoutWidget1);
         dButton->setObjectName(QStringLiteral("dButton"));
 
         gridLayout->addWidget(dButton, 3, 0, 1, 1);
 
         mainWindow->setCentralWidget(centralWidget);
+        layoutWidget->raise();
+        layoutWidget->raise();
         labelWelcome->raise();
         labelAuthors->raise();
         judgeButton->raise();
@@ -274,7 +276,7 @@ public:
         backButton->setText(QApplication::translate("mainWindow", "Back", 0));
         correctAnswer->setText(QString());
         valueJudge->setText(QString());
-        answerEditCloseA->setText(QApplication::translate("mainWindow", "sa", 0));
+        answerEditCloseA->setText(QString());
         answerEditCloseC->setText(QString());
         answerEditCloseD->setText(QString());
         answerEditCloseB->setText(QString());

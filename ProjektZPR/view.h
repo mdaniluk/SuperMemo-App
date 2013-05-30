@@ -25,7 +25,7 @@ signals:
 	void chooseCourse(std::string);
 	void closeAnyWindow();
 	void deleteCourse(std::string);
-	void endCourse(vector<int>);
+	void endCourse(vector<int>, std::string);
 	void computeMark(int, std::string, std::string);
 	void computeMark(int, vector<bool>, vector<bool>);
 
@@ -46,7 +46,7 @@ public slots:
 	void enabledMainWin();
 	void showYou();
 	void showError(std::string message);
-	void showQuestionCardList(vector<PQcard>);
+	void showQuestionCardList(vector<PQcard>, std::string);
 	void changeValueOfSlider(int);
 	void setSuggesterMark(int);
 private:
@@ -71,6 +71,7 @@ private:
 	bool isCClicked;
 	bool isDClicked;
 	bool isNextOrBack;
+	string nameOfCourse_;
 };
 
 #endif // VIEW_H
