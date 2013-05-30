@@ -30,6 +30,7 @@ void Controller::connectView(View * view){
 
 void Controller::endCourseJudge(std::vector<int> userJudges){
 	try{
+		qDebug()<<"END Controler";
 		model_->endCourseAction(userJudges);
 		}
 	catch (myException e){

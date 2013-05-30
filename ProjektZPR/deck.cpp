@@ -75,8 +75,11 @@ void Deck::setNextDateForEach(vector<int> answersJudged){
 		vectorPQ.at(n)->dateOfNextQuestion(answersJudge.at(n));
 	});
 		
-		*/	for (int n=0; n<vectorPQ.size(); n++){
-			vectorPQ.at(n)->dateOfNextQuestion(answersJudged.at(n));}
+		*/	
+	qDebug()<< "tttttttttt";
+	for (int n=0; n<vectorPQ.size(); n++){
+		qDebug()<< "jooooooo"+ n;
+		vectorPQ.at(n)->dateOfNextQuestion(answersJudged.at(n));}
 }
 Deck::Deck()
 {
