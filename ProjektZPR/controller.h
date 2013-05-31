@@ -36,6 +36,7 @@ signals:
 	void enabledMainWindow();
 	/// emit Question Card List and name of current course
 	void emitQuestionCardList(vector<PQcard>,std::string);
+	void emitQuestionCardListContinue(vector<PQcard>,std::string);
 	void emitSuggestedMark(int);
 	/// emit marks to statistic
 	void showStats(vector<int>);
@@ -54,10 +55,17 @@ public slots:
 	void addChooseCourse(std::string course);
 	void addCloseAnyWindow();
 	void deleteChooseCourse(std::string course);
+
 	void computeMarkForOpen(int, std::string, std::string);
 	void computeMarkForClose(int, vector<bool>, vector<bool>);
+
+	void endCourseJudge(vector<int>, std::string);
+	void addChooseCourseContinue(std::string name);
+
+
 	/// end of course
 	void addEndCourse(vector<int>, std::string);
+
 private:
 	View *view_;
 	Model *model_;
