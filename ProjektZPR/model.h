@@ -4,7 +4,11 @@
 #include "start.h"
 #include "mark.h"
 #include <QObject>
-
+/**
+ * Class represents Model in MVC.
+ * @author Piotr Maleci & Michal Daniluk
+ *
+ */
 class Model 
 {
 public:

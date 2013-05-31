@@ -5,6 +5,11 @@
 #include "ui_statistic.h"
 #include "view.h"
 #include "controller.h"
+/**
+ * Class represents Statistic
+ * @author Piotr Maleci & Michal Daniluk
+ *
+ */
 class Statistic : public QDialog,  public Ui::Statistic
 {
 	Q_OBJECT

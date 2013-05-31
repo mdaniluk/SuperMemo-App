@@ -3,7 +3,11 @@
 
 #include <vector>
 using namespace std;
-
+/**
+ * Class represents logic of course creator
+ * @author Piotr Maleci & Michal Daniluk
+ *
+ */
 class Course
 {
 public:

@@ -10,7 +10,7 @@ typedef boost::shared_ptr<QuestionCard> PQcard;
 
 class Controller;
 /**
- * Class represent the main application window. It is a View in design pattern - Model View Controller
+ * Class represents the main application window. It is a View in design pattern - Model View Controller
  * @author Piotr Malecki & Michal Daniluk
  *
  */

@@ -5,7 +5,11 @@
 
 using std::exception;
 using std::string;
-
+/**
+ * Class represents our own Exception
+ * @author Piotr Maleci & Michal Daniluk
+ *
+ */
 class myException : public exception {
 public:
 	myException (const string message) : message_(message) {}

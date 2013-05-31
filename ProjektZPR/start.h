@@ -2,7 +2,11 @@
 #include <boost/filesystem.hpp>
 #include "deck.h"
 namespace fs = ::boost::filesystem;
-
+/**
+ * Class represents logic of Start Menu Dialog
+ * @author Piotr Maleci & Michal Daniluk
+ *
+ */
 class Start
 {
 public:
