@@ -1,12 +1,15 @@
 #include "start.h"
 #include <algorithm>
+#include <boost/date_time/posix_time/posix_time.hpp>
+#include <boost/date_time/posix_time/posix_time_io.hpp>
 #define BOOST_FILESYSTEM_VERSION 3
 #define BOOST_FILESYSTEM_NO_DEPRECATED 
 
 Start::Start()
 {
 	//deck_= PDeck((new Deck(QString::fromStdString("Resources/ciekawostki.xml"))));
-	deck_=PDeck(new Deck());
+	//deck_=PDeck(new Deck());
+	decknew_=PDeck(new Deck());
 }
 
 
@@ -40,19 +43,18 @@ void Start::setNextDateForEach(vector<int> answersJudged, std::string courseName
 		
 		deck_->getQuestionCardVector().at(n)->dateOfNextQuestion(answersJudged.at(n));
 	}
-	std::string tmp = courseName + ".dat";
+	std::string tmp = courseName + ".txt";
 	const char* filename = tmp.c_str();
 	qDebug() << filename;
-	//const char* filename =courseName + ".dat";
 
-	//boost::shared_ptr<Deck> data(new Deck());
-	saveToFileCurrentState(filename,deck_);
+	saveToFileCurrentState(*deck_,filename);
+	
 }
 
 
-void  Start::saveToFileCurrentState(const char* filename, boost::shared_ptr<Deck> data)
+void  Start::saveToFileCurrentState(const Deck &s,const char* filename)
 {
-	/*try{
+	try{
 		
 		std::ofstream ofs(filename);
 		
@@ -60,48 +62,54 @@ void  Start::saveToFileCurrentState(const char* filename, boost::shared_ptr<Deck
 		oa << s;
 		ofs.close();
 	}
-	catch(std::exception e) { std::cout << e.what() << std::endl; exit(1); }*/
+	catch(std::exception e) { std::cout << e.what() << std::endl; exit(1); }
 	
-	std::ofstream ofs(filename);
+	/*std::ofstream ofs(filename);
 	assert(ofs.good());
-	 boost::archive::text_oarchive oa(ofs);
-	oa << data;
+	 boost::archive::binary_oarchive oa(ofs);
+	oa << data;*/
 
 }
 void Start::chooseCourse(std::string course){
-	deck_= PDeck(new Deck(QString::fromStdString("Resources/" + course + ".xml")));
+	deck_= new Deck(QString::fromStdString("Resources/" + course + ".xml"));
 }
 
-void Start::loadFromFileCurrentState(const char* filename, boost::shared_ptr<Deck> data)
+void Start::loadFromFileCurrentState( Deck &s, const char* filename/*, boost::shared_ptr<Deck> data*/)
 {
-	//try{
-	//
-	//	std::ifstream ifs(filename);
-	//	if (!ifs.is_open()) throw LackFile(filename);
-	//	boost::archive::text_iarchive ia(ifs);
-	//	
-	//	ia >> BOOST_SERIALIZATION_NVP(deck_);
-	//	//ia >> s;
-	//	ifs.close();
-	//}
-	//catch(std::exception e) { 
-	//	qDebug() << QString::fromStdString(e.what()) ; exit(1); }
+	try{
 	
-	std::ifstream ifs(filename);
-	boost::archive::text_iarchive ia(ifs);
-	ia >> BOOST_SERIALIZATION_NVP(data);
-	ifs.close();
+		std::ifstream ifs(filename);
+		if (!ifs.is_open()) throw LackFile(filename);
+		boost::archive::text_iarchive ia(ifs);
+		
+		//ia >> BOOST_SERIALIZATION_NVP(deck_);
+		ia >> s;
+		ifs.close();
+	}
+	catch(std::exception e) { 
+		qDebug() << QString::fromStdString(e.what()) ; exit(1); }
+	
+	//std::ifstream ifs(filename);
+	//boost::archive::binary_iarchive ia(ifs);
+	//ia >> BOOST_SERIALIZATION_NVP(data);
+	//ifs.close();
 }
 
 void Start::continueClicked(std::string name){
 	
-	
+	decknew_= PDeck(new Deck(QString::fromStdString("Resources/" + name + ".xml")));
 	//  IFa walnac mozna 
 	try{
-		name = name +".dat";
+		name = name +".txt";
 		const char* filename = name.c_str();
+		qDebug() << QString::fromStdString(filename);
 		//boost::shared_ptr<Deck> data(new Deck());
-		loadFromFileCurrentState( filename, deck_);
+		Deck deck1_;
+		{
+		loadFromFileCurrentState(deck1_, filename);
+		}
+		qDebug()<< QString::fromStdString(deck1_.getQuestionCardVector().at(1)->getAnswerOpen());
+		qDebug()<< QString::fromStdString(to_simple_string(deck1_.getQuestionCardVector().at(1)->getNextDate()));
 		qDebug()<<"Poszlo";
 	}
 	catch (LackFile e){

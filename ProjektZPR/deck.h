@@ -34,6 +34,7 @@ using namespace std;
 #include <boost/serialization/string.hpp>
 #include <boost/serialization/vector.hpp>
 #include <boost/serialization/version.hpp>
+#include <boost/serialization/wrapper.hpp>
 #include <boost/serialization/split_member.hpp>
  
 using namespace boost;
@@ -45,7 +46,7 @@ using std::pair;
 typedef boost::shared_ptr<QuestionCard> PQcard;
 // usunac niepotrzebne includy
 
-class Deck
+class Deck: public mpl::false_
 {
 public:
 	Deck();
@@ -81,5 +82,6 @@ public:
 	BOOST_SERIALIZATION_SPLIT_MEMBER()
 };
 BOOST_CLASS_VERSION(Deck, 1)
+//BOOST_MPL_ASSERT((serialization::is_wrapper<T>))
 
 #endif // DECK_H

@@ -30,6 +30,12 @@
 #include <boost/serialization/vector.hpp>
 #include <boost/serialization/version.hpp>
 #include <boost/serialization/split_member.hpp>
+#include <boost/serialization/utility.hpp>
+#include <boost/serialization/wrapper.hpp>
+#include <boost/archive/xml_woarchive.hpp>
+#include <boost/archive/xml_wiarchive.hpp>
+#include <boost/archive/binary_oarchive.hpp>
+#include <boost/archive/binary_iarchive.hpp>
 
 using namespace std;
 using namespace boost;
@@ -43,20 +49,20 @@ public:
 	~Start();
 	void setListOfFiles();
 	std::vector<std::string> getListOfFiles(){ return filesXml;}
-	PDeck getDeck() {return deck_;}
-	Deck* getDecknew() {return decknew_;}
+	Deck * getDeck() {return deck_;}
+	PDeck getDecknew() {return decknew_;}
 	void chooseCourse(std::string course);
 	void deleteCourse(std::string course);
 	void setNextDateForEach(vector<int> answersJudged, std::string courseName);
-	void saveToFileCurrentState( const char* filename, boost::shared_ptr<Deck> data);
-	void loadFromFileCurrentState(  const char* filename, boost::shared_ptr<Deck> data);
+	void saveToFileCurrentState(const Deck &s, const char* filename);
+	void loadFromFileCurrentState(Deck &s,  const char* filename);
 	void continueClicked(std::string name);
 
 	
 
 private:
 	std::vector<std::string> filesXml;
-	PDeck deck_;
-	Deck* decknew_;
+	Deck *deck_;
+	PDeck decknew_;
 };
 

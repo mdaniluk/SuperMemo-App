@@ -21,7 +21,7 @@ typedef std::vector<std::pair<string, string>> CloseAnswer;
 using namespace std;
  
 #include <boost/shared_ptr.hpp>
- 
+#include <boost/serialization/utility.hpp>
 #include <boost/archive/text_iarchive.hpp>
 #include <boost/archive/text_oarchive.hpp>
 #include <boost/archive/xml_iarchive.hpp>
@@ -55,6 +55,7 @@ public:
 	string getAnswerOpen() {return answerOpen_;}
 	string getQuestion() {return question_;}
 	CloseAnswer getcloseAnswer() {return closeAnswer_;}
+	boost::gregorian::date getNextDate() {return now;}
 	~QuestionCard();
 
 

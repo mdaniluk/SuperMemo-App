@@ -44,7 +44,7 @@ void Controller::addChooseCourseContinue(std::string name){
 		qDebug()<<"Continue2";
 		model_->setChooseCourseContinue(name);
 		emit closeStartWindow();
-		//emit emitQuestionCardListContinue(model_->getCurrentStart()->getDecknew()->getQuestionCardVector(), name);
+		emit emitQuestionCardListContinue(model_->getCurrentStart()->getDecknew()->getQuestionCardVector(), name);
 		}
 	catch (myException e){
 		emit error(e.returnMessage());
