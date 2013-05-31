@@ -18,10 +18,12 @@ View::View(Controller* controller, QWidget *parent): myController_(controller), 
 	connect(myController_, SIGNAL( emitQuestionCardList(vector<PQcard>, std::string)), this, SLOT(showQuestionCardList(vector<PQcard>, std::string)) );
 	connect(myController_, SIGNAL( emitQuestionCardListContinue(vector<PQcard>, std::string)), this, SLOT(showQuestionCardList(vector<PQcard>, std::string)) );
 	connect(myController_, SIGNAL(emitSuggestedMark(int) ), this, SLOT(setSuggesterMark(int) ) );
-	connect(this, SIGNAL(chooseCourse(std::string)), this, SLOT(on_beginChoose()) );
 
+	connect(this, SIGNAL(chooseCourse(std::string)), this, SLOT(on_beginChoose()) );
+	connect(this, SIGNAL(chooseContinueCourse(std::string)), this, SLOT(on_beginChoose()) );
+	
 	connect( verticalSlider, SIGNAL(valueChanged(int)),this, SLOT(changeValueOfSlider(int)) );
-	//connect(this, SIGNAL(endCourse(vector<int>)), myController_, SLOT(endCourseJudge(vector<int>) ) );
+	
 
 	onBeginHide();
 

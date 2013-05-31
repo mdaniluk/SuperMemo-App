@@ -27,6 +27,7 @@ void Controller::connectView(View * view){
 	connect(view_, SIGNAL(saveCurrentCourse(std::string)), this, SLOT(addSaveCourse(std::string)) );
 	connect(view_, SIGNAL(showCurrentListOfFiles()), this, SLOT(addListOfFiles() ) );
 	connect(view_, SIGNAL(chooseCourse(std::string)), this, SLOT(addChooseCourse(std::string) ) );
+
 	connect(view_, SIGNAL(chooseContinueCourse(std::string)), this, SLOT(addChooseCourseContinue(std::string) ) );
 	connect(view_, SIGNAL(deleteCourse(std::string)), this, SLOT(deleteChooseCourse(std::string) ) );
 	connect(view_, SIGNAL(closeAnyWindow()), this, SLOT(addCloseAnyWindow() ) );
