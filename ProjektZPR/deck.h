@@ -29,7 +29,7 @@ using std::list;
 using std::vector;
 using std::pair;
 typedef boost::shared_ptr<QuestionCard> PQcard;
-// usunac niepotrzebne includy
+
 
 class Deck: public mpl::false_
 {
