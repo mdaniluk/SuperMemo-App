@@ -6,7 +6,7 @@
 using std::exception;
 using std::string;
 
-class myException : public exception {
+class myException : public std::exception {
 public:
 	myException (const string message) : message_(message) {}
 	const string returnMessage() const {
