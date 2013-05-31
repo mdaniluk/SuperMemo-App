@@ -33,12 +33,13 @@ public:
     QHBoxLayout *horizontalLayout;
     QPushButton *choose;
     QPushButton *deleteButton;
+    QPushButton *continueButton;
 
     void setupUi(QWidget *StartMenu)
     {
         if (StartMenu->objectName().isEmpty())
             StartMenu->setObjectName(QStringLiteral("StartMenu"));
-        StartMenu->resize(306, 299);
+        StartMenu->resize(299, 299);
         label = new QLabel(StartMenu);
         label->setObjectName(QStringLiteral("label"));
         label->setGeometry(QRect(20, 10, 81, 21));
@@ -71,8 +72,12 @@ public:
 
         verticalLayout->addLayout(horizontalLayout);
 
+        continueButton = new QPushButton(StartMenu);
+        continueButton->setObjectName(QStringLiteral("continueButton"));
+        continueButton->setGeometry(QRect(100, 270, 101, 21));
         layoutWidget->raise();
         label->raise();
+        continueButton->raise();
 
         retranslateUi(StartMenu);
 
@@ -83,8 +88,9 @@ public:
     {
         StartMenu->setWindowTitle(QApplication::translate("StartMenu", "StartMenu", 0));
         label->setText(QApplication::translate("StartMenu", "Dost\304\231pne Kursy", 0));
-        choose->setText(QApplication::translate("StartMenu", "Wybierz", 0));
+        choose->setText(QApplication::translate("StartMenu", "Rozpocznij", 0));
         deleteButton->setText(QApplication::translate("StartMenu", "Usun", 0));
+        continueButton->setText(QApplication::translate("StartMenu", "Kontynuuj", 0));
     } // retranslateUi
 
 };

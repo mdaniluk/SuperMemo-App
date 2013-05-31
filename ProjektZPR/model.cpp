@@ -1,10 +1,15 @@
 #include "model.h"
 #include<qdebug.h>
+
 Model::Model()
 {
 	currentCourse = new Course();
 	start = new Start();
+
 	mark = new Mark();
+
+	deck = new Deck();
+
 }
 
 Model::~Model()
@@ -12,10 +17,16 @@ Model::~Model()
 
 }
 
+void Model::setChooseCourseContinue(std::string name){
+	start-> continueClicked(name);
+}
+void Model::endCourseAction(std::vector<int> answersJudged, std::string courseName){
+
+	start->setNextDateForEach(answersJudged, courseName);
+}
 void Model::setNext(int id, std::string question, std::string answer){
 	currentCourse->setQuestions(id, question);
 	currentCourse->setAnswers(id, answer);
-	//qDebug() << "jeeeeeeeeeeeeeee";
 }
 
 void Model::setSaveCourse(std::string nameOfFile){

@@ -1,0 +1,40 @@
+<SuperMemo>
+ <Task Id="1">
+  <Question Id="1">The longest river in the world ?</Question>
+  <AnswerOpen Id="1">Nil</AnswerOpen>
+ </Task>
+ <Task Id="2">
+  <Question Id="2">The highest mountain in the world ?</Question>
+  <AnswerOpen Id="2">Mount Everest</AnswerOpen>
+ </Task>
+ <Task Id="3">
+  <Question Id="3">The largest country in the world ?</Question>
+  <AnswerOpen Id="3">Russia</AnswerOpen>
+ </Task>
+ <Task Id="4">
+  <Question Id="4">Capital city of Australia?</Question>
+  <AnswerOpen Id="4">Cambera</AnswerOpen>
+ </Task>
+ <Task Id="5">
+  <Question Id="5">Which coutries/country are/is not a member of European Union ?</Question>
+  <AnswerClose Id="5">
+   <a Value="False">France</a>
+   <b Value="True">Norway</b>
+   <c Value="True">Swizerland</c>
+   <d Value="False">Lithuania</d>
+  </AnswerClose>
+ </Task>
+ <Task Id="6">
+  <Question Id="6">Which city is the largest ?</Question>
+  <AnswerClose Id="6">
+   <a Value="False">Berlin</a>
+   <b Value="True">Moscow</b>
+   <c Value="False">Madrit</c>
+   <d Value="False">Paris</d>
+  </AnswerClose>
+ </Task>
+ <Task Id="7">
+  <Question Id="7">Year of Waterloo battle ?</Question>
+  <AnswerOpen Id="7">1815</AnswerOpen>
+ </Task>
+</SuperMemo>

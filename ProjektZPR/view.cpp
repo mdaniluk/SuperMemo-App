@@ -13,15 +13,20 @@ View::View(Controller* controller, QWidget *parent): myController_(controller), 
 	palette.setBrush(this->backgroundRole(), QBrush(QImage("images/tlo.jpg")));
 	this->setPalette(palette);
 	qRegisterMetaType<vector<PQcard>>("vector<PQcard>");
+	qRegisterMetaType<vector<int>>("vector<int>");
 	qRegisterMetaType<std::string>("std::string");
 
 	connect(myController_, SIGNAL(enabledMainWindow()), this, SLOT(enabledMainWin() ) );
 	connect(myController_, SIGNAL(error(std::string)), this, SLOT(showError(std::string)) );
 	connect(myController_, SIGNAL( emitQuestionCardList(vector<PQcard>, std::string)), this, SLOT(showQuestionCardList(vector<PQcard>, std::string)) );
+	connect(myController_, SIGNAL( emitQuestionCardListContinue(vector<PQcard>, std::string)), this, SLOT(showQuestionCardList(vector<PQcard>, std::string)) );
 	connect(myController_, SIGNAL(emitSuggestedMark(int) ), this, SLOT(setSuggesterMark(int) ) );
-	connect(this, SIGNAL(chooseCourse(std::string)), this, SLOT(on_beginChoose()) );
 
+	connect(this, SIGNAL(chooseCourse(std::string)), this, SLOT(on_beginChoose()) );
+	connect(this, SIGNAL(chooseContinueCourse(std::string)), this, SLOT(on_beginChoose()) );
+	
 	connect( verticalSlider, SIGNAL(valueChanged(int)),this, SLOT(changeValueOfSlider(int)) );
+	
 
 	onBeginHide();
 
@@ -385,8 +390,10 @@ void View::on_endButton_clicked(){
 	msg->setStandardButtons(QMessageBox::Yes | QMessageBox::No);
 	msg->show();	
 	int reply = msg->exec();
+	qDebug() << "End";
 	switch (reply) {
 		case QMessageBox::Yes:
+
 			//prepareToOpen();
 			onBeginHide();
 			Statistic *statistic = new Statistic(myController_,this);

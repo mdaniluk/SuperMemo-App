@@ -22,12 +22,18 @@ public:
 	void setListOfFiles();
 	void setChooseCourse(std::string course);
 	void deleteChooseCourse(std::string course);
+	void endCourseAction(std::vector<int>, std::string);
 	void computeOpenMark(int type, std::string user, std::string correct );
 	void computeCloseMark(int type , vector<bool> user, vector<bool> correct );
+	void setChooseCourseContinue(std::string name);
 private:
 	Course *currentCourse;
 	Start *start;
 	Mark *mark;
+	Deck *deck;
+	
+
+
 };
 
 #endif // MODEL_H

@@ -45,10 +45,11 @@ boost::gregorian::date QuestionCard::dateOfNextQuestion(int mark )
 			interval_ = 1;
 		}
 
-	boost::gregorian::date teraz =  boost::gregorian::day_clock::local_day();
-	boost::gregorian::date_duration liczba_dni(static_cast<long>(interval_));
-	teraz += liczba_dni;
-	return teraz;
+	now =  boost::gregorian::day_clock::local_day();
+	boost::gregorian::date_duration number_days(static_cast<long>(interval_));
+	now += number_days;
+	qDebug() << QString::fromStdString(to_simple_string(now)); 
+	return now;
 
 }
 QuestionCard::~QuestionCard()
