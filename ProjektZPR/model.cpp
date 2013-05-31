@@ -1,5 +1,6 @@
 #include "model.h"
 #include<qdebug.h>
+
 Model::Model()
 {
 	currentCourse = new Course();
@@ -26,7 +27,6 @@ void Model::endCourseAction(std::vector<int> answersJudged, std::string courseNa
 void Model::setNext(int id, std::string question, std::string answer){
 	currentCourse->setQuestions(id, question);
 	currentCourse->setAnswers(id, answer);
-	//qDebug() << "jeeeeeeeeeeeeeee";
 }
 
 void Model::setSaveCourse(std::string nameOfFile){

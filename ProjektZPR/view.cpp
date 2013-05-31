@@ -1,5 +1,6 @@
 #include "view.h"
 #include "createtest.h"
+#include "statistic.h"
 #include "startmenu.h"
 #include <qmessagebox.h>
 #include "ui_projektzpr.h"
@@ -8,7 +9,9 @@ typedef std::vector<std::pair<string, string>> CloseAnswer; //wektor (odpowiedz 
 
 View::View(Controller* controller, QWidget *parent): myController_(controller), QMainWindow(parent){
 	setupUi(this);
-	QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
+	QPalette palette;
+	palette.setBrush(this->backgroundRole(), QBrush(QImage("images/tlo.jpg")));
+	this->setPalette(palette);
 	qRegisterMetaType<vector<PQcard>>("vector<PQcard>");
 	qRegisterMetaType<vector<int>>("vector<int>");
 	qRegisterMetaType<std::string>("std::string");
@@ -107,6 +110,7 @@ void View::onBeginHide(){
 	nextButton->hide();
 	backButton->hide();
 	prepareToOpen();
+	valueJudge->hide();
 }
 
 void View::prepareToOpen(){
@@ -131,6 +135,7 @@ void View::showCurrentTask(){
 	correctAnswer->hide();
 	questiocard_= taskVector_.at(currentTask_-1);
 	question->setText(QString::fromStdString(questiocard_->getQuestion()));
+	
 
 	if(judgeVector_.size() >= currentTask_){
 		verticalSlider->setValue(judgeVector_.at(currentTask_-1) );
@@ -312,7 +317,7 @@ void View::on_backButton_clicked(){
 
 void View::on_answerButton_clicked(){
 	computeSuggestedMark();
-	
+	valueJudge->show();
 	if(currentTaskType_ == 0){
 		CloseAnswer closeAnswer = questiocard_->getcloseAnswer();
 		if(closeAnswer.size() > 0){
@@ -357,6 +362,7 @@ void View::on_answerButton_clicked(){
 }
 
 void View::changeValueOfSlider(int value){
+	
 	valueJudge->setText(QString::number(value));
 	if(!isNextOrBack){
 		nextButton->setDisabled(true);
@@ -390,11 +396,10 @@ void View::on_endButton_clicked(){
 
 			//prepareToOpen();
 			onBeginHide();
+			Statistic *statistic = new Statistic(myController_,this);
 			emit endCourse(judgeVector_,nameOfCourse_);
-			QDialog *statistic = new QDialog();
-			//statistic->addAction(QLabel *label);
-			statistic->show();
-
+			
+			
 
 	}
 }

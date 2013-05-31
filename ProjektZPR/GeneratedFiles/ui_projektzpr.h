@@ -24,7 +24,6 @@
 #include <QtWidgets/QSlider>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTextEdit>
-#include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -67,7 +66,6 @@ public:
     QMenuBar *menuBar;
     QMenu *menuFile;
     QMenu *menuCreate;
-    QToolBar *mainToolBar;
     QStatusBar *statusBar;
 
     void setupUi(QMainWindow *mainWindow)
@@ -75,6 +73,7 @@ public:
         if (mainWindow->objectName().isEmpty())
             mainWindow->setObjectName(QStringLiteral("mainWindow"));
         mainWindow->resize(600, 400);
+        mainWindow->setMaximumSize(QSize(600, 400));
         actionStop = new QAction(mainWindow);
         actionStop->setObjectName(QStringLiteral("actionStop"));
         actionQuit = new QAction(mainWindow);
@@ -238,9 +237,6 @@ public:
         menuCreate = new QMenu(menuBar);
         menuCreate->setObjectName(QStringLiteral("menuCreate"));
         mainWindow->setMenuBar(menuBar);
-        mainToolBar = new QToolBar(mainWindow);
-        mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
-        mainWindow->addToolBar(Qt::TopToolBarArea, mainToolBar);
         statusBar = new QStatusBar(mainWindow);
         statusBar->setObjectName(QStringLiteral("statusBar"));
         mainWindow->setStatusBar(statusBar);
@@ -248,7 +244,6 @@ public:
         menuBar->addAction(menuFile->menuAction());
         menuBar->addAction(menuCreate->menuAction());
         menuFile->addAction(actionStart);
-        menuFile->addAction(actionStop);
         menuFile->addAction(actionQuit);
         menuCreate->addAction(actionNew_Course);
 

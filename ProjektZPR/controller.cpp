@@ -15,6 +15,7 @@ void Controller::connectView(View * view){
 	qRegisterMetaType<std::string>("std::string");
 
 	qRegisterMetaType<vector<bool>>("vector<bool>");
+	qRegisterMetaType<vector<int>>("vector<int>");
 
 
 	qRegisterMetaType<vector<int>>("vector<int>");
@@ -38,6 +39,7 @@ void Controller::connectView(View * view){
 	connect(view_, SIGNAL(endCourse(vector<int>, std::string)), this, SLOT(endCourseJudge(vector<int>, std::string) ) );
 
 
+	connect(view_, SIGNAL(endCourse(vector<int>, std::string) ), this, SLOT(addEndCourse(vector<int>, std::string) ) );
 }
 void Controller::addChooseCourseContinue(std::string name){
 
@@ -149,4 +151,8 @@ void Controller::computeMarkForOpen(int type, std::string user, std::string corr
 void Controller::computeMarkForClose(int type , vector<bool> user, vector<bool> correct){
 	model_->computeCloseMark(type,user,correct);
 	emit emitSuggestedMark(model_->getCurrentMark()->getValue() );
+}
+
+void Controller::addEndCourse(vector<int> marks, std::string name){
+	emit showStats(marks);
 }

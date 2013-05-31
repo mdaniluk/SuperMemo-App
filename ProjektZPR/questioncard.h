@@ -3,29 +3,21 @@
 
 #include <QObject>
 #include <QDebug>
-#include <list>
 #include <vector>
 #include <boost/date_time/gregorian/gregorian.hpp>
 #include <boost/date_time/gregorian/greg_serialize.hpp>
 #include <boost/serialization/map.hpp>
 #include <boost/serialization/is_bitwise_serializable.hpp>
 #include <boost/serialization/nvp.hpp>
-using std::string;
-using boost::serialization::make_nvp;
-typedef std::vector<std::pair<string, string>> CloseAnswer; 
 #include <memory>
 #include <iomanip>
 #include <iostream>
 #include <fstream>
 #include <string>
-using namespace std;
- 
 #include <boost/shared_ptr.hpp>
 #include <boost/serialization/utility.hpp>
 #include <boost/archive/text_iarchive.hpp>
 #include <boost/archive/text_oarchive.hpp>
-#include <boost/archive/xml_iarchive.hpp>
-#include <boost/archive/xml_oarchive.hpp>
 #include <boost/serialization/shared_ptr.hpp>
 #include <boost/serialization/string.hpp>
 #include <boost/serialization/vector.hpp>
@@ -33,7 +25,10 @@ using namespace std;
 #include <boost/serialization/split_member.hpp>
  
 using namespace boost;
-// usunac niepotrzebne includy
+using namespace std;
+using std::string;
+using boost::serialization::make_nvp;
+typedef std::vector<std::pair<string, string>> CloseAnswer; 
 
 /**
  * Class which represents logical structure of question, consists all elements of question. Enables setting 

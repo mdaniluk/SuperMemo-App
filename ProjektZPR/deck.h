@@ -1,6 +1,7 @@
 #ifndef DECK_H
 #define DECK_H
 #include "questioncard.h"
+#include "Exception.h"
 #include <QObject>
 #include <QFile>
 #include <QtCore>
@@ -8,38 +9,22 @@
 #include <QtXml>
 #include <QString>
 #include <QMessageBox>
-#include <QXmlStreamReader>
-#include <boost/serialization/shared_ptr.hpp>
-#include <boost/serialization/vector.hpp>
-#include <boost/archive/text_oarchive.hpp>
-#include <boost/archive/text_iarchive.hpp>
-#include <list>
-#include <iostream>
 #include <vector>
-#include <map>
 #include <memory>
 #include <iomanip>
 #include <iostream>
 #include <fstream>
-#include <string>
-using namespace std;
- 
 #include <boost/shared_ptr.hpp>
- 
-#include <boost/archive/text_iarchive.hpp>
-#include <boost/archive/text_oarchive.hpp>
-#include <boost/archive/xml_iarchive.hpp>
-#include <boost/archive/xml_oarchive.hpp>
 #include <boost/serialization/shared_ptr.hpp>
+#include <boost/archive/text_oarchive.hpp>
+#include <boost/archive/text_iarchive.hpp>
 #include <boost/serialization/string.hpp>
 #include <boost/serialization/vector.hpp>
 #include <boost/serialization/version.hpp>
-#include <boost/serialization/wrapper.hpp>
 #include <boost/serialization/split_member.hpp>
  
 using namespace boost;
-
-#include "Exception.h"
+using namespace std;
 using std::list;
 using std::vector;
 using std::pair;

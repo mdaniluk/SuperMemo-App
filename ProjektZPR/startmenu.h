@@ -5,7 +5,11 @@
 #include "ui_startmenu.h"
 #include "view.h"
 #include "controller.h"
-
+/**
+ * Class represents start menu dialog.
+ * @author Piotr Maleci & Michal Daniluk
+ *
+ */
 
 class StartMenu : public QDialog,  public Ui::StartMenu
 {

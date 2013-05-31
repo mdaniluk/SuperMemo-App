@@ -59,8 +59,6 @@ void Start::setNextDateForEach(vector<int> answersJudged, std::string courseName
 	
 	saveToFileCurrentState(*deck_,filename);	
 	}
-	
-	
 }
 
 
@@ -75,9 +73,8 @@ void  Start::saveToFileCurrentState(const Deck &s,const char* filename)
 		ofs.close();
 	}
 	catch(std::exception e) { std::cout << e.what() << std::endl; exit(1); }
-	
-
 }
+
 void Start::chooseCourse(std::string course){
 	deck_= new Deck(QString::fromStdString("Resources/" + course + ".xml"));
 }

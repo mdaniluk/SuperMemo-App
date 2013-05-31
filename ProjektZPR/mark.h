@@ -1,6 +1,11 @@
 #pragma once
 #include <string>
 #include <vector>
+/**
+ * Class represents logic of computing mark
+ * @author Piotr Maleci & Michal Daniluk
+ *
+ */
 class Mark
 {
 public:
