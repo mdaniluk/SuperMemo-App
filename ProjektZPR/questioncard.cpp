@@ -9,6 +9,7 @@ QuestionCard::QuestionCard(const std::string question,  const std::string answer
 	interval_ = 1;
 	eFactor_ = 2.5;
 	how_many_ = 0;
+	now = boost::gregorian::date(1991,01,10);
 }
 
 QuestionCard::QuestionCard( const std::string question,  CloseAnswer answer, const int idQuestion, const bool questionType): question_(question),  closeAnswer_(answer), 
@@ -18,6 +19,7 @@ QuestionCard::QuestionCard( const std::string question,  CloseAnswer answer, con
 	interval_ = 1;
 	eFactor_ = 2.5;
 	how_many_ = 0;
+	now = boost::gregorian::date(1991,01,10);
 }
 
 boost::gregorian::date QuestionCard::dateOfNextQuestion(int mark )

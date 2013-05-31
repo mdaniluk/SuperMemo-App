@@ -50,6 +50,8 @@ void View::showQuestionCardList(vector<PQcard> vectorPQcard, std::string nameOfC
 	showCurrentTask();
 
 }
+
+
 void View::on_beginChoose(){
 	nextButton->setDisabled(true);
 	backButton->setDisabled(true);
@@ -127,69 +129,91 @@ void View::prepareToOpen(){
 
 void View::showCurrentTask(){
 	isNextOrBack = true;
-	question->show();
-	answerEditCloseA->setStyleSheet("QLabel {}");
-	answerEditCloseB->setStyleSheet("QLabel {}");
-	answerEditCloseC->setStyleSheet("QLabel {}");
-	answerEditCloseD->setStyleSheet("QLabel {}");
-	correctAnswer->hide();
 	questiocard_= taskVector_.at(currentTask_-1);
-	question->setText(QString::fromStdString(questiocard_->getQuestion()));
+	boost::gregorian::date dateOfRevision = questiocard_->getNextDate();
+	boost::gregorian::date now = boost::gregorian::day_clock::local_day();
+	if(now >= dateOfRevision){
+		question->show();
+		answerEditCloseA->setStyleSheet("QLabel {}");
+		answerEditCloseB->setStyleSheet("QLabel {}");
+		answerEditCloseC->setStyleSheet("QLabel {}");
+		answerEditCloseD->setStyleSheet("QLabel {}");
+		correctAnswer->hide();
 	
-
-	if(judgeVector_.size() >= currentTask_){
-		verticalSlider->setValue(judgeVector_.at(currentTask_-1) );
-	}
-	else{
-		verticalSlider->setValue(0);
-		
-	}
-
-	if(questiocard_->getQuestionType() == true){ //open answer
-		currentTaskType_ = 1 ;
-		answerOpenEdit->clear();
-		answerOpenEdit->show();
-		prepareToOpen();
-	}
-	else{
-		isAClicked = false; 
-		isBClicked = false;
-		isCClicked = false;
-		isDClicked = false;
-		aButton->setStyleSheet("");
-		bButton->setStyleSheet("");
-		cButton->setStyleSheet("");
-		dButton->setStyleSheet("");
-		currentTaskType_ = 0;
-		answerOpenEdit->hide();
-
-		CloseAnswer closeAnswer = questiocard_->getcloseAnswer();
-		if(closeAnswer.size() > 0){
-			answerEditCloseA->setText(QString::fromStdString(closeAnswer.at(0).first) );
-			answerEditCloseA->show();
-			aButton->show();
-			if(closeAnswer.size() > 1 && closeAnswer.at(1).first != ""){
-				answerEditCloseB->setText(QString::fromStdString(closeAnswer.at(1).first) );
-				answerEditCloseB->show();
-				bButton->show();
-
-			}
-				
-			if(closeAnswer.size() > 2 && closeAnswer.at(2).first != ""){
-				answerEditCloseC->setText(QString::fromStdString(closeAnswer.at(2).first) );
-				answerEditCloseC->show();
-				cButton->show();
-			}
-			if(closeAnswer.size() > 3 && closeAnswer.at(3).first != ""){
-				answerEditCloseD->setText(QString::fromStdString(closeAnswer.at(3).first) );
-				answerEditCloseD->show();
-				dButton->show();
-			}
+		question->setText(QString::fromStdString(questiocard_->getQuestion()));
+	
+	
+		if(judgeVector_.size() >= currentTask_){
+			verticalSlider->setValue(judgeVector_.at(currentTask_-1) );
 		}
+		else{
+			verticalSlider->setValue(0);
+		
+		}
+
+		if(questiocard_->getQuestionType() == true){ //open answer
+			currentTaskType_ = 1 ;
+			answerOpenEdit->clear();
+			answerOpenEdit->show();
+			prepareToOpen();
+		}
+		else{
+			isAClicked = false; 
+			isBClicked = false;
+			isCClicked = false;
+			isDClicked = false;
+			aButton->setStyleSheet("");
+			bButton->setStyleSheet("");
+			cButton->setStyleSheet("");
+			dButton->setStyleSheet("");
+			currentTaskType_ = 0;
+			answerOpenEdit->hide();
+
+			CloseAnswer closeAnswer = questiocard_->getcloseAnswer();
+			if(closeAnswer.size() > 0){
+				answerEditCloseA->setText(QString::fromStdString(closeAnswer.at(0).first) );
+				answerEditCloseA->show();
+				aButton->show();
+				if(closeAnswer.size() > 1 && closeAnswer.at(1).first != ""){
+					answerEditCloseB->setText(QString::fromStdString(closeAnswer.at(1).first) );
+					answerEditCloseB->show();
+					bButton->show();
+
+				}
+				
+				if(closeAnswer.size() > 2 && closeAnswer.at(2).first != ""){
+					answerEditCloseC->setText(QString::fromStdString(closeAnswer.at(2).first) );
+					answerEditCloseC->show();
+					cButton->show();
+				}
+				if(closeAnswer.size() > 3 && closeAnswer.at(3).first != ""){
+					answerEditCloseD->setText(QString::fromStdString(closeAnswer.at(3).first) );
+					answerEditCloseD->show();
+					dButton->show();
+				}
+			}
 		
 	
 
+		}
 	}
+	else{
+		nextButton->setEnabled(true);
+		backButton->setEnabled(true);
+		int valueProgressBar =  ( ((double)(currentTask_)/(double)numberOfAllTasks_) )*100;
+		if(valueProgressBar > progressBar->value() )
+			progressBar->setValue(valueProgressBar);
+
+		if(currentTask_> judgeVector_.size() )
+			judgeVector_.push_back(6);
+		else
+			judgeVector_.at(currentTask_ - 1) = 6;
+		if(isNext)
+			on_nextButton_clicked();
+		else
+			on_backButton_clicked();
+	}
+	
 	isNextOrBack = false;
 }
 
@@ -292,7 +316,7 @@ void View::setSuggesterMark(int mark){
 void View::on_nextButton_clicked(){
 	
 	if(currentTask_ < taskVector_.size() ){
-		
+		isNext = true;
 		currentTask_++;
 		showCurrentTask();
 		//progressBar->setValue( ( ((double)(currentTask_-1)/(double)numberOfAllTasks_) )*100);
@@ -301,6 +325,7 @@ void View::on_nextButton_clicked(){
 			backButton->setDisabled(true);
 
 		}
+		isNext = false;
 	}
 	
 }
@@ -403,3 +428,4 @@ void View::on_endButton_clicked(){
 
 	}
 }
+

@@ -74,6 +74,7 @@ public slots:
 	void changeValueOfSlider(int);
 	/// set suggested mark
 	void setSuggesterMark(int);
+	//void showQuestionCardListContinue(vector<PQcard>, std::string);
 private:
 	Controller* myController_;
 	/// hide some elements on the begin
@@ -97,6 +98,7 @@ private:
 	bool isCClicked;
 	bool isDClicked;
 	bool isNextOrBack;
+	bool isNext;
 	string nameOfCourse_;
 };
 

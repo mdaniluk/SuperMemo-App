@@ -38,7 +38,7 @@ void Mark::computeForOpen(int type, std::string user, std::string correct){
 				sizeMax = correct.size();user.size();
 			}
 			for (int i = 0; i < sizeMin; i++ ) {
-				if (user[i] = correct[i]) {
+				if (user[i] == correct[i]) {
 						correctValue++;
 				}
 			}
