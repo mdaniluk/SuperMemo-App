@@ -24,6 +24,7 @@ signals:
 	void enabledMainWindow();
 	void refreshCourses();
 	void emitQuestionCardList(vector<PQcard>,std::string);
+	void emitQuestionCardListContinue(vector<PQcard>,std::string);
 	void emitSuggestedMark(int);
 public slots:
 	void addTaskNext(int id, std::string question, std::string answer);
@@ -38,7 +39,7 @@ public slots:
 	void computeMarkForOpen(int, std::string, std::string);
 	void computeMarkForClose(int, vector<bool>, vector<bool>);
 
-	void endCourseJudge(vector<int>);
+	void endCourseJudge(vector<int>, std::string);
 	void addChooseCourseContinue(std::string name);
 
 private:

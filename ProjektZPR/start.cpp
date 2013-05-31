@@ -5,7 +5,7 @@
 
 Start::Start()
 {
-
+	deck_= new Deck(QString::fromStdString("Resources/ciekawostki.xml"));
 }
 
 
@@ -32,24 +32,17 @@ void Start::setListOfFiles(){
 	}
 }
 
-void Start::setNextDateForEach(vector<int> answersJudged){
+void Start::setNextDateForEach(vector<int> answersJudged, std::string courseName){
 	
-	//for (vector<PQcard>::const_iterator i=vectorPQ.begin();i!=vectorPQ.end(); ++i){
-	//	vectorPQ.at(i)->dateOfNextQuestion(answersJudged.at(i));
-
-	//}
-	/*for_each(vectorPQ.begin(), vectorPQ.end(), [&evenCount] (int n){
 	
-		vectorPQ.at(n)->dateOfNextQuestion(answersJudge.at(n));
-	});
-		
-		*/	
-	//qDebug()<< "jooooooo"+ deck_->getQuestionCardVector().size();
 	for (int n=0; n<deck_->getQuestionCardVector().size(); n++){
 		
 		deck_->getQuestionCardVector().at(n)->dateOfNextQuestion(answersJudged.at(n));
 	}
-	const char* filename = "ala_i_kot.dat";
+	std::string tmp = courseName + ".dat";
+	const char* filename = tmp.c_str();
+	qDebug() << filename;
+	//const char* filename =courseName + ".dat";
 	saveToFileCurrentState(*deck_,filename);
 }
 
@@ -61,6 +54,7 @@ void  Start::saveToFileCurrentState(const Deck &s, const char* filename)
 		
 		boost::archive::text_oarchive oa(ofs);
 		oa << s;
+		ofs.close();
 	}
 	catch(std::exception e) { std::cout << e.what() << std::endl; exit(1); }
 }
@@ -71,21 +65,31 @@ void Start::chooseCourse(std::string course){
 void Start::loadFromFileCurrentState( Deck &s, const char* filename)
 {
 	try{
-		
+	
 		std::ifstream ifs(filename);
+		if (!ifs.is_open()) throw LackFile(filename);
 		boost::archive::text_iarchive ia(ifs);
 		
-		ia >> s;
+		ia >> BOOST_SERIALIZATION_NVP(deck_);
+		//ia >> s;
+		ifs.close();
 	}
 	catch(std::exception e) { 
-		std::cout << e.what() << std::endl; exit(1); }
+		qDebug() << QString::fromStdString(e.what()) ; exit(1); }
 }
 
 void Start::continueClicked(std::string name){
-
-	qDebug() << "CONTINUE";
-	//Deck *newDeck_;
-	//loadFromFileCurrentState(*newDeck_, name.c_str());
+	
+	
+	//  IFa walnac mozna 
+	try{
+		name = name +".dat";
+		const char* filename = name.c_str();
+		loadFromFileCurrentState(*deck_, filename);
+	}
+	catch (LackFile e){
+		 e.returnMessage();
+	}
 	
 	
 }

@@ -11,6 +11,8 @@
 #include <QXmlStreamReader>
 #include <boost/serialization/shared_ptr.hpp>
 #include <boost/serialization/vector.hpp>
+#include <boost/archive/text_oarchive.hpp>
+#include <boost/archive/text_iarchive.hpp>
 #include <list>
 #include <iostream>
 #include <vector>
@@ -28,7 +30,7 @@ public:
 	Deck(QString filename);
 	// Tworzymy nowy kurs
 	vector<PQcard> getQuestionCardVector() {return vectorPQ;}
-	void setNextDateForEach(vector<int> answersJudged);
+	
 	~Deck();
 
 private:
@@ -39,9 +41,12 @@ private:
     void serialize(Archive & ar, const unsigned int version)
     {
         
-		ar & vectorPQ;
+	
+		ar & BOOST_SERIALIZATION_NVP(a);
+		ar & BOOST_SERIALIZATION_NVP(vectorPQ);
     }
 	vector<PQcard> vectorPQ; 
+	int a;
 };
 
 #endif // DECK_H

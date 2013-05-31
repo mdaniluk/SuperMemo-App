@@ -7,7 +7,8 @@ Deck::Deck(QString filename)
 	PQcard card;
 	QDomDocument doc;
 	QFile file(filename);
-	 QTextStream out(&file);
+	QTextStream out(&file);
+	list<PQcard> temp;
 	if (!file.open(QIODevice:: ReadOnly | QIODevice::Text)) {
 		qDebug() << "Failed to open File";	
 	}
@@ -41,7 +42,7 @@ Deck::Deck(QString filename)
 
 		qDebug()<<"Otwarte";
 		card=PQcard(new QuestionCard((itemnode.firstChild().toElement().text()).toStdString(), (itemnode.lastChild().toElement().text()).toStdString(),  (itemnode.toElement().attribute("Id")).toInt(), true ));
-		vectorPQ.push_back(card);
+		temp.push_back(card);
 		 }
 
 		 else{
@@ -57,26 +58,15 @@ Deck::Deck(QString filename)
 		}
 		
 		card=PQcard(new QuestionCard((itemnode.firstChild().toElement().text()).toStdString(), answer,  (itemnode.toElement().attribute("Id")).toInt(), false ));
-		vectorPQ.push_back(card);
+		temp.push_back(card);
 		 qDebug()<<"Zamkniete";
 		 } 
 	 }
 	
-
+	 vectorPQ.reserve(temp.size());
+	 std::copy(temp.begin(), temp.end(), std::back_inserter(vectorPQ));
 }
 
-
-//void saveToFileCurrentState(const akademik &s, const char* filename)
-//{
-//	try{
-//		// stworz archiwum
-//		std::ofstream ofs(filename);
-//		// zapisz w postaci archiwum tekstowego
-//		boost::archive::text_oarchive oa(ofs);
-//		oa << s;
-//	}
-//	catch(std::exception e) { std::cout << e.what() << std::endl; exit(1); }
-//}
 Deck::Deck()
 {
 

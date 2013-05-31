@@ -34,7 +34,7 @@ void Controller::connectView(View * view){
 	connect(view_, SIGNAL(computeMark(int, std::string, std::string) ), this, SLOT(computeMarkForOpen(int, std::string, std::string) ) );
 	connect(view_, SIGNAL(computeMark(int, vector<bool>, vector<bool>) ), this, SLOT(computeMarkForClose(int, vector<bool>, vector<bool>)) );
 
-	connect(view_, SIGNAL(endCourse(vector<int>)), this, SLOT(endCourseJudge(vector<int>) ) );
+	connect(view_, SIGNAL(endCourse(vector<int>, std::string)), this, SLOT(endCourseJudge(vector<int>, std::string) ) );
 
 
 }
@@ -44,16 +44,16 @@ void Controller::addChooseCourseContinue(std::string name){
 		qDebug()<<"Continue2";
 		model_->setChooseCourseContinue(name);
 		emit closeStartWindow();
-		//emit emitQuestionCardList(model_->getCurrentStart()->getDeck()->getQuestionCardVector());
+		emit emitQuestionCardListContinue(model_->getCurrentStart()->getDecknew()->getQuestionCardVector(), name);
 		}
 	catch (myException e){
 		emit error(e.returnMessage());
 	}
 
 }
-void Controller::endCourseJudge(std::vector<int> userJudges){
+void Controller::endCourseJudge(std::vector<int> userJudges, std::string courseName){
 	try{
-		model_->endCourseAction(userJudges);
+		model_->endCourseAction(userJudges, courseName);
 		}
 	catch (myException e){
 		emit error(e.returnMessage());

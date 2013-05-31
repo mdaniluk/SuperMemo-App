@@ -16,6 +16,7 @@ View::View(Controller* controller, QWidget *parent): myController_(controller), 
 	connect(myController_, SIGNAL(enabledMainWindow()), this, SLOT(enabledMainWin() ) );
 	connect(myController_, SIGNAL(error(std::string)), this, SLOT(showError(std::string)) );
 	connect(myController_, SIGNAL( emitQuestionCardList(vector<PQcard>, std::string)), this, SLOT(showQuestionCardList(vector<PQcard>, std::string)) );
+	connect(myController_, SIGNAL( emitQuestionCardListContinue(vector<PQcard>, std::string)), this, SLOT(showQuestionCardList(vector<PQcard>, std::string)) );
 	connect(myController_, SIGNAL(emitSuggestedMark(int) ), this, SLOT(setSuggesterMark(int) ) );
 	connect(this, SIGNAL(chooseCourse(std::string)), this, SLOT(on_beginChoose()) );
 

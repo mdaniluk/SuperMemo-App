@@ -1,0 +1,8 @@
+22 serialization::archive 10 0 0 0 0 7 1 0 1 3 1 0
+0 1 1 3 Nil 0 0 0 0 32 The longest river in the world ? 1 2.5 1 0 0 8 20130531 3
+1 1 2 13 Mount Everest 0 0 35 The highest mountain in the world ? 1 2.5 6 8 20130605 3
+2 1 3 6 Russia 0 0 34 The largest country in the world ? 1 2.3599999999999999 6 8 20130605 3
+3 1 4 7 Cambera 0 0 26 Capital city of Australia? 1 2.5 1 8 20130531 3
+4 0 5 0  5 0 0 0 6 France 5 False 6 Norway 4 True 10 Swizerland 4 True 9 Lithuania 5 False 0  0  62 Which coutries/country are/is not a member of European Union ? 1 2.5 1 8 20130531 3
+5 0 6 0  5 0 6 Berlin 5 False 6 Moscow 4 True 6 Madrit 5 False 5 Paris 5 False 0  0  27 Which city is the largest ? 1 2.5 1 8 20130531 3
+6 1 7 4 1815 0 0 25 Year of Waterloo battle ? 1 2.5 1 8 20130531
