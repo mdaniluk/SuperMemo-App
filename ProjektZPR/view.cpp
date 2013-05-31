@@ -313,7 +313,7 @@ void View::on_backButton_clicked(){
 
 void View::on_answerButton_clicked(){
 	computeSuggestedMark();
-	
+	valueJudge->show();
 	if(currentTaskType_ == 0){
 		CloseAnswer closeAnswer = questiocard_->getcloseAnswer();
 		if(closeAnswer.size() > 0){
@@ -358,6 +358,7 @@ void View::on_answerButton_clicked(){
 }
 
 void View::changeValueOfSlider(int value){
+	
 	valueJudge->setText(QString::number(value));
 	if(!isNextOrBack){
 		nextButton->setDisabled(true);
