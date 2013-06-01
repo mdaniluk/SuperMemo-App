@@ -84,7 +84,8 @@ void View::on_beginChoose(){
 	else{
 		QMessageBox* msg = new QMessageBox(this->parentWidget());
 		msg->setWindowTitle("Warning");
-		msg->setText("You don't have any task to revision today !");
+		std::string tmp = "You don't have any task to revision today ! \n Yuor next revision is : "+to_simple_string(mindateOfRevision_);
+		msg->setText(QString::fromStdString(tmp));
 		msg->setStandardButtons(QMessageBox::Ok);
 		msg->show();	
 	}
@@ -464,13 +465,15 @@ void View::on_endButton_clicked(){
 
 void View::setNumberOfQuestionToRevision(){
 	numberOfQuestionToRevision_ = 0;
+	 mindateOfRevision_= taskVector_.at(0)->getNextDate();
 	for(int i = 0; i < taskVector_.size(); i++){
 		questiocard_= taskVector_.at(i);
-		boost::gregorian::date dateOfRevision = questiocard_->getNextDate();
+		boost::gregorian::date dateOfRevision_ = questiocard_->getNextDate();
 		boost::gregorian::date now = boost::gregorian::day_clock::local_day();
-		if(now >= dateOfRevision){
+		if(now >= dateOfRevision_){
 			numberOfQuestionToRevision_++;
 		}
+		if (mindateOfRevision_ >dateOfRevision_){mindateOfRevision_=dateOfRevision_;}
 	}
 
 }

@@ -105,6 +105,7 @@ private:
 	int counterProgressBar;
 	string nameOfCourse_;
 	int numberOfQuestionToRevision_;
+	boost::gregorian::date mindateOfRevision_;
 	void setNumberOfQuestionToRevision();
 };
 

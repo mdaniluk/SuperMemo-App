@@ -7,7 +7,7 @@
 
 Start::Start()
 {
-	
+	flag_=false;
 }
 
 
