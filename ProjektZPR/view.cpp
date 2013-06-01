@@ -101,6 +101,13 @@ void View::on_actionStart_triggered(){
 	this->setDisabled(true);
 	startmenu->setEnabled(true);
 }
+
+void View::on_actionSchedule_triggered(){
+	Schedule *schedule= new Schedule(myController_,this);
+	//this->setDisabled(true);
+	schedule->setEnabled(true);
+}
+
 void View::on_actionNew_Course_triggered(){
 	CreateTest *createTest = new CreateTest(myController_,this);
 	this->setDisabled(true);

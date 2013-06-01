@@ -35,6 +35,7 @@ public:
     QAction *actionQuit;
     QAction *actionNew_Course;
     QAction *actionStart;
+    QAction *actionSchedule;
     QWidget *centralWidget;
     QLabel *labelWelcome;
     QLabel *labelAuthors;
@@ -82,6 +83,8 @@ public:
         actionNew_Course->setObjectName(QStringLiteral("actionNew_Course"));
         actionStart = new QAction(mainWindow);
         actionStart->setObjectName(QStringLiteral("actionStart"));
+        actionSchedule = new QAction(mainWindow);
+        actionSchedule->setObjectName(QStringLiteral("actionSchedule"));
         centralWidget = new QWidget(mainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         labelWelcome = new QLabel(centralWidget);
@@ -245,6 +248,7 @@ public:
         menuBar->addAction(menuCreate->menuAction());
         menuFile->addAction(actionStart);
         menuFile->addAction(actionQuit);
+        menuFile->addAction(actionSchedule);
         menuCreate->addAction(actionNew_Course);
 
         retranslateUi(mainWindow);
@@ -259,6 +263,7 @@ public:
         actionQuit->setText(QApplication::translate("mainWindow", "Quit", 0));
         actionNew_Course->setText(QApplication::translate("mainWindow", "New Course", 0));
         actionStart->setText(QApplication::translate("mainWindow", "Start", 0));
+        actionSchedule->setText(QApplication::translate("mainWindow", "Schedule ", 0));
         labelWelcome->setText(QApplication::translate("mainWindow", "Witaj w Supermemo ", 0));
         labelAuthors->setText(QApplication::translate("mainWindow", "Autors: Micha\305\202 Daniluk & Piotr Ma\305\202ecki", 0));
         judgeButton->setText(QApplication::translate("mainWindow", "Judge", 0));

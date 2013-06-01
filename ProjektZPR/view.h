@@ -5,6 +5,7 @@
 #include "ui_projektzpr.h"
 #include "controller.h"
 #include "deck.h"
+#include "schedule.h"
 
 typedef boost::shared_ptr<QuestionCard> PQcard;
 
@@ -61,6 +62,7 @@ private slots:
 	void on_bButton_clicked();
 	void on_cButton_clicked();
 	void on_dButton_clicked();
+	void on_actionSchedule_triggered();
 public slots:
 	/// set enable main window
 	void enabledMainWin();
