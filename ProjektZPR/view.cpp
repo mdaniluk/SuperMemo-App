@@ -9,6 +9,7 @@ typedef std::vector<std::pair<string, string>> CloseAnswer; //wektor (odpowiedz 
 
 View::View(Controller* controller, QWidget *parent): myController_(controller), QMainWindow(parent){
 	setupUi(this);
+
 	QPalette palette;
 	palette.setBrush(this->backgroundRole(), QBrush(QImage("images/tlo.jpg")));
 	this->setPalette(palette);
@@ -22,8 +23,8 @@ View::View(Controller* controller, QWidget *parent): myController_(controller), 
 	connect(myController_, SIGNAL( emitQuestionCardListContinue(vector<PQcard>, std::string)), this, SLOT(showQuestionCardList(vector<PQcard>, std::string)) );
 	connect(myController_, SIGNAL(emitSuggestedMark(int) ), this, SLOT(setSuggesterMark(int) ) );
 
-	connect(this, SIGNAL(chooseCourse(std::string)), this, SLOT(on_beginChoose()) );
-	connect(this, SIGNAL(chooseContinueCourse(std::string)), this, SLOT(on_beginChoose()) );
+	//connect(this, SIGNAL(chooseCourse(std::string)), this, SLOT(on_beginChoose()) );
+	//connect(this, SIGNAL(chooseContinueCourse(std::string)), this, SLOT(on_beginChoose()) );
 	
 	connect( verticalSlider, SIGNAL(valueChanged(int)),this, SLOT(changeValueOfSlider(int)) );
 	
@@ -43,34 +44,48 @@ void View::showQuestionCardList(vector<PQcard> vectorPQcard, std::string nameOfC
 	/*boost::shared_ptr<QuestionCard> questiocard;
 	questiocard= vectorPQcard.at(2);
 	question->setText(QString::fromUtf8((questiocard->getQuestion()).c_str()));*/
+	isInitial = true;
+	counterProgressBar = 0;
 	nameOfCourse_ = nameOfCourse;
 	currentTask_ = 1;
 	taskVector_ = vectorPQcard;
 	numberOfAllTasks_ = taskVector_.size();
+	setNumberOfQuestionToRevision();
+	on_beginChoose();
 	showCurrentTask();
+	isInitial = false;
 
 }
 
 
 void View::on_beginChoose(){
-	nextButton->setDisabled(true);
-	backButton->setDisabled(true);
-	progressBar->setValue(0);
-	progressBar->show();
-	answerButton->show();
-	judgeButton->show();
-	endButton->show();
-	trudne->show();
-	latwe->show();
-	verticalSlider->show();
+	if(numberOfQuestionToRevision_ != 0){
+		nextButton->setDisabled(true);
+		backButton->setDisabled(true);
+		progressBar->setValue(0);
+		progressBar->show();
+		answerButton->show();
+		judgeButton->show();
+		endButton->show();
+		trudne->show();
+		latwe->show();
+		verticalSlider->show();
 
-	labelWelcome->hide();
-	labelAuthors->hide();
+		labelWelcome->hide();
+		labelAuthors->hide();
 	
-	nextButton->show();
-	backButton->show();
-	prepareToOpen();
-
+		nextButton->show();
+		backButton->show();
+		prepareToOpen();
+	}
+	else{
+		QMessageBox* msg = new QMessageBox(this->parentWidget());
+		msg->setWindowTitle("Warning");
+		msg->setText("You don't have any task to revision today !");
+		msg->setStandardButtons(QMessageBox::Ok);
+		msg->show();	
+	}
+	
 
 }
 void View::showYou(){
@@ -133,6 +148,7 @@ void View::showCurrentTask(){
 	boost::gregorian::date dateOfRevision = questiocard_->getNextDate();
 	boost::gregorian::date now = boost::gregorian::day_clock::local_day();
 	if(now >= dateOfRevision){
+		counterProgressBar++;
 		question->show();
 		answerEditCloseA->setStyleSheet("QLabel {}");
 		answerEditCloseB->setStyleSheet("QLabel {}");
@@ -200,9 +216,9 @@ void View::showCurrentTask(){
 	else{
 		nextButton->setEnabled(true);
 		backButton->setEnabled(true);
-		int valueProgressBar =  ( ((double)(currentTask_)/(double)numberOfAllTasks_) )*100;
+		/*int valueProgressBar =  ( ((double)(currentTask_-numberOfQuestionToRevision_)/(double)numberOfQuestionToRevision_) )*100;
 		if(valueProgressBar > progressBar->value() )
-			progressBar->setValue(valueProgressBar);
+			progressBar->setValue(valueProgressBar);*/
 
 		if(currentTask_> judgeVector_.size() )
 			judgeVector_.push_back(6);
@@ -210,8 +226,11 @@ void View::showCurrentTask(){
 			judgeVector_.at(currentTask_ - 1) = 6;
 		if(isNext)
 			on_nextButton_clicked();
+		else if(isInitial)
+			on_nextButton_clicked();
 		else
 			on_backButton_clicked();
+
 	}
 	
 	isNextOrBack = false;
@@ -333,14 +352,17 @@ void View::on_nextButton_clicked(){
 void View::on_backButton_clicked(){
 	
 	if(currentTask_ > 1 ){
+
 		currentTask_--;
 		showCurrentTask();
 		//progressBar->setValue( ( ((double)(currentTask_-1)/(double)numberOfAllTasks_) )*100);
+
 	}
 	
 }
 
 void View::on_answerButton_clicked(){
+	questiocard_=taskVector_.at(currentTask_-1);
 	computeSuggestedMark();
 	valueJudge->show();
 	if(currentTaskType_ == 0){
@@ -398,7 +420,8 @@ void View::on_judgeButton_clicked(){
 
 	nextButton->setEnabled(true);
 	backButton->setEnabled(true);
-	int valueProgressBar =  ( ((double)(currentTask_)/(double)numberOfAllTasks_) )*100;
+	
+	int valueProgressBar =  ( ((double)(counterProgressBar)/(double)numberOfQuestionToRevision_) )*100;
 	if(valueProgressBar > progressBar->value() )
 		progressBar->setValue(valueProgressBar);
 
@@ -427,5 +450,18 @@ void View::on_endButton_clicked(){
 			
 
 	}
+}
+
+void View::setNumberOfQuestionToRevision(){
+	numberOfQuestionToRevision_ = 0;
+	for(int i = 0; i < taskVector_.size(); i++){
+		questiocard_= taskVector_.at(i);
+		boost::gregorian::date dateOfRevision = questiocard_->getNextDate();
+		boost::gregorian::date now = boost::gregorian::day_clock::local_day();
+		if(now >= dateOfRevision){
+			numberOfQuestionToRevision_++;
+		}
+	}
+
 }
 

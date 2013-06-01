@@ -99,7 +99,11 @@ private:
 	bool isDClicked;
 	bool isNextOrBack;
 	bool isNext;
+	bool isInitial;
+	int counterProgressBar;
 	string nameOfCourse_;
+	int numberOfQuestionToRevision_;
+	void setNumberOfQuestionToRevision();
 };
 
 #endif // VIEW_H
