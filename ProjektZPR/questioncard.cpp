@@ -25,7 +25,7 @@ QuestionCard::QuestionCard( const std::string question,  CloseAnswer answer, con
 boost::gregorian::date QuestionCard::dateOfNextQuestion(int mark )
 {	
 	++ how_many_;
-	if (mark < 3.0)
+	if (mark > 3.0)
 	{
 			eFactor_ = eFactor_ + (0.1 - mark * (0.08 + mark * 0.02));
 			if (eFactor_ < 1.3) 

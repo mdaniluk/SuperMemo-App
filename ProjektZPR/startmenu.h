@@ -22,7 +22,7 @@ protected:
 	void closeEvent(QCloseEvent *event);
 signals:
 	void showListOfFiles();
-	void choose(std::string);
+	void choose(std::string, bool);
 	void chooseContinue(std::string);
 	void closeStart();
 	void deleteCourse(std::string);

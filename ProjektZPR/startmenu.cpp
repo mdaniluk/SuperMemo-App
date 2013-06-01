@@ -7,9 +7,9 @@ StartMenu::StartMenu(Controller *controller, View *parent)
 	setupUi(this);
 
 	qRegisterMetaType<std::vector<std::string>>("std::vector<std::string>");
-
+	qRegisterMetaType<bool>("bool");
 	connect(this,SIGNAL(showListOfFiles()), myView_, SIGNAL(showCurrentListOfFiles()) );
-	connect(this,SIGNAL(choose(std::string)), myView_, SIGNAL(chooseCourse(std::string)) );
+	connect(this,SIGNAL(choose(std::string, bool)), myView_, SIGNAL(chooseCourse(std::string, bool)) );
 
 	connect(this,SIGNAL(chooseContinue(std::string)), myView_, SIGNAL(chooseContinueCourse(std::string)) );
 	connect(this,SIGNAL(closeStart()), myView_, SIGNAL(closeAnyWindow()) );
@@ -54,7 +54,8 @@ void StartMenu::on_continueButton_clicked(){
 }
 
 void StartMenu::on_choose_clicked(){
-	emit choose(coursesList->currentItem()->text().toStdString() );
+	emit choose(coursesList->currentItem()->text().toStdString(), true );
+	qDebug()<<"startmenu";
 }
 
 void StartMenu::on_deleteButton_clicked(){

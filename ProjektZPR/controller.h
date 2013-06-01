@@ -52,7 +52,7 @@ public slots:
 	/// set list names of courses
 	void addListOfFiles();
 	/// show chosen course
-	void addChooseCourse(std::string course);
+	void addChooseCourse(std::string course, bool flag);
 	void addCloseAnyWindow();
 	void deleteChooseCourse(std::string course);
 

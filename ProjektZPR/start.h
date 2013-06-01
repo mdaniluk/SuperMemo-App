@@ -43,12 +43,13 @@ public:
 	std::vector<std::string> getListOfFiles(){ return filesXml;}
 	Deck * getDeck() {return deck_;}
 	PDeck getDecknew() {return decknew_;}
-	void chooseCourse(std::string course);
+	void chooseCourse(std::string course, bool flag);
 	void deleteCourse(std::string course);
 	void setNextDateForEach(vector<int> answersJudged, std::string courseName);
 	void saveToFileCurrentState(const Deck &s, const char* filename);
 	void loadFromFileCurrentState(Deck &s,  const char* filename);
 	void continueClicked(std::string name);
+	bool flag_;
 
 	
 

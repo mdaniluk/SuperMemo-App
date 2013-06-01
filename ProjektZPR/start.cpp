@@ -41,14 +41,29 @@ void Start::setNextDateForEach(vector<int> answersJudged, std::string courseName
 	const char* filename = tmp.c_str();
 	ifstream file(tmp);
 	if (file.good())
-	{
-		for (int n=0; n<decknew_->getQuestionCardVector().size(); n++)
+	{	
+		if (flag_){
+		for (int n=0; n<deck_->getQuestionCardVector().size(); n++)
 		{
-			decknew_->getQuestionCardVector().at(n)->dateOfNextQuestion(answersJudged.at(n));
+			deck_->getQuestionCardVector().at(n)->dateOfNextQuestion(answersJudged.at(n));
+		}
+	
+		saveToFileCurrentState(*deck_,filename);
+		flag_=false;
+		}
+		else{
+		for (int n=0; n<decknew_->getQuestionCardVector().size(); n++)
+		{	
+				if (answersJudged.at(n)!=6)
+				{
+					decknew_->getQuestionCardVector().at(n)->dateOfNextQuestion(answersJudged.at(n));
+				}
+			}
+		saveToFileCurrentState(*decknew_,filename);	
 		}
 	
 	
-	saveToFileCurrentState(*decknew_,filename);	
+	
 	}
 	else
 	{
@@ -75,8 +90,9 @@ void  Start::saveToFileCurrentState(const Deck &s,const char* filename)
 	catch(std::exception e) { std::cout << e.what() << std::endl; exit(1); }
 }
 
-void Start::chooseCourse(std::string course){
+void Start::chooseCourse(std::string course, bool flag){
 	deck_= new Deck(QString::fromStdString("Resources/" + course + ".xml"));
+	flag_=flag;
 }
 
 void Start::loadFromFileCurrentState( Deck &s, const char* filename)

@@ -37,8 +37,8 @@ void Model::setListOfFiles(){
 	start->setListOfFiles();
 }
 
-void Model::setChooseCourse(std::string course){
-	start->chooseCourse(course);
+void Model::setChooseCourse(std::string course, bool flag){
+	start->chooseCourse(course, flag);
 }
 
 void Model::deleteChooseCourse(std::string course){

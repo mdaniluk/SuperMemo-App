@@ -33,7 +33,7 @@ signals:
 	///Emit to show list of course, when we click Start .
 	void showCurrentListOfFiles();
 	///Emit when we choose new Course. It contains name of course.
-	void chooseCourse(std::string);
+	void chooseCourse(std::string, bool flag);
 
 	void chooseContinueCourse(std::string);
 

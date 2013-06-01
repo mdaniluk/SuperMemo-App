@@ -20,7 +20,7 @@ public:
 	Mark* getCurrentMark(){ return mark; }
 	void setSaveCourse(std::string nameOfFile);
 	void setListOfFiles();
-	void setChooseCourse(std::string course);
+	void setChooseCourse(std::string course, bool flag);
 	void deleteChooseCourse(std::string course);
 	void endCourseAction(std::vector<int>, std::string);
 	void computeOpenMark(int type, std::string user, std::string correct );

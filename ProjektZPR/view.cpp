@@ -15,6 +15,7 @@ View::View(Controller* controller, QWidget *parent): myController_(controller), 
 	qRegisterMetaType<vector<PQcard>>("vector<PQcard>");
 	qRegisterMetaType<vector<int>>("vector<int>");
 	qRegisterMetaType<std::string>("std::string");
+	qRegisterMetaType<bool>("bool");
 
 	connect(myController_, SIGNAL(enabledMainWindow()), this, SLOT(enabledMainWin() ) );
 	connect(myController_, SIGNAL(error(std::string)), this, SLOT(showError(std::string)) );
@@ -22,7 +23,7 @@ View::View(Controller* controller, QWidget *parent): myController_(controller), 
 	connect(myController_, SIGNAL( emitQuestionCardListContinue(vector<PQcard>, std::string)), this, SLOT(showQuestionCardList(vector<PQcard>, std::string)) );
 	connect(myController_, SIGNAL(emitSuggestedMark(int) ), this, SLOT(setSuggesterMark(int) ) );
 
-	connect(this, SIGNAL(chooseCourse(std::string)), this, SLOT(on_beginChoose()) );
+	connect(this, SIGNAL(chooseCourse(std::string, bool)), this, SLOT(on_beginChoose()) );
 	connect(this, SIGNAL(chooseContinueCourse(std::string)), this, SLOT(on_beginChoose()) );
 	
 	connect( verticalSlider, SIGNAL(valueChanged(int)),this, SLOT(changeValueOfSlider(int)) );

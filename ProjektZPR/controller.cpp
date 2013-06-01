@@ -18,7 +18,7 @@ void Controller::connectView(View * view){
 	qRegisterMetaType<vector<int>>("vector<int>");
 
 
-	qRegisterMetaType<vector<int>>("vector<int>");
+	qRegisterMetaType<bool>("bool");
 	
 
 
@@ -27,7 +27,7 @@ void Controller::connectView(View * view){
 	connect(view_, SIGNAL(setLastTask(int, std::string, std::string)), this, SLOT(addLastTask(int, std::string, std::string) ) );
 	connect(view_, SIGNAL(saveCurrentCourse(std::string)), this, SLOT(addSaveCourse(std::string)) );
 	connect(view_, SIGNAL(showCurrentListOfFiles()), this, SLOT(addListOfFiles() ) );
-	connect(view_, SIGNAL(chooseCourse(std::string)), this, SLOT(addChooseCourse(std::string) ) );
+	connect(view_, SIGNAL(chooseCourse(std::string, bool)), this, SLOT(addChooseCourse(std::string, bool) ) );
 
 	connect(view_, SIGNAL(chooseContinueCourse(std::string)), this, SLOT(addChooseCourseContinue(std::string) ) );
 	connect(view_, SIGNAL(deleteCourse(std::string)), this, SLOT(deleteChooseCourse(std::string) ) );
@@ -112,12 +112,14 @@ void Controller::addListOfFiles(){
 	}
 }
 
-void Controller::addChooseCourse(std::string course){
+void Controller::addChooseCourse(std::string course, bool flag){
 	try{
-		model_->setChooseCourse(course);
+		model_->setChooseCourse(course, flag);
 		emit closeStartWindow();
 		emit emitQuestionCardList(model_->getCurrentStart()->getDeck()->getQuestionCardVector(),course);
-	}
+		qDebug()<<"controlerrr";
+		}
+	
 	catch (myException e){
 		emit error(e.returnMessage());
 	}
