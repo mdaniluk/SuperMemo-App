@@ -14,7 +14,9 @@ Model::Model()
 
 Model::~Model()
 {
-
+	delete start;
+	delete mark;
+	delete deck;
 }
 
 void Model::setChooseCourseContinue(std::string name){
