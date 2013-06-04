@@ -72,7 +72,7 @@ BOOST_AUTO_TEST_CASE( test_Start)
 	BOOST_CHECK(d->getQuestionCardVector().at(0)->closeAnswer_.empty());
 	BOOST_CHECK(d->getQuestionCardVector().at(5)->how_many_>=0);
 	BOOST_CHECK(d->getQuestionCardVector().at(5)->interval_>=1);
-	BOOST_CHECK(d->getQuestionCardVector().at(4)->eFactor_>=2.5);
+	BOOST_CHECK(d->getQuestionCardVector().at(4)->eFactor_>=0.5);
 	BOOST_CHECK(d->getQuestionCardVector().at(2)->questionType_==0);
 	BOOST_CHECK(d->getQuestionCardVector().at(6)->getQuestion()!="empty");
 

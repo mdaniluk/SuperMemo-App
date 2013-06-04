@@ -1,0 +1,651 @@
+\section{View Class Reference}
+\label{class_view}\index{View@{View}}
+
+
+{\ttfamily \#include $<$view.\-h$>$}
+
+Inheritance diagram for View\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_view}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf enabled\-Main\-Win} ()
+\begin{DoxyCompactList}\small\item\em set enable main window \end{DoxyCompactList}\item 
+void {\bf show\-You} ()
+\begin{DoxyCompactList}\small\item\em show main window \end{DoxyCompactList}\item 
+void {\bf show\-Error} (std\-::string message)
+\begin{DoxyCompactList}\small\item\em show warning message \end{DoxyCompactList}\item 
+void {\bf show\-Question\-Card\-List} (vector$<$ {\bf P\-Qcard} $>$, std\-::string)
+\begin{DoxyCompactList}\small\item\em set initial value and show first task \end{DoxyCompactList}\item 
+void {\bf change\-Value\-Of\-Slider} (int)
+\begin{DoxyCompactList}\small\item\em change judge\-Label when value of slider change \end{DoxyCompactList}\item 
+void {\bf set\-Suggester\-Mark} (int)
+\begin{DoxyCompactList}\small\item\em set suggested mark \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf set\-Current\-Task\-Next} (int id, std\-::string {\bf question}, std\-::string answer)
+\begin{DoxyCompactList}\small\item\em Emit during creating new course to save current task, when we go to next task. It contains task id, question and answer. \end{DoxyCompactList}\item 
+void {\bf set\-Current\-Task\-Back} (int id, std\-::string {\bf question}, std\-::string answer)
+\begin{DoxyCompactList}\small\item\em Emit during creating new course to save current task, when we go to previous task. It contains task id, question and answer. \end{DoxyCompactList}\item 
+void {\bf set\-Last\-Task} (int id, std\-::string {\bf question}, std\-::string answer)
+\begin{DoxyCompactList}\small\item\em Emit during creating new course to save last task when we clicked save\-Button. It contains task id, question and answer. \end{DoxyCompactList}\item 
+void {\bf save\-Current\-Course} (std\-::string)
+\begin{DoxyCompactList}\small\item\em Emit during creating new course to save course. It contains name od course. \end{DoxyCompactList}\item 
+void {\bf show\-Current\-List\-Of\-Files} ()
+\begin{DoxyCompactList}\small\item\em Emit to show list of course, when we click \doxyref{Start}{p.}{class_start} . \end{DoxyCompactList}\item 
+void {\bf choose\-Course} (std\-::string, bool flag)
+\begin{DoxyCompactList}\small\item\em Emit when we choose new \doxyref{Course}{p.}{class_course}. It contains name of course. \end{DoxyCompactList}\item 
+void {\bf choose\-Continue\-Course} (std\-::string)
+\begin{DoxyCompactList}\small\item\em Emit when we choose Contiunue option. \end{DoxyCompactList}\item 
+void {\bf close\-Any\-Window} ()
+\begin{DoxyCompactList}\small\item\em Emit when we close any window. \end{DoxyCompactList}\item 
+void {\bf delete\-Course} (std\-::string)
+\begin{DoxyCompactList}\small\item\em Emit when we want to delete any course. It contains name of this course. \end{DoxyCompactList}\item 
+void {\bf end\-Course} (vector$<$ int $>$, std\-::string)
+\begin{DoxyCompactList}\small\item\em Emit when we want to finish our course. It contains marks and name of course. \end{DoxyCompactList}\item 
+void {\bf compute\-Mark} (int, std\-::string, std\-::string)
+\begin{DoxyCompactList}\small\item\em Emit when we click answer\-Button to compute mark of open question. It contains type of question, user answer and correct answer. \end{DoxyCompactList}\item 
+void {\bf compute\-Mark} (int, vector$<$ bool $>$, vector$<$ bool $>$)
+\begin{DoxyCompactList}\small\item\em Emit when we click answer\-Button to compute mark of close question. It contains type of question, user answer and correct answer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf View} ({\bf Controller} $\ast$controller, Q\-Widget $\ast$parent=N\-U\-L\-L)
+\begin{DoxyCompactList}\small\item\em Constructor set \doxyref{Controller}{p.}{class_controller} and Widget. \end{DoxyCompactList}\item 
+{\bf $\sim$\-View} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf on\-\_\-action\-Start\-\_\-triggered} ()
+\item 
+void {\bf on\-\_\-action\-Quit\-\_\-triggered} ()
+\item 
+void {\bf on\-\_\-action\-New\-\_\-\-Course\-\_\-triggered} ()
+\item 
+void {\bf on\-\_\-begin\-Choose} ()
+\item 
+void {\bf on\-\_\-next\-Button\-\_\-clicked} ()
+\item 
+void {\bf on\-\_\-back\-Button\-\_\-clicked} ()
+\item 
+void {\bf on\-\_\-answer\-Button\-\_\-clicked} ()
+\item 
+void {\bf on\-\_\-judge\-Button\-\_\-clicked} ()
+\item 
+void {\bf on\-\_\-end\-Button\-\_\-clicked} ()
+\item 
+void {\bf on\-\_\-a\-Button\-\_\-clicked} ()
+\item 
+void {\bf on\-\_\-b\-Button\-\_\-clicked} ()
+\item 
+void {\bf on\-\_\-c\-Button\-\_\-clicked} ()
+\item 
+void {\bf on\-\_\-d\-Button\-\_\-clicked} ()
+\item 
+void {\bf on\-\_\-action\-Schedule\-\_\-triggered} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf on\-Begin\-Hide} ()
+\begin{DoxyCompactList}\small\item\em hide some elements on the begin \end{DoxyCompactList}\item 
+void {\bf prepare\-To\-Close} ()
+\begin{DoxyCompactList}\small\item\em preapre window to show close answer \end{DoxyCompactList}\item 
+void {\bf prepare\-To\-Open} ()
+\begin{DoxyCompactList}\small\item\em preapre window to show open answer \end{DoxyCompactList}\item 
+void {\bf show\-Current\-Task} ()
+\item 
+void {\bf get\-Current\-Task} ()
+\item 
+void {\bf set\-Current\-Task} ()
+\item 
+void {\bf compute\-Suggested\-Mark} ()
+\item 
+void {\bf set\-Number\-Of\-Question\-To\-Revision} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Controller} $\ast$ {\bf my\-Controller\-\_\-}
+\item 
+vector$<$ {\bf P\-Qcard} $>$ {\bf task\-Vector\-\_\-}
+\item 
+boost\-::shared\-\_\-ptr$<$ {\bf Question\-Card} $>$ {\bf questiocard\-\_\-}
+\begin{DoxyCompactList}\small\item\em pointers on \doxyref{Question\-Card}{p.}{class_question_card} \end{DoxyCompactList}\item 
+int {\bf current\-Task\-\_\-}
+\begin{DoxyCompactList}\small\item\em number of current task \end{DoxyCompactList}\item 
+int {\bf current\-Task\-Type\-\_\-}
+\begin{DoxyCompactList}\small\item\em current task type 1 -\/ open, 0 -\/ close \end{DoxyCompactList}\item 
+int {\bf number\-Of\-All\-Tasks\-\_\-}
+\begin{DoxyCompactList}\small\item\em number of all task \end{DoxyCompactList}\item 
+vector$<$ int $>$ {\bf judge\-Vector\-\_\-}
+\begin{DoxyCompactList}\small\item\em vector marks \end{DoxyCompactList}\item 
+int {\bf mark\-\_\-}
+\item 
+bool {\bf is\-A\-Clicked}
+\item 
+bool {\bf is\-B\-Clicked}
+\item 
+bool {\bf is\-C\-Clicked}
+\item 
+bool {\bf is\-D\-Clicked}
+\item 
+bool {\bf is\-Next\-Or\-Back}
+\item 
+bool {\bf is\-Next}
+\item 
+bool {\bf is\-Initial}
+\item 
+int {\bf counter\-Progress\-Bar}
+\item 
+string {\bf name\-Of\-Course\-\_\-}
+\item 
+int {\bf number\-Of\-Question\-To\-Revision\-\_\-}
+\item 
+boost\-::gregorian\-::date {\bf mindate\-Of\-Revision\-\_\-}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Class represents the main application window. It is a \doxyref{View}{p.}{class_view} in design pattern -\/ \doxyref{Model}{p.}{class_model} \doxyref{View}{p.}{class_view} \doxyref{Controller}{p.}{class_controller} \begin{DoxyAuthor}{Author}
+Piotr Malecki \& Michal Daniluk 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{View@{View}!View@{View}}
+\index{View@{View}!View@{View}}
+\subsubsection[{View}]{\setlength{\rightskip}{0pt plus 5cm}View\-::\-View (
+\begin{DoxyParamCaption}
+\item[{{\bf Controller} $\ast$}]{controller, }
+\item[{Q\-Widget $\ast$}]{parent = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\label{class_view_a7968507b838310e6b67a639ad1d5bd63}
+
+
+Constructor set \doxyref{Controller}{p.}{class_controller} and Widget. 
+
+\index{View@{View}!$\sim$\-View@{$\sim$\-View}}
+\index{$\sim$\-View@{$\sim$\-View}!View@{View}}
+\subsubsection[{$\sim$\-View}]{\setlength{\rightskip}{0pt plus 5cm}View\-::$\sim$\-View (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_view_ad0dc854db9aabbea98a334dec89f785c}
+
+
+\subsection{Member Function Documentation}
+\index{View@{View}!change\-Value\-Of\-Slider@{change\-Value\-Of\-Slider}}
+\index{change\-Value\-Of\-Slider@{change\-Value\-Of\-Slider}!View@{View}}
+\subsubsection[{change\-Value\-Of\-Slider}]{\setlength{\rightskip}{0pt plus 5cm}void View\-::change\-Value\-Of\-Slider (
+\begin{DoxyParamCaption}
+\item[{int}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{class_view_a21b5c41de31f5bad27525f03e5fc9326}
+
+
+change judge\-Label when value of slider change 
+
+\index{View@{View}!choose\-Continue\-Course@{choose\-Continue\-Course}}
+\index{choose\-Continue\-Course@{choose\-Continue\-Course}!View@{View}}
+\subsubsection[{choose\-Continue\-Course}]{\setlength{\rightskip}{0pt plus 5cm}void View\-::choose\-Continue\-Course (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{\-\_\-t1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_view_abbd855cea8f85389491e73a0f0cd3cfe}
+
+
+Emit when we choose Contiunue option. 
+
+\index{View@{View}!choose\-Course@{choose\-Course}}
+\index{choose\-Course@{choose\-Course}!View@{View}}
+\subsubsection[{choose\-Course}]{\setlength{\rightskip}{0pt plus 5cm}void View\-::choose\-Course (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{\-\_\-t1, }
+\item[{bool}]{flag}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_view_a11f725140297ad1e8e6f8f3670e5f279}
+
+
+Emit when we choose new \doxyref{Course}{p.}{class_course}. It contains name of course. 
+
+\index{View@{View}!close\-Any\-Window@{close\-Any\-Window}}
+\index{close\-Any\-Window@{close\-Any\-Window}!View@{View}}
+\subsubsection[{close\-Any\-Window}]{\setlength{\rightskip}{0pt plus 5cm}void View\-::close\-Any\-Window (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_view_a94e0a0b4a5f20fccafb1a9f31095f1e1}
+
+
+Emit when we close any window. 
+
+\index{View@{View}!compute\-Mark@{compute\-Mark}}
+\index{compute\-Mark@{compute\-Mark}!View@{View}}
+\subsubsection[{compute\-Mark}]{\setlength{\rightskip}{0pt plus 5cm}void View\-::compute\-Mark (
+\begin{DoxyParamCaption}
+\item[{int}]{\-\_\-t1, }
+\item[{std\-::string}]{\-\_\-t2, }
+\item[{std\-::string}]{\-\_\-t3}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_view_a05c7ef7dd325c861fe09654ed0645353}
+
+
+Emit when we click answer\-Button to compute mark of open question. It contains type of question, user answer and correct answer. 
+
+\index{View@{View}!compute\-Mark@{compute\-Mark}}
+\index{compute\-Mark@{compute\-Mark}!View@{View}}
+\subsubsection[{compute\-Mark}]{\setlength{\rightskip}{0pt plus 5cm}void View\-::compute\-Mark (
+\begin{DoxyParamCaption}
+\item[{int}]{\-\_\-t1, }
+\item[{vector$<$ bool $>$}]{\-\_\-t2, }
+\item[{vector$<$ bool $>$}]{\-\_\-t3}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_view_a287ee6156e79a11d1ce2daf12ea27e1a}
+
+
+Emit when we click answer\-Button to compute mark of close question. It contains type of question, user answer and correct answer. 
+
+\index{View@{View}!compute\-Suggested\-Mark@{compute\-Suggested\-Mark}}
+\index{compute\-Suggested\-Mark@{compute\-Suggested\-Mark}!View@{View}}
+\subsubsection[{compute\-Suggested\-Mark}]{\setlength{\rightskip}{0pt plus 5cm}void View\-::compute\-Suggested\-Mark (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_view_ad6f577c4e034eb51577bc817616dd71e}
+\index{View@{View}!delete\-Course@{delete\-Course}}
+\index{delete\-Course@{delete\-Course}!View@{View}}
+\subsubsection[{delete\-Course}]{\setlength{\rightskip}{0pt plus 5cm}void View\-::delete\-Course (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{\-\_\-t1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_view_abe3631e51bbfef8ec7ca892944220ab5}
+
+
+Emit when we want to delete any course. It contains name of this course. 
+
+\index{View@{View}!enabled\-Main\-Win@{enabled\-Main\-Win}}
+\index{enabled\-Main\-Win@{enabled\-Main\-Win}!View@{View}}
+\subsubsection[{enabled\-Main\-Win}]{\setlength{\rightskip}{0pt plus 5cm}void View\-::enabled\-Main\-Win (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{class_view_abe5f0cf4162681b0370fa6cdab36b1c9}
+
+
+set enable main window 
+
+\index{View@{View}!end\-Course@{end\-Course}}
+\index{end\-Course@{end\-Course}!View@{View}}
+\subsubsection[{end\-Course}]{\setlength{\rightskip}{0pt plus 5cm}void View\-::end\-Course (
+\begin{DoxyParamCaption}
+\item[{vector$<$ int $>$}]{\-\_\-t1, }
+\item[{std\-::string}]{\-\_\-t2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_view_a28cf1f79daed2fd2d36b743ef5d64942}
+
+
+Emit when we want to finish our course. It contains marks and name of course. 
+
+\index{View@{View}!get\-Current\-Task@{get\-Current\-Task}}
+\index{get\-Current\-Task@{get\-Current\-Task}!View@{View}}
+\subsubsection[{get\-Current\-Task}]{\setlength{\rightskip}{0pt plus 5cm}void View\-::get\-Current\-Task (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_view_ae2b2f17229bcd64c94591dc3e6081e98}
+\index{View@{View}!on\-\_\-a\-Button\-\_\-clicked@{on\-\_\-a\-Button\-\_\-clicked}}
+\index{on\-\_\-a\-Button\-\_\-clicked@{on\-\_\-a\-Button\-\_\-clicked}!View@{View}}
+\subsubsection[{on\-\_\-a\-Button\-\_\-clicked}]{\setlength{\rightskip}{0pt plus 5cm}void View\-::on\-\_\-a\-Button\-\_\-clicked (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{class_view_a663ac382843060438a9baef165e431d7}
+\index{View@{View}!on\-\_\-action\-New\-\_\-\-Course\-\_\-triggered@{on\-\_\-action\-New\-\_\-\-Course\-\_\-triggered}}
+\index{on\-\_\-action\-New\-\_\-\-Course\-\_\-triggered@{on\-\_\-action\-New\-\_\-\-Course\-\_\-triggered}!View@{View}}
+\subsubsection[{on\-\_\-action\-New\-\_\-\-Course\-\_\-triggered}]{\setlength{\rightskip}{0pt plus 5cm}void View\-::on\-\_\-action\-New\-\_\-\-Course\-\_\-triggered (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{class_view_aa004c861b77824c44d0fcc3a96a0c27d}
+\index{View@{View}!on\-\_\-action\-Quit\-\_\-triggered@{on\-\_\-action\-Quit\-\_\-triggered}}
+\index{on\-\_\-action\-Quit\-\_\-triggered@{on\-\_\-action\-Quit\-\_\-triggered}!View@{View}}
+\subsubsection[{on\-\_\-action\-Quit\-\_\-triggered}]{\setlength{\rightskip}{0pt plus 5cm}void View\-::on\-\_\-action\-Quit\-\_\-triggered (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{class_view_ab07c0acf288621e3b137b920ae43c900}
+\index{View@{View}!on\-\_\-action\-Schedule\-\_\-triggered@{on\-\_\-action\-Schedule\-\_\-triggered}}
+\index{on\-\_\-action\-Schedule\-\_\-triggered@{on\-\_\-action\-Schedule\-\_\-triggered}!View@{View}}
+\subsubsection[{on\-\_\-action\-Schedule\-\_\-triggered}]{\setlength{\rightskip}{0pt plus 5cm}void View\-::on\-\_\-action\-Schedule\-\_\-triggered (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{class_view_a740e192c52db8b50f7d8c66c6663b5f0}
+\index{View@{View}!on\-\_\-action\-Start\-\_\-triggered@{on\-\_\-action\-Start\-\_\-triggered}}
+\index{on\-\_\-action\-Start\-\_\-triggered@{on\-\_\-action\-Start\-\_\-triggered}!View@{View}}
+\subsubsection[{on\-\_\-action\-Start\-\_\-triggered}]{\setlength{\rightskip}{0pt plus 5cm}void View\-::on\-\_\-action\-Start\-\_\-triggered (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{class_view_aa4f8ede30f0a93dc2fba35448ce09014}
+\index{View@{View}!on\-\_\-answer\-Button\-\_\-clicked@{on\-\_\-answer\-Button\-\_\-clicked}}
+\index{on\-\_\-answer\-Button\-\_\-clicked@{on\-\_\-answer\-Button\-\_\-clicked}!View@{View}}
+\subsubsection[{on\-\_\-answer\-Button\-\_\-clicked}]{\setlength{\rightskip}{0pt plus 5cm}void View\-::on\-\_\-answer\-Button\-\_\-clicked (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{class_view_aa63d7f5da56da9f1f01ea3e4820892da}
+\index{View@{View}!on\-\_\-back\-Button\-\_\-clicked@{on\-\_\-back\-Button\-\_\-clicked}}
+\index{on\-\_\-back\-Button\-\_\-clicked@{on\-\_\-back\-Button\-\_\-clicked}!View@{View}}
+\subsubsection[{on\-\_\-back\-Button\-\_\-clicked}]{\setlength{\rightskip}{0pt plus 5cm}void View\-::on\-\_\-back\-Button\-\_\-clicked (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{class_view_a0666e812bec23f56683adf798966d56e}
+\index{View@{View}!on\-\_\-b\-Button\-\_\-clicked@{on\-\_\-b\-Button\-\_\-clicked}}
+\index{on\-\_\-b\-Button\-\_\-clicked@{on\-\_\-b\-Button\-\_\-clicked}!View@{View}}
+\subsubsection[{on\-\_\-b\-Button\-\_\-clicked}]{\setlength{\rightskip}{0pt plus 5cm}void View\-::on\-\_\-b\-Button\-\_\-clicked (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{class_view_a8ba505bfa97031ec3f107c29c4e3a5b2}
+\index{View@{View}!on\-\_\-begin\-Choose@{on\-\_\-begin\-Choose}}
+\index{on\-\_\-begin\-Choose@{on\-\_\-begin\-Choose}!View@{View}}
+\subsubsection[{on\-\_\-begin\-Choose}]{\setlength{\rightskip}{0pt plus 5cm}void View\-::on\-\_\-begin\-Choose (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{class_view_ac223c52b2cf54fa0c6ed71b9336b3a6f}
+\index{View@{View}!on\-\_\-c\-Button\-\_\-clicked@{on\-\_\-c\-Button\-\_\-clicked}}
+\index{on\-\_\-c\-Button\-\_\-clicked@{on\-\_\-c\-Button\-\_\-clicked}!View@{View}}
+\subsubsection[{on\-\_\-c\-Button\-\_\-clicked}]{\setlength{\rightskip}{0pt plus 5cm}void View\-::on\-\_\-c\-Button\-\_\-clicked (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{class_view_a8399036c8240c31483990d2de900d540}
+\index{View@{View}!on\-\_\-d\-Button\-\_\-clicked@{on\-\_\-d\-Button\-\_\-clicked}}
+\index{on\-\_\-d\-Button\-\_\-clicked@{on\-\_\-d\-Button\-\_\-clicked}!View@{View}}
+\subsubsection[{on\-\_\-d\-Button\-\_\-clicked}]{\setlength{\rightskip}{0pt plus 5cm}void View\-::on\-\_\-d\-Button\-\_\-clicked (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{class_view_af19c9cb3333523f5011687efa8f1d952}
+\index{View@{View}!on\-\_\-end\-Button\-\_\-clicked@{on\-\_\-end\-Button\-\_\-clicked}}
+\index{on\-\_\-end\-Button\-\_\-clicked@{on\-\_\-end\-Button\-\_\-clicked}!View@{View}}
+\subsubsection[{on\-\_\-end\-Button\-\_\-clicked}]{\setlength{\rightskip}{0pt plus 5cm}void View\-::on\-\_\-end\-Button\-\_\-clicked (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{class_view_a52446d6f69aa5ebf4acfdf4ef5fa02bf}
+\index{View@{View}!on\-\_\-judge\-Button\-\_\-clicked@{on\-\_\-judge\-Button\-\_\-clicked}}
+\index{on\-\_\-judge\-Button\-\_\-clicked@{on\-\_\-judge\-Button\-\_\-clicked}!View@{View}}
+\subsubsection[{on\-\_\-judge\-Button\-\_\-clicked}]{\setlength{\rightskip}{0pt plus 5cm}void View\-::on\-\_\-judge\-Button\-\_\-clicked (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{class_view_a9990c69ed23e91695caa32c3452dbbd2}
+\index{View@{View}!on\-\_\-next\-Button\-\_\-clicked@{on\-\_\-next\-Button\-\_\-clicked}}
+\index{on\-\_\-next\-Button\-\_\-clicked@{on\-\_\-next\-Button\-\_\-clicked}!View@{View}}
+\subsubsection[{on\-\_\-next\-Button\-\_\-clicked}]{\setlength{\rightskip}{0pt plus 5cm}void View\-::on\-\_\-next\-Button\-\_\-clicked (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{class_view_a6b378e481baaaae8258390f1f9059634}
+\index{View@{View}!on\-Begin\-Hide@{on\-Begin\-Hide}}
+\index{on\-Begin\-Hide@{on\-Begin\-Hide}!View@{View}}
+\subsubsection[{on\-Begin\-Hide}]{\setlength{\rightskip}{0pt plus 5cm}void View\-::on\-Begin\-Hide (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_view_ae1186c36d987f7e906bf8c542cebb67a}
+
+
+hide some elements on the begin 
+
+\index{View@{View}!prepare\-To\-Close@{prepare\-To\-Close}}
+\index{prepare\-To\-Close@{prepare\-To\-Close}!View@{View}}
+\subsubsection[{prepare\-To\-Close}]{\setlength{\rightskip}{0pt plus 5cm}void View\-::prepare\-To\-Close (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_view_a3a698e208a13510922f4c1bdccfde6df}
+
+
+preapre window to show close answer 
+
+\index{View@{View}!prepare\-To\-Open@{prepare\-To\-Open}}
+\index{prepare\-To\-Open@{prepare\-To\-Open}!View@{View}}
+\subsubsection[{prepare\-To\-Open}]{\setlength{\rightskip}{0pt plus 5cm}void View\-::prepare\-To\-Open (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_view_acdcbd45def0b8796f4fdee030b760417}
+
+
+preapre window to show open answer 
+
+\index{View@{View}!save\-Current\-Course@{save\-Current\-Course}}
+\index{save\-Current\-Course@{save\-Current\-Course}!View@{View}}
+\subsubsection[{save\-Current\-Course}]{\setlength{\rightskip}{0pt plus 5cm}void View\-::save\-Current\-Course (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{\-\_\-t1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_view_a0b29675baa9cc066a03a45f7124434a2}
+
+
+Emit during creating new course to save course. It contains name od course. 
+
+\index{View@{View}!set\-Current\-Task@{set\-Current\-Task}}
+\index{set\-Current\-Task@{set\-Current\-Task}!View@{View}}
+\subsubsection[{set\-Current\-Task}]{\setlength{\rightskip}{0pt plus 5cm}void View\-::set\-Current\-Task (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_view_a2191782ee975e9c76d8f7b01a34028bb}
+\index{View@{View}!set\-Current\-Task\-Back@{set\-Current\-Task\-Back}}
+\index{set\-Current\-Task\-Back@{set\-Current\-Task\-Back}!View@{View}}
+\subsubsection[{set\-Current\-Task\-Back}]{\setlength{\rightskip}{0pt plus 5cm}void View\-::set\-Current\-Task\-Back (
+\begin{DoxyParamCaption}
+\item[{int}]{id, }
+\item[{std\-::string}]{question, }
+\item[{std\-::string}]{answer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_view_acc87610b389f1df38a574d5963e1bd93}
+
+
+Emit during creating new course to save current task, when we go to previous task. It contains task id, question and answer. 
+
+\index{View@{View}!set\-Current\-Task\-Next@{set\-Current\-Task\-Next}}
+\index{set\-Current\-Task\-Next@{set\-Current\-Task\-Next}!View@{View}}
+\subsubsection[{set\-Current\-Task\-Next}]{\setlength{\rightskip}{0pt plus 5cm}void View\-::set\-Current\-Task\-Next (
+\begin{DoxyParamCaption}
+\item[{int}]{id, }
+\item[{std\-::string}]{question, }
+\item[{std\-::string}]{answer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_view_ae3d7695045d1e91ae8b5263a32cb0349}
+
+
+Emit during creating new course to save current task, when we go to next task. It contains task id, question and answer. 
+
+\index{View@{View}!set\-Last\-Task@{set\-Last\-Task}}
+\index{set\-Last\-Task@{set\-Last\-Task}!View@{View}}
+\subsubsection[{set\-Last\-Task}]{\setlength{\rightskip}{0pt plus 5cm}void View\-::set\-Last\-Task (
+\begin{DoxyParamCaption}
+\item[{int}]{id, }
+\item[{std\-::string}]{question, }
+\item[{std\-::string}]{answer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_view_ad314b6a3f4bc349c476b0992a4f16a65}
+
+
+Emit during creating new course to save last task when we clicked save\-Button. It contains task id, question and answer. 
+
+\index{View@{View}!set\-Number\-Of\-Question\-To\-Revision@{set\-Number\-Of\-Question\-To\-Revision}}
+\index{set\-Number\-Of\-Question\-To\-Revision@{set\-Number\-Of\-Question\-To\-Revision}!View@{View}}
+\subsubsection[{set\-Number\-Of\-Question\-To\-Revision}]{\setlength{\rightskip}{0pt plus 5cm}void View\-::set\-Number\-Of\-Question\-To\-Revision (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_view_a4b8f192c2bdfa7ac81976079e7a1ca03}
+\index{View@{View}!set\-Suggester\-Mark@{set\-Suggester\-Mark}}
+\index{set\-Suggester\-Mark@{set\-Suggester\-Mark}!View@{View}}
+\subsubsection[{set\-Suggester\-Mark}]{\setlength{\rightskip}{0pt plus 5cm}void View\-::set\-Suggester\-Mark (
+\begin{DoxyParamCaption}
+\item[{int}]{mark}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{class_view_a3bcd2c32534a3aadeacd6d3b00a9b541}
+
+
+set suggested mark 
+
+\index{View@{View}!show\-Current\-List\-Of\-Files@{show\-Current\-List\-Of\-Files}}
+\index{show\-Current\-List\-Of\-Files@{show\-Current\-List\-Of\-Files}!View@{View}}
+\subsubsection[{show\-Current\-List\-Of\-Files}]{\setlength{\rightskip}{0pt plus 5cm}void View\-::show\-Current\-List\-Of\-Files (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_view_aa8eb37effd449813620a403d0f689ac9}
+
+
+Emit to show list of course, when we click \doxyref{Start}{p.}{class_start} . 
+
+\index{View@{View}!show\-Current\-Task@{show\-Current\-Task}}
+\index{show\-Current\-Task@{show\-Current\-Task}!View@{View}}
+\subsubsection[{show\-Current\-Task}]{\setlength{\rightskip}{0pt plus 5cm}void View\-::show\-Current\-Task (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_view_ac899a18a2b5d3671fe856c6f9f4d49db}
+\index{View@{View}!show\-Error@{show\-Error}}
+\index{show\-Error@{show\-Error}!View@{View}}
+\subsubsection[{show\-Error}]{\setlength{\rightskip}{0pt plus 5cm}void View\-::show\-Error (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{message}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{class_view_a7c730ed8932e2376687b2a0103ebd870}
+
+
+show warning message 
+
+\index{View@{View}!show\-Question\-Card\-List@{show\-Question\-Card\-List}}
+\index{show\-Question\-Card\-List@{show\-Question\-Card\-List}!View@{View}}
+\subsubsection[{show\-Question\-Card\-List}]{\setlength{\rightskip}{0pt plus 5cm}void View\-::show\-Question\-Card\-List (
+\begin{DoxyParamCaption}
+\item[{vector$<$ {\bf P\-Qcard} $>$}]{vector\-P\-Qcard, }
+\item[{std\-::string}]{name\-Of\-Course}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{class_view_a8cf8db5695838b598c4006f3762360d4}
+
+
+set initial value and show first task 
+
+\index{View@{View}!show\-You@{show\-You}}
+\index{show\-You@{show\-You}!View@{View}}
+\subsubsection[{show\-You}]{\setlength{\rightskip}{0pt plus 5cm}void View\-::show\-You (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{class_view_afa28fb76a03f422c57cfef7748094380}
+
+
+show main window 
+
+
+
+\subsection{Member Data Documentation}
+\index{View@{View}!counter\-Progress\-Bar@{counter\-Progress\-Bar}}
+\index{counter\-Progress\-Bar@{counter\-Progress\-Bar}!View@{View}}
+\subsubsection[{counter\-Progress\-Bar}]{\setlength{\rightskip}{0pt plus 5cm}int View\-::counter\-Progress\-Bar\hspace{0.3cm}{\ttfamily [private]}}\label{class_view_a694924c0022809b5c52788784c541a26}
+\index{View@{View}!current\-Task\-\_\-@{current\-Task\-\_\-}}
+\index{current\-Task\-\_\-@{current\-Task\-\_\-}!View@{View}}
+\subsubsection[{current\-Task\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}int View\-::current\-Task\-\_\-\hspace{0.3cm}{\ttfamily [private]}}\label{class_view_a7dab207166e09d508db015d9c6757526}
+
+
+number of current task 
+
+\index{View@{View}!current\-Task\-Type\-\_\-@{current\-Task\-Type\-\_\-}}
+\index{current\-Task\-Type\-\_\-@{current\-Task\-Type\-\_\-}!View@{View}}
+\subsubsection[{current\-Task\-Type\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}int View\-::current\-Task\-Type\-\_\-\hspace{0.3cm}{\ttfamily [private]}}\label{class_view_a14a398f7071c4b9c89d8006f663a8755}
+
+
+current task type 1 -\/ open, 0 -\/ close 
+
+\index{View@{View}!is\-A\-Clicked@{is\-A\-Clicked}}
+\index{is\-A\-Clicked@{is\-A\-Clicked}!View@{View}}
+\subsubsection[{is\-A\-Clicked}]{\setlength{\rightskip}{0pt plus 5cm}bool View\-::is\-A\-Clicked\hspace{0.3cm}{\ttfamily [private]}}\label{class_view_aba7e1e6e4a6cf76e62121535e0417cef}
+\index{View@{View}!is\-B\-Clicked@{is\-B\-Clicked}}
+\index{is\-B\-Clicked@{is\-B\-Clicked}!View@{View}}
+\subsubsection[{is\-B\-Clicked}]{\setlength{\rightskip}{0pt plus 5cm}bool View\-::is\-B\-Clicked\hspace{0.3cm}{\ttfamily [private]}}\label{class_view_a18e41beb69ce07f5abc70acd0b46205e}
+\index{View@{View}!is\-C\-Clicked@{is\-C\-Clicked}}
+\index{is\-C\-Clicked@{is\-C\-Clicked}!View@{View}}
+\subsubsection[{is\-C\-Clicked}]{\setlength{\rightskip}{0pt plus 5cm}bool View\-::is\-C\-Clicked\hspace{0.3cm}{\ttfamily [private]}}\label{class_view_aebc21f4a737d4322cf7743442100fd03}
+\index{View@{View}!is\-D\-Clicked@{is\-D\-Clicked}}
+\index{is\-D\-Clicked@{is\-D\-Clicked}!View@{View}}
+\subsubsection[{is\-D\-Clicked}]{\setlength{\rightskip}{0pt plus 5cm}bool View\-::is\-D\-Clicked\hspace{0.3cm}{\ttfamily [private]}}\label{class_view_a4f58a146e5a8d93e4805d46b14212307}
+\index{View@{View}!is\-Initial@{is\-Initial}}
+\index{is\-Initial@{is\-Initial}!View@{View}}
+\subsubsection[{is\-Initial}]{\setlength{\rightskip}{0pt plus 5cm}bool View\-::is\-Initial\hspace{0.3cm}{\ttfamily [private]}}\label{class_view_a76dde84e70ccd5a45fc1c5b30d780c30}
+\index{View@{View}!is\-Next@{is\-Next}}
+\index{is\-Next@{is\-Next}!View@{View}}
+\subsubsection[{is\-Next}]{\setlength{\rightskip}{0pt plus 5cm}bool View\-::is\-Next\hspace{0.3cm}{\ttfamily [private]}}\label{class_view_a9139e16b5f0e154b3a4429981e06383b}
+\index{View@{View}!is\-Next\-Or\-Back@{is\-Next\-Or\-Back}}
+\index{is\-Next\-Or\-Back@{is\-Next\-Or\-Back}!View@{View}}
+\subsubsection[{is\-Next\-Or\-Back}]{\setlength{\rightskip}{0pt plus 5cm}bool View\-::is\-Next\-Or\-Back\hspace{0.3cm}{\ttfamily [private]}}\label{class_view_a22723e470731201ab162fa5db5d5824b}
+\index{View@{View}!judge\-Vector\-\_\-@{judge\-Vector\-\_\-}}
+\index{judge\-Vector\-\_\-@{judge\-Vector\-\_\-}!View@{View}}
+\subsubsection[{judge\-Vector\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$int$>$ View\-::judge\-Vector\-\_\-\hspace{0.3cm}{\ttfamily [private]}}\label{class_view_a12b393b9eb3e44c03734d17a2c0f6d75}
+
+
+vector marks 
+
+\index{View@{View}!mark\-\_\-@{mark\-\_\-}}
+\index{mark\-\_\-@{mark\-\_\-}!View@{View}}
+\subsubsection[{mark\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}int View\-::mark\-\_\-\hspace{0.3cm}{\ttfamily [private]}}\label{class_view_ae6f27c7ab226b7fbc646c37a46b4d376}
+\index{View@{View}!mindate\-Of\-Revision\-\_\-@{mindate\-Of\-Revision\-\_\-}}
+\index{mindate\-Of\-Revision\-\_\-@{mindate\-Of\-Revision\-\_\-}!View@{View}}
+\subsubsection[{mindate\-Of\-Revision\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::gregorian\-::date View\-::mindate\-Of\-Revision\-\_\-\hspace{0.3cm}{\ttfamily [private]}}\label{class_view_ae7f3c5fcf01da326122ea8e451935d11}
+\index{View@{View}!my\-Controller\-\_\-@{my\-Controller\-\_\-}}
+\index{my\-Controller\-\_\-@{my\-Controller\-\_\-}!View@{View}}
+\subsubsection[{my\-Controller\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Controller}$\ast$ View\-::my\-Controller\-\_\-\hspace{0.3cm}{\ttfamily [private]}}\label{class_view_af4e5256c247f05badf4fa3c71d13586f}
+\index{View@{View}!name\-Of\-Course\-\_\-@{name\-Of\-Course\-\_\-}}
+\index{name\-Of\-Course\-\_\-@{name\-Of\-Course\-\_\-}!View@{View}}
+\subsubsection[{name\-Of\-Course\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}string View\-::name\-Of\-Course\-\_\-\hspace{0.3cm}{\ttfamily [private]}}\label{class_view_ae08bda3aec6456316b24137f60e91122}
+\index{View@{View}!number\-Of\-All\-Tasks\-\_\-@{number\-Of\-All\-Tasks\-\_\-}}
+\index{number\-Of\-All\-Tasks\-\_\-@{number\-Of\-All\-Tasks\-\_\-}!View@{View}}
+\subsubsection[{number\-Of\-All\-Tasks\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}int View\-::number\-Of\-All\-Tasks\-\_\-\hspace{0.3cm}{\ttfamily [private]}}\label{class_view_ac6ef708d25e79a11b9ad47e38b4ab135}
+
+
+number of all task 
+
+\index{View@{View}!number\-Of\-Question\-To\-Revision\-\_\-@{number\-Of\-Question\-To\-Revision\-\_\-}}
+\index{number\-Of\-Question\-To\-Revision\-\_\-@{number\-Of\-Question\-To\-Revision\-\_\-}!View@{View}}
+\subsubsection[{number\-Of\-Question\-To\-Revision\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}int View\-::number\-Of\-Question\-To\-Revision\-\_\-\hspace{0.3cm}{\ttfamily [private]}}\label{class_view_a573942fd06230f0dc794b45987294606}
+\index{View@{View}!questiocard\-\_\-@{questiocard\-\_\-}}
+\index{questiocard\-\_\-@{questiocard\-\_\-}!View@{View}}
+\subsubsection[{questiocard\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::shared\-\_\-ptr$<${\bf Question\-Card}$>$ View\-::questiocard\-\_\-\hspace{0.3cm}{\ttfamily [private]}}\label{class_view_aa0e2cbb9f64553d69e9fb7b5f597befd}
+
+
+pointers on \doxyref{Question\-Card}{p.}{class_question_card} 
+
+\index{View@{View}!task\-Vector\-\_\-@{task\-Vector\-\_\-}}
+\index{task\-Vector\-\_\-@{task\-Vector\-\_\-}!View@{View}}
+\subsubsection[{task\-Vector\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf P\-Qcard}$>$ View\-::task\-Vector\-\_\-\hspace{0.3cm}{\ttfamily [private]}}\label{class_view_aa74dc413508985028794985aeaa5ae9e}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Projekt\-Z\-P\-R/{\bf view.\-h}\item 
+Projekt\-Z\-P\-R/\-Generated\-Files/\-Debug/{\bf moc\-\_\-view.\-cpp}\item 
+Projekt\-Z\-P\-R/\-Generated\-Files/\-Release/{\bf moc\-\_\-view.\-cpp}\item 
+Projekt\-Z\-P\-R/\-Generated\-Files/\-Testy\-Z\-P\-R/{\bf moc\-\_\-view.\-cpp}\item 
+Projekt\-Z\-P\-R/\-Generated\-Files/\-Testy\-Z\-P\-R2/{\bf moc\-\_\-view.\-cpp}\item 
+Projekt\-Z\-P\-R/{\bf view.\-cpp}\end{DoxyCompactItemize}

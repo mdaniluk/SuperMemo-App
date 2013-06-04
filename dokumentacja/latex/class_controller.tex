@@ -1,0 +1,406 @@
+\section{Controller Class Reference}
+\label{class_controller}\index{Controller@{Controller}}
+
+
+{\ttfamily \#include $<$controller.\-h$>$}
+
+Inheritance diagram for Controller\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_controller}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf add\-Task\-Next} (int id, std\-::string question, std\-::string answer)
+\begin{DoxyCompactList}\small\item\em add current task when we click next in course creator \end{DoxyCompactList}\item 
+void {\bf add\-Task\-Back} (int id, std\-::string question, std\-::string answer)
+\begin{DoxyCompactList}\small\item\em add current task when we click back in course creator \end{DoxyCompactList}\item 
+void {\bf add\-Last\-Task} (int id, std\-::string question, std\-::string answer)
+\begin{DoxyCompactList}\small\item\em add current task when we click save in course creator \end{DoxyCompactList}\item 
+void {\bf add\-Save\-Course} (std\-::string name\-Of\-File)
+\begin{DoxyCompactList}\small\item\em set course in creator \end{DoxyCompactList}\item 
+void {\bf add\-List\-Of\-Files} ()
+\begin{DoxyCompactList}\small\item\em set list names of courses \end{DoxyCompactList}\item 
+void {\bf add\-Choose\-Course} (std\-::string course, bool flag)
+\begin{DoxyCompactList}\small\item\em show chosen course \end{DoxyCompactList}\item 
+void {\bf add\-Close\-Any\-Window} ()
+\begin{DoxyCompactList}\small\item\em close window \end{DoxyCompactList}\item 
+void {\bf delete\-Choose\-Course} (std\-::string course)
+\begin{DoxyCompactList}\small\item\em when delete button clicked \end{DoxyCompactList}\item 
+void {\bf compute\-Mark\-For\-Open} (int, std\-::string, std\-::string)
+\begin{DoxyCompactList}\small\item\em used to count mark for open questions \end{DoxyCompactList}\item 
+void {\bf compute\-Mark\-For\-Close} (int, vector$<$ bool $>$, vector$<$ bool $>$)
+\begin{DoxyCompactList}\small\item\em used to count mark for close questions \end{DoxyCompactList}\item 
+void {\bf end\-Course\-Judge} (vector$<$ int $>$, std\-::string)
+\begin{DoxyCompactList}\small\item\em used to judge the course \end{DoxyCompactList}\item 
+void {\bf add\-Choose\-Course\-Continue} (std\-::string name)
+\begin{DoxyCompactList}\small\item\em used when Continue course clicked \end{DoxyCompactList}\item 
+void {\bf add\-End\-Course} (vector$<$ int $>$, std\-::string)
+\begin{DoxyCompactList}\small\item\em end of course \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf error} (std\-::string)
+\begin{DoxyCompactList}\small\item\em emit when we catch exception. \end{DoxyCompactList}\item 
+void {\bf go\-Next} (int id, std\-::string question, std\-::string answer)
+\begin{DoxyCompactList}\small\item\em emit when we create course and go to next question. It contains task id,question and answer. \end{DoxyCompactList}\item 
+void {\bf close\-Creator} ()
+\begin{DoxyCompactList}\small\item\em emit when we save course to close creator window \end{DoxyCompactList}\item 
+void {\bf get\-List\-Of\-Courses} (std\-::vector$<$ std\-::string $>$)
+\begin{DoxyCompactList}\small\item\em emit list of names xml files with courses \end{DoxyCompactList}\item 
+void {\bf close\-Start\-Window} ()
+\begin{DoxyCompactList}\small\item\em emit when we choose course to close window \end{DoxyCompactList}\item 
+void {\bf enabled\-Main\-Window} ()
+\begin{DoxyCompactList}\small\item\em set enable main window when any other window close \end{DoxyCompactList}\item 
+void {\bf emit\-Question\-Card\-List} (vector$<$ {\bf P\-Qcard} $>$, std\-::string)
+\begin{DoxyCompactList}\small\item\em emit Question Card List and name of current course \end{DoxyCompactList}\item 
+void {\bf emit\-Question\-Card\-List\-Continue} (vector$<$ {\bf P\-Qcard} $>$, std\-::string)
+\begin{DoxyCompactList}\small\item\em emit when choosed option Contiunue \end{DoxyCompactList}\item 
+void {\bf emit\-Suggested\-Mark} (int)
+\begin{DoxyCompactList}\small\item\em emit suggested mark counted by computer \end{DoxyCompactList}\item 
+void {\bf show\-Stats} (vector$<$ int $>$)
+\begin{DoxyCompactList}\small\item\em emit marks to statistic \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Controller} ()
+\item 
+{\bf $\sim$\-Controller} ()
+\item 
+void {\bf connect\-View} ({\bf View} $\ast$view)
+\begin{DoxyCompactList}\small\item\em connect \doxyref{View}{p.}{class_view} to controller \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf View} $\ast$ {\bf view\-\_\-}
+\item 
+{\bf Model} $\ast$ {\bf model\-\_\-}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class represents \doxyref{Controller}{p.}{class_controller} in M\-V\-C. It communicate between \doxyref{Model}{p.}{class_model} and View.\-It respond on user actions, calls up methods from \doxyref{Model}{p.}{class_model} to get data. \doxyref{Controller}{p.}{class_controller} emits signals to inform \doxyref{View}{p.}{class_view} about change model state. \begin{DoxyAuthor}{Author}
+Piotr Maleci \& Michal Daniluk 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Controller@{Controller}!Controller@{Controller}}
+\index{Controller@{Controller}!Controller@{Controller}}
+\subsubsection[{Controller}]{\setlength{\rightskip}{0pt plus 5cm}Controller\-::\-Controller (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\label{class_controller_a95c56822d667e94b031451729ce069a9}
+\index{Controller@{Controller}!$\sim$\-Controller@{$\sim$\-Controller}}
+\index{$\sim$\-Controller@{$\sim$\-Controller}!Controller@{Controller}}
+\subsubsection[{$\sim$\-Controller}]{\setlength{\rightskip}{0pt plus 5cm}Controller\-::$\sim$\-Controller (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_controller_a0ab87934c4f7a266cfdb86e0f36bc1b5}
+
+
+\subsection{Member Function Documentation}
+\index{Controller@{Controller}!add\-Choose\-Course@{add\-Choose\-Course}}
+\index{add\-Choose\-Course@{add\-Choose\-Course}!Controller@{Controller}}
+\subsubsection[{add\-Choose\-Course}]{\setlength{\rightskip}{0pt plus 5cm}void Controller\-::add\-Choose\-Course (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{course, }
+\item[{bool}]{flag}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{class_controller_a237cc194575e06bb1838bc4ef9066f60}
+
+
+show chosen course 
+
+\index{Controller@{Controller}!add\-Choose\-Course\-Continue@{add\-Choose\-Course\-Continue}}
+\index{add\-Choose\-Course\-Continue@{add\-Choose\-Course\-Continue}!Controller@{Controller}}
+\subsubsection[{add\-Choose\-Course\-Continue}]{\setlength{\rightskip}{0pt plus 5cm}void Controller\-::add\-Choose\-Course\-Continue (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{class_controller_aaecc9270c5eb4129960a6de1fc7d9898}
+
+
+used when Continue course clicked 
+
+\index{Controller@{Controller}!add\-Close\-Any\-Window@{add\-Close\-Any\-Window}}
+\index{add\-Close\-Any\-Window@{add\-Close\-Any\-Window}!Controller@{Controller}}
+\subsubsection[{add\-Close\-Any\-Window}]{\setlength{\rightskip}{0pt plus 5cm}void Controller\-::add\-Close\-Any\-Window (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{class_controller_a7ee8a4eb7d7f0a8e786f09587bb9607f}
+
+
+close window 
+
+\index{Controller@{Controller}!add\-End\-Course@{add\-End\-Course}}
+\index{add\-End\-Course@{add\-End\-Course}!Controller@{Controller}}
+\subsubsection[{add\-End\-Course}]{\setlength{\rightskip}{0pt plus 5cm}void Controller\-::add\-End\-Course (
+\begin{DoxyParamCaption}
+\item[{vector$<$ int $>$}]{marks, }
+\item[{std\-::string}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{class_controller_a50afe16c31586a0be61d140a76c687f5}
+
+
+end of course 
+
+\index{Controller@{Controller}!add\-Last\-Task@{add\-Last\-Task}}
+\index{add\-Last\-Task@{add\-Last\-Task}!Controller@{Controller}}
+\subsubsection[{add\-Last\-Task}]{\setlength{\rightskip}{0pt plus 5cm}void Controller\-::add\-Last\-Task (
+\begin{DoxyParamCaption}
+\item[{int}]{id, }
+\item[{std\-::string}]{question, }
+\item[{std\-::string}]{answer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{class_controller_a9a38ec67594e89557e84ca53c07e6c36}
+
+
+add current task when we click save in course creator 
+
+\index{Controller@{Controller}!add\-List\-Of\-Files@{add\-List\-Of\-Files}}
+\index{add\-List\-Of\-Files@{add\-List\-Of\-Files}!Controller@{Controller}}
+\subsubsection[{add\-List\-Of\-Files}]{\setlength{\rightskip}{0pt plus 5cm}void Controller\-::add\-List\-Of\-Files (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{class_controller_a159c919c1a9797224d6ba6f04b44dc90}
+
+
+set list names of courses 
+
+\index{Controller@{Controller}!add\-Save\-Course@{add\-Save\-Course}}
+\index{add\-Save\-Course@{add\-Save\-Course}!Controller@{Controller}}
+\subsubsection[{add\-Save\-Course}]{\setlength{\rightskip}{0pt plus 5cm}void Controller\-::add\-Save\-Course (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{name\-Of\-File}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{class_controller_a39de4f27d21a469e6582a6fe02ad2bcf}
+
+
+set course in creator 
+
+\index{Controller@{Controller}!add\-Task\-Back@{add\-Task\-Back}}
+\index{add\-Task\-Back@{add\-Task\-Back}!Controller@{Controller}}
+\subsubsection[{add\-Task\-Back}]{\setlength{\rightskip}{0pt plus 5cm}void Controller\-::add\-Task\-Back (
+\begin{DoxyParamCaption}
+\item[{int}]{id, }
+\item[{std\-::string}]{question, }
+\item[{std\-::string}]{answer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{class_controller_ad705b15118fedced188479b8d8514457}
+
+
+add current task when we click back in course creator 
+
+\index{Controller@{Controller}!add\-Task\-Next@{add\-Task\-Next}}
+\index{add\-Task\-Next@{add\-Task\-Next}!Controller@{Controller}}
+\subsubsection[{add\-Task\-Next}]{\setlength{\rightskip}{0pt plus 5cm}void Controller\-::add\-Task\-Next (
+\begin{DoxyParamCaption}
+\item[{int}]{id, }
+\item[{std\-::string}]{question, }
+\item[{std\-::string}]{answer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{class_controller_a8eb5e6f7512d5ee9c69467192bb5097a}
+
+
+add current task when we click next in course creator 
+
+\index{Controller@{Controller}!close\-Creator@{close\-Creator}}
+\index{close\-Creator@{close\-Creator}!Controller@{Controller}}
+\subsubsection[{close\-Creator}]{\setlength{\rightskip}{0pt plus 5cm}void Controller\-::close\-Creator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_controller_aa6ba203f8be9b921e0fc7ec4bc412241}
+
+
+emit when we save course to close creator window 
+
+\index{Controller@{Controller}!close\-Start\-Window@{close\-Start\-Window}}
+\index{close\-Start\-Window@{close\-Start\-Window}!Controller@{Controller}}
+\subsubsection[{close\-Start\-Window}]{\setlength{\rightskip}{0pt plus 5cm}void Controller\-::close\-Start\-Window (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_controller_a7a0ba393140c98402bdec5b9d0095a32}
+
+
+emit when we choose course to close window 
+
+\index{Controller@{Controller}!compute\-Mark\-For\-Close@{compute\-Mark\-For\-Close}}
+\index{compute\-Mark\-For\-Close@{compute\-Mark\-For\-Close}!Controller@{Controller}}
+\subsubsection[{compute\-Mark\-For\-Close}]{\setlength{\rightskip}{0pt plus 5cm}void Controller\-::compute\-Mark\-For\-Close (
+\begin{DoxyParamCaption}
+\item[{int}]{type, }
+\item[{vector$<$ bool $>$}]{user, }
+\item[{vector$<$ bool $>$}]{correct}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{class_controller_a84608057a98bc83693d347e14c8a731a}
+
+
+used to count mark for close questions 
+
+\index{Controller@{Controller}!compute\-Mark\-For\-Open@{compute\-Mark\-For\-Open}}
+\index{compute\-Mark\-For\-Open@{compute\-Mark\-For\-Open}!Controller@{Controller}}
+\subsubsection[{compute\-Mark\-For\-Open}]{\setlength{\rightskip}{0pt plus 5cm}void Controller\-::compute\-Mark\-For\-Open (
+\begin{DoxyParamCaption}
+\item[{int}]{type, }
+\item[{std\-::string}]{user, }
+\item[{std\-::string}]{correct}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{class_controller_aa7e31ff2ca95a9aced78c246e9cc2cc1}
+
+
+used to count mark for open questions 
+
+\index{Controller@{Controller}!connect\-View@{connect\-View}}
+\index{connect\-View@{connect\-View}!Controller@{Controller}}
+\subsubsection[{connect\-View}]{\setlength{\rightskip}{0pt plus 5cm}void Controller\-::connect\-View (
+\begin{DoxyParamCaption}
+\item[{{\bf View} $\ast$}]{view}
+\end{DoxyParamCaption}
+)}\label{class_controller_a50d72513cf40c383e6dc8cb58c9a9c2a}
+
+
+connect \doxyref{View}{p.}{class_view} to controller 
+
+\index{Controller@{Controller}!delete\-Choose\-Course@{delete\-Choose\-Course}}
+\index{delete\-Choose\-Course@{delete\-Choose\-Course}!Controller@{Controller}}
+\subsubsection[{delete\-Choose\-Course}]{\setlength{\rightskip}{0pt plus 5cm}void Controller\-::delete\-Choose\-Course (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{course}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{class_controller_a2d739cc72ac8d39cba976072cc26d98d}
+
+
+when delete button clicked 
+
+\index{Controller@{Controller}!emit\-Question\-Card\-List@{emit\-Question\-Card\-List}}
+\index{emit\-Question\-Card\-List@{emit\-Question\-Card\-List}!Controller@{Controller}}
+\subsubsection[{emit\-Question\-Card\-List}]{\setlength{\rightskip}{0pt plus 5cm}void Controller\-::emit\-Question\-Card\-List (
+\begin{DoxyParamCaption}
+\item[{vector$<$ {\bf P\-Qcard} $>$}]{\-\_\-t1, }
+\item[{std\-::string}]{\-\_\-t2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_controller_ae1289fb5e1e3525ac96db0d136afe509}
+
+
+emit Question Card List and name of current course 
+
+\index{Controller@{Controller}!emit\-Question\-Card\-List\-Continue@{emit\-Question\-Card\-List\-Continue}}
+\index{emit\-Question\-Card\-List\-Continue@{emit\-Question\-Card\-List\-Continue}!Controller@{Controller}}
+\subsubsection[{emit\-Question\-Card\-List\-Continue}]{\setlength{\rightskip}{0pt plus 5cm}void Controller\-::emit\-Question\-Card\-List\-Continue (
+\begin{DoxyParamCaption}
+\item[{vector$<$ {\bf P\-Qcard} $>$}]{\-\_\-t1, }
+\item[{std\-::string}]{\-\_\-t2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_controller_aa25e21d1682c6e8207dadc2e792a30df}
+
+
+emit when choosed option Contiunue 
+
+\index{Controller@{Controller}!emit\-Suggested\-Mark@{emit\-Suggested\-Mark}}
+\index{emit\-Suggested\-Mark@{emit\-Suggested\-Mark}!Controller@{Controller}}
+\subsubsection[{emit\-Suggested\-Mark}]{\setlength{\rightskip}{0pt plus 5cm}void Controller\-::emit\-Suggested\-Mark (
+\begin{DoxyParamCaption}
+\item[{int}]{\-\_\-t1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_controller_a3ef7f656abd8c7e69eeacdce849ce12d}
+
+
+emit suggested mark counted by computer 
+
+\index{Controller@{Controller}!enabled\-Main\-Window@{enabled\-Main\-Window}}
+\index{enabled\-Main\-Window@{enabled\-Main\-Window}!Controller@{Controller}}
+\subsubsection[{enabled\-Main\-Window}]{\setlength{\rightskip}{0pt plus 5cm}void Controller\-::enabled\-Main\-Window (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_controller_adedf10a18e2b5c84ba1683928d5a2f68}
+
+
+set enable main window when any other window close 
+
+\index{Controller@{Controller}!end\-Course\-Judge@{end\-Course\-Judge}}
+\index{end\-Course\-Judge@{end\-Course\-Judge}!Controller@{Controller}}
+\subsubsection[{end\-Course\-Judge}]{\setlength{\rightskip}{0pt plus 5cm}void Controller\-::end\-Course\-Judge (
+\begin{DoxyParamCaption}
+\item[{vector$<$ int $>$}]{, }
+\item[{std\-::string}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{class_controller_a0d0a8ff395bc737b333d3c7abb24bfb5}
+
+
+used to judge the course 
+
+\index{Controller@{Controller}!error@{error}}
+\index{error@{error}!Controller@{Controller}}
+\subsubsection[{error}]{\setlength{\rightskip}{0pt plus 5cm}void Controller\-::error (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{\-\_\-t1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_controller_a74dc9631de09ae2b86e61bf3ba4f3eea}
+
+
+emit when we catch exception. 
+
+\index{Controller@{Controller}!get\-List\-Of\-Courses@{get\-List\-Of\-Courses}}
+\index{get\-List\-Of\-Courses@{get\-List\-Of\-Courses}!Controller@{Controller}}
+\subsubsection[{get\-List\-Of\-Courses}]{\setlength{\rightskip}{0pt plus 5cm}void Controller\-::get\-List\-Of\-Courses (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ std\-::string $>$}]{\-\_\-t1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_controller_a0eb01297d58d5db2108c25d44c2d20b3}
+
+
+emit list of names xml files with courses 
+
+\index{Controller@{Controller}!go\-Next@{go\-Next}}
+\index{go\-Next@{go\-Next}!Controller@{Controller}}
+\subsubsection[{go\-Next}]{\setlength{\rightskip}{0pt plus 5cm}void Controller\-::go\-Next (
+\begin{DoxyParamCaption}
+\item[{int}]{id, }
+\item[{std\-::string}]{question, }
+\item[{std\-::string}]{answer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_controller_a3a46ebb0133dcfbb2a90470d6ac27832}
+
+
+emit when we create course and go to next question. It contains task id,question and answer. 
+
+\index{Controller@{Controller}!show\-Stats@{show\-Stats}}
+\index{show\-Stats@{show\-Stats}!Controller@{Controller}}
+\subsubsection[{show\-Stats}]{\setlength{\rightskip}{0pt plus 5cm}void Controller\-::show\-Stats (
+\begin{DoxyParamCaption}
+\item[{vector$<$ int $>$}]{\-\_\-t1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_controller_ae5e63eafb76d0755170bc771aa6b1e4c}
+
+
+emit marks to statistic 
+
+
+
+\subsection{Member Data Documentation}
+\index{Controller@{Controller}!model\-\_\-@{model\-\_\-}}
+\index{model\-\_\-@{model\-\_\-}!Controller@{Controller}}
+\subsubsection[{model\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Model}$\ast$ Controller\-::model\-\_\-\hspace{0.3cm}{\ttfamily [private]}}\label{class_controller_a883630e7bbe2b0e24a370c3122249d07}
+\index{Controller@{Controller}!view\-\_\-@{view\-\_\-}}
+\index{view\-\_\-@{view\-\_\-}!Controller@{Controller}}
+\subsubsection[{view\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf View}$\ast$ Controller\-::view\-\_\-\hspace{0.3cm}{\ttfamily [private]}}\label{class_controller_a02f83722f9e5b258d78cffda10cd4489}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Projekt\-Z\-P\-R/{\bf controller.\-h}\item 
+Projekt\-Z\-P\-R/{\bf controller.\-cpp}\item 
+Projekt\-Z\-P\-R/\-Generated\-Files/\-Debug/{\bf moc\-\_\-controller.\-cpp}\item 
+Projekt\-Z\-P\-R/\-Generated\-Files/\-Release/{\bf moc\-\_\-controller.\-cpp}\item 
+Projekt\-Z\-P\-R/\-Generated\-Files/\-Testy\-Z\-P\-R/{\bf moc\-\_\-controller.\-cpp}\item 
+Projekt\-Z\-P\-R/\-Generated\-Files/\-Testy\-Z\-P\-R2/{\bf moc\-\_\-controller.\-cpp}\end{DoxyCompactItemize}

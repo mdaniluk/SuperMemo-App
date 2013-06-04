@@ -1,0 +1,273 @@
+\section{Create\-Test Class Reference}
+\label{class_create_test}\index{Create\-Test@{Create\-Test}}
+
+
+{\ttfamily \#include $<$createtest.\-h$>$}
+
+Inheritance diagram for Create\-Test\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_create_test}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf refresh\-Task} (int number, std\-::string question, std\-::string answer)
+\begin{DoxyCompactList}\small\item\em refresh task when we back to previus task, wchich we agreed. \end{DoxyCompactList}\item 
+void {\bf current\-Changed\-Slot} (int index)
+\begin{DoxyCompactList}\small\item\em show waring message when we want to change type of answer when we wrote one of them \end{DoxyCompactList}\item 
+void {\bf close\-Window} ()
+\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf set\-Task\-Next} (int id, std\-::string question, std\-::string answer)
+\begin{DoxyCompactList}\small\item\em emit when we click next to set current task \end{DoxyCompactList}\item 
+void {\bf set\-Task\-Back} (int id, std\-::string question, std\-::string answer)
+\begin{DoxyCompactList}\small\item\em emit when we click back to set current task \end{DoxyCompactList}\item 
+void {\bf set\-Last\-Task} (int id, std\-::string question, std\-::string answer)
+\begin{DoxyCompactList}\small\item\em emit when we click save to set last task \end{DoxyCompactList}\item 
+void {\bf save\-Course} (std\-::string)
+\item 
+void {\bf close\-Creator} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Create\-Test} ({\bf Controller} $\ast$controller, {\bf View} $\ast$parent=N\-U\-L\-L)
+\item 
+{\bf $\sim$\-Create\-Test} ()
+\item 
+void {\bf close\-Event} (Q\-Close\-Event $\ast$event)
+\end{DoxyCompactItemize}
+\subsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf on\-\_\-next\-\_\-clicked} ()
+\item 
+void {\bf on\-\_\-back\-\_\-clicked} ()
+\item 
+void {\bf on\-\_\-save\-\_\-clicked} ()
+\item 
+void {\bf on\-\_\-help\-\_\-clicked} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf get\-Task} ()
+\item 
+void {\bf current\-Changed\-Tab} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf View} $\ast$ {\bf my\-View\-\_\-}
+\item 
+{\bf Controller} $\ast$ {\bf my\-Controller\-\_\-}
+\item 
+int {\bf number\-\_\-}
+\item 
+string {\bf answer\-\_\-}
+\item 
+string {\bf question\-\_\-}
+\item 
+int {\bf number\-Of\-Questions\-\_\-}
+\item 
+bool {\bf is\-Next\-Or\-Back\-\_\-}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Class represents test creator dialog. \begin{DoxyAuthor}{Author}
+Piotr Maleci \& Michal Daniluk 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Create\-Test@{Create\-Test}!Create\-Test@{Create\-Test}}
+\index{Create\-Test@{Create\-Test}!CreateTest@{Create\-Test}}
+\subsubsection[{Create\-Test}]{\setlength{\rightskip}{0pt plus 5cm}Create\-Test\-::\-Create\-Test (
+\begin{DoxyParamCaption}
+\item[{{\bf Controller} $\ast$}]{controller, }
+\item[{{\bf View} $\ast$}]{parent = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{class_create_test_a6142a8b5db1b0b01b19cd32937744f1c}
+\index{Create\-Test@{Create\-Test}!$\sim$\-Create\-Test@{$\sim$\-Create\-Test}}
+\index{$\sim$\-Create\-Test@{$\sim$\-Create\-Test}!CreateTest@{Create\-Test}}
+\subsubsection[{$\sim$\-Create\-Test}]{\setlength{\rightskip}{0pt plus 5cm}Create\-Test\-::$\sim$\-Create\-Test (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_create_test_ac9a712208a3a64f531ffbcec4aab07cc}
+
+
+\subsection{Member Function Documentation}
+\index{Create\-Test@{Create\-Test}!close\-Creator@{close\-Creator}}
+\index{close\-Creator@{close\-Creator}!CreateTest@{Create\-Test}}
+\subsubsection[{close\-Creator}]{\setlength{\rightskip}{0pt plus 5cm}void Create\-Test\-::close\-Creator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_create_test_ac3186d53855ebf1aa206323106682546}
+\index{Create\-Test@{Create\-Test}!close\-Event@{close\-Event}}
+\index{close\-Event@{close\-Event}!CreateTest@{Create\-Test}}
+\subsubsection[{close\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void Create\-Test\-::close\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Close\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)}\label{class_create_test_a92c077986e2df975c6d9efe585a1e7c2}
+\index{Create\-Test@{Create\-Test}!close\-Window@{close\-Window}}
+\index{close\-Window@{close\-Window}!CreateTest@{Create\-Test}}
+\subsubsection[{close\-Window}]{\setlength{\rightskip}{0pt plus 5cm}void Create\-Test\-::close\-Window (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{class_create_test_af628a165beae6e1abbc55cd69e7b9c5f}
+\index{Create\-Test@{Create\-Test}!current\-Changed\-Slot@{current\-Changed\-Slot}}
+\index{current\-Changed\-Slot@{current\-Changed\-Slot}!CreateTest@{Create\-Test}}
+\subsubsection[{current\-Changed\-Slot}]{\setlength{\rightskip}{0pt plus 5cm}void Create\-Test\-::current\-Changed\-Slot (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{class_create_test_a70a5c03eb200e142ce3d4ef335538809}
+
+
+show waring message when we want to change type of answer when we wrote one of them 
+
+\index{Create\-Test@{Create\-Test}!current\-Changed\-Tab@{current\-Changed\-Tab}}
+\index{current\-Changed\-Tab@{current\-Changed\-Tab}!CreateTest@{Create\-Test}}
+\subsubsection[{current\-Changed\-Tab}]{\setlength{\rightskip}{0pt plus 5cm}void Create\-Test\-::current\-Changed\-Tab (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_create_test_a62737a82d647c58f3355082fbfe9d2a6}
+\index{Create\-Test@{Create\-Test}!get\-Task@{get\-Task}}
+\index{get\-Task@{get\-Task}!CreateTest@{Create\-Test}}
+\subsubsection[{get\-Task}]{\setlength{\rightskip}{0pt plus 5cm}void Create\-Test\-::get\-Task (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_create_test_a1fee6ebaf6cc6212e38530a89096aed2}
+\index{Create\-Test@{Create\-Test}!on\-\_\-back\-\_\-clicked@{on\-\_\-back\-\_\-clicked}}
+\index{on\-\_\-back\-\_\-clicked@{on\-\_\-back\-\_\-clicked}!CreateTest@{Create\-Test}}
+\subsubsection[{on\-\_\-back\-\_\-clicked}]{\setlength{\rightskip}{0pt plus 5cm}void Create\-Test\-::on\-\_\-back\-\_\-clicked (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{class_create_test_a8ee47f15d8316c43b6c488bfce79d160}
+\index{Create\-Test@{Create\-Test}!on\-\_\-help\-\_\-clicked@{on\-\_\-help\-\_\-clicked}}
+\index{on\-\_\-help\-\_\-clicked@{on\-\_\-help\-\_\-clicked}!CreateTest@{Create\-Test}}
+\subsubsection[{on\-\_\-help\-\_\-clicked}]{\setlength{\rightskip}{0pt plus 5cm}void Create\-Test\-::on\-\_\-help\-\_\-clicked (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{class_create_test_a3ca3818a63b6319a39c4e265a4f4544b}
+\index{Create\-Test@{Create\-Test}!on\-\_\-next\-\_\-clicked@{on\-\_\-next\-\_\-clicked}}
+\index{on\-\_\-next\-\_\-clicked@{on\-\_\-next\-\_\-clicked}!CreateTest@{Create\-Test}}
+\subsubsection[{on\-\_\-next\-\_\-clicked}]{\setlength{\rightskip}{0pt plus 5cm}void Create\-Test\-::on\-\_\-next\-\_\-clicked (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{class_create_test_a2801da6fd5810b2c03600780808c9618}
+\index{Create\-Test@{Create\-Test}!on\-\_\-save\-\_\-clicked@{on\-\_\-save\-\_\-clicked}}
+\index{on\-\_\-save\-\_\-clicked@{on\-\_\-save\-\_\-clicked}!CreateTest@{Create\-Test}}
+\subsubsection[{on\-\_\-save\-\_\-clicked}]{\setlength{\rightskip}{0pt plus 5cm}void Create\-Test\-::on\-\_\-save\-\_\-clicked (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{class_create_test_ab78df0a11684b34980b6e3294d81e94e}
+\index{Create\-Test@{Create\-Test}!refresh\-Task@{refresh\-Task}}
+\index{refresh\-Task@{refresh\-Task}!CreateTest@{Create\-Test}}
+\subsubsection[{refresh\-Task}]{\setlength{\rightskip}{0pt plus 5cm}void Create\-Test\-::refresh\-Task (
+\begin{DoxyParamCaption}
+\item[{int}]{number, }
+\item[{std\-::string}]{question, }
+\item[{std\-::string}]{answer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{class_create_test_ad551555454f65522345371b5e046a190}
+
+
+refresh task when we back to previus task, wchich we agreed. 
+
+\index{Create\-Test@{Create\-Test}!save\-Course@{save\-Course}}
+\index{save\-Course@{save\-Course}!CreateTest@{Create\-Test}}
+\subsubsection[{save\-Course}]{\setlength{\rightskip}{0pt plus 5cm}void Create\-Test\-::save\-Course (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{\-\_\-t1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_create_test_a8b3b1550a554ca6bba3e96cb4ae48fd5}
+\index{Create\-Test@{Create\-Test}!set\-Last\-Task@{set\-Last\-Task}}
+\index{set\-Last\-Task@{set\-Last\-Task}!CreateTest@{Create\-Test}}
+\subsubsection[{set\-Last\-Task}]{\setlength{\rightskip}{0pt plus 5cm}void Create\-Test\-::set\-Last\-Task (
+\begin{DoxyParamCaption}
+\item[{int}]{id, }
+\item[{std\-::string}]{question, }
+\item[{std\-::string}]{answer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_create_test_a056ce41fe0e8fc89a8e84f95869a4658}
+
+
+emit when we click save to set last task 
+
+\index{Create\-Test@{Create\-Test}!set\-Task\-Back@{set\-Task\-Back}}
+\index{set\-Task\-Back@{set\-Task\-Back}!CreateTest@{Create\-Test}}
+\subsubsection[{set\-Task\-Back}]{\setlength{\rightskip}{0pt plus 5cm}void Create\-Test\-::set\-Task\-Back (
+\begin{DoxyParamCaption}
+\item[{int}]{id, }
+\item[{std\-::string}]{question, }
+\item[{std\-::string}]{answer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_create_test_ab6be0fd1e22f66a06e36cd33c82bb731}
+
+
+emit when we click back to set current task 
+
+\index{Create\-Test@{Create\-Test}!set\-Task\-Next@{set\-Task\-Next}}
+\index{set\-Task\-Next@{set\-Task\-Next}!CreateTest@{Create\-Test}}
+\subsubsection[{set\-Task\-Next}]{\setlength{\rightskip}{0pt plus 5cm}void Create\-Test\-::set\-Task\-Next (
+\begin{DoxyParamCaption}
+\item[{int}]{id, }
+\item[{std\-::string}]{question, }
+\item[{std\-::string}]{answer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_create_test_a47710afff9c1b0f825ad47dc50b8955c}
+
+
+emit when we click next to set current task 
+
+
+
+\subsection{Member Data Documentation}
+\index{Create\-Test@{Create\-Test}!answer\-\_\-@{answer\-\_\-}}
+\index{answer\-\_\-@{answer\-\_\-}!CreateTest@{Create\-Test}}
+\subsubsection[{answer\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}string Create\-Test\-::answer\-\_\-\hspace{0.3cm}{\ttfamily [private]}}\label{class_create_test_a97330835e7e0cb416f87bdc6ad0e7471}
+\index{Create\-Test@{Create\-Test}!is\-Next\-Or\-Back\-\_\-@{is\-Next\-Or\-Back\-\_\-}}
+\index{is\-Next\-Or\-Back\-\_\-@{is\-Next\-Or\-Back\-\_\-}!CreateTest@{Create\-Test}}
+\subsubsection[{is\-Next\-Or\-Back\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}bool Create\-Test\-::is\-Next\-Or\-Back\-\_\-\hspace{0.3cm}{\ttfamily [private]}}\label{class_create_test_a27f5feb19b16f62722cafa649b576b90}
+\index{Create\-Test@{Create\-Test}!my\-Controller\-\_\-@{my\-Controller\-\_\-}}
+\index{my\-Controller\-\_\-@{my\-Controller\-\_\-}!CreateTest@{Create\-Test}}
+\subsubsection[{my\-Controller\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Controller}$\ast$ Create\-Test\-::my\-Controller\-\_\-\hspace{0.3cm}{\ttfamily [private]}}\label{class_create_test_a685e8d1406bbf11fcfb8228402915c6e}
+\index{Create\-Test@{Create\-Test}!my\-View\-\_\-@{my\-View\-\_\-}}
+\index{my\-View\-\_\-@{my\-View\-\_\-}!CreateTest@{Create\-Test}}
+\subsubsection[{my\-View\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf View}$\ast$ Create\-Test\-::my\-View\-\_\-\hspace{0.3cm}{\ttfamily [private]}}\label{class_create_test_a4960a53fd2fed242295e730805548b76}
+\index{Create\-Test@{Create\-Test}!number\-\_\-@{number\-\_\-}}
+\index{number\-\_\-@{number\-\_\-}!CreateTest@{Create\-Test}}
+\subsubsection[{number\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}int Create\-Test\-::number\-\_\-\hspace{0.3cm}{\ttfamily [private]}}\label{class_create_test_ab807c29561c5fe6f5f6c9d34d7ab5fa7}
+\index{Create\-Test@{Create\-Test}!number\-Of\-Questions\-\_\-@{number\-Of\-Questions\-\_\-}}
+\index{number\-Of\-Questions\-\_\-@{number\-Of\-Questions\-\_\-}!CreateTest@{Create\-Test}}
+\subsubsection[{number\-Of\-Questions\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}int Create\-Test\-::number\-Of\-Questions\-\_\-\hspace{0.3cm}{\ttfamily [private]}}\label{class_create_test_a4ab76bc4c6a46a1709d1f4a3d8ce0fb5}
+\index{Create\-Test@{Create\-Test}!question\-\_\-@{question\-\_\-}}
+\index{question\-\_\-@{question\-\_\-}!CreateTest@{Create\-Test}}
+\subsubsection[{question\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}string Create\-Test\-::question\-\_\-\hspace{0.3cm}{\ttfamily [private]}}\label{class_create_test_a63cf4626f6b7ace61cfcba21e8353fe1}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Projekt\-Z\-P\-R/{\bf createtest.\-h}\item 
+Projekt\-Z\-P\-R/{\bf createtest.\-cpp}\item 
+Projekt\-Z\-P\-R/\-Generated\-Files/\-Debug/{\bf moc\-\_\-createtest.\-cpp}\item 
+Projekt\-Z\-P\-R/\-Generated\-Files/\-Release/{\bf moc\-\_\-createtest.\-cpp}\item 
+Projekt\-Z\-P\-R/\-Generated\-Files/\-Testy\-Z\-P\-R/{\bf moc\-\_\-createtest.\-cpp}\item 
+Projekt\-Z\-P\-R/\-Generated\-Files/\-Testy\-Z\-P\-R2/{\bf moc\-\_\-createtest.\-cpp}\end{DoxyCompactItemize}

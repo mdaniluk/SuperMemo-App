@@ -1,0 +1,131 @@
+\section{Course Class Reference}
+\label{class_course}\index{Course@{Course}}
+
+
+{\ttfamily \#include $<$course.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Course} (void)
+\item 
+{\bf $\sim$\-Course} ()
+\item 
+vector$<$ string $>$ {\bf get\-Questions} ()
+\item 
+vector$<$ string $>$ {\bf get\-Answers} ()
+\item 
+string {\bf get\-Questions} (int index)
+\item 
+string {\bf get\-Answers} (int index)
+\item 
+void {\bf set\-Questions} (int id, string question)
+\item 
+void {\bf set\-Answers} (int id, string answer)
+\item 
+void {\bf write\-To\-X\-M\-L} (std\-::string name\-Of\-File)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ string $>$ {\bf questions}
+\item 
+vector$<$ string $>$ {\bf answers}
+\item 
+int {\bf number\-Of\-Questions\-\_\-}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class represents logic of course creator \begin{DoxyAuthor}{Author}
+Piotr Maleci \& Michal Daniluk 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Course@{Course}!Course@{Course}}
+\index{Course@{Course}!Course@{Course}}
+\subsubsection[{Course}]{\setlength{\rightskip}{0pt plus 5cm}Course\-::\-Course (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{class_course_a47049fe05b86e2e9443a951ac596d41a}
+\index{Course@{Course}!$\sim$\-Course@{$\sim$\-Course}}
+\index{$\sim$\-Course@{$\sim$\-Course}!Course@{Course}}
+\subsubsection[{$\sim$\-Course}]{\setlength{\rightskip}{0pt plus 5cm}Course\-::$\sim$\-Course (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_course_aa9038f2e129526920037dda9e76d69d0}
+
+
+\subsection{Member Function Documentation}
+\index{Course@{Course}!get\-Answers@{get\-Answers}}
+\index{get\-Answers@{get\-Answers}!Course@{Course}}
+\subsubsection[{get\-Answers}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$string$>$ Course\-::get\-Answers (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_course_adcc45874b4d669ccb8f61fa5b6b5ccea}
+\index{Course@{Course}!get\-Answers@{get\-Answers}}
+\index{get\-Answers@{get\-Answers}!Course@{Course}}
+\subsubsection[{get\-Answers}]{\setlength{\rightskip}{0pt plus 5cm}string Course\-::get\-Answers (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}\label{class_course_a785e0eabf6d5437b354f2a1bd719225c}
+\index{Course@{Course}!get\-Questions@{get\-Questions}}
+\index{get\-Questions@{get\-Questions}!Course@{Course}}
+\subsubsection[{get\-Questions}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$string$>$ Course\-::get\-Questions (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_course_a503efffe9d1f3949618efaa71ead2442}
+\index{Course@{Course}!get\-Questions@{get\-Questions}}
+\index{get\-Questions@{get\-Questions}!Course@{Course}}
+\subsubsection[{get\-Questions}]{\setlength{\rightskip}{0pt plus 5cm}string Course\-::get\-Questions (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}\label{class_course_a88a7a4f9b8a9c6eac2cde76a735b6542}
+\index{Course@{Course}!set\-Answers@{set\-Answers}}
+\index{set\-Answers@{set\-Answers}!Course@{Course}}
+\subsubsection[{set\-Answers}]{\setlength{\rightskip}{0pt plus 5cm}void Course\-::set\-Answers (
+\begin{DoxyParamCaption}
+\item[{int}]{id, }
+\item[{string}]{answer}
+\end{DoxyParamCaption}
+)}\label{class_course_a74fd02306d58cab833d028e16fc608b3}
+\index{Course@{Course}!set\-Questions@{set\-Questions}}
+\index{set\-Questions@{set\-Questions}!Course@{Course}}
+\subsubsection[{set\-Questions}]{\setlength{\rightskip}{0pt plus 5cm}void Course\-::set\-Questions (
+\begin{DoxyParamCaption}
+\item[{int}]{id, }
+\item[{string}]{question}
+\end{DoxyParamCaption}
+)}\label{class_course_a8bae174780438b864a1a1f192f823e7b}
+\index{Course@{Course}!write\-To\-X\-M\-L@{write\-To\-X\-M\-L}}
+\index{write\-To\-X\-M\-L@{write\-To\-X\-M\-L}!Course@{Course}}
+\subsubsection[{write\-To\-X\-M\-L}]{\setlength{\rightskip}{0pt plus 5cm}void Course\-::write\-To\-X\-M\-L (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{name\-Of\-File}
+\end{DoxyParamCaption}
+)}\label{class_course_aea8151ddbda24f35a0449fa1b360581c}
+
+
+\subsection{Member Data Documentation}
+\index{Course@{Course}!answers@{answers}}
+\index{answers@{answers}!Course@{Course}}
+\subsubsection[{answers}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$string$>$ Course\-::answers\hspace{0.3cm}{\ttfamily [private]}}\label{class_course_ab29e40631a77c3e57f6d0d1597cda1e8}
+\index{Course@{Course}!number\-Of\-Questions\-\_\-@{number\-Of\-Questions\-\_\-}}
+\index{number\-Of\-Questions\-\_\-@{number\-Of\-Questions\-\_\-}!Course@{Course}}
+\subsubsection[{number\-Of\-Questions\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}int Course\-::number\-Of\-Questions\-\_\-\hspace{0.3cm}{\ttfamily [private]}}\label{class_course_ac8be6684d56f82b3b1022461f98f50c1}
+\index{Course@{Course}!questions@{questions}}
+\index{questions@{questions}!Course@{Course}}
+\subsubsection[{questions}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$string$>$ Course\-::questions\hspace{0.3cm}{\ttfamily [private]}}\label{class_course_a7e4549fa40ccc6fbb2caacec4abee7b8}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Projekt\-Z\-P\-R/{\bf course.\-h}\item 
+Projekt\-Z\-P\-R/{\bf course.\-cpp}\end{DoxyCompactItemize}

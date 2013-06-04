@@ -135,7 +135,7 @@
     <ClCompile Include="questioncard.cpp" />
     <ClCompile Include="startmenu.cpp" />
     <ClCompile Include="statistic.cpp" />
-    <ClCompile Include="test.cpp" />
+    <ClCompile Include="test .cpp" />
     <ClCompile Include="view.cpp" />
   </ItemGroup>
   <ItemGroup>

@@ -1,0 +1,214 @@
+\section{Question\-Card Class Reference}
+\label{class_question_card}\index{Question\-Card@{Question\-Card}}
+
+
+{\ttfamily \#include $<$questioncard.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Question\-Card} ()
+\item 
+{\bf Question\-Card} (const std\-::string question, const std\-::string answer, const int id\-Question, const bool question\-Type)
+\item 
+{\bf Question\-Card} (const std\-::string question, {\bf Close\-Answer} closeanswer, const int id\-Question, const bool question\-Type)
+\item 
+boost\-::gregorian\-::date {\bf date\-Of\-Next\-Question} (int mark)
+\item 
+bool {\bf get\-Question\-Type} ()
+\item 
+int {\bf get\-Id\-Question} ()
+\item 
+string {\bf get\-Answer\-Open} ()
+\item 
+string {\bf get\-Question} ()
+\item 
+{\bf Close\-Answer} {\bf getclose\-Answer} ()
+\item 
+boost\-::gregorian\-::date {\bf get\-Next\-Date} ()
+\item 
+{\bf $\sim$\-Question\-Card} ()
+\item 
+{\footnotesize template$<$class Archive $>$ }\\void {\bf save} (Archive \&ar, const unsigned int version) const 
+\item 
+{\footnotesize template$<$class Archive $>$ }\\void {\bf load} (Archive \&ar, const unsigned int version)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf question\-Type\-\_\-}
+\item 
+int {\bf id\-Question\-\_\-}
+\item 
+string {\bf answer\-Open\-\_\-}
+\item 
+string {\bf question\-\_\-}
+\item 
+{\bf Close\-Answer} {\bf close\-Answer\-\_\-}
+\item 
+int {\bf how\-\_\-many\-\_\-}
+\item 
+double {\bf e\-Factor\-\_\-}
+\item 
+double {\bf interval\-\_\-}
+\item 
+boost\-::gregorian\-::date {\bf now}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf boost\-::serialization\-::access}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class which represents logical structure of question, consists all elements of question. Enables setting next date of showing each question. \begin{DoxyAuthor}{Author}
+Piotr 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Question\-Card@{Question\-Card}!Question\-Card@{Question\-Card}}
+\index{Question\-Card@{Question\-Card}!QuestionCard@{Question\-Card}}
+\subsubsection[{Question\-Card}]{\setlength{\rightskip}{0pt plus 5cm}Question\-Card\-::\-Question\-Card (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_question_card_a8fdde9cec4be79271361bb378aa3d4c4}
+\index{Question\-Card@{Question\-Card}!Question\-Card@{Question\-Card}}
+\index{Question\-Card@{Question\-Card}!QuestionCard@{Question\-Card}}
+\subsubsection[{Question\-Card}]{\setlength{\rightskip}{0pt plus 5cm}Question\-Card\-::\-Question\-Card (
+\begin{DoxyParamCaption}
+\item[{const std\-::string}]{question, }
+\item[{const std\-::string}]{answer, }
+\item[{const int}]{id\-Question, }
+\item[{const bool}]{question\-Type}
+\end{DoxyParamCaption}
+)}\label{class_question_card_ae4f2839fe0b1dd2963b3844cd8b7000f}
+\index{Question\-Card@{Question\-Card}!Question\-Card@{Question\-Card}}
+\index{Question\-Card@{Question\-Card}!QuestionCard@{Question\-Card}}
+\subsubsection[{Question\-Card}]{\setlength{\rightskip}{0pt plus 5cm}Question\-Card\-::\-Question\-Card (
+\begin{DoxyParamCaption}
+\item[{const std\-::string}]{question, }
+\item[{{\bf Close\-Answer}}]{closeanswer, }
+\item[{const int}]{id\-Question, }
+\item[{const bool}]{question\-Type}
+\end{DoxyParamCaption}
+)}\label{class_question_card_ae892c3fddbedaa7a9a07275b1d3bf59b}
+\index{Question\-Card@{Question\-Card}!$\sim$\-Question\-Card@{$\sim$\-Question\-Card}}
+\index{$\sim$\-Question\-Card@{$\sim$\-Question\-Card}!QuestionCard@{Question\-Card}}
+\subsubsection[{$\sim$\-Question\-Card}]{\setlength{\rightskip}{0pt plus 5cm}Question\-Card\-::$\sim$\-Question\-Card (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_question_card_ae63659debcd878b1d794cd22e41e6e59}
+
+
+\subsection{Member Function Documentation}
+\index{Question\-Card@{Question\-Card}!date\-Of\-Next\-Question@{date\-Of\-Next\-Question}}
+\index{date\-Of\-Next\-Question@{date\-Of\-Next\-Question}!QuestionCard@{Question\-Card}}
+\subsubsection[{date\-Of\-Next\-Question}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::gregorian\-::date Question\-Card\-::date\-Of\-Next\-Question (
+\begin{DoxyParamCaption}
+\item[{int}]{mark}
+\end{DoxyParamCaption}
+)}\label{class_question_card_a8daaa5222b51fce9d77f2a3a3d61e7a8}
+\index{Question\-Card@{Question\-Card}!get\-Answer\-Open@{get\-Answer\-Open}}
+\index{get\-Answer\-Open@{get\-Answer\-Open}!QuestionCard@{Question\-Card}}
+\subsubsection[{get\-Answer\-Open}]{\setlength{\rightskip}{0pt plus 5cm}string Question\-Card\-::get\-Answer\-Open (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_question_card_a31c8077a7f18c01e52d12284b5d137e7}
+\index{Question\-Card@{Question\-Card}!getclose\-Answer@{getclose\-Answer}}
+\index{getclose\-Answer@{getclose\-Answer}!QuestionCard@{Question\-Card}}
+\subsubsection[{getclose\-Answer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Close\-Answer} Question\-Card\-::getclose\-Answer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_question_card_a1c4a4de5190b6797a537b3b7e842df3e}
+\index{Question\-Card@{Question\-Card}!get\-Id\-Question@{get\-Id\-Question}}
+\index{get\-Id\-Question@{get\-Id\-Question}!QuestionCard@{Question\-Card}}
+\subsubsection[{get\-Id\-Question}]{\setlength{\rightskip}{0pt plus 5cm}int Question\-Card\-::get\-Id\-Question (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_question_card_aa8833040bc87397164d4be69ad193a93}
+\index{Question\-Card@{Question\-Card}!get\-Next\-Date@{get\-Next\-Date}}
+\index{get\-Next\-Date@{get\-Next\-Date}!QuestionCard@{Question\-Card}}
+\subsubsection[{get\-Next\-Date}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::gregorian\-::date Question\-Card\-::get\-Next\-Date (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_question_card_a6f48cd81df5c8fc299e295e07974f573}
+\index{Question\-Card@{Question\-Card}!get\-Question@{get\-Question}}
+\index{get\-Question@{get\-Question}!QuestionCard@{Question\-Card}}
+\subsubsection[{get\-Question}]{\setlength{\rightskip}{0pt plus 5cm}string Question\-Card\-::get\-Question (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_question_card_a700c9aca651fd1d8a4e1e6897df4ab10}
+\index{Question\-Card@{Question\-Card}!get\-Question\-Type@{get\-Question\-Type}}
+\index{get\-Question\-Type@{get\-Question\-Type}!QuestionCard@{Question\-Card}}
+\subsubsection[{get\-Question\-Type}]{\setlength{\rightskip}{0pt plus 5cm}bool Question\-Card\-::get\-Question\-Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_question_card_a97b826f52c382be5a4bc0222fdbf0cf3}
+\index{Question\-Card@{Question\-Card}!load@{load}}
+\index{load@{load}!QuestionCard@{Question\-Card}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Archive $>$ void Question\-Card\-::load (
+\begin{DoxyParamCaption}
+\item[{Archive \&}]{ar, }
+\item[{const unsigned int}]{version}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_question_card_a8722e344ab08f7c38ba05c2a69ec7fdd}
+\index{Question\-Card@{Question\-Card}!save@{save}}
+\index{save@{save}!QuestionCard@{Question\-Card}}
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Archive $>$ void Question\-Card\-::save (
+\begin{DoxyParamCaption}
+\item[{Archive \&}]{ar, }
+\item[{const unsigned int}]{version}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_question_card_a23ef7914f5dffb9d80ad3d7fd73cdbb4}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{Question\-Card@{Question\-Card}!boost\-::serialization\-::access@{boost\-::serialization\-::access}}
+\index{boost\-::serialization\-::access@{boost\-::serialization\-::access}!QuestionCard@{Question\-Card}}
+\subsubsection[{boost\-::serialization\-::access}]{\setlength{\rightskip}{0pt plus 5cm}friend class boost\-::serialization\-::access\hspace{0.3cm}{\ttfamily [friend]}}\label{class_question_card_ac98d07dd8f7b70e16ccb9a01abf56b9c}
+
+
+\subsection{Member Data Documentation}
+\index{Question\-Card@{Question\-Card}!answer\-Open\-\_\-@{answer\-Open\-\_\-}}
+\index{answer\-Open\-\_\-@{answer\-Open\-\_\-}!QuestionCard@{Question\-Card}}
+\subsubsection[{answer\-Open\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}string Question\-Card\-::answer\-Open\-\_\-}\label{class_question_card_ab0157e4e29bbbe81fc11ba53b78e630c}
+\index{Question\-Card@{Question\-Card}!close\-Answer\-\_\-@{close\-Answer\-\_\-}}
+\index{close\-Answer\-\_\-@{close\-Answer\-\_\-}!QuestionCard@{Question\-Card}}
+\subsubsection[{close\-Answer\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Close\-Answer} Question\-Card\-::close\-Answer\-\_\-}\label{class_question_card_aeb1255b53a83b70ed65af5e52d5a56d3}
+\index{Question\-Card@{Question\-Card}!e\-Factor\-\_\-@{e\-Factor\-\_\-}}
+\index{e\-Factor\-\_\-@{e\-Factor\-\_\-}!QuestionCard@{Question\-Card}}
+\subsubsection[{e\-Factor\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double Question\-Card\-::e\-Factor\-\_\-}\label{class_question_card_a594a57745f09fdd3986bb697b8cd806c}
+\index{Question\-Card@{Question\-Card}!how\-\_\-many\-\_\-@{how\-\_\-many\-\_\-}}
+\index{how\-\_\-many\-\_\-@{how\-\_\-many\-\_\-}!QuestionCard@{Question\-Card}}
+\subsubsection[{how\-\_\-many\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}int Question\-Card\-::how\-\_\-many\-\_\-}\label{class_question_card_aa309ccc12e592b0e9aeadbbf5c6ca52d}
+\index{Question\-Card@{Question\-Card}!id\-Question\-\_\-@{id\-Question\-\_\-}}
+\index{id\-Question\-\_\-@{id\-Question\-\_\-}!QuestionCard@{Question\-Card}}
+\subsubsection[{id\-Question\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}int Question\-Card\-::id\-Question\-\_\-}\label{class_question_card_ab32d3e335f623af9c6c86171256b7d0d}
+\index{Question\-Card@{Question\-Card}!interval\-\_\-@{interval\-\_\-}}
+\index{interval\-\_\-@{interval\-\_\-}!QuestionCard@{Question\-Card}}
+\subsubsection[{interval\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double Question\-Card\-::interval\-\_\-}\label{class_question_card_aee718e8899e927a91569d631684f99ab}
+\index{Question\-Card@{Question\-Card}!now@{now}}
+\index{now@{now}!QuestionCard@{Question\-Card}}
+\subsubsection[{now}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::gregorian\-::date Question\-Card\-::now}\label{class_question_card_a22494150564aeaa69065c41098d5b18c}
+\index{Question\-Card@{Question\-Card}!question\-\_\-@{question\-\_\-}}
+\index{question\-\_\-@{question\-\_\-}!QuestionCard@{Question\-Card}}
+\subsubsection[{question\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}string Question\-Card\-::question\-\_\-}\label{class_question_card_a5f6f13c809aab6dd8c1e66bd95011d2d}
+\index{Question\-Card@{Question\-Card}!question\-Type\-\_\-@{question\-Type\-\_\-}}
+\index{question\-Type\-\_\-@{question\-Type\-\_\-}!QuestionCard@{Question\-Card}}
+\subsubsection[{question\-Type\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}bool Question\-Card\-::question\-Type\-\_\-}\label{class_question_card_a726e564badbacebe030cc8fa849bb43c}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Projekt\-Z\-P\-R/{\bf questioncard.\-h}\item 
+Projekt\-Z\-P\-R/{\bf questioncard.\-cpp}\end{DoxyCompactItemize}

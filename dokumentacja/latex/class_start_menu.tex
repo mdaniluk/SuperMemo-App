@@ -1,0 +1,185 @@
+\section{Start\-Menu Class Reference}
+\label{class_start_menu}\index{Start\-Menu@{Start\-Menu}}
+
+
+{\ttfamily \#include $<$startmenu.\-h$>$}
+
+Inheritance diagram for Start\-Menu\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_start_menu}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf set\-List\-Of\-Courses} (std\-::vector$<$ std\-::string $>$ list\-Of\-Files)
+\item 
+void {\bf close\-Window} ()
+\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf show\-List\-Of\-Files} ()
+\item 
+void {\bf choose} (std\-::string, bool)
+\item 
+void {\bf choose\-Continue} (std\-::string)
+\item 
+void {\bf close\-Start} ()
+\item 
+void {\bf delete\-Course} (std\-::string)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Start\-Menu} ({\bf Controller} $\ast$controller, {\bf View} $\ast$parent=N\-U\-L\-L)
+\item 
+{\bf $\sim$\-Start\-Menu} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf close\-Event} (Q\-Close\-Event $\ast$event)
+\end{DoxyCompactItemize}
+\subsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf on\-\_\-choose\-\_\-clicked} ()
+\item 
+void {\bf on\-\_\-continue\-Button\-\_\-clicked} ()
+\item 
+void {\bf on\-\_\-delete\-Button\-\_\-clicked} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf View} $\ast$ {\bf my\-View\-\_\-}
+\item 
+{\bf Controller} $\ast$ {\bf my\-Controller\-\_\-}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Class represents start menu dialog. \begin{DoxyAuthor}{Author}
+Piotr Maleci \& Michal Daniluk 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Start\-Menu@{Start\-Menu}!Start\-Menu@{Start\-Menu}}
+\index{Start\-Menu@{Start\-Menu}!StartMenu@{Start\-Menu}}
+\subsubsection[{Start\-Menu}]{\setlength{\rightskip}{0pt plus 5cm}Start\-Menu\-::\-Start\-Menu (
+\begin{DoxyParamCaption}
+\item[{{\bf Controller} $\ast$}]{controller, }
+\item[{{\bf View} $\ast$}]{parent = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{class_start_menu_a1e8aab02fee6433f78b05a2705a226cc}
+\index{Start\-Menu@{Start\-Menu}!$\sim$\-Start\-Menu@{$\sim$\-Start\-Menu}}
+\index{$\sim$\-Start\-Menu@{$\sim$\-Start\-Menu}!StartMenu@{Start\-Menu}}
+\subsubsection[{$\sim$\-Start\-Menu}]{\setlength{\rightskip}{0pt plus 5cm}Start\-Menu\-::$\sim$\-Start\-Menu (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_start_menu_a0586b30fd5cedbb22ad3a22c98913481}
+
+
+\subsection{Member Function Documentation}
+\index{Start\-Menu@{Start\-Menu}!choose@{choose}}
+\index{choose@{choose}!StartMenu@{Start\-Menu}}
+\subsubsection[{choose}]{\setlength{\rightskip}{0pt plus 5cm}void Start\-Menu\-::choose (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{\-\_\-t1, }
+\item[{bool}]{\-\_\-t2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_start_menu_a9636a82f457c9f302091e6bcd2e887eb}
+\index{Start\-Menu@{Start\-Menu}!choose\-Continue@{choose\-Continue}}
+\index{choose\-Continue@{choose\-Continue}!StartMenu@{Start\-Menu}}
+\subsubsection[{choose\-Continue}]{\setlength{\rightskip}{0pt plus 5cm}void Start\-Menu\-::choose\-Continue (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{\-\_\-t1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_start_menu_a0c06234ebc3c68d6259167571b54454e}
+\index{Start\-Menu@{Start\-Menu}!close\-Event@{close\-Event}}
+\index{close\-Event@{close\-Event}!StartMenu@{Start\-Menu}}
+\subsubsection[{close\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void Start\-Menu\-::close\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Close\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_start_menu_a4e1479681b0bf8b2493a8589c1a61adc}
+\index{Start\-Menu@{Start\-Menu}!close\-Start@{close\-Start}}
+\index{close\-Start@{close\-Start}!StartMenu@{Start\-Menu}}
+\subsubsection[{close\-Start}]{\setlength{\rightskip}{0pt plus 5cm}void Start\-Menu\-::close\-Start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_start_menu_a59682c8c3d87da802947a1aefd5771a6}
+\index{Start\-Menu@{Start\-Menu}!close\-Window@{close\-Window}}
+\index{close\-Window@{close\-Window}!StartMenu@{Start\-Menu}}
+\subsubsection[{close\-Window}]{\setlength{\rightskip}{0pt plus 5cm}void Start\-Menu\-::close\-Window (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{class_start_menu_a5013e6965f128b801cfee2ebb0f9f373}
+\index{Start\-Menu@{Start\-Menu}!delete\-Course@{delete\-Course}}
+\index{delete\-Course@{delete\-Course}!StartMenu@{Start\-Menu}}
+\subsubsection[{delete\-Course}]{\setlength{\rightskip}{0pt plus 5cm}void Start\-Menu\-::delete\-Course (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{\-\_\-t1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_start_menu_a2afa98577a9fa5b7ba8cb30235e37e09}
+\index{Start\-Menu@{Start\-Menu}!on\-\_\-choose\-\_\-clicked@{on\-\_\-choose\-\_\-clicked}}
+\index{on\-\_\-choose\-\_\-clicked@{on\-\_\-choose\-\_\-clicked}!StartMenu@{Start\-Menu}}
+\subsubsection[{on\-\_\-choose\-\_\-clicked}]{\setlength{\rightskip}{0pt plus 5cm}void Start\-Menu\-::on\-\_\-choose\-\_\-clicked (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{class_start_menu_ad575601c28f91b604c21bfc6ebebc0dd}
+\index{Start\-Menu@{Start\-Menu}!on\-\_\-continue\-Button\-\_\-clicked@{on\-\_\-continue\-Button\-\_\-clicked}}
+\index{on\-\_\-continue\-Button\-\_\-clicked@{on\-\_\-continue\-Button\-\_\-clicked}!StartMenu@{Start\-Menu}}
+\subsubsection[{on\-\_\-continue\-Button\-\_\-clicked}]{\setlength{\rightskip}{0pt plus 5cm}void Start\-Menu\-::on\-\_\-continue\-Button\-\_\-clicked (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{class_start_menu_a5127d4820b5c0606e0908d0cedf359b1}
+\index{Start\-Menu@{Start\-Menu}!on\-\_\-delete\-Button\-\_\-clicked@{on\-\_\-delete\-Button\-\_\-clicked}}
+\index{on\-\_\-delete\-Button\-\_\-clicked@{on\-\_\-delete\-Button\-\_\-clicked}!StartMenu@{Start\-Menu}}
+\subsubsection[{on\-\_\-delete\-Button\-\_\-clicked}]{\setlength{\rightskip}{0pt plus 5cm}void Start\-Menu\-::on\-\_\-delete\-Button\-\_\-clicked (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{class_start_menu_a49019953b58cab4f2cca079041cab4c4}
+\index{Start\-Menu@{Start\-Menu}!set\-List\-Of\-Courses@{set\-List\-Of\-Courses}}
+\index{set\-List\-Of\-Courses@{set\-List\-Of\-Courses}!StartMenu@{Start\-Menu}}
+\subsubsection[{set\-List\-Of\-Courses}]{\setlength{\rightskip}{0pt plus 5cm}void Start\-Menu\-::set\-List\-Of\-Courses (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ std\-::string $>$}]{list\-Of\-Files}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{class_start_menu_a8ceadba505c2d0411a8194de981ab98a}
+\index{Start\-Menu@{Start\-Menu}!show\-List\-Of\-Files@{show\-List\-Of\-Files}}
+\index{show\-List\-Of\-Files@{show\-List\-Of\-Files}!StartMenu@{Start\-Menu}}
+\subsubsection[{show\-List\-Of\-Files}]{\setlength{\rightskip}{0pt plus 5cm}void Start\-Menu\-::show\-List\-Of\-Files (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_start_menu_adaa4d7657672a7dcbce5d5835be69caf}
+
+
+\subsection{Member Data Documentation}
+\index{Start\-Menu@{Start\-Menu}!my\-Controller\-\_\-@{my\-Controller\-\_\-}}
+\index{my\-Controller\-\_\-@{my\-Controller\-\_\-}!StartMenu@{Start\-Menu}}
+\subsubsection[{my\-Controller\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Controller}$\ast$ Start\-Menu\-::my\-Controller\-\_\-\hspace{0.3cm}{\ttfamily [private]}}\label{class_start_menu_a175f033340fdbeae0d9264001c9aed27}
+\index{Start\-Menu@{Start\-Menu}!my\-View\-\_\-@{my\-View\-\_\-}}
+\index{my\-View\-\_\-@{my\-View\-\_\-}!StartMenu@{Start\-Menu}}
+\subsubsection[{my\-View\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf View}$\ast$ Start\-Menu\-::my\-View\-\_\-\hspace{0.3cm}{\ttfamily [private]}}\label{class_start_menu_a686aafb8e0a2ae7ed6f9ba40e6369734}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Projekt\-Z\-P\-R/{\bf startmenu.\-h}\item 
+Projekt\-Z\-P\-R/\-Generated\-Files/\-Debug/{\bf moc\-\_\-startmenu.\-cpp}\item 
+Projekt\-Z\-P\-R/\-Generated\-Files/\-Release/{\bf moc\-\_\-startmenu.\-cpp}\item 
+Projekt\-Z\-P\-R/\-Generated\-Files/\-Testy\-Z\-P\-R/{\bf moc\-\_\-startmenu.\-cpp}\item 
+Projekt\-Z\-P\-R/\-Generated\-Files/\-Testy\-Z\-P\-R2/{\bf moc\-\_\-startmenu.\-cpp}\item 
+Projekt\-Z\-P\-R/{\bf startmenu.\-cpp}\end{DoxyCompactItemize}
