@@ -51,6 +51,7 @@ signals:
 
 private slots:
 	void on_actionStart_triggered();
+	void on_actionQuit_triggered();
 	void on_actionNew_Course_triggered();
 	void on_beginChoose();
 	void on_nextButton_clicked();

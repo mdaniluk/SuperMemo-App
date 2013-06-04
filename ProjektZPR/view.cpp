@@ -112,6 +112,9 @@ void View::on_actionSchedule_triggered(){
 	schedule->setEnabled(true);
 }
 
+void View::on_actionQuit_triggered(){
+	close();
+}
 void View::on_actionNew_Course_triggered(){
 	CreateTest *createTest = new CreateTest(myController_,this);
 	this->setDisabled(true);
