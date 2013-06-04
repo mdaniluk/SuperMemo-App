@@ -1,0 +1,122 @@
+\section{Deck Class Reference}
+\label{class_deck}\index{Deck@{Deck}}
+
+
+{\ttfamily \#include $<$deck.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Deck} ()
+\item 
+{\bf Deck} (Q\-String filename)
+\begin{DoxyCompactList}\small\item\em constructor with file which is loaded \end{DoxyCompactList}\item 
+vector$<$ {\bf P\-Qcard} $>$ {\bf get\-Question\-Card\-Vector} ()
+\begin{DoxyCompactList}\small\item\em function to get vector of P\-Qcard \end{DoxyCompactList}\item 
+{\bf $\sim$\-Deck} ()
+\item 
+{\footnotesize template$<$class Archive $>$ }\\void {\bf save} (Archive \&ar, const unsigned int version) const 
+\item 
+{\footnotesize template$<$class Archive $>$ }\\void {\bf load} (Archive \&ar, const unsigned int version)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ {\bf P\-Qcard} $>$ {\bf vector\-P\-Q}
+\begin{DoxyCompactList}\small\item\em vector of smart pointers to \doxyref{Question\-Card}{p.}{class_question_card} objects \end{DoxyCompactList}\item 
+int {\bf a}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf boost\-::serialization\-::access}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class represents collection of questions and answers which are showed after users action. (Press apropriate button). Class in its constructor loads from xml file all information. \begin{DoxyAuthor}{Author}
+Piotr Malecki \& Michal Daniluk 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Deck@{Deck}!Deck@{Deck}}
+\index{Deck@{Deck}!Deck@{Deck}}
+\subsubsection[{Deck}]{\setlength{\rightskip}{0pt plus 5cm}Deck\-::\-Deck (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_deck_a57ae1cb4ac6fd61c249cefb2db85eb99}
+\index{Deck@{Deck}!Deck@{Deck}}
+\index{Deck@{Deck}!Deck@{Deck}}
+\subsubsection[{Deck}]{\setlength{\rightskip}{0pt plus 5cm}Deck\-::\-Deck (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{filename}
+\end{DoxyParamCaption}
+)}\label{class_deck_a2de005a2b038321987776b98f754f032}
+
+
+constructor with file which is loaded 
+
+\index{Deck@{Deck}!$\sim$\-Deck@{$\sim$\-Deck}}
+\index{$\sim$\-Deck@{$\sim$\-Deck}!Deck@{Deck}}
+\subsubsection[{$\sim$\-Deck}]{\setlength{\rightskip}{0pt plus 5cm}Deck\-::$\sim$\-Deck (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_deck_a7d1331cc558c302fdf44e5ae8aae1a95}
+
+
+\subsection{Member Function Documentation}
+\index{Deck@{Deck}!get\-Question\-Card\-Vector@{get\-Question\-Card\-Vector}}
+\index{get\-Question\-Card\-Vector@{get\-Question\-Card\-Vector}!Deck@{Deck}}
+\subsubsection[{get\-Question\-Card\-Vector}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf P\-Qcard}$>$ Deck\-::get\-Question\-Card\-Vector (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_deck_a31471a9f843cbd3467688c94748cd70b}
+
+
+function to get vector of P\-Qcard 
+
+\index{Deck@{Deck}!load@{load}}
+\index{load@{load}!Deck@{Deck}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Archive $>$ void Deck\-::load (
+\begin{DoxyParamCaption}
+\item[{Archive \&}]{ar, }
+\item[{const unsigned int}]{version}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_deck_a5398698219babba24a524b8ee1bd138b}
+\index{Deck@{Deck}!save@{save}}
+\index{save@{save}!Deck@{Deck}}
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Archive $>$ void Deck\-::save (
+\begin{DoxyParamCaption}
+\item[{Archive \&}]{ar, }
+\item[{const unsigned int}]{version}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_deck_a396b0f975aeb9eff075719ac6e99f83d}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{Deck@{Deck}!boost\-::serialization\-::access@{boost\-::serialization\-::access}}
+\index{boost\-::serialization\-::access@{boost\-::serialization\-::access}!Deck@{Deck}}
+\subsubsection[{boost\-::serialization\-::access}]{\setlength{\rightskip}{0pt plus 5cm}friend class boost\-::serialization\-::access\hspace{0.3cm}{\ttfamily [friend]}}\label{class_deck_ac98d07dd8f7b70e16ccb9a01abf56b9c}
+
+
+\subsection{Member Data Documentation}
+\index{Deck@{Deck}!a@{a}}
+\index{a@{a}!Deck@{Deck}}
+\subsubsection[{a}]{\setlength{\rightskip}{0pt plus 5cm}int Deck\-::a}\label{class_deck_a91fe9068713c685e8b8a4d308415fc61}
+\index{Deck@{Deck}!vector\-P\-Q@{vector\-P\-Q}}
+\index{vector\-P\-Q@{vector\-P\-Q}!Deck@{Deck}}
+\subsubsection[{vector\-P\-Q}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf P\-Qcard}$>$ Deck\-::vector\-P\-Q}\label{class_deck_a5b0180c72d1a90a495606145beaebfab}
+
+
+vector of smart pointers to \doxyref{Question\-Card}{p.}{class_question_card} objects 
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Projekt\-Z\-P\-R/{\bf deck.\-h}\item 
+Projekt\-Z\-P\-R/{\bf deck.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,216 @@
+\section{Start Class Reference}
+\label{class_start}\index{Start@{Start}}
+
+
+{\ttfamily \#include $<$start.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Start} ()
+\item 
+{\bf $\sim$\-Start} ()
+\item 
+void {\bf set\-List\-Of\-Files} ()
+\begin{DoxyCompactList}\small\item\em function to set lists of file in the course window \end{DoxyCompactList}\item 
+std\-::vector$<$ std\-::string $>$ {\bf get\-List\-Of\-Files} ()
+\begin{DoxyCompactList}\small\item\em function to get lists of file \end{DoxyCompactList}\item 
+{\bf Deck} $\ast$ {\bf get\-Deck} ()
+\begin{DoxyCompactList}\small\item\em function to get \doxyref{Deck}{p.}{class_deck} object \end{DoxyCompactList}\item 
+{\bf P\-Deck} {\bf get\-Decknew} ()
+\begin{DoxyCompactList}\small\item\em function to get P\-Deck object \end{DoxyCompactList}\item 
+void {\bf choose\-Course} (std\-::string course, bool flag)
+\begin{DoxyCompactList}\small\item\em function to perform action after choose button clicked \end{DoxyCompactList}\item 
+void {\bf delete\-Course} (std\-::string course)
+\begin{DoxyCompactList}\small\item\em function to perform action after delete button clicked \end{DoxyCompactList}\item 
+void {\bf set\-Next\-Date\-For\-Each} (vector$<$ int $>$ answers\-Judged, std\-::string course\-Name)
+\begin{DoxyCompactList}\small\item\em function to count next date for each question, implementation of S\-M2 algorithm \end{DoxyCompactList}\item 
+void {\bf save\-To\-File\-Current\-State} (const {\bf Deck} \&s, const char $\ast$filename)
+\begin{DoxyCompactList}\small\item\em serialization of current object state \end{DoxyCompactList}\item 
+void {\bf load\-From\-File\-Current\-State} ({\bf Deck} \&s, const char $\ast$filename)
+\begin{DoxyCompactList}\small\item\em load state of object from file \end{DoxyCompactList}\item 
+void {\bf continue\-Clicked} (std\-::string name)
+\begin{DoxyCompactList}\small\item\em function to perform action after continue button clicked \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf flag\-\_\-}
+\begin{DoxyCompactList}\small\item\em field to protect from unwanted behaviour of aplication \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::vector$<$ std\-::string $>$ {\bf files\-Xml}
+\begin{DoxyCompactList}\small\item\em vector of file which are about to be on courses list \end{DoxyCompactList}\item 
+{\bf Deck} $\ast$ {\bf deck\-\_\-}
+\item 
+{\bf P\-Deck} {\bf decknew\-\_\-}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class represents logic of \doxyref{Start}{p.}{class_start} Menu Dialog \begin{DoxyAuthor}{Author}
+Piotr Maleci \& Michal Daniluk 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Start@{Start}!Start@{Start}}
+\index{Start@{Start}!Start@{Start}}
+\subsubsection[{Start}]{\setlength{\rightskip}{0pt plus 5cm}Start\-::\-Start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_start_a26acc6dcc887a9c9d140532a179cfe34}
+\index{Start@{Start}!$\sim$\-Start@{$\sim$\-Start}}
+\index{$\sim$\-Start@{$\sim$\-Start}!Start@{Start}}
+\subsubsection[{$\sim$\-Start}]{\setlength{\rightskip}{0pt plus 5cm}Start\-::$\sim$\-Start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_start_ad28971ef6d65a39a8a748d4992260f8c}
+
+
+\subsection{Member Function Documentation}
+\index{Start@{Start}!choose\-Course@{choose\-Course}}
+\index{choose\-Course@{choose\-Course}!Start@{Start}}
+\subsubsection[{choose\-Course}]{\setlength{\rightskip}{0pt plus 5cm}void Start\-::choose\-Course (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{course, }
+\item[{bool}]{flag}
+\end{DoxyParamCaption}
+)}\label{class_start_ae34e97c88db29c6d8c9b647e3b22abc8}
+
+
+function to perform action after choose button clicked 
+
+\index{Start@{Start}!continue\-Clicked@{continue\-Clicked}}
+\index{continue\-Clicked@{continue\-Clicked}!Start@{Start}}
+\subsubsection[{continue\-Clicked}]{\setlength{\rightskip}{0pt plus 5cm}void Start\-::continue\-Clicked (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{name}
+\end{DoxyParamCaption}
+)}\label{class_start_ae434cdd7579b59bd2358497a9ca62ff2}
+
+
+function to perform action after continue button clicked 
+
+\index{Start@{Start}!delete\-Course@{delete\-Course}}
+\index{delete\-Course@{delete\-Course}!Start@{Start}}
+\subsubsection[{delete\-Course}]{\setlength{\rightskip}{0pt plus 5cm}void Start\-::delete\-Course (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{course}
+\end{DoxyParamCaption}
+)}\label{class_start_adf449dff62c491679bfab6c6365048bb}
+
+
+function to perform action after delete button clicked 
+
+\index{Start@{Start}!get\-Deck@{get\-Deck}}
+\index{get\-Deck@{get\-Deck}!Start@{Start}}
+\subsubsection[{get\-Deck}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Deck}$\ast$ Start\-::get\-Deck (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_start_aad74a0c9e127b2c6ff4b24cf545b130d}
+
+
+function to get \doxyref{Deck}{p.}{class_deck} object 
+
+\index{Start@{Start}!get\-Decknew@{get\-Decknew}}
+\index{get\-Decknew@{get\-Decknew}!Start@{Start}}
+\subsubsection[{get\-Decknew}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-Deck} Start\-::get\-Decknew (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_start_a0a91aa87cff930931881457639ba6e6c}
+
+
+function to get P\-Deck object 
+
+\index{Start@{Start}!get\-List\-Of\-Files@{get\-List\-Of\-Files}}
+\index{get\-List\-Of\-Files@{get\-List\-Of\-Files}!Start@{Start}}
+\subsubsection[{get\-List\-Of\-Files}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$std\-::string$>$ Start\-::get\-List\-Of\-Files (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_start_a1fc0c5c6250f3507c89baa502dc76a8a}
+
+
+function to get lists of file 
+
+\index{Start@{Start}!load\-From\-File\-Current\-State@{load\-From\-File\-Current\-State}}
+\index{load\-From\-File\-Current\-State@{load\-From\-File\-Current\-State}!Start@{Start}}
+\subsubsection[{load\-From\-File\-Current\-State}]{\setlength{\rightskip}{0pt plus 5cm}void Start\-::load\-From\-File\-Current\-State (
+\begin{DoxyParamCaption}
+\item[{{\bf Deck} \&}]{s, }
+\item[{const char $\ast$}]{filename}
+\end{DoxyParamCaption}
+)}\label{class_start_ab6b6f1d081ca1b613629696e271a2def}
+
+
+load state of object from file 
+
+\index{Start@{Start}!save\-To\-File\-Current\-State@{save\-To\-File\-Current\-State}}
+\index{save\-To\-File\-Current\-State@{save\-To\-File\-Current\-State}!Start@{Start}}
+\subsubsection[{save\-To\-File\-Current\-State}]{\setlength{\rightskip}{0pt plus 5cm}void Start\-::save\-To\-File\-Current\-State (
+\begin{DoxyParamCaption}
+\item[{const {\bf Deck} \&}]{s, }
+\item[{const char $\ast$}]{filename}
+\end{DoxyParamCaption}
+)}\label{class_start_abf3764f12336ace3d90d37724e020938}
+
+
+serialization of current object state 
+
+\index{Start@{Start}!set\-List\-Of\-Files@{set\-List\-Of\-Files}}
+\index{set\-List\-Of\-Files@{set\-List\-Of\-Files}!Start@{Start}}
+\subsubsection[{set\-List\-Of\-Files}]{\setlength{\rightskip}{0pt plus 5cm}void Start\-::set\-List\-Of\-Files (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_start_a8d285fb9b9ac9fe04947bb835f1c8e59}
+
+
+function to set lists of file in the course window 
+
+\index{Start@{Start}!set\-Next\-Date\-For\-Each@{set\-Next\-Date\-For\-Each}}
+\index{set\-Next\-Date\-For\-Each@{set\-Next\-Date\-For\-Each}!Start@{Start}}
+\subsubsection[{set\-Next\-Date\-For\-Each}]{\setlength{\rightskip}{0pt plus 5cm}void Start\-::set\-Next\-Date\-For\-Each (
+\begin{DoxyParamCaption}
+\item[{vector$<$ int $>$}]{answers\-Judged, }
+\item[{std\-::string}]{course\-Name}
+\end{DoxyParamCaption}
+)}\label{class_start_ad7bead563cace80868b0c27755f5a226}
+
+
+function to count next date for each question, implementation of S\-M2 algorithm 
+
+
+
+\subsection{Member Data Documentation}
+\index{Start@{Start}!deck\-\_\-@{deck\-\_\-}}
+\index{deck\-\_\-@{deck\-\_\-}!Start@{Start}}
+\subsubsection[{deck\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Deck}$\ast$ Start\-::deck\-\_\-\hspace{0.3cm}{\ttfamily [private]}}\label{class_start_a456664134843f62e5e45107bdc849a0a}
+\index{Start@{Start}!decknew\-\_\-@{decknew\-\_\-}}
+\index{decknew\-\_\-@{decknew\-\_\-}!Start@{Start}}
+\subsubsection[{decknew\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-Deck} Start\-::decknew\-\_\-\hspace{0.3cm}{\ttfamily [private]}}\label{class_start_ab2fb4f580007a612df4cb2e20f513145}
+\index{Start@{Start}!files\-Xml@{files\-Xml}}
+\index{files\-Xml@{files\-Xml}!Start@{Start}}
+\subsubsection[{files\-Xml}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$std\-::string$>$ Start\-::files\-Xml\hspace{0.3cm}{\ttfamily [private]}}\label{class_start_a37eda4da9fb1f4b857ede3ac91608c26}
+
+
+vector of file which are about to be on courses list 
+
+\index{Start@{Start}!flag\-\_\-@{flag\-\_\-}}
+\index{flag\-\_\-@{flag\-\_\-}!Start@{Start}}
+\subsubsection[{flag\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}bool Start\-::flag\-\_\-}\label{class_start_afeb30c075329fbe519bf01a4869d2a64}
+
+
+field to protect from unwanted behaviour of aplication 
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Projekt\-Z\-P\-R/{\bf start.\-h}\item 
+Projekt\-Z\-P\-R/{\bf start.\-cpp}\end{DoxyCompactItemize}

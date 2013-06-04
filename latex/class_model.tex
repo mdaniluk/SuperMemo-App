@@ -1,0 +1,235 @@
+\section{Model Class Reference}
+\label{class_model}\index{Model@{Model}}
+
+
+{\ttfamily \#include $<$model.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Model} ()
+\item 
+{\bf $\sim$\-Model} ()
+\item 
+void {\bf set\-Next} (int id, std\-::string question, std\-::string answer)
+\begin{DoxyCompactList}\small\item\em used when set Next is pressed \end{DoxyCompactList}\item 
+{\bf Course} $\ast$ {\bf get\-Current\-Course} ()
+\begin{DoxyCompactList}\small\item\em to get pointer to course object \end{DoxyCompactList}\item 
+{\bf Start} $\ast$ {\bf get\-Current\-Start} ()
+\begin{DoxyCompactList}\small\item\em to get pointer to start object \end{DoxyCompactList}\item 
+{\bf Mark} $\ast$ {\bf get\-Current\-Mark} ()
+\begin{DoxyCompactList}\small\item\em to get pointer to mark object \end{DoxyCompactList}\item 
+void {\bf set\-Save\-Course} (std\-::string name\-Of\-File)
+\begin{DoxyCompactList}\small\item\em to save course \end{DoxyCompactList}\item 
+void {\bf set\-List\-Of\-Files} ()
+\begin{DoxyCompactList}\small\item\em used to set list of files \end{DoxyCompactList}\item 
+void {\bf set\-Choose\-Course} (std\-::string course, bool flag)
+\begin{DoxyCompactList}\small\item\em used to choose course \end{DoxyCompactList}\item 
+void {\bf delete\-Choose\-Course} (std\-::string course)
+\begin{DoxyCompactList}\small\item\em used when delete clicked \end{DoxyCompactList}\item 
+void {\bf end\-Course\-Action} (std\-::vector$<$ int $>$, std\-::string)
+\begin{DoxyCompactList}\small\item\em when end clicked \end{DoxyCompactList}\item 
+void {\bf compute\-Open\-Mark} (int type, std\-::string user, std\-::string correct)
+\begin{DoxyCompactList}\small\item\em used to count mark for open questions \end{DoxyCompactList}\item 
+void {\bf compute\-Close\-Mark} (int type, vector$<$ bool $>$ user, vector$<$ bool $>$ correct)
+\begin{DoxyCompactList}\small\item\em used to count mark for close questions \end{DoxyCompactList}\item 
+void {\bf set\-Choose\-Course\-Continue} (std\-::string name)
+\begin{DoxyCompactList}\small\item\em used when continue clicked \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Course} $\ast$ {\bf current\-Course}
+\item 
+{\bf Start} $\ast$ {\bf start}
+\item 
+{\bf Mark} $\ast$ {\bf mark}
+\item 
+{\bf Deck} $\ast$ {\bf deck}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class represents \doxyref{Model}{p.}{class_model} in M\-V\-C. \begin{DoxyAuthor}{Author}
+Piotr Maleci \& Michal Daniluk 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Model@{Model}!Model@{Model}}
+\index{Model@{Model}!Model@{Model}}
+\subsubsection[{Model}]{\setlength{\rightskip}{0pt plus 5cm}Model\-::\-Model (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_model_ae3b375de5f6df4faf74a95d64748e048}
+\index{Model@{Model}!$\sim$\-Model@{$\sim$\-Model}}
+\index{$\sim$\-Model@{$\sim$\-Model}!Model@{Model}}
+\subsubsection[{$\sim$\-Model}]{\setlength{\rightskip}{0pt plus 5cm}Model\-::$\sim$\-Model (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_model_ad6ebd2062a0b823db841a0b88baac4c0}
+
+
+\subsection{Member Function Documentation}
+\index{Model@{Model}!compute\-Close\-Mark@{compute\-Close\-Mark}}
+\index{compute\-Close\-Mark@{compute\-Close\-Mark}!Model@{Model}}
+\subsubsection[{compute\-Close\-Mark}]{\setlength{\rightskip}{0pt plus 5cm}void Model\-::compute\-Close\-Mark (
+\begin{DoxyParamCaption}
+\item[{int}]{type, }
+\item[{vector$<$ bool $>$}]{user, }
+\item[{vector$<$ bool $>$}]{correct}
+\end{DoxyParamCaption}
+)}\label{class_model_a96c4b148a2824746ae1959abde9e14e1}
+
+
+used to count mark for close questions 
+
+\index{Model@{Model}!compute\-Open\-Mark@{compute\-Open\-Mark}}
+\index{compute\-Open\-Mark@{compute\-Open\-Mark}!Model@{Model}}
+\subsubsection[{compute\-Open\-Mark}]{\setlength{\rightskip}{0pt plus 5cm}void Model\-::compute\-Open\-Mark (
+\begin{DoxyParamCaption}
+\item[{int}]{type, }
+\item[{std\-::string}]{user, }
+\item[{std\-::string}]{correct}
+\end{DoxyParamCaption}
+)}\label{class_model_ab99155ffc02c15a39655def5b3cad3a7}
+
+
+used to count mark for open questions 
+
+\index{Model@{Model}!delete\-Choose\-Course@{delete\-Choose\-Course}}
+\index{delete\-Choose\-Course@{delete\-Choose\-Course}!Model@{Model}}
+\subsubsection[{delete\-Choose\-Course}]{\setlength{\rightskip}{0pt plus 5cm}void Model\-::delete\-Choose\-Course (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{course}
+\end{DoxyParamCaption}
+)}\label{class_model_a64496c92b37be0ba6f7b1a21dc42c40f}
+
+
+used when delete clicked 
+
+\index{Model@{Model}!end\-Course\-Action@{end\-Course\-Action}}
+\index{end\-Course\-Action@{end\-Course\-Action}!Model@{Model}}
+\subsubsection[{end\-Course\-Action}]{\setlength{\rightskip}{0pt plus 5cm}void Model\-::end\-Course\-Action (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ int $>$}]{answers\-Judged, }
+\item[{std\-::string}]{course\-Name}
+\end{DoxyParamCaption}
+)}\label{class_model_a1ec87d48fb374790148b0ef6d9e4aad5}
+
+
+when end clicked 
+
+\index{Model@{Model}!get\-Current\-Course@{get\-Current\-Course}}
+\index{get\-Current\-Course@{get\-Current\-Course}!Model@{Model}}
+\subsubsection[{get\-Current\-Course}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Course}$\ast$ Model\-::get\-Current\-Course (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_model_a3213aa4c9b312267ebaca0e8848bc09f}
+
+
+to get pointer to course object 
+
+\index{Model@{Model}!get\-Current\-Mark@{get\-Current\-Mark}}
+\index{get\-Current\-Mark@{get\-Current\-Mark}!Model@{Model}}
+\subsubsection[{get\-Current\-Mark}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mark}$\ast$ Model\-::get\-Current\-Mark (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_model_ab1828bd7b78669a7fb9efcaeedbfab23}
+
+
+to get pointer to mark object 
+
+\index{Model@{Model}!get\-Current\-Start@{get\-Current\-Start}}
+\index{get\-Current\-Start@{get\-Current\-Start}!Model@{Model}}
+\subsubsection[{get\-Current\-Start}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Start}$\ast$ Model\-::get\-Current\-Start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_model_aaaf471e62a4d441e4cc02ba9e4230ecd}
+
+
+to get pointer to start object 
+
+\index{Model@{Model}!set\-Choose\-Course@{set\-Choose\-Course}}
+\index{set\-Choose\-Course@{set\-Choose\-Course}!Model@{Model}}
+\subsubsection[{set\-Choose\-Course}]{\setlength{\rightskip}{0pt plus 5cm}void Model\-::set\-Choose\-Course (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{course, }
+\item[{bool}]{flag}
+\end{DoxyParamCaption}
+)}\label{class_model_a70a651bda1c27902bff97d331b03fc48}
+
+
+used to choose course 
+
+\index{Model@{Model}!set\-Choose\-Course\-Continue@{set\-Choose\-Course\-Continue}}
+\index{set\-Choose\-Course\-Continue@{set\-Choose\-Course\-Continue}!Model@{Model}}
+\subsubsection[{set\-Choose\-Course\-Continue}]{\setlength{\rightskip}{0pt plus 5cm}void Model\-::set\-Choose\-Course\-Continue (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{name}
+\end{DoxyParamCaption}
+)}\label{class_model_a1821aed1f84fcedff1d0396ef197d53e}
+
+
+used when continue clicked 
+
+\index{Model@{Model}!set\-List\-Of\-Files@{set\-List\-Of\-Files}}
+\index{set\-List\-Of\-Files@{set\-List\-Of\-Files}!Model@{Model}}
+\subsubsection[{set\-List\-Of\-Files}]{\setlength{\rightskip}{0pt plus 5cm}void Model\-::set\-List\-Of\-Files (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_model_a937d7c21c027c61ab6db7b146fb66518}
+
+
+used to set list of files 
+
+\index{Model@{Model}!set\-Next@{set\-Next}}
+\index{set\-Next@{set\-Next}!Model@{Model}}
+\subsubsection[{set\-Next}]{\setlength{\rightskip}{0pt plus 5cm}void Model\-::set\-Next (
+\begin{DoxyParamCaption}
+\item[{int}]{id, }
+\item[{std\-::string}]{question, }
+\item[{std\-::string}]{answer}
+\end{DoxyParamCaption}
+)}\label{class_model_a31d4f8b7432120e4e2524d3a69e6ff54}
+
+
+used when set Next is pressed 
+
+\index{Model@{Model}!set\-Save\-Course@{set\-Save\-Course}}
+\index{set\-Save\-Course@{set\-Save\-Course}!Model@{Model}}
+\subsubsection[{set\-Save\-Course}]{\setlength{\rightskip}{0pt plus 5cm}void Model\-::set\-Save\-Course (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{name\-Of\-File}
+\end{DoxyParamCaption}
+)}\label{class_model_a1a491166f5a11220c7f0f1b0e84b8123}
+
+
+to save course 
+
+
+
+\subsection{Member Data Documentation}
+\index{Model@{Model}!current\-Course@{current\-Course}}
+\index{current\-Course@{current\-Course}!Model@{Model}}
+\subsubsection[{current\-Course}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Course}$\ast$ Model\-::current\-Course\hspace{0.3cm}{\ttfamily [private]}}\label{class_model_ac3b91a3ed954e175ae34ea2308950efe}
+\index{Model@{Model}!deck@{deck}}
+\index{deck@{deck}!Model@{Model}}
+\subsubsection[{deck}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Deck}$\ast$ Model\-::deck\hspace{0.3cm}{\ttfamily [private]}}\label{class_model_af4659340fc1cd97928ddb3312486c867}
+\index{Model@{Model}!mark@{mark}}
+\index{mark@{mark}!Model@{Model}}
+\subsubsection[{mark}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mark}$\ast$ Model\-::mark\hspace{0.3cm}{\ttfamily [private]}}\label{class_model_a430b9f920220066900c35ee00dda9418}
+\index{Model@{Model}!start@{start}}
+\index{start@{start}!Model@{Model}}
+\subsubsection[{start}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Start}$\ast$ Model\-::start\hspace{0.3cm}{\ttfamily [private]}}\label{class_model_af1d966b88165e49caf54ce4c4841c534}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Projekt\-Z\-P\-R/{\bf model.\-h}\item 
+Projekt\-Z\-P\-R/{\bf model.\-cpp}\end{DoxyCompactItemize}
