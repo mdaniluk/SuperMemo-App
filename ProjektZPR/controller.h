@@ -36,7 +36,9 @@ signals:
 	void enabledMainWindow();
 	/// emit Question Card List and name of current course
 	void emitQuestionCardList(vector<PQcard>,std::string);
+	/// emit when choosed option Contiunue
 	void emitQuestionCardListContinue(vector<PQcard>,std::string);
+	/// emit suggested mark counted by computer
 	void emitSuggestedMark(int);
 	/// emit marks to statistic
 	void showStats(vector<int>);
@@ -53,13 +55,17 @@ public slots:
 	void addListOfFiles();
 	/// show chosen course
 	void addChooseCourse(std::string course, bool flag);
+	/// close window
 	void addCloseAnyWindow();
+	/// when delete button clicked
 	void deleteChooseCourse(std::string course);
-
+	/// used to count mark for open questions
 	void computeMarkForOpen(int, std::string, std::string);
+	/// used to count mark for close questions
 	void computeMarkForClose(int, vector<bool>, vector<bool>);
-
+	/// used to judge the course
 	void endCourseJudge(vector<int>, std::string);
+	/// used when Continue course clicked
 	void addChooseCourseContinue(std::string name);
 
 

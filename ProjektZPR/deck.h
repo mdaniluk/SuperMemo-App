@@ -30,20 +30,27 @@ using std::vector;
 using std::pair;
 typedef boost::shared_ptr<QuestionCard> PQcard;
 
+/**
+ * Class represents collection of questions and answers which are showed after users action. (Press apropriate button).
+ * Class in its constructor loads from xml file all information.
+ * @author Piotr Malecki & Michal Daniluk
+ *
+ */
 
-class Deck: public mpl::false_
+class Deck
 {
 public:
 	Deck();
+	///constructor with file which is loaded
 	Deck(QString filename);
-	// Tworzymy nowy kurs
+	/// function to get vector of PQcard
 	vector<PQcard> getQuestionCardVector() {return vectorPQ;}
 	
 	~Deck();
 
 
 	friend class boost::serialization::access;
-	
+	/// vector of smart pointers to QuestionCard objects
 	vector<PQcard> vectorPQ; 
 	int a;
  
