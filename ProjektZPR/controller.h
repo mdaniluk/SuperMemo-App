@@ -36,7 +36,9 @@ signals:
 	void enabledMainWindow();
 	/// emit Question Card List and name of current course
 	void emitQuestionCardList(vector<PQcard>,std::string);
+	// emit when choosed option Contiunue
 	void emitQuestionCardListContinue(vector<PQcard>,std::string);
+	// emit suggested mark counted by computer
 	void emitSuggestedMark(int);
 	/// emit marks to statistic
 	void showStats(vector<int>);

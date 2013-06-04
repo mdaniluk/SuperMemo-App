@@ -35,7 +35,7 @@ signals:
 	void showCurrentListOfFiles();
 	///Emit when we choose new Course. It contains name of course.
 	void chooseCourse(std::string, bool flag);
-
+	///Emit when we choose Contiunue option
 	void chooseContinueCourse(std::string);
 
 	///Emit when we close any window
